@@ -1,0 +1,48 @@
+categories:
+  AstryxSitepackage:
+    label: 'ASTRYX SITEPACKAGE Sitepackage'
+  AstryxSitepackage.templates:
+    label: 'Templates'
+    parent: AstryxSitepackage
+  AstryxSitepackage.layout:
+    label: 'Layout'
+    parent: AstryxSitepackage
+  AstryxSitepackage.menus:
+    label: 'Menus'
+    parent: AstryxSitepackage
+
+settings:
+  AstryxSitepackage.template_path:
+    label: 'Page template path'
+    category: AstryxSitepackage.templates
+    description: 'Path to the templates of the ASTRYX SITEPACKAGE Sitepackage.'
+    type: string
+    default: 'EXT:astryx_sitepackage/Resources/Private/Templates/'
+
+  AstryxSitepackage.logo:
+    label: 'Logo'
+    category: AstryxSitepackage.layout
+    description: 'Path to the logo of ASTRYX SITEPACKAGE Sitepackage.'
+    type: string
+    default: 'EXT:astryx_sitepackage/Resources/Public/Images/logo.svg'
+
+  AstryxSitepackage.logo-alt:
+    label: 'Logo Alt text'
+    category: AstryxSitepackage.layout
+    description: 'Alternative text of the logo for the visually impaired'
+    type: string
+    default: 'Logo'
+
+  AstryxSitepackage.favicon:
+    label: 'Favicon'
+    description: 'This icon is displayed in search engine results and in the browser tab'
+    category: AstryxSitepackage.layout
+    type: string
+    default: 'EXT:astryx_sitepackage/Resources/Public/Icons/favicon.ico'
+
+  AstryxSitepackage.footerMenuRoot:
+      label: 'Footer menu root uid'
+      description: 'The subpages of this page are displayed in the footer'
+      category: AstryxSitepackage.menus
+      type: int
+      default: 2

@@ -1,0 +1,26 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "This TYPO3 v14 project was created with `typo3-auto-install`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build && node verify-stylex-build.mjs",
+    "watch": "vite build --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@stylexjs/stylex": "^0.19.1"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.29.9",
+    "@stylexjs/unplugin": "^0.19.1",
+    "vite": "^7.3.6",
+    "vite-plugin-live-reload": "^3.1.0",
+    "vite-plugin-typo3": "^3.0.0"
+  },
+  "type": "module"
+}

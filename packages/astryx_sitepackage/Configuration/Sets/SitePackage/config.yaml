@@ -1,0 +1,7 @@
+name: skom/astryx-sitepackage
+label: 'ASTRYX SITEPACKAGE Sitepackage'
+dependencies:
+  - typo3/fluid-styled-content
+  - typo3/fluid-styled-content-css
+  - skom/stylex-connector
+
