@@ -1,0 +1,59 @@
+name: astryx/notice
+typeName: astryx_notice
+group: astryx
+title: Astryx Notice
+fields:
+- identifier: header
+  useExistingField: true
+- identifier: header_layout
+  useExistingField: true
+- identifier: header_position
+  useExistingField: true
+- identifier: header_link
+  useExistingField: true
+- identifier: subheader
+  useExistingField: true
+- identifier: heading_size
+  type: Select
+  renderType: selectSingle
+  default: medium
+  items:
+  - value: medium
+    label: Medium
+  - value: small
+    label: Small
+  - value: large
+    label: Large
+  - value: display
+    label: Display
+- identifier: bodytext
+  useExistingField: true
+  type: Textarea
+  enableRichtext: true
+- identifier: status
+  type: Select
+  renderType: selectSingle
+  default: neutral
+  items:
+  - value: neutral
+    label: Neutral
+  - value: accent
+    label: Accent
+  - value: success
+    label: Success
+  - value: warning
+    label: Warning
+  - value: error
+    label: Error
+- identifier: icon
+  type: Text
+- identifier: cta_link
+  type: Link
+- identifier: cta_label
+  type: Text
+- identifier: secondary_link
+  type: Link
+- identifier: secondary_label
+  type: Text
+basics:
+  - Astryx/spacing

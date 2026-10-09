@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+  Skom\Typo3Astryx\:
+    resource: '../Classes/*'
+  Skom\Typo3Astryx\ViewHelpers\RecipeViewHelper:
+    public: true
+  Skom\Typo3Astryx\DataProcessing\PageThemeProcessor:
+    public: true
+  Skom\Typo3Astryx\Command\MigrateCommand:
+    tags:
+      - name: console.command
+        command: 'astryx:migrate'

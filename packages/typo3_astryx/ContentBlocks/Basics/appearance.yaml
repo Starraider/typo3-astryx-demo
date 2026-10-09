@@ -1,0 +1,11 @@
+identifier: Astryx/appearance
+fields:
+- identifier: width
+  type: Select
+  renderType: selectSingle
+  default: prose
+  items:
+  - value: prose
+    label: Prose
+  - value: full
+    label: Full

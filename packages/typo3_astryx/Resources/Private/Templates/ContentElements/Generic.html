@@ -1,0 +1,4 @@
+<f:layout name="Default" />
+<f:section name="Main"><f:render partial="ContentElements/Header" arguments="{data: data}" />
+<f:if condition="{content}"><f:then>{content -> f:format.raw()}</f:then><f:else><f:cObject typoscriptObjectPath="tt_content.{data.CType}.20" data="{data}" table="tt_content" /></f:else></f:if>
+</f:section>

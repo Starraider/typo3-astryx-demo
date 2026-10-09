@@ -1,7 +1,4 @@
 name: skom/astryx-sitepackage
-label: 'ASTRYX SITEPACKAGE Sitepackage'
+label: 'Astryx starter'
 dependencies:
-  - typo3/fluid-styled-content
-  - typo3/fluid-styled-content-css
-  - skom/stylex-connector
-
+  - skom/typo3-astryx

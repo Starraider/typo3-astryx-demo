@@ -1,0 +1,13 @@
+<f:layout name="Default" />
+<f:section name="Main"><f:render partial="ContentElements/Header" arguments="{data: data}" />
+    <div class="astryx-code-block" data-astryx-code-block data-language="{data.language}" data-line-numbers="{data.line_numbers}">
+        <div class="astryx-code-block-header">
+            <span class="astryx-code-block-title"><f:if condition="{data.filename}"><span class="astryx-code-block-filename">{data.filename}</span><span aria-hidden="true"> — </span></f:if><span>{f:translate(key: 'codeBlock.language.{data.language}', extensionName: 'Typo3Astryx', default: data.language)}</span></span>
+            <button type="button" class="astryx-code-block-copy" hidden data-code-copy aria-label="{f:translate(key: 'codeBlock.copy', extensionName: 'Typo3Astryx')}" title="{f:translate(key: 'codeBlock.copy', extensionName: 'Typo3Astryx')}" data-label-copy="{f:translate(key: 'codeBlock.copy', extensionName: 'Typo3Astryx')}" data-label-copied="{f:translate(key: 'codeBlock.copied', extensionName: 'Typo3Astryx')}" data-label-error="{f:translate(key: 'codeBlock.copyError', extensionName: 'Typo3Astryx')}">
+                <f:image src="EXT:typo3_astryx/Resources/Public/Icons/copy.svg" width="16" height="16" alt="" class="astryx-code-block-copy-icon" />
+            </button>
+        </div>
+        <pre class="astryx-code-block-body" tabindex="0" role="region" aria-label="{f:translate(key: 'codeBlock.snippet', extensionName: 'Typo3Astryx')}"><code>{data.code}</code></pre>
+        <span class="astryx-sr-only" role="status" aria-live="polite" data-code-status></span>
+    </div>
+</f:section>

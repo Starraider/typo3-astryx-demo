@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0-rc.1",
+  "upstream": "0.6.5",
+  "changes": [
+    "Native Fluid instead of React",
+    "Finite static recipes instead of dynamic StyleX",
+    "Public tokens renamed to --astryx-*",
+    "Editorial body text uses 16px for prose",
+    "System fonts without bundled font downloads",
+    "Native details/summary accordions styled after the Collapsible overview, with animated single/multiple modes and native grouping without JavaScript",
+    "Scroll-snap card carousel without autoplay",
+    "Ocean derived from verified blue/cyan tokens",
+    "CSS attribute bridge reapplies complete theme tokens at each nested boundary",
+    "Hero image-only contract; protected text overlay background with 70% transparency; Textmedia supports standard controlled media and poster",
+    "Shared image display aspect presets retain the default FAL crop variant",
+    "Original small SVG icon set and system fonts; no upstream fonts bundled"
+  ]
+}

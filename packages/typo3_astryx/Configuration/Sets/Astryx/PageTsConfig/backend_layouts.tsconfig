@@ -1,0 +1,83 @@
+mod.web_layout.BackendLayouts {
+  default {
+    title = Astryx Default
+    icon = EXT:typo3_astryx/Resources/Public/Icons/BackendLayouts/default.svg
+    config.backend_layout {
+      colCount = 1
+      rowCount = 2
+      rows {
+        1.columns.1 {
+          name = LLL:EXT:typo3_astryx/Resources/Private/Language/locallang.xlf:stage
+          colPos = 1
+          identifier = stage
+        }
+        2.columns.1 {
+          name = LLL:EXT:typo3_astryx/Resources/Private/Language/locallang.xlf:main
+          colPos = 0
+          identifier = main
+        }
+      }
+    }
+  }
+  astryx_sidebar {
+    title = Astryx Sidebar
+    icon = EXT:typo3_astryx/Resources/Public/Icons/BackendLayouts/astryx_sidebar.svg
+    config.backend_layout {
+      colCount = 2
+      rowCount = 2
+      rows {
+        1.columns.1 {
+          name = LLL:EXT:typo3_astryx/Resources/Private/Language/locallang.xlf:stage
+          colPos = 1
+          identifier = stage
+          colspan = 2
+        }
+        2.columns {
+          1 {
+            name = LLL:EXT:typo3_astryx/Resources/Private/Language/locallang.xlf:main
+            colPos = 0
+            identifier = main
+          }
+          2 {
+            name = LLL:EXT:typo3_astryx/Resources/Private/Language/locallang.xlf:detail
+            colPos = 2
+            identifier = detail
+          }
+        }
+      }
+    }
+  }
+  astryx_app_shell {
+    title = Astryx App Shell
+    icon = EXT:typo3_astryx/Resources/Public/Icons/BackendLayouts/astryx_app_shell.svg
+    config.backend_layout {
+      colCount = 3
+      rowCount = 2
+      rows {
+        1.columns.1 {
+          name = LLL:EXT:typo3_astryx/Resources/Private/Language/locallang.xlf:stage
+          colPos = 1
+          identifier = stage
+          colspan = 3
+        }
+        2.columns {
+          1 {
+            name = LLL:EXT:typo3_astryx/Resources/Private/Language/locallang.xlf:sideNavigation
+            colPos = 3
+            identifier = navigation
+          }
+          2 {
+            name = LLL:EXT:typo3_astryx/Resources/Private/Language/locallang.xlf:main
+            colPos = 0
+            identifier = main
+          }
+          3 {
+            name = LLL:EXT:typo3_astryx/Resources/Private/Language/locallang.xlf:detail
+            colPos = 2
+            identifier = detail
+          }
+        }
+      }
+    }
+  }
+}

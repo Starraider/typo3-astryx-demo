@@ -1,0 +1,30 @@
+@layer astryx-base {
+  .astryx-code-block { min-inline-size: 0; max-inline-size: 100%; overflow: hidden; border: 1px solid light-dark(var(--astryx-border-strong), var(--astryx-border)); border-radius: calc(var(--astryx-radius-container) - 2px); background: var(--astryx-surface); color: var(--astryx-text); font-family: var(--astryx-font-code); font-size: .875rem; line-height: 1.4285714286; }
+  /* Darken light headers so they stand out against the page's muted background. */
+  .astryx-code-block-header { display: flex; align-items: center; justify-content: space-between; gap: var(--astryx-space-3); min-block-size: 45px; padding: var(--astryx-space-2) var(--astryx-space-4); border-block-end: 1px solid light-dark(var(--astryx-border-strong), var(--astryx-border)); background: light-dark(color-mix(in srgb, var(--astryx-muted) 92%, var(--astryx-text)), var(--astryx-muted)); }
+  .astryx-code-block-title { min-inline-size: 0; color: light-dark(color-mix(in srgb, var(--astryx-secondary) 85%, var(--astryx-text)), var(--astryx-secondary)); font-size: .75rem; font-weight: 500; overflow-wrap: anywhere; }
+  .astryx-code-block-copy { display: grid; place-items: center; flex: 0 0 28px; inline-size: 28px; block-size: 28px; padding: 0; border: 0; border-radius: var(--astryx-radius-element); color: var(--astryx-secondary); background: transparent; cursor: pointer; }
+  .astryx-code-block-copy[hidden] { display: none; }
+  .astryx-code-block-copy:hover { background: color-mix(in srgb, var(--astryx-text) 8%, transparent); }
+  .astryx-code-block-copy:focus-visible, .astryx-code-block-body:focus-visible { outline: 2px solid var(--astryx-accent); outline-offset: -2px; }
+  .astryx-code-block-copy-icon { filter: brightness(0); opacity: .65; }
+  .astryx-code-block-copy[data-state="copied"] { background: color-mix(in srgb, var(--astryx-success) 15%, transparent); }
+  .astryx-code-block-copy[data-state="copied"] .astryx-code-block-copy-icon { display: none; }
+  .astryx-code-block-copy[data-state="copied"]::after { content: ''; inline-size: 9px; block-size: 5px; border-inline-start: 1.5px solid currentColor; border-block-end: 1.5px solid currentColor; transform: rotate(-45deg); }
+  .astryx-code-block-copy[data-state="error"] { color: var(--astryx-error); }
+  .astryx-code-block-body { display: flex; align-items: stretch; margin: 0; padding: var(--astryx-space-3) 0; overflow: auto; max-block-size: 40rem; font: inherit; text-align: start; direction: ltr; tab-size: 4; }
+  .astryx-code-block-body > code { display: block; flex: 1 0 auto; padding-inline: var(--astryx-space-4); font: inherit; white-space: pre; }
+  .astryx-code-block-gutter { flex: 0 0 auto; padding-inline: var(--astryx-space-4) var(--astryx-space-3); border-inline-end: 1px solid var(--astryx-border); color: var(--astryx-secondary); text-align: end; white-space: pre; user-select: none; }
+  .astryx-code-copy-buffer { position: fixed; inset: 0 auto auto -9999px; }
+  /* GitHub-style syntax colors paired for the surrounding light/dark scheme. */
+  .astryx-code-block .hljs-comment, .astryx-code-block .hljs-quote { color: light-dark(#57606a, #a0a0a0); }
+  .astryx-code-block .hljs-keyword, .astryx-code-block .hljs-selector-tag, .astryx-code-block .hljs-literal, .astryx-code-block .hljs-deletion { color: light-dark(#a626a4, #d2a8ff); }
+  .astryx-code-block .hljs-string, .astryx-code-block .hljs-regexp, .astryx-code-block .hljs-addition, .astryx-code-block .hljs-meta .hljs-string { color: light-dark(#116329, #a7cfa0); }
+  .astryx-code-block .hljs-number, .astryx-code-block .hljs-built_in, .astryx-code-block .hljs-type, .astryx-code-block .hljs-attr, .astryx-code-block .hljs-attribute, .astryx-code-block .hljs-variable, .astryx-code-block .hljs-template-variable { color: light-dark(#0550ae, #a5c8ff); }
+  .astryx-code-block .hljs-title, .astryx-code-block .hljs-name, .astryx-code-block .hljs-selector-class, .astryx-code-block .hljs-selector-id, .astryx-code-block .hljs-meta { color: light-dark(#6639ba, #b9c7ef); }
+  .astryx-code-block .hljs-emphasis { font-style: italic; }
+  .astryx-code-block .hljs-strong { font-weight: 600; }
+  [data-astryx-mode="dark"] .astryx-code-block-copy-icon { filter: brightness(0) invert(1); }
+  @media (prefers-color-scheme: dark) { [data-astryx-mode="system"] .astryx-code-block-copy-icon { filter: brightness(0) invert(1); } }
+  @media (forced-colors: active) { .astryx-code-block-copy { border: 1px solid ButtonText; } .astryx-code-block-copy-icon { filter: none; background: white; } }
+}

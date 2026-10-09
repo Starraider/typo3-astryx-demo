@@ -1,0 +1,1 @@
+<ul class="astryx-menu"><f:for each="{items}" as="item"><li><f:if condition="{item.current}"><f:then><a href="{item.link}" aria-current="page">{item.title}</a></f:then><f:else><a href="{item.link}">{item.title}</a></f:else></f:if><f:if condition="{item.children}"><f:render partial="Navigation/Menu" arguments="{items: item.children}" /></f:if></li></f:for></ul>

@@ -1,0 +1,17 @@
+<f:if condition="{breadcrumbs}">
+    <nav class="astryx-breadcrumbs" aria-label="{f:translate(key: 'breadcrumbs', extensionName: 'Typo3Astryx', default: 'Breadcrumbs')}">
+        <ol class="astryx-breadcrumbs-list">
+            <f:for each="{breadcrumbs}" as="item" iteration="iterator">
+                <li class="astryx-breadcrumb-item">
+                    <f:if condition="!{iterator.isFirst}">
+                        <span class="astryx-breadcrumb-separator" aria-hidden="true">/</span>
+                    </f:if>
+                    <f:if condition="{item.current}">
+                        <f:then><span class="astryx-breadcrumb-current" aria-current="page">{item.title}</span></f:then>
+                        <f:else><f:link.typolink parameter="{item.link}" target="{item.target}" class="astryx-breadcrumb-link">{item.title}</f:link.typolink></f:else>
+                    </f:if>
+                </li>
+            </f:for>
+        </ol>
+    </nav>
+</f:if>

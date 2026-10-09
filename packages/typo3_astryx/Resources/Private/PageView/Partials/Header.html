@@ -1,0 +1,34 @@
+<header class="astryx-header" data-astryx-dropdowns>
+    <div class="astryx-shell-width astryx-header-inner">
+        <f:link.page pageUid="{site.rootPageId}" class="astryx-logo">
+            <f:if condition="{settings.Astryx.logo}">
+                <f:then><f:image src="{settings.Astryx.logo}" alt="{settings.Astryx.logoAlt}" width="200" /></f:then>
+                <f:else>{site.configuration.websiteTitle}</f:else>
+            </f:if>
+        </f:link.page>
+        <nav class="astryx-navigation" data-astryx-mobile-nav aria-label="{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}">
+            <f:render partial="Navigation/MainMenu" arguments="{items: navigation, prefix: 'desktop', nested: false}" />
+            <button class="astryx-mobile-toggle astryx-header-control" type="button" data-nav-open aria-haspopup="dialog" aria-expanded="false" aria-controls="astryx-navigation-dialog">
+                <span class="astryx-menu-icon" aria-hidden="true"></span>
+                <span class="astryx-sr-only">{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}</span>
+            </button>
+            <dialog class="astryx-dialog" id="astryx-navigation-dialog" aria-label="{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}">
+                <div class="astryx-dialog-header">
+                    <span>{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}</span>
+                    <button type="button" data-nav-close class="astryx-header-control">{f:translate(key: 'close', extensionName: 'Typo3Astryx')}</button>
+                </div>
+                <f:render partial="Navigation/MainMenu" arguments="{items: navigation, prefix: 'mobile', nested: false}" />
+            </dialog>
+        </nav>
+        <f:if condition="{astryx.allowUserMode} || {settings.Astryx.showLanguageMenu}">
+            <div class="astryx-header-actions">
+                <f:if condition="{astryx.allowUserMode}">
+                    <f:render partial="ThemeSwitcher" />
+                </f:if>
+                <f:if condition="{settings.Astryx.showLanguageMenu} && {languageMenu -> f:count()} > 1">
+                    <f:render partial="Navigation/LanguageMenu" arguments="{items: languageMenu}" />
+                </f:if>
+            </div>
+        </f:if>
+    </div>
+</header>

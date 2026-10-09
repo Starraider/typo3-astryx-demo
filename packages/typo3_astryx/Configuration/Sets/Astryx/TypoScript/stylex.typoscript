@@ -1,0 +1,3 @@
+[applicationContext matches "/^Development/"]
+    config.no_cache = 1
+[END]

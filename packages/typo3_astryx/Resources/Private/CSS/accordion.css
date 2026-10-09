@@ -1,0 +1,17 @@
+@layer astryx-base {
+  /* Collapsible overview: one compact Card around a Stack with gap-4. */
+  .astryx-accordion { display: grid; gap: var(--astryx-space-4); padding: calc(var(--astryx-space-3) - 1px); border: 1px solid var(--astryx-border); border-radius: var(--astryx-radius-container); background: var(--astryx-surface); }
+  .astryx-accordion > details { min-inline-size: 0; }
+  .astryx-accordion > details > summary { display: flex; align-items: center; justify-content: space-between; gap: var(--astryx-space-2); list-style: none; cursor: pointer; color: var(--astryx-text); font-size: var(--astryx-font-size-label); font-weight: 600; line-height: var(--astryx-line-label); }
+  .astryx-accordion > details > summary::-webkit-details-marker { display: none; }
+  .astryx-accordion-label { min-inline-size: 0; overflow-wrap: anywhere; }
+  .astryx-accordion-chevron { display: grid; place-items: center; flex: 0 0 var(--astryx-font-size-body); inline-size: var(--astryx-font-size-body); block-size: var(--astryx-font-size-body); color: var(--astryx-secondary); transition: transform var(--astryx-duration) var(--astryx-easing); }
+  .astryx-accordion-chevron::before { content: ''; inline-size: .4375rem; block-size: .4375rem; border-inline-end: 1.5px solid currentColor; border-block-end: 1.5px solid currentColor; transform: translateY(-.125rem) rotate(45deg); }
+  .astryx-accordion > details[open] > summary .astryx-accordion-chevron { transform: rotate(180deg); }
+  .astryx-accordion > details > summary[aria-expanded="false"] .astryx-accordion-chevron { transform: none; }
+  .astryx-accordion-content { padding-block-start: var(--astryx-space-1); color: var(--astryx-secondary); font-size: var(--astryx-font-size-label); line-height: var(--astryx-line-label); }
+  .astryx-accordion-content > p { margin-block: 0 var(--astryx-space-2); }
+  .astryx-accordion-content > :last-child { margin-block-end: 0; }
+  .astryx-accordion > details[data-animating] { overflow: hidden; }
+  @media (prefers-reduced-motion: reduce) { .astryx-accordion-chevron { transition: none; } }
+}

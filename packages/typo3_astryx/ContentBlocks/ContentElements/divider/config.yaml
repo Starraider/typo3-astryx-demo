@@ -1,0 +1,24 @@
+name: astryx/divider
+typeName: astryx_divider
+group: astryx
+title: Astryx Divider
+fields:
+- identifier: header
+  useExistingField: true
+- identifier: header_layout
+  useExistingField: true
+- identifier: header_position
+  useExistingField: true
+- identifier: header_link
+  useExistingField: true
+- identifier: variant
+  type: Select
+  renderType: selectSingle
+  default: subtle
+  items:
+  - value: subtle
+    label: Subtle
+  - value: strong
+    label: Strong
+basics:
+  - Astryx/spacing

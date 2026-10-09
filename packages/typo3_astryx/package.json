@@ -1,0 +1,16 @@
+{
+  "name": "@skom/typo3-astryx",
+  "version": "0.1.0-rc.2",
+  "private": true,
+  "type": "module",
+  "description": "Sources compile from the consuming TYPO3 project root",
+  "peerDependencies": {
+    "@stylexjs/stylex": "0.19.1",
+    "@stylexjs/unplugin": "0.19.1",
+    "vite": "^7.3.6",
+    "highlight.js": "^11.12.0"
+  },
+  "scripts": {
+    "verify": "node Build/verify-artifacts.mjs"
+  }
+}

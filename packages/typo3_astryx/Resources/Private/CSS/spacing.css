@@ -1,0 +1,13 @@
+@layer astryx-base {
+  /* FSC class names with Astryx's compact scale; Default renders Medium (8px). */
+  .astryx-element.frame-space-before-extra-small { margin-block-start: calc(var(--astryx-space-1, 4px) / 2); }
+  .astryx-element.frame-space-before-small { margin-block-start: var(--astryx-space-1, 4px); }
+  .astryx-element.frame-space-before-medium { margin-block-start: var(--astryx-space-2, 8px); }
+  .astryx-element.frame-space-before-large { margin-block-start: var(--astryx-space-4, 16px); }
+  .astryx-element.frame-space-before-extra-large { margin-block-start: var(--astryx-space-6, 24px); }
+  .astryx-element.frame-space-after-extra-small { margin-block-end: calc(var(--astryx-space-1, 4px) / 2); }
+  .astryx-element.frame-space-after-small { margin-block-end: var(--astryx-space-1, 4px); }
+  .astryx-element.frame-space-after-medium { margin-block-end: var(--astryx-space-2, 8px); }
+  .astryx-element.frame-space-after-large { margin-block-end: var(--astryx-space-4, 16px); }
+  .astryx-element.frame-space-after-extra-large { margin-block-end: var(--astryx-space-6, 24px); }
+}

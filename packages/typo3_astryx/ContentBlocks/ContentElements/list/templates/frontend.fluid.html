@@ -1,0 +1,1 @@
+<f:layout name="Default" /><f:section name="Main"><f:render partial="ContentElements/Header" arguments="{data: data}" /><f:if condition="{data.kind} == 'ordered'"><f:then><ol><f:for each="{data.items}" as="item"><li>{item.text}</li></f:for></ol></f:then><f:else><ul><f:for each="{data.items}" as="item"><li>{item.text}</li></f:for></ul></f:else></f:if></f:section>

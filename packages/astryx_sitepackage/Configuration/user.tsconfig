@@ -8,6 +8,6 @@ options {
     }
     sites {
         # These sets are already included, therefore hide them in the site configuration set editor
-        hideSets := addToList(typo3/fluid-styled-content,typo3/fluid-styled-content-css)
+        hideSets := addToList(skom/typo3-astryx,skom/stylex-connector)
     }
 }

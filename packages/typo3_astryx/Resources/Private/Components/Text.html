@@ -1,0 +1,5 @@
+<f:argument name="text" type="string" default="" />
+<f:argument name="richText" type="string" default="" />
+<f:argument name="width" type="string" default="prose" />
+<f:argument name="density" type="string" default="normal" />
+<div class="astryx-prose {ax:recipe(name: 'Text', options: {width: width, density: density})}"><f:if condition="{richText}"><f:then>{richText -> f:format.html()}</f:then><f:else>{text}<f:slot /></f:else></f:if></div>

@@ -1,16 +1,3 @@
-page = PAGE
-page {
-  10 = PAGEVIEW
-  10 {
-    paths {
-      0 = EXT:astryx_sitepackage/Resources/Private/PageView/
-      10 = {$AstryxSitepackage.template_path}
-    }
-
-    dataProcessing {
-      # makes content elements available as {content} in Fluid template
-      10 = page-content
-    }
-  }
-  shortcutIcon = {$AstryxSitepackage.favicon}
-}
+# Product overrides extend the shared Astryx page templates.
+page.10.paths.20 = EXT:astryx_sitepackage/Resources/Private/PageView/
+page.shortcutIcon = {$AstryxProduct.favicon}

@@ -1,0 +1,1090 @@
+{
+  "version": "2.0",
+  "producer": {
+    "name": "skom/stylex-connector",
+    "version": "2.0"
+  },
+  "compiler": {
+    "name": "@stylexjs/stylex",
+    "version": "0.19.1"
+  },
+  "capabilities": [
+    "static-conflicts",
+    "null-clearing"
+  ],
+  "generation": "4cf037dd916e8e13c2e7993e7b7fb9cd244f934b3106dc6f145a692421d26780",
+  "artifacts": [
+    {
+      "path": "../Assets/astryx.css",
+      "sha256": "669956d512ab9a4d781200396380f66cc0f55c39a399aec4561b73d767f4f33c"
+    },
+    {
+      "path": "../Assets/rte.css",
+      "sha256": "9ecfbc6b86996f01acc94c61661db9643d6ca43346d3b19bec1a5566f9d78ea9"
+    },
+    {
+      "path": "../Assets/preview.css",
+      "sha256": "b09638ddf3185d62de852fbf79ab2d26d9d762175ed9009cc6810e60b8bcff98"
+    },
+    {
+      "path": "../Css/rte-tokens.css",
+      "sha256": "ede627f58304630b9b1d07a262b2bd09b39a920856947d3857e6a4068dd47503"
+    },
+    {
+      "path": "../Css/backend-preview.css",
+      "sha256": "9c4f3d67752f5c95098ebb71c30a36f1bb7904cc6352c5396f0b9966d41ec8e4"
+    }
+  ],
+  "styles": {
+    "AstryxBadge.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x3nfvp2 x6s0dn4 xl56j7k x9f619 x1qx5ct2 xxymvpz x1jnr06f x1xq1gxn x10hpsqq xboafo0 xk50ysn x1fc57z9 xuxw1ft",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "x3nfvp2",
+        "kGNEyG": "x6s0dn4",
+        "kjj79g": "xl56j7k",
+        "kB7OPa": "x9f619",
+        "kZKoxP": "x1qx5ct2",
+        "kXLuUW": "xxymvpz",
+        "kOIVth": "x1jnr06f",
+        "kmVPX3": "x1xq1gxn",
+        "kaIpWk": "x10hpsqq",
+        "kGuDYH": "xboafo0",
+        "k63SB2": "xk50ysn",
+        "kLWn49": "x1fc57z9",
+        "khDVqt": "xuxw1ft"
+      }
+    },
+    "AstryxBadge.variant_accent": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "AstryxBadge.variant_error": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "AstryxBadge.variant_neutral": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "AstryxBadge.variant_success": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "AstryxBadge.variant_warning": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxBadge.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x3nfvp2 x6s0dn4 xl56j7k x9f619 x1qx5ct2 xxymvpz x1jnr06f x1xq1gxn x10hpsqq xboafo0 xk50ysn x1fc57z9 xuxw1ft",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "x3nfvp2",
+        "kGNEyG": "x6s0dn4",
+        "kjj79g": "xl56j7k",
+        "kB7OPa": "x9f619",
+        "kZKoxP": "x1qx5ct2",
+        "kXLuUW": "xxymvpz",
+        "kOIVth": "x1jnr06f",
+        "kmVPX3": "x1xq1gxn",
+        "kaIpWk": "x10hpsqq",
+        "kGuDYH": "xboafo0",
+        "k63SB2": "xk50ysn",
+        "kLWn49": "x1fc57z9",
+        "khDVqt": "xuxw1ft"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxBadge.stylex.styles.variant_accent": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxBadge.stylex.styles.variant_error": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxBadge.stylex.styles.variant_neutral": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxBadge.stylex.styles.variant_success": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxBadge.stylex.styles.variant_warning": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "AstryxButton.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x3nfvp2 x6s0dn4 xl56j7k ximursj x15bly71 xk50ysn x1672ciy xeuugli x193iq5w x1hl2dhg x1ypdohk x1e8aii2 x1eo0hed",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "x3nfvp2",
+        "kGNEyG": "x6s0dn4",
+        "kjj79g": "xl56j7k",
+        "kOIVth": "ximursj",
+        "kaIpWk": "x15bly71",
+        "k63SB2": "xk50ysn",
+        "kLWn49": "x1672ciy",
+        "k7Eaqz": "xeuugli",
+        "ks0D6T": "x193iq5w",
+        "kybGjl": "x1hl2dhg",
+        "kkrTdU": "x1ypdohk",
+        "k1ekBW": "x1e8aii2",
+        "kIyJzY": "x1eo0hed"
+      }
+    },
+    "AstryxButton.size_large": {
+      "kind": "compiled",
+      "className": "x1ifpib x1wxaq2x x1lkfr7t",
+      "properties": {
+        "kmVPX3": "x1ifpib",
+        "kAzted": "x1wxaq2x",
+        "kGuDYH": "x1lkfr7t"
+      }
+    },
+    "AstryxButton.size_medium": {
+      "kind": "compiled",
+      "className": "x153ncpu x1gg8mnh x1btsg3b",
+      "properties": {
+        "kmVPX3": "x153ncpu",
+        "kAzted": "x1gg8mnh",
+        "kGuDYH": "x1btsg3b"
+      }
+    },
+    "AstryxButton.size_small": {
+      "kind": "compiled",
+      "className": "xk61eof x21xpn4 xboafo0",
+      "properties": {
+        "kmVPX3": "xk61eof",
+        "kAzted": "x21xpn4",
+        "kGuDYH": "xboafo0"
+      }
+    },
+    "AstryxButton.variant_destructive": {
+      "kind": "compiled",
+      "className": "x10t7qge x1awj2ng",
+      "properties": {
+        "kWkggS": "x10t7qge",
+        "kMwMTN": "x1awj2ng"
+      }
+    },
+    "AstryxButton.variant_ghost": {
+      "kind": "compiled",
+      "className": "xjbqb8w x9bm28c",
+      "properties": {
+        "kWkggS": "xjbqb8w",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "AstryxButton.variant_primary": {
+      "kind": "compiled",
+      "className": "x1q20d9l x1xk6ftw",
+      "properties": {
+        "kWkggS": "x1q20d9l",
+        "kMwMTN": "x1xk6ftw"
+      }
+    },
+    "AstryxButton.variant_secondary": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxButton.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x3nfvp2 x6s0dn4 xl56j7k ximursj x15bly71 xk50ysn x1672ciy xeuugli x193iq5w x1hl2dhg x1ypdohk x1e8aii2 x1eo0hed",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "x3nfvp2",
+        "kGNEyG": "x6s0dn4",
+        "kjj79g": "xl56j7k",
+        "kOIVth": "ximursj",
+        "kaIpWk": "x15bly71",
+        "k63SB2": "xk50ysn",
+        "kLWn49": "x1672ciy",
+        "k7Eaqz": "xeuugli",
+        "ks0D6T": "x193iq5w",
+        "kybGjl": "x1hl2dhg",
+        "kkrTdU": "x1ypdohk",
+        "k1ekBW": "x1e8aii2",
+        "kIyJzY": "x1eo0hed"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxButton.stylex.styles.size_large": {
+      "kind": "compiled",
+      "className": "x1ifpib x1wxaq2x x1lkfr7t",
+      "properties": {
+        "kmVPX3": "x1ifpib",
+        "kAzted": "x1wxaq2x",
+        "kGuDYH": "x1lkfr7t"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxButton.stylex.styles.size_medium": {
+      "kind": "compiled",
+      "className": "x153ncpu x1gg8mnh x1btsg3b",
+      "properties": {
+        "kmVPX3": "x153ncpu",
+        "kAzted": "x1gg8mnh",
+        "kGuDYH": "x1btsg3b"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxButton.stylex.styles.size_small": {
+      "kind": "compiled",
+      "className": "xk61eof x21xpn4 xboafo0",
+      "properties": {
+        "kmVPX3": "xk61eof",
+        "kAzted": "x21xpn4",
+        "kGuDYH": "xboafo0"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxButton.stylex.styles.variant_destructive": {
+      "kind": "compiled",
+      "className": "x10t7qge x1awj2ng",
+      "properties": {
+        "kWkggS": "x10t7qge",
+        "kMwMTN": "x1awj2ng"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxButton.stylex.styles.variant_ghost": {
+      "kind": "compiled",
+      "className": "xjbqb8w x9bm28c",
+      "properties": {
+        "kWkggS": "xjbqb8w",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxButton.stylex.styles.variant_primary": {
+      "kind": "compiled",
+      "className": "x1q20d9l x1xk6ftw",
+      "properties": {
+        "kWkggS": "x1q20d9l",
+        "kMwMTN": "x1xk6ftw"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxButton.stylex.styles.variant_secondary": {
+      "kind": "compiled",
+      "className": "x16gt4w8 x9bm28c",
+      "properties": {
+        "kWkggS": "x16gt4w8",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "AstryxCard.padding_compact": {
+      "kind": "compiled",
+      "className": "xjyu79h",
+      "properties": {
+        "kmVPX3": "xjyu79h"
+      }
+    },
+    "AstryxCard.padding_normal": {
+      "kind": "compiled",
+      "className": "xew49mq",
+      "properties": {
+        "kmVPX3": "xew49mq"
+      }
+    },
+    "AstryxCard.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xeuugli xjy1p6w x1kajz4m x9bm28c xj0a0fe",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k7Eaqz": "xeuugli",
+        "kaIpWk": "xjy1p6w",
+        "kWkggS": "x1kajz4m",
+        "kMwMTN": "x9bm28c",
+        "kHjlTd": "xj0a0fe"
+      }
+    },
+    "AstryxCard.variant_elevated": {
+      "kind": "compiled",
+      "className": "xx8erdj",
+      "properties": {
+        "kGVxlE": "xx8erdj"
+      }
+    },
+    "AstryxCard.variant_flat": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxCard.variant_outlined": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxCard.stylex.styles.padding_compact": {
+      "kind": "compiled",
+      "className": "xjyu79h",
+      "properties": {
+        "kmVPX3": "xjyu79h"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxCard.stylex.styles.padding_normal": {
+      "kind": "compiled",
+      "className": "xew49mq",
+      "properties": {
+        "kmVPX3": "xew49mq"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxCard.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xeuugli xjy1p6w x1kajz4m x9bm28c xj0a0fe",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k7Eaqz": "xeuugli",
+        "kaIpWk": "xjy1p6w",
+        "kWkggS": "x1kajz4m",
+        "kMwMTN": "x9bm28c",
+        "kHjlTd": "xj0a0fe"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxCard.stylex.styles.variant_elevated": {
+      "kind": "compiled",
+      "className": "xx8erdj",
+      "properties": {
+        "kGVxlE": "xx8erdj"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxCard.stylex.styles.variant_flat": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxCard.stylex.styles.variant_outlined": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxDivider.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x178xt8z x13fuv20 xxkmx1",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kEafiO": "x178xt8z",
+        "kPef9Z": "x13fuv20",
+        "kqGvvJ": "xxkmx1"
+      }
+    },
+    "AstryxDivider.variant_strong": {
+      "kind": "compiled",
+      "className": "x9wr8bx",
+      "properties": {
+        "kLZC3w": "x9wr8bx"
+      }
+    },
+    "AstryxDivider.variant_subtle": {
+      "kind": "compiled",
+      "className": "x1m4ihsq",
+      "properties": {
+        "kLZC3w": "x1m4ihsq"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxDivider.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x178xt8z x13fuv20 xxkmx1",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kEafiO": "x178xt8z",
+        "kPef9Z": "x13fuv20",
+        "kqGvvJ": "xxkmx1"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxDivider.stylex.styles.variant_strong": {
+      "kind": "compiled",
+      "className": "x9wr8bx",
+      "properties": {
+        "kLZC3w": "x9wr8bx"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxDivider.stylex.styles.variant_subtle": {
+      "kind": "compiled",
+      "className": "x1m4ihsq",
+      "properties": {
+        "kLZC3w": "x1m4ihsq"
+      }
+    },
+    "AstryxGrid.columns_auto": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxGrid.columns_four": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxGrid.columns_three": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxGrid.columns_two": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxGrid.gap_large": {
+      "kind": "compiled",
+      "className": "xi8qq1n",
+      "properties": {
+        "kOIVth": "xi8qq1n"
+      }
+    },
+    "AstryxGrid.gap_normal": {
+      "kind": "compiled",
+      "className": "x1b26bkr",
+      "properties": {
+        "kOIVth": "x1b26bkr"
+      }
+    },
+    "AstryxGrid.gap_small": {
+      "kind": "compiled",
+      "className": "x172gbdg",
+      "properties": {
+        "kOIVth": "x172gbdg"
+      }
+    },
+    "AstryxGrid.ratio_33_66": {
+      "kind": "compiled",
+      "className": "xjvrg09",
+      "properties": {
+        "kumcoG": "xjvrg09"
+      }
+    },
+    "AstryxGrid.ratio_50_50": {
+      "kind": "compiled",
+      "className": "xnby9oq",
+      "properties": {
+        "kumcoG": "xnby9oq"
+      }
+    },
+    "AstryxGrid.ratio_66_33": {
+      "kind": "compiled",
+      "className": "x19i92ox",
+      "properties": {
+        "kumcoG": "x19i92ox"
+      }
+    },
+    "AstryxGrid.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xrvj5dj xeuugli",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "xrvj5dj",
+        "k7Eaqz": "xeuugli"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.columns_auto": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.columns_four": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.columns_three": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.columns_two": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.gap_large": {
+      "kind": "compiled",
+      "className": "xi8qq1n",
+      "properties": {
+        "kOIVth": "xi8qq1n"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.gap_normal": {
+      "kind": "compiled",
+      "className": "x1b26bkr",
+      "properties": {
+        "kOIVth": "x1b26bkr"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.gap_small": {
+      "kind": "compiled",
+      "className": "x172gbdg",
+      "properties": {
+        "kOIVth": "x172gbdg"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.ratio_33_66": {
+      "kind": "compiled",
+      "className": "xjvrg09",
+      "properties": {
+        "kumcoG": "xjvrg09"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.ratio_50_50": {
+      "kind": "compiled",
+      "className": "xnby9oq",
+      "properties": {
+        "kumcoG": "xnby9oq"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.ratio_66_33": {
+      "kind": "compiled",
+      "className": "x19i92ox",
+      "properties": {
+        "kumcoG": "x19i92ox"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xrvj5dj xeuugli",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "xrvj5dj",
+        "k7Eaqz": "xeuugli"
+      }
+    },
+    "AstryxHeading.align_center": {
+      "kind": "compiled",
+      "className": "x2b8uid",
+      "properties": {
+        "k9WMMc": "x2b8uid"
+      }
+    },
+    "AstryxHeading.align_end": {
+      "kind": "compiled",
+      "className": "xp4054r",
+      "properties": {
+        "k9WMMc": "xp4054r"
+      }
+    },
+    "AstryxHeading.align_left": {
+      "kind": "compiled",
+      "className": "xdpxx8g",
+      "properties": {
+        "k9WMMc": "xdpxx8g"
+      }
+    },
+    "AstryxHeading.align_right": {
+      "kind": "compiled",
+      "className": "x1hr2gdg",
+      "properties": {
+        "k9WMMc": "x1hr2gdg"
+      }
+    },
+    "AstryxHeading.align_start": {
+      "kind": "compiled",
+      "className": "x1yc453h",
+      "properties": {
+        "k9WMMc": "x1yc453h"
+      }
+    },
+    "AstryxHeading.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x9bm28c x1s688f x1u34134 x10im51j xj0a0fe",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kMwMTN": "x9bm28c",
+        "k63SB2": "x1s688f",
+        "kLWn49": "x1u34134",
+        "kqGvvJ": "x10im51j",
+        "kHjlTd": "xj0a0fe"
+      }
+    },
+    "AstryxHeading.size_display": {
+      "kind": "compiled",
+      "className": "x1weigxw x3d5eol",
+      "properties": {
+        "kGuDYH": "x1weigxw",
+        "kLWn49": "x3d5eol"
+      }
+    },
+    "AstryxHeading.size_large": {
+      "kind": "compiled",
+      "className": "x1h833of x1qaoq4",
+      "properties": {
+        "kGuDYH": "x1h833of",
+        "kLWn49": "x1qaoq4"
+      }
+    },
+    "AstryxHeading.size_medium": {
+      "kind": "compiled",
+      "className": "x88aly3",
+      "properties": {
+        "kGuDYH": "x88aly3"
+      }
+    },
+    "AstryxHeading.size_small": {
+      "kind": "compiled",
+      "className": "xngnso2 xofdmnd",
+      "properties": {
+        "kGuDYH": "xngnso2",
+        "kLWn49": "xofdmnd"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.align_center": {
+      "kind": "compiled",
+      "className": "x2b8uid",
+      "properties": {
+        "k9WMMc": "x2b8uid"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.align_end": {
+      "kind": "compiled",
+      "className": "xp4054r",
+      "properties": {
+        "k9WMMc": "xp4054r"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.align_left": {
+      "kind": "compiled",
+      "className": "xdpxx8g",
+      "properties": {
+        "k9WMMc": "xdpxx8g"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.align_right": {
+      "kind": "compiled",
+      "className": "x1hr2gdg",
+      "properties": {
+        "k9WMMc": "x1hr2gdg"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.align_start": {
+      "kind": "compiled",
+      "className": "x1yc453h",
+      "properties": {
+        "k9WMMc": "x1yc453h"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x9bm28c x1s688f x1u34134 x10im51j xj0a0fe",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kMwMTN": "x9bm28c",
+        "k63SB2": "x1s688f",
+        "kLWn49": "x1u34134",
+        "kqGvvJ": "x10im51j",
+        "kHjlTd": "xj0a0fe"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.size_display": {
+      "kind": "compiled",
+      "className": "x1weigxw x3d5eol",
+      "properties": {
+        "kGuDYH": "x1weigxw",
+        "kLWn49": "x3d5eol"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.size_large": {
+      "kind": "compiled",
+      "className": "x1h833of x1qaoq4",
+      "properties": {
+        "kGuDYH": "x1h833of",
+        "kLWn49": "x1qaoq4"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.size_medium": {
+      "kind": "compiled",
+      "className": "x88aly3",
+      "properties": {
+        "kGuDYH": "x88aly3"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxHeading.stylex.styles.size_small": {
+      "kind": "compiled",
+      "className": "xngnso2 xofdmnd",
+      "properties": {
+        "kGuDYH": "xngnso2",
+        "kLWn49": "xofdmnd"
+      }
+    },
+    "AstryxIcon.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x1rg5ohu x2lah0s xxymvpz xbh8q5q x73je2i xvlca1e",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "x1rg5ohu",
+        "kmuXW": "x2lah0s",
+        "kXLuUW": "xxymvpz",
+        "kDwRjp": "xbh8q5q",
+        "kjVXCG": "x73je2i",
+        "kfJifR": "xvlca1e"
+      }
+    },
+    "AstryxIcon.size_large": {
+      "kind": "compiled",
+      "className": "xvy4d1p xxk0z11",
+      "properties": {
+        "kzqmXN": "xvy4d1p",
+        "kZKoxP": "xxk0z11"
+      }
+    },
+    "AstryxIcon.size_medium": {
+      "kind": "compiled",
+      "className": "xw4jnvo x1qx5ct2",
+      "properties": {
+        "kzqmXN": "xw4jnvo",
+        "kZKoxP": "x1qx5ct2"
+      }
+    },
+    "AstryxIcon.size_small": {
+      "kind": "compiled",
+      "className": "x1kky2od xlup9mm",
+      "properties": {
+        "kzqmXN": "x1kky2od",
+        "kZKoxP": "xlup9mm"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxIcon.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x1rg5ohu x2lah0s xxymvpz xbh8q5q x73je2i xvlca1e",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "x1rg5ohu",
+        "kmuXW": "x2lah0s",
+        "kXLuUW": "xxymvpz",
+        "kDwRjp": "xbh8q5q",
+        "kjVXCG": "x73je2i",
+        "kfJifR": "xvlca1e"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxIcon.stylex.styles.size_large": {
+      "kind": "compiled",
+      "className": "xvy4d1p xxk0z11",
+      "properties": {
+        "kzqmXN": "xvy4d1p",
+        "kZKoxP": "xxk0z11"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxIcon.stylex.styles.size_medium": {
+      "kind": "compiled",
+      "className": "xw4jnvo x1qx5ct2",
+      "properties": {
+        "kzqmXN": "xw4jnvo",
+        "kZKoxP": "x1qx5ct2"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxIcon.stylex.styles.size_small": {
+      "kind": "compiled",
+      "className": "x1kky2od xlup9mm",
+      "properties": {
+        "kzqmXN": "x1kky2od",
+        "kZKoxP": "xlup9mm"
+      }
+    },
+    "AstryxNotice.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xew49mq xjy1p6w x56jcm7 x1t7ytsu x1kajz4m",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kmVPX3": "xew49mq",
+        "kaIpWk": "xjy1p6w",
+        "k2ei4v": "x56jcm7",
+        "kVhnKS": "x1t7ytsu",
+        "kWkggS": "x1kajz4m"
+      }
+    },
+    "AstryxNotice.variant_accent": {
+      "kind": "compiled",
+      "className": "x118hpnp",
+      "properties": {
+        "kGJrpR": "x118hpnp"
+      }
+    },
+    "AstryxNotice.variant_error": {
+      "kind": "compiled",
+      "className": "x1gpeouf",
+      "properties": {
+        "kGJrpR": "x1gpeouf"
+      }
+    },
+    "AstryxNotice.variant_neutral": {
+      "kind": "compiled",
+      "className": "xn89zs6",
+      "properties": {
+        "kGJrpR": "xn89zs6"
+      }
+    },
+    "AstryxNotice.variant_success": {
+      "kind": "compiled",
+      "className": "x1msapes",
+      "properties": {
+        "kGJrpR": "x1msapes"
+      }
+    },
+    "AstryxNotice.variant_warning": {
+      "kind": "compiled",
+      "className": "x1e01vt9",
+      "properties": {
+        "kGJrpR": "x1e01vt9"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xew49mq xjy1p6w x56jcm7 x1t7ytsu x1kajz4m",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kmVPX3": "xew49mq",
+        "kaIpWk": "xjy1p6w",
+        "k2ei4v": "x56jcm7",
+        "kVhnKS": "x1t7ytsu",
+        "kWkggS": "x1kajz4m"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_accent": {
+      "kind": "compiled",
+      "className": "x118hpnp",
+      "properties": {
+        "kGJrpR": "x118hpnp"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_error": {
+      "kind": "compiled",
+      "className": "x1gpeouf",
+      "properties": {
+        "kGJrpR": "x1gpeouf"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_neutral": {
+      "kind": "compiled",
+      "className": "xn89zs6",
+      "properties": {
+        "kGJrpR": "xn89zs6"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_success": {
+      "kind": "compiled",
+      "className": "x1msapes",
+      "properties": {
+        "kGJrpR": "x1msapes"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_warning": {
+      "kind": "compiled",
+      "className": "x1e01vt9",
+      "properties": {
+        "kGJrpR": "x1e01vt9"
+      }
+    },
+    "AstryxStatusDot.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x1rg5ohu x1xc55vz xdk7pt x10hpsqq x2lah0s",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "x1rg5ohu",
+        "kzqmXN": "x1xc55vz",
+        "kZKoxP": "xdk7pt",
+        "kaIpWk": "x10hpsqq",
+        "kmuXW": "x2lah0s"
+      }
+    },
+    "AstryxStatusDot.variant_accent": {
+      "kind": "compiled",
+      "className": "x1q20d9l",
+      "properties": {
+        "kWkggS": "x1q20d9l"
+      }
+    },
+    "AstryxStatusDot.variant_error": {
+      "kind": "compiled",
+      "className": "x10t7qge",
+      "properties": {
+        "kWkggS": "x10t7qge"
+      }
+    },
+    "AstryxStatusDot.variant_neutral": {
+      "kind": "compiled",
+      "className": "x1n9ulxa",
+      "properties": {
+        "kWkggS": "x1n9ulxa"
+      }
+    },
+    "AstryxStatusDot.variant_success": {
+      "kind": "compiled",
+      "className": "xz08xk",
+      "properties": {
+        "kWkggS": "xz08xk"
+      }
+    },
+    "AstryxStatusDot.variant_warning": {
+      "kind": "compiled",
+      "className": "x1vzrpq8",
+      "properties": {
+        "kWkggS": "x1vzrpq8"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxStatusDot.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x1rg5ohu x1xc55vz xdk7pt x10hpsqq x2lah0s",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "x1rg5ohu",
+        "kzqmXN": "x1xc55vz",
+        "kZKoxP": "xdk7pt",
+        "kaIpWk": "x10hpsqq",
+        "kmuXW": "x2lah0s"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxStatusDot.stylex.styles.variant_accent": {
+      "kind": "compiled",
+      "className": "x1q20d9l",
+      "properties": {
+        "kWkggS": "x1q20d9l"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxStatusDot.stylex.styles.variant_error": {
+      "kind": "compiled",
+      "className": "x10t7qge",
+      "properties": {
+        "kWkggS": "x10t7qge"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxStatusDot.stylex.styles.variant_neutral": {
+      "kind": "compiled",
+      "className": "x1n9ulxa",
+      "properties": {
+        "kWkggS": "x1n9ulxa"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxStatusDot.stylex.styles.variant_success": {
+      "kind": "compiled",
+      "className": "xz08xk",
+      "properties": {
+        "kWkggS": "xz08xk"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxStatusDot.stylex.styles.variant_warning": {
+      "kind": "compiled",
+      "className": "x1vzrpq8",
+      "properties": {
+        "kWkggS": "x1vzrpq8"
+      }
+    },
+    "AstryxText.density_compact": {
+      "kind": "compiled",
+      "className": "x37zpob",
+      "properties": {
+        "kLWn49": "x37zpob"
+      }
+    },
+    "AstryxText.density_normal": {
+      "kind": "compiled",
+      "className": "xr0kew2",
+      "properties": {
+        "kLWn49": "xr0kew2"
+      }
+    },
+    "AstryxText.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x3a5do xo1l8bm xr0kew2 x9bm28c",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kGuDYH": "x3a5do",
+        "k63SB2": "xo1l8bm",
+        "kLWn49": "xr0kew2",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "AstryxText.width_full": {
+      "kind": "compiled",
+      "className": "x1x1rfll",
+      "properties": {
+        "ks0D6T": "x1x1rfll"
+      }
+    },
+    "AstryxText.width_prose": {
+      "kind": "compiled",
+      "className": "x1fa9m1o",
+      "properties": {
+        "ks0D6T": "x1fa9m1o"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxText.stylex.styles.density_compact": {
+      "kind": "compiled",
+      "className": "x37zpob",
+      "properties": {
+        "kLWn49": "x37zpob"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxText.stylex.styles.density_normal": {
+      "kind": "compiled",
+      "className": "xr0kew2",
+      "properties": {
+        "kLWn49": "xr0kew2"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxText.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b x3a5do xo1l8bm xr0kew2 x9bm28c",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kGuDYH": "x3a5do",
+        "k63SB2": "xo1l8bm",
+        "kLWn49": "xr0kew2",
+        "kMwMTN": "x9bm28c"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxText.stylex.styles.width_full": {
+      "kind": "compiled",
+      "className": "x1x1rfll",
+      "properties": {
+        "ks0D6T": "x1x1rfll"
+      }
+    },
+    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxText.stylex.styles.width_prose": {
+      "kind": "compiled",
+      "className": "x1fa9m1o",
+      "properties": {
+        "ks0D6T": "x1fa9m1o"
+      }
+    }
+  }
+}

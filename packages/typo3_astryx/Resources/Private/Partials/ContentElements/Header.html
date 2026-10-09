@@ -1,0 +1,3 @@
+<f:if condition="{data.header} && {data.header_layout} != 100">
+    <astryx:heading text="{data.header}" subtitle="{data.subheader}" level="{f:if(condition: data.header_layout, then: data.header_layout, else: 2)}" size="{data.heading_size}" align="{f:if(condition: data.header_position, then: data.header_position, else: 'left')}" link="{data.header_link}" />
+</f:if>

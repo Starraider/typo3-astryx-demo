@@ -1,0 +1,16 @@
+Astryx.theme: "neutral"
+Astryx.mode: "system"
+Astryx.allowUserMode: true
+Astryx.showLanguageMenu: true
+Astryx.contentWidth: "72rem"
+Astryx.navigationRoot: 0
+Astryx.footerRoot: 0
+Astryx.footerContentPage: 0
+Astryx.logo: ""
+Astryx.logoAlt: "Home"
+Astryx.pageViewPath: "EXT:typo3_astryx/Resources/Private/PageView/"
+Astryx.pinnedHeader: true
+Astryx.pinnedFooter: false
+Astryx.useVite: false
+StylexConnector.includeCssViaTypoScript: false
+StylexConnector.declareCssLayers: false

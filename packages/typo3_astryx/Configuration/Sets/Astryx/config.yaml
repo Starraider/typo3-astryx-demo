@@ -1,0 +1,7 @@
+name: skom/typo3-astryx
+label: 'TYPO3 Astryx'
+dependencies:
+  - skom/stylex-connector
+optionalDependencies:
+  - typo3/felogin
+  - typo3/form

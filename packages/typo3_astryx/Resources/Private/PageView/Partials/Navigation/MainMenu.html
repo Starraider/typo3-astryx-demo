@@ -1,0 +1,18 @@
+<ul class="{f:if(condition: nested, then: 'astryx-submenu', else: 'astryx-menu astryx-main-menu')}">
+    <f:for each="{items}" as="item">
+        <li class="astryx-menu-item {f:if(condition: item.active, then: 'astryx-menu-item--active')}">
+            <f:variable name="current" value="{f:if(condition: item.current, then: 'page', else: 'false')}" />
+            <f:link.typolink parameter="{item.link}" target="{item.target}" class="astryx-menu-link" additionalAttributes="{'aria-current': current}">{item.title}</f:link.typolink>
+            <f:if condition="{item.children}">
+                <details class="astryx-dropdown" data-astryx-dropdown>
+                    <summary class="astryx-submenu-toggle" aria-controls="astryx-submenu-{prefix}-{item.data.uid}" aria-label="{f:translate(key: 'submenu', extensionName: 'Typo3Astryx', default: 'Toggle submenu for %s', arguments: {0: item.title})}">
+                        <span class="astryx-chevron" aria-hidden="true"></span>
+                    </summary>
+                    <div class="astryx-dropdown-panel" id="astryx-submenu-{prefix}-{item.data.uid}">
+                        <f:render partial="Navigation/MainMenu" arguments="{items: item.children, prefix: prefix, nested: true}" />
+                    </div>
+                </details>
+            </f:if>
+        </li>
+    </f:for>
+</ul>

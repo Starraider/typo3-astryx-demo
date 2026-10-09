@@ -1,0 +1,76 @@
+categories:
+  Astryx:
+    label: Astryx
+settings:
+  Astryx.theme:
+    type: string
+    default: "neutral"
+    label: Theme
+    category: Astryx
+  Astryx.mode:
+    type: string
+    default: "system"
+    label: Color mode
+    category: Astryx
+  Astryx.allowUserMode:
+    type: bool
+    default: true
+    label: Show theme switcher and allow saved user color mode
+    description: Allow visitors to toggle between Light and Dark. System mode applies until a visitor saves a preference. Disable to enforce the configured page or site color mode.
+    category: Astryx
+  Astryx.showLanguageMenu:
+    type: bool
+    default: true
+    label: Show language selector
+    description: Show the available site languages when the site has more than one enabled language.
+    category: Astryx
+  Astryx.contentWidth:
+    type: string
+    default: "72rem"
+    label: Content width
+    category: Astryx
+  Astryx.navigationRoot:
+    type: int
+    default: 0
+    label: Navigation root, zero uses the site root
+    category: Astryx
+  Astryx.footerRoot:
+    type: int
+    default: 0
+    label: Footer menu root, zero disables the menu
+    category: Astryx
+  Astryx.footerContentPage:
+    type: int
+    default: 0
+    label: Page containing editorial footer content
+    category: Astryx
+  Astryx.logo:
+    type: string
+    default: ""
+    label: Logo path
+    category: Astryx
+  Astryx.logoAlt:
+    type: string
+    default: "Home"
+    label: Logo alternative text
+    category: Astryx
+  Astryx.pageViewPath:
+    type: string
+    default: "EXT:typo3_astryx/Resources/Private/PageView/"
+    label: Page template override path
+    category: Astryx
+  Astryx.pinnedHeader:
+    type: bool
+    default: true
+    label: Keep header visible
+    category: Astryx
+  Astryx.pinnedFooter:
+    type: bool
+    default: false
+    label: Keep footer visible
+    category: Astryx
+  Astryx.useVite:
+    type: bool
+    default: false
+    label: Use consuming project Vite assets instead of packaged assets
+    category: Astryx

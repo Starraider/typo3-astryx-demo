@@ -1,0 +1,21 @@
+page = PAGE
+page {
+    meta.viewport = width=device-width, initial-scale=1
+    10 = PAGEVIEW
+    10 {
+        paths.0 = EXT:typo3_astryx/Resources/Private/PageView/
+        paths.10 = {$Astryx.pageViewPath}
+        dataProcessing.10 = page-content
+        dataProcessing.20 = Skom\Typo3Astryx\DataProcessing\PageThemeProcessor
+    }
+}
+lib.astryxFooterContent = CONTENT
+lib.astryxFooterContent {
+    table = tt_content
+    select {
+        pidInList = {$Astryx.footerContentPage}
+        where = colPos=0 AND tx_container_parent=0
+        orderBy = sorting
+    }
+    if.isTrue = {$Astryx.footerContentPage}
+}

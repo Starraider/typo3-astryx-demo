@@ -1,0 +1,20 @@
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:render partial="ContentElements/Header" arguments="{data: data}" />
+    <f:variable name="orientation" value="{ax:orientation(value: data.imageorient)}" />
+    <f:variable name="textWidth" value="prose" />
+    <f:if condition="{orientation.vertical} == 'intext'"><f:variable name="textWidth" value="full" /></f:if>
+    <div class="astryx-textmedia" data-orientation="{orientation.vertical}" data-alignment="{orientation.horizontal}" data-nowrap="{f:if(condition: orientation.noWrap, then: 'true', else: 'false')}">
+        <f:if condition="{data.assets} || {data.image}">
+        <div class="astryx-media">
+            <f:for each="{data.assets}" as="file">
+                <f:render partial="Media/Media" arguments="{file: file, aspectRatio: data.aspect_ratio, poster: data.poster.0}" />
+            </f:for>
+            <f:for each="{data.image}" as="file">
+                <f:render partial="Media/Image" arguments="{file: file, aspectRatio: data.aspect_ratio}" />
+            </f:for>
+        </div>
+        </f:if>
+        <div class="astryx-textmedia-text"><astryx:text richText="{data.bodytext}" width="{textWidth}" /></div>
+    </div>
+</f:section>

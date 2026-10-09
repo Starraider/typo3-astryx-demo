@@ -1,0 +1,109 @@
+{
+  "Button": {
+    "variant": [
+      "primary",
+      "secondary",
+      "ghost",
+      "destructive"
+    ],
+    "size": [
+      "small",
+      "medium",
+      "large"
+    ]
+  },
+  "Badge": {
+    "variant": [
+      "neutral",
+      "accent",
+      "success",
+      "warning",
+      "error"
+    ]
+  },
+  "StatusDot": {
+    "variant": [
+      "neutral",
+      "accent",
+      "success",
+      "warning",
+      "error"
+    ]
+  },
+  "Heading": {
+    "size": [
+      "medium",
+      "small",
+      "large",
+      "display"
+    ],
+    "align": [
+      "start",
+      "center",
+      "end",
+      "left",
+      "right"
+    ]
+  },
+  "Text": {
+    "width": [
+      "prose",
+      "full"
+    ],
+    "density": [
+      "normal",
+      "compact"
+    ]
+  },
+  "Divider": {
+    "variant": [
+      "subtle",
+      "strong"
+    ]
+  },
+  "Card": {
+    "variant": [
+      "outlined",
+      "elevated",
+      "flat"
+    ],
+    "padding": [
+      "normal",
+      "compact"
+    ]
+  },
+  "Grid": {
+    "ratio": [
+      "50-50",
+      "66-33",
+      "33-66"
+    ],
+    "gap": [
+      "normal",
+      "small",
+      "large"
+    ],
+    "columns": [
+      "auto",
+      "two",
+      "three",
+      "four"
+    ]
+  },
+  "Notice": {
+    "variant": [
+      "neutral",
+      "accent",
+      "success",
+      "warning",
+      "error"
+    ]
+  },
+  "Icon": {
+    "size": [
+      "small",
+      "medium",
+      "large"
+    ]
+  }
+}

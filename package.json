@@ -6,17 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
-    "build": "vite build && node verify-stylex-build.mjs",
-    "watch": "vite build --watch"
+    "build": "vite build && node verify-stylex-build.mjs && npm run build:astryx",
+    "watch": "vite build --watch",
+    "build:astryx": "node packages/typo3_astryx/Build/generate-theme-bridge.mjs && vite build --config packages/typo3_astryx/Build/vite.config.mjs && node packages/typo3_astryx/Build/finalize-assets.mjs && node packages/typo3_astryx/Build/verify-artifacts.mjs",
+    "test:astryx": "node packages/typo3_astryx/Tests/Browser/run.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@stylexjs/stylex": "^0.19.1"
+    "@stylexjs/stylex": "^0.19.1",
+    "highlight.js": "^11.12.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@babel/parser": "^7.29.9",
+    "@playwright/test": "^1.63.0",
     "@stylexjs/unplugin": "^0.19.1",
     "vite": "^7.3.6",
     "vite-plugin-live-reload": "^3.1.0",

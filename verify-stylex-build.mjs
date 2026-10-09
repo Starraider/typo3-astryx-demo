@@ -9,7 +9,7 @@ const stylexManifestPath = "packages/astryx_sitepackage/Resources/Public/StylexM
 const stylex = JSON.parse(fs.readFileSync(stylexManifestPath, "utf8"));
 assert.equal(stylex.version, "2.0", "Rebuild with the connector's maintained version 2 manifest adapter");
 const entry = Object.values(manifest).find(item =>
-    item.isEntry && item.src?.endsWith("/Resources/Private/JavaScript/Main.entry.js"),
+    item.isEntry && item.src?.includes("/astryx-sitepackage/Resources/Private/JavaScript/Main.entry.js"),
 );
 assert(entry, "Vite did not build the sitepackage entrypoint");
 const cssFiles = new Set();
@@ -51,3 +51,35 @@ for (const file of cssFiles) {
     assert(pairedCss.has(path.resolve(output, file)), `Entry CSS has no StyleX checksum: ${file}`);
 }
 console.log("StyleX build verified: Fluid classes, CSS selectors, Vite assets, and paired CSS checksums match.");
+
+// StyleX may place shared atomic CSS on the first entry. The shell loads both entries.
+const astryx = JSON.parse(fs.readFileSync('packages/typo3_astryx/Resources/Public/StylexManifest/stylex-manifest.json'));
+const sharedCss = Object.values(manifest).flatMap(item => item.css ?? []).map(file => fs.readFileSync(path.join(output,file),'utf8')).join('\n');
+for (const [key, recipe] of Object.entries(astryx.styles)) {
+  for (const className of recipe.className.split(/\s+/).filter(Boolean)) {
+    assert(sharedCss.includes(`.${className}`), `Consuming Vite CSS has no selector for ${key}: ${className}`);
+  }
+}
+console.log('Astryx recipe selectors are present in the consuming Vite build.');
+
+// Pages using vite:asset load the project bundles, independently of the
+// extension's packaged Resources/Public/Assets. Verify the gallery is delivered.
+const astryxEntry = Object.values(manifest).find(item =>
+  item.isEntry && item.src?.includes('/typo3-astryx/Resources/Private/JavaScript/Main.entry.js'),
+);
+assert(astryxEntry, 'Vite did not build the Astryx frontend entrypoint');
+const galleryCss = (astryxEntry.css ?? []).map(file => fs.readFileSync(path.join(output, file), 'utf8')).join('\n');
+for (const selector of ['.astryx-classic-gallery-tiles', '.astryx-classic-gallery-tile']) {
+  assert(galleryCss.includes(selector), `Consuming Vite CSS is missing ${selector}`);
+}
+const galleryChunks = new Set();
+function collectGalleryScripts(item) {
+  if (galleryChunks.has(item.file)) return;
+  galleryChunks.add(item.file);
+  for (const imported of item.imports ?? []) collectGalleryScripts(manifest[imported]);
+}
+collectGalleryScripts(astryxEntry);
+const galleryJs = [...galleryChunks].map(file => fs.readFileSync(path.join(output, file), 'utf8')).join('\n');
+assert(galleryJs.includes('data-astryx-classic-gallery') && galleryJs.includes('data-gallery-category'),
+  'Consuming Vite JavaScript is missing the Classic Gallery controller');
+console.log('Classic Gallery layout and filtering are present in the consuming Vite bundles.');

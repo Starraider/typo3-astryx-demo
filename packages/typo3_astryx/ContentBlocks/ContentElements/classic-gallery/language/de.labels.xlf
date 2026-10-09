@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" target-language="de">
+    <body>
+      <trans-unit id="title">
+        <source>Classic Gallery</source>
+        <target>Klassische Galerie</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Centered intro, category filters and equal-ratio image tiles that fill every row.</source>
+        <target>Zentrierter Einleitungstext, Kategoriefilter und gleichformatige Bilder, die jede Zeile ausfüllen.</target>
+      </trans-unit>
+      <trans-unit id="columns.label">
+        <source>Maximum images per row</source>
+        <target>Maximale Bilder pro Zeile</target>
+      </trans-unit>
+      <trans-unit id="columns.description">
+        <source>Default: 4. Narrow content areas use fewer columns. Incomplete rows stretch evenly across the available width.</source>
+        <target>Standard: 4. In schmalen Inhaltsbereichen erscheinen weniger Spalten. Unvollständige Zeilen füllen die Breite gleichmäßig aus.</target>
+      </trans-unit>
+      <trans-unit id="items.label">
+        <source>Images</source>
+        <target>Bilder</target>
+      </trans-unit>
+      <trans-unit id="items.title.label">
+        <source>Title</source>
+        <target>Titel</target>
+      </trans-unit>
+      <trans-unit id="items.title.description">
+        <source>Editor label for this image. Set alternative text in the image metadata.</source>
+        <target>Bezeichnung für die Redaktion. Alternativtext in den Bildmetadaten pflegen.</target>
+      </trans-unit>
+      <trans-unit id="items.image.label">
+        <source>Image</source>
+        <target>Bild</target>
+      </trans-unit>
+      <trans-unit id="items.category.label">
+        <source>Category</source>
+        <target>Kategorie</target>
+      </trans-unit>
+      <trans-unit id="items.category.description">
+        <source>Images with the same category share a filter. Leave empty to show this image only under All.</source>
+        <target>Bilder derselben Kategorie teilen einen Filter. Ohne Kategorie erscheint das Bild nur unter Alle.</target>
+      </trans-unit>
+      <trans-unit id="frontend.all">
+        <source>All</source>
+        <target>Alle</target>
+      </trans-unit>
+      <trans-unit id="frontend.filters">
+        <source>Filter images by category</source>
+        <target>Bilder nach Kategorie filtern</target>
+      </trans-unit>
+      <trans-unit id="frontend.images">
+        <source>Gallery images</source>
+        <target>Galeriebilder</target>
+      </trans-unit>
+      <trans-unit id="frontend.count">
+        <source>Images shown: %s</source>
+        <target>Angezeigte Bilder: %s</target>
+      </trans-unit>
+      <trans-unit id="preview.columns">
+        <source>Maximum images per row: %s</source>
+        <target>Maximale Bilder pro Zeile: %s</target>
+      </trans-unit>
+      <trans-unit id="frontend.open">
+        <source>Open image</source>
+        <target>Bild öffnen</target>
+      </trans-unit>
+      <trans-unit id="frontend.lightbox">
+        <source>Image gallery</source>
+        <target>Bildergalerie</target>
+      </trans-unit>
+      <trans-unit id="frontend.close">
+        <source>Close</source>
+        <target>Schließen</target>
+      </trans-unit>
+      <trans-unit id="frontend.previous">
+        <source>Previous</source>
+        <target>Vorheriges Bild</target>
+      </trans-unit>
+      <trans-unit id="frontend.next">
+        <source>Next</source>
+        <target>Nächstes Bild</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

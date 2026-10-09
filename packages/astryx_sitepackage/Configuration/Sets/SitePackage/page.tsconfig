@@ -1,3 +1,1 @@
-@import './PageTsConfig/'
-@import './PageTsConfig/BackendLayouts/'
-
+# Backend layouts and RTE presets are provided by typo3_astryx.

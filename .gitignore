@@ -50,6 +50,7 @@
 /public/_assets/*
 !/public/_assets/vite/
 !/public/_assets/vite/*
+/public/_assets_install/*
 
 /public/typo3temp
 /public/fileadmin

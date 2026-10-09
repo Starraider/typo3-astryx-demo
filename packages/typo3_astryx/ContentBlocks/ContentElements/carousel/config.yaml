@@ -1,0 +1,57 @@
+name: astryx/carousel
+typeName: astryx_carousel
+group: astryx
+title: Astryx Carousel
+fields:
+- identifier: header
+  useExistingField: true
+- identifier: header_layout
+  useExistingField: true
+- identifier: header_position
+  useExistingField: true
+- identifier: header_link
+  useExistingField: true
+- identifier: subheader
+  useExistingField: true
+- identifier: heading_size
+  type: Select
+  renderType: selectSingle
+  default: medium
+  items:
+  - value: medium
+    label: Medium
+  - value: small
+    label: Small
+  - value: large
+    label: Large
+  - value: display
+    label: Display
+- identifier: navigation
+  type: Checkbox
+  default: 1
+- identifier: items
+  type: Collection
+  table: tx_astryx_carousel_item
+  labelField: title
+  fields:
+  - identifier: title
+    type: Text
+  - identifier: body
+    type: Textarea
+    enableRichtext: true
+  - identifier: image
+    type: File
+    allowed: common-image-types
+    maxitems: 1
+  - identifier: badge
+    type: Text
+  - identifier: link
+    type: Link
+  - identifier: label
+    type: Text
+  maxitems: 100
+- identifier: edge_fade
+  type: Checkbox
+  default: 0
+basics:
+  - Astryx/spacing

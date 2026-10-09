@@ -1,0 +1,88 @@
+name: astryx/card-grid
+typeName: astryx_card_grid
+group: astryx
+title: Astryx Card Grid
+fields:
+- identifier: header
+  useExistingField: true
+- identifier: header_layout
+  useExistingField: true
+- identifier: header_position
+  useExistingField: true
+- identifier: header_link
+  useExistingField: true
+- identifier: subheader
+  useExistingField: true
+- identifier: heading_size
+  type: Select
+  renderType: selectSingle
+  default: medium
+  items:
+  - value: medium
+    label: Medium
+  - value: small
+    label: Small
+  - value: large
+    label: Large
+  - value: display
+    label: Display
+- identifier: columns
+  type: Select
+  renderType: selectSingle
+  default: auto
+  items:
+  - value: auto
+    label: Auto
+  - value: two
+    label: Two
+  - value: three
+    label: Three
+  - value: four
+    label: Four
+- identifier: gap
+  type: Select
+  renderType: selectSingle
+  default: normal
+  items:
+  - value: normal
+    label: Normal
+  - value: small
+    label: Small
+  - value: large
+    label: Large
+- identifier: items
+  type: Collection
+  table: tx_astryx_card_grid_item
+  labelField: title
+  fields:
+  - identifier: title
+    type: Text
+  - identifier: body
+    type: Textarea
+    enableRichtext: true
+  - identifier: image
+    type: File
+    allowed: common-image-types
+    maxitems: 1
+  - identifier: badge
+    type: Text
+  - identifier: link
+    type: Link
+  - identifier: label
+    type: Text
+  maxitems: 100
+- identifier: aspect_ratio
+  type: Select
+  renderType: selectSingle
+  default: auto
+  items:
+  - value: auto
+    label: Original
+  - value: wide
+    label: Wide (16:9)
+  - value: landscape
+    label: Landscape (4:3)
+  - value: square
+    label: Square (1:1)
+basics:
+  - Astryx/spacing

@@ -1,0 +1,4 @@
+<f:argument name="text" type="string" />
+<f:argument name="variant" type="string" default="neutral" />
+<f:argument name="icon" type="string" default="" />
+<span class="astryx-badge {ax:recipe(name: 'Badge', options: {variant: variant})}"><f:if condition="{icon}"><astryx:icon name="{icon}" size="small" /></f:if>{text}</span>

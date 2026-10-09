@@ -1,7 +1,5 @@
-styles.content.textmedia.maxW: 1200
-styles.content.textmedia.maxWInText: 600
-styles.content.textmedia.linkWraplightboxEnabled: true
-styles.content.textmedia.lightboxCssClass: lightbox
-
-StylexConnector.includeCssViaTypoScript: false
-StylexConnector.declareCssLayers: false
+Astryx.logo: 'EXT:astryx_sitepackage/Resources/Public/Images/logo.svg'
+Astryx.logoAlt: 'Astryx'
+Astryx.navigationRoot: 1
+Astryx.footerRoot: 2
+Astryx.useVite: true

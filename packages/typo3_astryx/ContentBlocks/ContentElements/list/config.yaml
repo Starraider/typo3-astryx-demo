@@ -1,0 +1,47 @@
+name: astryx/list
+typeName: astryx_list
+group: astryx
+title: Astryx List
+fields:
+- identifier: header
+  useExistingField: true
+- identifier: header_layout
+  useExistingField: true
+- identifier: header_position
+  useExistingField: true
+- identifier: header_link
+  useExistingField: true
+- identifier: subheader
+  useExistingField: true
+- identifier: heading_size
+  type: Select
+  renderType: selectSingle
+  default: medium
+  items:
+  - value: medium
+    label: Medium
+  - value: small
+    label: Small
+  - value: large
+    label: Large
+  - value: display
+    label: Display
+- identifier: kind
+  type: Select
+  renderType: selectSingle
+  default: unordered
+  items:
+  - value: unordered
+    label: Unordered
+  - value: ordered
+    label: Ordered
+- identifier: items
+  type: Collection
+  table: tx_astryx_list_item
+  labelField: text
+  fields:
+  - identifier: text
+    type: Text
+  maxitems: 100
+basics:
+  - Astryx/spacing

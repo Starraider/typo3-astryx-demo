@@ -1,0 +1,8 @@
+<f:if condition="{settings.Astryx.useVite}"><f:then><vite:asset entry="EXT:typo3_astryx/Resources/Private/JavaScript/Main.entry.js" /></f:then><f:else><f:asset.css identifier="astryx" href="EXT:typo3_astryx/Resources/Public/Assets/astryx.css" /><f:asset.script identifier="astryx" src="EXT:typo3_astryx/Resources/Public/Assets/astryx.js" type="module" /></f:else></f:if>
+<f:render partial="ProductAssets" optional="{true}" arguments="{_all}" />
+<div class="astryx-root astryx-shell" data-astryx-theme="{astryx.theme}" data-astryx-mode="{astryx.mode}" data-user-mode="{astryx.allowUserMode}" style="--astryx-content-width: {astryx.contentWidth}" data-pinned-header="{settings.Astryx.pinnedHeader}" data-pinned-footer="{settings.Astryx.pinnedFooter}">
+<a class="astryx-skip" href="#main-content">{f:translate(key: 'skip', extensionName: 'Typo3Astryx')}</a>
+<f:render partial="Header" arguments="{_all}" />
+<main class="astryx-main" id="main-content" tabindex="-1"><f:render section="Main" /></main>
+<f:render partial="Footer" arguments="{_all}" />
+</div>

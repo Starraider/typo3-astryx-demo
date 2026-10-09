@@ -1,0 +1,6 @@
+@import './TypoScript/contentElements.typoscript'
+@import './TypoScript/plugins.typoscript'
+@import './TypoScript/rte.typoscript'
+@import './TypoScript/stylex.typoscript'
+@import './TypoScript/page.typoscript'
+@import './TypoScript/navigation.typoscript'

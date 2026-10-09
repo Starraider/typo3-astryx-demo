@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"><file source-language="en" target-language="de" datatype="plaintext" original="messages"><body>
+<trans-unit id="title"><source>Code Block</source><target>Code Block</target></trans-unit>
+<trans-unit id="description"><source>Syntax-highlighted programming code with an optional filename, line numbers and copy button.</source><target>Programmcode mit Syntaxhervorhebung, optionalem Dateinamen, Zeilennummern und Kopierbutton.</target></trans-unit>
+<trans-unit id="language.label"><source>Programming language</source><target>Programmiersprache</target></trans-unit>
+<trans-unit id="filename.label"><source>Filename (optional)</source><target>Dateiname (optional)</target></trans-unit>
+<trans-unit id="filename.description"><source>For example: main.js, styles.css or install.sh.</source><target>Zum Beispiel: main.js, styles.css oder install.sh.</target></trans-unit>
+<trans-unit id="code.label"><source>Code snippet</source><target>Code-Ausschnitt</target></trans-unit>
+<trans-unit id="code.description"><source>Paste plain code. Indentation and line breaks are preserved; HTML is displayed as code.</source><target>Unformatierten Code einfügen. Einrückung und Zeilenumbrüche bleiben erhalten; HTML wird als Code angezeigt.</target></trans-unit>
+<trans-unit id="line_numbers.label"><source>Show line numbers</source><target>Zeilennummern anzeigen</target></trans-unit>
+<trans-unit id="language.items.javascript.label"><source>JavaScript</source><target>JavaScript</target></trans-unit>
+<trans-unit id="language.items.typescript.label"><source>TypeScript</source><target>TypeScript</target></trans-unit>
+<trans-unit id="language.items.css.label"><source>CSS</source><target>CSS</target></trans-unit>
+<trans-unit id="language.items.html.label"><source>HTML</source><target>HTML</target></trans-unit>
+<trans-unit id="language.items.php.label"><source>PHP</source><target>PHP</target></trans-unit>
+<trans-unit id="language.items.python.label"><source>Python</source><target>Python</target></trans-unit>
+<trans-unit id="language.items.rust.label"><source>Rust</source><target>Rust</target></trans-unit>
+<trans-unit id="language.items.bash.label"><source>Bash</source><target>Bash</target></trans-unit>
+<trans-unit id="language.items.json.label"><source>JSON</source><target>JSON</target></trans-unit>
+<trans-unit id="language.items.yaml.label"><source>YAML</source><target>YAML</target></trans-unit>
+<trans-unit id="language.items.plaintext.label"><source>Plain text</source><target>Klartext</target></trans-unit>
+</body></file></xliff>

@@ -1,0 +1,51 @@
+name: astryx/table
+typeName: astryx_table
+group: astryx
+title: Astryx Table
+fields:
+- identifier: header
+  useExistingField: true
+- identifier: header_layout
+  useExistingField: true
+- identifier: header_position
+  useExistingField: true
+- identifier: header_link
+  useExistingField: true
+- identifier: subheader
+  useExistingField: true
+- identifier: heading_size
+  type: Select
+  renderType: selectSingle
+  default: medium
+  items:
+  - value: medium
+    label: Medium
+  - value: small
+    label: Small
+  - value: large
+    label: Large
+  - value: display
+    label: Display
+- identifier: caption
+  type: Text
+- identifier: header_row
+  type: Checkbox
+  default: 1
+- identifier: rows
+  type: Collection
+  table: tx_astryx_table_item
+  labelField: title
+  fields:
+  - identifier: title
+    type: Text
+  - identifier: cells
+    type: Collection
+    table: tx_astryx_table_cell
+    labelField: value
+    fields:
+    - identifier: value
+      type: Text
+    maxitems: 100
+  maxitems: 100
+basics:
+  - Astryx/spacing

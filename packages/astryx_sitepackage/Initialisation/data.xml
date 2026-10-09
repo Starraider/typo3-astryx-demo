@@ -591,7 +591,7 @@
 				<field index="module"></field>
 				<field index="l18n_cfg" type="integer">0</field>
 				<field index="backend_layout">pagets__default</field>
-				<field index="backend_layout_next_level">pagets__subpage</field>
+				<field index="backend_layout_next_level">pagets__default</field>
 				<field index="tsconfig_includes"></field>
 				<field index="seo_title"></field>
 				<field index="no_index" type="integer">0</field>
@@ -635,7 +635,7 @@
 				<field index="colPos" type="integer">1</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">text</field>
+				<field index="CType">astryx_text</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -709,7 +709,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">text</field>
+				<field index="CType">astryx_text</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -801,7 +801,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">text</field>
+				<field index="CType">astryx_text</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -1040,7 +1040,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">text</field>
+				<field index="CType">astryx_text</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -1195,7 +1195,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">text</field>
+				<field index="CType">astryx_text</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -1350,7 +1350,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">text</field>
+				<field index="CType">astryx_text</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -1740,7 +1740,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">textpic</field>
+				<field index="CType">astryx_textmedia</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -1824,7 +1824,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">textpic</field>
+				<field index="CType">astryx_textmedia</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -2029,7 +2029,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">textpic</field>
+				<field index="CType">astryx_textmedia</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -2278,7 +2278,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">text</field>
+				<field index="CType">astryx_text</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -2437,7 +2437,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">text</field>
+				<field index="CType">astryx_text</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>
@@ -2592,7 +2592,7 @@
 				<field index="colPos" type="integer">0</field>
 				<field index="table_caption" type="NULL"></field>
 				<field index="tx_impexp_origuid" type="integer">0</field>
-				<field index="CType">text</field>
+				<field index="CType">astryx_text</field>
 				<field index="categories" type="integer">0</field>
 				<field index="layout" type="integer">0</field>
 				<field index="space_before_class"></field>

@@ -1,0 +1,21 @@
+<nav class="astryx-language-menu" aria-label="{f:translate(key: 'language', extensionName: 'Typo3Astryx', default: 'Language')}">
+    <details class="astryx-dropdown" data-astryx-dropdown>
+        <summary class="astryx-header-control" aria-controls="astryx-language-options" aria-label="{f:translate(key: 'language', extensionName: 'Typo3Astryx', default: 'Language')}">
+            <f:for each="{items}" as="language"><f:if condition="{language.active}"><span lang="{language.hreflang}">{language.twoLetterIsoCode -> f:format.case(mode: 'upper')}</span></f:if></f:for>
+            <span class="astryx-chevron" aria-hidden="true"></span>
+        </summary>
+        <ul class="astryx-dropdown-panel astryx-language-options" id="astryx-language-options">
+            <f:for each="{items}" as="language">
+                <li>
+                    <f:if condition="{language.available}">
+                        <f:then>
+                            <f:variable name="current" value="{f:if(condition: language.active, then: 'true', else: 'false')}" />
+                            <f:link.typolink parameter="{language.link}" additionalAttributes="{hreflang: language.hreflang, lang: language.hreflang, 'aria-current': current}">{language.navigationTitle}</f:link.typolink>
+                        </f:then>
+                        <f:else><span aria-disabled="true" lang="{language.hreflang}">{language.navigationTitle}</span></f:else>
+                    </f:if>
+                </li>
+            </f:for>
+        </ul>
+    </details>
+</nav>

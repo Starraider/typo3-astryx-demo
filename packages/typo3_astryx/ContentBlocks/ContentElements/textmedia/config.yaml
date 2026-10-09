@@ -1,0 +1,61 @@
+name: astryx/textmedia
+typeName: astryx_textmedia
+group: astryx
+title: Astryx Textmedia
+fields:
+- identifier: header
+  useExistingField: true
+- identifier: header_layout
+  useExistingField: true
+- identifier: header_position
+  useExistingField: true
+- identifier: header_link
+  useExistingField: true
+- identifier: subheader
+  useExistingField: true
+- identifier: heading_size
+  type: Select
+  renderType: selectSingle
+  default: medium
+  items:
+  - value: medium
+    label: Medium
+  - value: small
+    label: Small
+  - value: large
+    label: Large
+  - value: display
+    label: Display
+- identifier: bodytext
+  useExistingField: true
+  type: Textarea
+  enableRichtext: true
+- identifier: assets
+  useExistingField: true
+  type: File
+  allowed: common-media-types
+- identifier: image
+  useExistingField: true
+  type: File
+  allowed: common-image-types
+- identifier: imageorient
+  useExistingField: true
+- identifier: aspect_ratio
+  type: Select
+  renderType: selectSingle
+  default: auto
+  items:
+  - value: auto
+    label: Original
+  - value: wide
+    label: Wide (16:9)
+  - value: landscape
+    label: Landscape (4:3)
+  - value: square
+    label: Square (1:1)
+- identifier: poster
+  type: File
+  allowed: common-image-types
+  maxitems: 1
+basics:
+  - Astryx/spacing

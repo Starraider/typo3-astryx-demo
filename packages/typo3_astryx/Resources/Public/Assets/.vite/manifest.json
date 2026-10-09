@@ -1,0 +1,58 @@
+{
+  "packages/typo3_astryx/Resources/Private/Fonts/Figtree-latin-ext.woff2": {
+    "file": "Figtree-latin-ext.woff2",
+    "src": "packages/typo3_astryx/Resources/Private/Fonts/Figtree-latin-ext.woff2"
+  },
+  "packages/typo3_astryx/Resources/Private/Fonts/Figtree-latin.woff2": {
+    "file": "Figtree-latin.woff2",
+    "src": "packages/typo3_astryx/Resources/Private/Fonts/Figtree-latin.woff2"
+  },
+  "packages/typo3_astryx/Resources/Private/JavaScript/Main.entry.js": {
+    "file": "astryx.js",
+    "name": "astryx",
+    "src": "packages/typo3_astryx/Resources/Private/JavaScript/Main.entry.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "packages/typo3_astryx/Resources/Private/JavaScript/code-highlighter.js"
+    ],
+    "css": [
+      "astryx.css"
+    ],
+    "assets": [
+      "Figtree-latin-ext.woff2",
+      "Figtree-latin.woff2"
+    ]
+  },
+  "packages/typo3_astryx/Resources/Private/JavaScript/Preview.entry.js": {
+    "file": "preview.js",
+    "name": "preview",
+    "src": "packages/typo3_astryx/Resources/Private/JavaScript/Preview.entry.js",
+    "isEntry": true,
+    "css": [
+      "preview.css"
+    ],
+    "assets": [
+      "Figtree-latin-ext.woff2",
+      "Figtree-latin.woff2"
+    ]
+  },
+  "packages/typo3_astryx/Resources/Private/JavaScript/Rte.entry.js": {
+    "file": "rte.js",
+    "name": "rte",
+    "src": "packages/typo3_astryx/Resources/Private/JavaScript/Rte.entry.js",
+    "isEntry": true,
+    "css": [
+      "rte.css"
+    ],
+    "assets": [
+      "Figtree-latin-ext.woff2",
+      "Figtree-latin.woff2"
+    ]
+  },
+  "packages/typo3_astryx/Resources/Private/JavaScript/code-highlighter.js": {
+    "file": "code-highlighter-ff5_MZ3n.js",
+    "name": "code-highlighter",
+    "src": "packages/typo3_astryx/Resources/Private/JavaScript/code-highlighter.js",
+    "isDynamicEntry": true
+  }
+}

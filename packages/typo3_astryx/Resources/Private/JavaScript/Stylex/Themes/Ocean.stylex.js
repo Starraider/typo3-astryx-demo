@@ -1,0 +1,37 @@
+// CSS attribute bridge is generated from these values for nested boundaries.
+import * as stylex from '@stylexjs/stylex';
+import {tokens} from '../tokens.stylex.js';
+export const theme = stylex.createTheme(tokens, {
+  "--astryx-accent": "light-dark(#005a85, #8edafa)",
+  "--astryx-on-accent": "light-dark(#ffffff, #15110c)",
+  "--astryx-body": "light-dark(#eef7fb, #071b27)",
+  "--astryx-surface": "light-dark(#ffffff, #102b3a)",
+  "--astryx-muted": "light-dark(#dceef6, #193d4e)",
+  "--astryx-text": "light-dark(#15110c, #dfe2e5)",
+  "--astryx-secondary": "light-dark(#4e606f, #aaafb5)",
+  "--astryx-border": "light-dark(#b7d3e0, #365c6e)",
+  "--astryx-border-strong": "light-dark(#d4d4d4, #525252)",
+  "--astryx-success": "light-dark(#00490b, #a4d6a3)",
+  "--astryx-warning": "light-dark(#4b3900, #f8d36a)",
+  "--astryx-error": "light-dark(#76000c, #ffc4be)",
+  "--astryx-shadow-color": "light-dark(#0000001A, #0000004D)",
+  "--astryx-font": "Figtree, \"Figtree Variable\", system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+  "--astryx-font-code": "\"SF Mono\", Monaco, Consolas, monospace",
+  "--astryx-radius-element": "8px",
+  "--astryx-radius-container": "12px",
+  "--astryx-radius-page": "28px",
+  "--astryx-space-1": "4px",
+  "--astryx-space-2": "8px",
+  "--astryx-space-3": "12px",
+  "--astryx-space-4": "16px",
+  "--astryx-space-6": "24px",
+  "--astryx-space-8": "32px",
+  "--astryx-space-12": "48px",
+  "--astryx-content-width": "72rem",
+  "--astryx-prose-width": "68ch",
+  "--astryx-nav-width": "16rem",
+  "--astryx-detail-width": "20rem",
+  "--astryx-duration": "125ms",
+  "--astryx-easing": "cubic-bezier(0.24, 1, 0.4, 1)",
+  "--astryx-shadow": "0 2px 12px var(--astryx-shadow-color)"
+});

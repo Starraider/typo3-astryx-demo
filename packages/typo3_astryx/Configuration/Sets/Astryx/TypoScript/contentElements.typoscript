@@ -1,0 +1,50 @@
+# The Content Blocks extension owns lib.contentBlock and its processor.
+lib.contentBlock {
+    partialRootPaths.10 = EXT:typo3_astryx/Resources/Private/Partials/
+    layoutRootPaths.10 = EXT:typo3_astryx/Resources/Private/Layouts/ContentElements/
+}
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+    templateName = Generic
+    templateRootPaths.10 = EXT:typo3_astryx/Resources/Private/Templates/ContentElements/
+    partialRootPaths.10 = EXT:typo3_astryx/Resources/Private/Partials/
+    layoutRootPaths.10 = EXT:typo3_astryx/Resources/Private/Layouts/ContentElements/
+    dataProcessing.1770716912 = record-transformation
+}
+lib.astryxContentElement =< lib.contentElement
+tt_content.astryx_container_two_col.dataProcessing.100 = B13\Container\DataProcessing\ContentAreaProcessor
+
+# Inventoried legacy menu records retain their core fields and links.
+tt_content.menu_sitemap =< lib.contentElement
+tt_content.menu_sitemap {
+    templateName = Menu
+    dataProcessing.10 = menu
+    dataProcessing.10.levels = 7
+    dataProcessing.10.as = menu
+}
+tt_content.menu_subpages =< lib.contentElement
+tt_content.menu_subpages {
+    templateName = Menu
+    dataProcessing.10 = menu
+    dataProcessing.10.special = directory
+    dataProcessing.10.special.value.field = pages
+    dataProcessing.10.as = menu
+}
+tt_content.shortcut =< lib.contentElement
+tt_content.shortcut {
+    templateName = Shortcut
+    variables.shortcuts = RECORDS
+    variables.shortcuts {
+        source.field = records
+        tables = tt_content
+    }
+}
+tt_content.html =< lib.contentElement
+tt_content.html {
+    templateName = Html
+    variables.safeHtml = TEXT
+    variables.safeHtml {
+        field = bodytext
+        stdWrap.htmlSanitize = 1
+    }
+}

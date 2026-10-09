@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d958d57977f46eafd57fbc99dcf1cb5",
+    "content-hash": "d7431321e0d0cfc98029d759bc5abf69",
     "packages": [
         {
             "name": "b13/container",
@@ -2804,13 +2804,13 @@
             "dist": {
                 "type": "path",
                 "url": "packages/astryx_sitepackage",
-                "reference": "71b2a58a5a11e9a199178e87b2937ecba815ee2f"
+                "reference": "82882f89527c12645084219eaf4b52ff6f42effb"
             },
             "require": {
                 "praetorius/vite-asset-collector": "^1.18",
                 "skom/stylex-connector": "dev-main",
+                "skom/typo3-astryx": "@dev",
                 "typo3/cms-core": "^14.0",
-                "typo3/cms-fluid-styled-content": "^14.0",
                 "typo3/cms-rte-ckeditor": "^14.0"
             },
             "suggest": {
@@ -2840,6 +2840,7 @@
                     "homepage": "https://www.skom.de"
                 }
             ],
+            "description": "Product configuration and assets for the TYPO3 Astryx starter",
             "homepage": "https://www.skom.de",
             "keywords": [
                 "TYPO3 CMS"
@@ -2921,6 +2922,64 @@
                 "source": "https://github.com/Starraider/stylex-connector"
             },
             "time": "2026-10-04T08:09:42+00:00"
+        },
+        {
+            "name": "skom/typo3-astryx",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "packages/typo3_astryx",
+                "reference": "9c6ecd60392f9f4e6e7a6c9a83f2813776d6650d"
+            },
+            "require": {
+                "b13/container": "^4.1",
+                "friendsoftypo3/content-blocks": "^2.4.10",
+                "php": ">=8.3 <8.5",
+                "praetorius/vite-asset-collector": "^1.18",
+                "skom/stylex-connector": "dev-main",
+                "typo3/cms-core": "~14.3.0",
+                "typo3/cms-fluid": "~14.3.0",
+                "typo3/cms-frontend": "~14.3.0",
+                "typo3/cms-rte-ckeditor": "~14.3.0"
+            },
+            "conflict": {
+                "typo3/cms-fluid-styled-content": "*"
+            },
+            "suggest": {
+                "typo3/cms-seo": "Page metadata and SEO"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "typo3_astryx"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Skom\\Typo3Astryx\\": "Classes/"
+                }
+            },
+            "archive": {
+                "exclude": [
+                    "/Tests",
+                    "/Documentation/Validation-private",
+                    "/node_modules",
+                    "/vendor",
+                    "/.git"
+                ]
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Kalbhenn"
+                }
+            ],
+            "description": "Native Astryx components, Content Blocks and page layouts for TYPO3 14.3",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "symfony/cache",
@@ -7473,75 +7532,6 @@
             "time": "2026-09-08T09:17:25+00:00"
         },
         {
-            "name": "typo3/cms-fluid-styled-content",
-            "version": "v14.3.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TYPO3-CMS/fluid_styled_content.git",
-                "reference": "9a57ba7cdae1e60cfe3d7c8c535b6927b3d30fe7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3-CMS/fluid_styled_content/zipball/9a57ba7cdae1e60cfe3d7c8c535b6927b3d30fe7",
-                "reference": "9a57ba7cdae1e60cfe3d7c8c535b6927b3d30fe7",
-                "shasum": ""
-            },
-            "require": {
-                "typo3/cms-core": "14.3.7",
-                "typo3/cms-fluid": "14.3.7",
-                "typo3/cms-frontend": "14.3.7"
-            },
-            "conflict": {
-                "typo3/cms": "*"
-            },
-            "type": "typo3-cms-framework",
-            "extra": {
-                "typo3/cms": {
-                    "Package": {
-                        "partOfFactoryDefault": true
-                    },
-                    "extension-key": "fluid_styled_content"
-                },
-                "branch-alias": {
-                    "dev-main": "14.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "TYPO3\\CMS\\FluidStyledContent\\": "Classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "TYPO3 Core Team",
-                    "email": "typo3cms@typo3.org",
-                    "role": "Developer"
-                }
-            ],
-            "description": "TYPO3 CMS Fluid Styled Content - Fluid templates for TYPO3 content elements.",
-            "homepage": "https://typo3.community/",
-            "support": {
-                "chat": "https://typo3.community/meet/slack/",
-                "docs": "https://docs.typo3.org/c/typo3/cms-fluid-styled-content/main/en-us/",
-                "forum": "https://talk.typo3.org/",
-                "issues": "https://forge.typo3.org/issues/",
-                "rss": "https://news.typo3.com/rss/",
-                "security": "https://typo3.org/security/",
-                "source": "https://github.com/TYPO3/typo3/"
-            },
-            "funding": [
-                {
-                    "url": "https://typo3.org/membership",
-                    "type": "membership"
-                }
-            ],
-            "time": "2026-09-08T09:17:25+00:00"
-        },
-        {
             "name": "typo3/cms-form",
             "version": "v14.3.7",
             "source": {
@@ -9284,7 +9274,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "skom/astryx-sitepackage": 20,
-        "skom/stylex-connector": 20
+        "skom/stylex-connector": 20,
+        "skom/typo3-astryx": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

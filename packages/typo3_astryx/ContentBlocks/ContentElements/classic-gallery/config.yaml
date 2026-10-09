@@ -1,0 +1,63 @@
+name: astryx/classic-gallery
+typeName: astryx_classic_gallery
+group: astryx
+title: Classic Gallery
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: header_layout
+    useExistingField: true
+  - identifier: header_position
+    useExistingField: true
+  - identifier: header_link
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+  - identifier: heading_size
+    type: Select
+    renderType: selectSingle
+    default: small
+    items:
+      - value: small
+        label: Small
+      - value: medium
+        label: Medium
+      - value: large
+        label: Large
+      - value: display
+        label: Display
+  - identifier: columns
+    type: Select
+    renderType: selectSingle
+    default: 4
+    items:
+      - value: 1
+        label: '1'
+      - value: 2
+        label: '2'
+      - value: 3
+        label: '3'
+      - value: 4
+        label: '4'
+      - value: 5
+        label: '5'
+      - value: 6
+        label: '6'
+  - identifier: items
+    type: Collection
+    table: tx_astryx_classic_gallery_item
+    labelField: title
+    maxitems: 100
+    fields:
+      - identifier: title
+        type: Text
+      - identifier: image
+        type: File
+        allowed: common-image-types
+        minitems: 1
+        maxitems: 1
+      - identifier: category
+        type: Text
+        max: 100
+basics:
+  - Astryx/spacing

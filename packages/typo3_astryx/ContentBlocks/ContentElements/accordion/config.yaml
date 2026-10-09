@@ -1,0 +1,52 @@
+name: astryx/accordion
+typeName: astryx_accordion
+group: astryx
+title: Astryx Accordion
+fields:
+- identifier: header
+  useExistingField: true
+- identifier: header_layout
+  useExistingField: true
+- identifier: header_position
+  useExistingField: true
+- identifier: header_link
+  useExistingField: true
+- identifier: subheader
+  useExistingField: true
+- identifier: heading_size
+  type: Select
+  renderType: selectSingle
+  default: medium
+  items:
+  - value: medium
+    label: Medium
+  - value: small
+    label: Small
+  - value: large
+    label: Large
+  - value: display
+    label: Display
+- identifier: mode
+  type: Select
+  renderType: selectSingle
+  default: multiple
+  items:
+  - value: multiple
+    label: Multiple
+  - value: single
+    label: Single
+- identifier: items
+  type: Collection
+  table: tx_astryx_accordion_item
+  labelField: title
+  fields:
+  - identifier: title
+    type: Text
+  - identifier: body
+    type: Textarea
+    enableRichtext: true
+  - identifier: open
+    type: Checkbox
+  maxitems: 100
+basics:
+  - Astryx/spacing

@@ -1,0 +1,24 @@
+renderingOptions:
+  submitButtonLabel: Submit fixture
+identifier: astryx-contact
+label: Astryx test form
+type: Form
+prototypeName: standard
+finishers:
+  - identifier: Confirmation
+    options:
+      message: Astryx form submitted
+renderables:
+  - identifier: page-1
+    type: Page
+    label: Contact details
+    renderables:
+      - identifier: email
+        type: Email
+        label: Email address
+        properties:
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          - identifier: NotEmpty
+          - identifier: EmailAddress

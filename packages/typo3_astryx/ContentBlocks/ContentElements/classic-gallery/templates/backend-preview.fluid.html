@@ -1,0 +1,18 @@
+<f:layout name="Preview" />
+<f:section name="Header"><strong>{data.header}</strong></f:section>
+<f:section name="Content">
+    <f:asset.css identifier="astryx-preview" href="EXT:typo3_astryx/Resources/Public/Css/backend-preview.css" />
+    <div class="astryx-preview">
+        <f:if condition="{data.subheader}"><p>{data.subheader}</p></f:if>
+        <p><f:translate key="LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:preview.columns" arguments="{0: data.columns}" default="Maximum images per row: %s" /></p>
+        <ul class="astryx-classic-gallery-preview">
+            <f:for each="{data.items}" as="item">
+                <li>
+                    <f:for each="{item.image}" as="file"><f:if condition="{ax:fileAvailable(file: file)}"><f:image image="{file}" width="240" /></f:if></f:for>
+                    <strong>{item.title}</strong>
+                    <f:if condition="{item.category}"><span>{item.category}</span></f:if>
+                </li>
+            </f:for>
+        </ul>
+    </div>
+</f:section>

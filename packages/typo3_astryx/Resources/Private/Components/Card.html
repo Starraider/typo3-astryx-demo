@@ -1,0 +1,9 @@
+<f:argument name="title" type="string" default="" />
+<f:argument name="body" type="string" default="" />
+<f:argument name="href" type="string|TYPO3\CMS\Core\LinkHandling\TypolinkParameter" default="" />
+<f:argument name="label" type="string" default="" />
+<f:argument name="badge" type="string" default="" />
+<f:argument name="level" type="int" default="3" />
+<f:argument name="variant" type="string" default="outlined" />
+<f:argument name="padding" type="string" default="normal" />
+<article class="{ax:recipe(name: 'Card', options: {variant: variant, padding: padding})}"><f:slot name="media" /><f:if condition="{badge}"><astryx:badge text="{badge}" /></f:if><f:slot name="heading"><f:if condition="{title}"><astryx:heading text="{title}" level="{level}" size="small" /></f:if></f:slot><astryx:text richText="{body}"><f:slot /></astryx:text><f:if condition="{href} && {label}"><astryx:button href="{href}" label="{label}" size="small" /></f:if><f:slot name="footer" /></article>

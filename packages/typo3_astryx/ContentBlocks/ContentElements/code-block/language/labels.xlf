@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2"><file source-language="en" datatype="plaintext" original="messages"><body>
+<trans-unit id="title"><source>Code Block</source></trans-unit>
+<trans-unit id="description"><source>Syntax-highlighted programming code with an optional filename, line numbers and copy button.</source></trans-unit>
+<trans-unit id="language.label"><source>Programming language</source></trans-unit>
+<trans-unit id="filename.label"><source>Filename (optional)</source></trans-unit>
+<trans-unit id="filename.description"><source>For example: main.js, styles.css or install.sh.</source></trans-unit>
+<trans-unit id="code.label"><source>Code snippet</source></trans-unit>
+<trans-unit id="code.description"><source>Paste plain code. Indentation and line breaks are preserved; HTML is displayed as code.</source></trans-unit>
+<trans-unit id="line_numbers.label"><source>Show line numbers</source></trans-unit>
+<trans-unit id="language.items.javascript.label"><source>JavaScript</source></trans-unit>
+<trans-unit id="language.items.typescript.label"><source>TypeScript</source></trans-unit>
+<trans-unit id="language.items.css.label"><source>CSS</source></trans-unit>
+<trans-unit id="language.items.html.label"><source>HTML</source></trans-unit>
+<trans-unit id="language.items.php.label"><source>PHP</source></trans-unit>
+<trans-unit id="language.items.python.label"><source>Python</source></trans-unit>
+<trans-unit id="language.items.rust.label"><source>Rust</source></trans-unit>
+<trans-unit id="language.items.bash.label"><source>Bash</source></trans-unit>
+<trans-unit id="language.items.json.label"><source>JSON</source></trans-unit>
+<trans-unit id="language.items.yaml.label"><source>YAML</source></trans-unit>
+<trans-unit id="language.items.plaintext.label"><source>Plain text</source></trans-unit>
+</body></file></xliff>

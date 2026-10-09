@@ -1,0 +1,3 @@
+persistenceManager:
+  allowedExtensionPaths:
+    999: 'EXT:typo3_astryx/Tests/Fixtures/'

@@ -1,0 +1,31 @@
+page.10.dataProcessing {
+    30 = menu
+    30 {
+        special = directory
+        special.value = {$Astryx.navigationRoot}
+        special.value.ifEmpty.data = leveluid:0
+        levels = 3
+        expandAll = 1
+        as = navigation
+    }
+    40 = menu
+    40 {
+        special = rootline
+        special.range = 0|-1
+        includeNotInMenu = 1
+        as = breadcrumbs
+    }
+    50 = menu
+    50 {
+        if.isTrue = {$Astryx.footerRoot}
+        special = directory
+        special.value = {$Astryx.footerRoot}
+        as = footerNavigation
+    }
+    60 = language-menu
+    60 {
+        if.isTrue = {$Astryx.showLanguageMenu}
+        languages = auto
+        as = languageMenu
+    }
+}

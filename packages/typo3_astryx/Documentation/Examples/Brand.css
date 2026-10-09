@@ -1,0 +1,8 @@
+/* Load after Astryx and add class product-brand to a theme boundary in your page override. */
+@layer product {
+  .product-brand {
+    --astryx-accent: light-dark(#6a287e, #e9acf7);
+    --astryx-on-accent: light-dark(#ffffff, #31103b);
+    --astryx-radius-element: 6px;
+  }
+}

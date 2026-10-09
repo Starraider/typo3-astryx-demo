@@ -1,0 +1,10 @@
+identifier: Astryx/cta-fields
+fields:
+- identifier: cta_link
+  type: Link
+- identifier: cta_label
+  type: Text
+- identifier: secondary_link
+  type: Link
+- identifier: secondary_label
+  type: Text

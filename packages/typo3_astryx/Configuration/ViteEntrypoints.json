@@ -1,0 +1,5 @@
+[
+  "../Resources/Private/JavaScript/Main.entry.js",
+  "../Resources/Private/JavaScript/Rte.entry.js",
+  "../Resources/Private/JavaScript/Preview.entry.js"
+]

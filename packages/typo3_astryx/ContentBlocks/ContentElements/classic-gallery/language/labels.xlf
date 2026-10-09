@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages">
+    <body>
+      <trans-unit id="title">
+        <source>Classic Gallery</source>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Centered intro, category filters and equal-ratio image tiles that fill every row.</source>
+      </trans-unit>
+      <trans-unit id="header.label">
+        <source>Heading</source>
+      </trans-unit>
+      <trans-unit id="header_layout.label">
+        <source>Heading level</source>
+      </trans-unit>
+      <trans-unit id="subheader.label">
+        <source>Intro text</source>
+      </trans-unit>
+      <trans-unit id="heading_size.label">
+        <source>Heading size</source>
+      </trans-unit>
+      <trans-unit id="heading_size.items.small.label">
+        <source>Small</source>
+      </trans-unit>
+      <trans-unit id="heading_size.items.medium.label">
+        <source>Medium</source>
+      </trans-unit>
+      <trans-unit id="heading_size.items.large.label">
+        <source>Large</source>
+      </trans-unit>
+      <trans-unit id="heading_size.items.display.label">
+        <source>Display</source>
+      </trans-unit>
+      <trans-unit id="columns.label">
+        <source>Maximum images per row</source>
+      </trans-unit>
+      <trans-unit id="columns.description">
+        <source>Default: 4. Narrow content areas use fewer columns. Incomplete rows stretch evenly across the available width.</source>
+      </trans-unit>
+      <trans-unit id="items.label">
+        <source>Images</source>
+      </trans-unit>
+      <trans-unit id="items.title.label">
+        <source>Title</source>
+      </trans-unit>
+      <trans-unit id="items.title.description">
+        <source>Editor label for this image. Set alternative text in the image metadata.</source>
+      </trans-unit>
+      <trans-unit id="items.image.label">
+        <source>Image</source>
+      </trans-unit>
+      <trans-unit id="items.category.label">
+        <source>Category</source>
+      </trans-unit>
+      <trans-unit id="items.category.description">
+        <source>Images with the same category share a filter. Leave empty to show this image only under All.</source>
+      </trans-unit>
+      <trans-unit id="frontend.all">
+        <source>All</source>
+      </trans-unit>
+      <trans-unit id="frontend.filters">
+        <source>Filter images by category</source>
+      </trans-unit>
+      <trans-unit id="frontend.images">
+        <source>Gallery images</source>
+      </trans-unit>
+      <trans-unit id="frontend.count">
+        <source>Images shown: %s</source>
+      </trans-unit>
+      <trans-unit id="preview.columns">
+        <source>Maximum images per row: %s</source>
+      </trans-unit>
+      <trans-unit id="columns.items.1.label">
+        <source>1</source>
+      </trans-unit>
+      <trans-unit id="columns.items.2.label">
+        <source>2</source>
+      </trans-unit>
+      <trans-unit id="columns.items.3.label">
+        <source>3</source>
+      </trans-unit>
+      <trans-unit id="columns.items.4.label">
+        <source>4</source>
+      </trans-unit>
+      <trans-unit id="columns.items.5.label">
+        <source>5</source>
+      </trans-unit>
+      <trans-unit id="columns.items.6.label">
+        <source>6</source>
+      </trans-unit>
+      <trans-unit id="frontend.open">
+        <source>Open image</source>
+      </trans-unit>
+      <trans-unit id="frontend.lightbox">
+        <source>Image gallery</source>
+      </trans-unit>
+      <trans-unit id="frontend.close">
+        <source>Close</source>
+      </trans-unit>
+      <trans-unit id="frontend.previous">
+        <source>Previous</source>
+      </trans-unit>
+      <trans-unit id="frontend.next">
+        <source>Next</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,557 @@
+@layer product{.astryx-logo img{max-height:2.75rem;width:auto}}
+
+@layer priority1 {
+  :root, .x15xvuy5 {
+    --astryx-accent: var(--lightningcss-light, #1b1b1b) var(--lightningcss-dark, #f1f1f1);
+    --astryx-on-accent: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-body: var(--lightningcss-light, #f1f1f1) var(--lightningcss-dark, #1b1b1b);
+    --astryx-surface: var(--lightningcss-light, #fff) var(--lightningcss-dark, #262626);
+    --astryx-muted: var(--lightningcss-light, #f1f1f1) var(--lightningcss-dark, #1b1b1b);
+    --astryx-text: var(--lightningcss-light, #15110c) var(--lightningcss-dark, #dfe2e5);
+    --astryx-secondary: var(--lightningcss-light, #4e606f) var(--lightningcss-dark, #aaafb5);
+    --astryx-border: var(--lightningcss-light, #00000014) var(--lightningcss-dark, #ffffff1a);
+    --astryx-border-strong: var(--lightningcss-light, #d4d4d4) var(--lightningcss-dark, #525252);
+    --astryx-success: var(--lightningcss-light, #00490b) var(--lightningcss-dark, #a4d6a3);
+    --astryx-warning: var(--lightningcss-light, #4b3900) var(--lightningcss-dark, #f8d36a);
+    --astryx-error: var(--lightningcss-light, #76000c) var(--lightningcss-dark, #ffc4be);
+    --astryx-shadow-color: var(--lightningcss-light, #0000001a) var(--lightningcss-dark, #0000004d);
+    --astryx-font: Figtree, "Figtree Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --astryx-link: var(--lightningcss-light, #15110c) var(--lightningcss-dark, #dfe2e5);
+    --astryx-font-size-body: 1.0625rem;
+    --astryx-font-size-label: .875rem;
+    --astryx-font-size-supporting: .75rem;
+    --astryx-line-body: 1.64706;
+    --astryx-line-label: 1.42857;
+    --astryx-font-code: "SF Mono", Monaco, Consolas, monospace;
+    --astryx-radius-element: 8px;
+    --astryx-radius-container: 12px;
+    --astryx-radius-page: 28px;
+    --astryx-space-1: 4px;
+    --astryx-space-2: 8px;
+    --astryx-space-3: 12px;
+    --astryx-space-4: 16px;
+    --astryx-space-6: 24px;
+    --astryx-space-8: 32px;
+    --astryx-space-12: 48px;
+    --astryx-content-width: 72rem;
+    --astryx-prose-width: 68ch;
+    --astryx-nav-width: 16rem;
+    --astryx-detail-width: 20rem;
+    --astryx-duration: .125s;
+    --astryx-easing: cubic-bezier(.24, 1, .4, 1);
+    --astryx-shadow: 0 2px 12px var(--astryx-shadow-color);
+  }
+
+  .x2avcy.x2avcy, .x2avcy.x2avcy:root {
+    --astryx-accent: var(--lightningcss-light, #005a85) var(--lightningcss-dark, #8edafa);
+    --astryx-body: var(--lightningcss-light, #eef7fb) var(--lightningcss-dark, #071b27);
+    --astryx-border: var(--lightningcss-light, #b7d3e0) var(--lightningcss-dark, #365c6e);
+    --astryx-border-strong: var(--lightningcss-light, #d4d4d4) var(--lightningcss-dark, #525252);
+    --astryx-content-width: 72rem;
+    --astryx-detail-width: 20rem;
+    --astryx-duration: .125s;
+    --astryx-easing: cubic-bezier(.24, 1, .4, 1);
+    --astryx-error: var(--lightningcss-light, #76000c) var(--lightningcss-dark, #ffc4be);
+    --astryx-font: Figtree, "Figtree Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --astryx-font-code: "SF Mono", Monaco, Consolas, monospace;
+    --astryx-muted: var(--lightningcss-light, #dceef6) var(--lightningcss-dark, #193d4e);
+    --astryx-nav-width: 16rem;
+    --astryx-on-accent: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-prose-width: 68ch;
+    --astryx-radius-container: 12px;
+    --astryx-radius-element: 8px;
+    --astryx-radius-page: 28px;
+    --astryx-secondary: var(--lightningcss-light, #4e606f) var(--lightningcss-dark, #aaafb5);
+    --astryx-shadow: 0 2px 12px var(--astryx-shadow-color);
+    --astryx-shadow-color: var(--lightningcss-light, #0000001a) var(--lightningcss-dark, #0000004d);
+    --astryx-space-1: 4px;
+    --astryx-space-12: 48px;
+    --astryx-space-2: 8px;
+    --astryx-space-3: 12px;
+    --astryx-space-4: 16px;
+    --astryx-space-6: 24px;
+    --astryx-space-8: 32px;
+    --astryx-success: var(--lightningcss-light, #00490b) var(--lightningcss-dark, #a4d6a3);
+    --astryx-surface: var(--lightningcss-light, #fff) var(--lightningcss-dark, #102b3a);
+    --astryx-text: var(--lightningcss-light, #15110c) var(--lightningcss-dark, #dfe2e5);
+    --astryx-warning: var(--lightningcss-light, #4b3900) var(--lightningcss-dark, #f8d36a);
+  }
+
+  .xq6zbpt.xq6zbpt, .xq6zbpt.xq6zbpt:root {
+    --astryx-accent: var(--lightningcss-light, #1b1b1b) var(--lightningcss-dark, #f1f1f1);
+    --astryx-body: var(--lightningcss-light, #f1f1f1) var(--lightningcss-dark, #1b1b1b);
+    --astryx-border: var(--lightningcss-light, #00000014) var(--lightningcss-dark, #ffffff1a);
+    --astryx-border-strong: var(--lightningcss-light, #d4d4d4) var(--lightningcss-dark, #525252);
+    --astryx-content-width: 72rem;
+    --astryx-detail-width: 20rem;
+    --astryx-duration: .125s;
+    --astryx-easing: cubic-bezier(.24, 1, .4, 1);
+    --astryx-error: var(--lightningcss-light, #76000c) var(--lightningcss-dark, #ffc4be);
+    --astryx-font: Figtree, "Figtree Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --astryx-font-code: "SF Mono", Monaco, Consolas, monospace;
+    --astryx-muted: var(--lightningcss-light, #f1f1f1) var(--lightningcss-dark, #1b1b1b);
+    --astryx-nav-width: 16rem;
+    --astryx-on-accent: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-prose-width: 68ch;
+    --astryx-radius-container: 12px;
+    --astryx-radius-element: 8px;
+    --astryx-radius-page: 28px;
+    --astryx-secondary: var(--lightningcss-light, #4e606f) var(--lightningcss-dark, #aaafb5);
+    --astryx-shadow: 0 2px 12px var(--astryx-shadow-color);
+    --astryx-shadow-color: var(--lightningcss-light, #0000001a) var(--lightningcss-dark, #0000004d);
+    --astryx-space-1: 4px;
+    --astryx-space-12: 48px;
+    --astryx-space-2: 8px;
+    --astryx-space-3: 12px;
+    --astryx-space-4: 16px;
+    --astryx-space-6: 24px;
+    --astryx-space-8: 32px;
+    --astryx-success: var(--lightningcss-light, #00490b) var(--lightningcss-dark, #a4d6a3);
+    --astryx-surface: var(--lightningcss-light, #fff) var(--lightningcss-dark, #262626);
+    --astryx-text: var(--lightningcss-light, #15110c) var(--lightningcss-dark, #dfe2e5);
+    --astryx-warning: var(--lightningcss-light, #4b3900) var(--lightningcss-dark, #f8d36a);
+  }
+
+  .xqv5ou.xqv5ou, .xqv5ou.xqv5ou:root {
+    --astryx-accent: var(--lightningcss-light, #25252a) var(--lightningcss-dark, #f3f3f5);
+    --astryx-body: var(--lightningcss-light, #f3f3f5) var(--lightningcss-dark, #111015);
+    --astryx-border: var(--lightningcss-light, #e2e2e8) var(--lightningcss-dark, #f3f3f51a);
+    --astryx-border-strong: var(--lightningcss-light, #83838a) var(--lightningcss-dark, #5e5e61);
+    --astryx-content-width: 72rem;
+    --astryx-detail-width: 20rem;
+    --astryx-duration: .125s;
+    --astryx-easing: cubic-bezier(.24, 1, .4, 1);
+    --astryx-error: var(--lightningcss-light, #58413e) var(--lightningcss-dark, #dcc0bc);
+    --astryx-font: Figtree, "Figtree Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --astryx-font-code: "SF Mono", Monaco, Consolas, monospace;
+    --astryx-muted: var(--lightningcss-light, #e2e2e8) var(--lightningcss-dark, #3b3b3f);
+    --astryx-nav-width: 16rem;
+    --astryx-on-accent: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-prose-width: 68ch;
+    --astryx-radius-container: 12px;
+    --astryx-radius-element: 8px;
+    --astryx-radius-page: 28px;
+    --astryx-secondary: var(--lightningcss-light, #4e606f) var(--lightningcss-dark, #aaafb5);
+    --astryx-shadow: 0 2px 12px var(--astryx-shadow-color);
+    --astryx-shadow-color: var(--lightningcss-light, #25252a1a) var(--lightningcss-dark, #0000004d);
+    --astryx-space-1: 4px;
+    --astryx-space-12: 48px;
+    --astryx-space-2: 8px;
+    --astryx-space-3: 12px;
+    --astryx-space-4: 16px;
+    --astryx-space-6: 24px;
+    --astryx-space-8: 32px;
+    --astryx-success: var(--lightningcss-light, #374c36) var(--lightningcss-dark, #b4cdb2);
+    --astryx-surface: var(--lightningcss-light, #fff) var(--lightningcss-dark, #1b1b1f);
+    --astryx-text: var(--lightningcss-light, #15110c) var(--lightningcss-dark, #dfe2e5);
+    --astryx-warning: var(--lightningcss-light, #524622) var(--lightningcss-dark, #d7c59c);
+  }
+}
+
+@layer priority2 {
+  .x1xq1gxn {
+    padding: 0 8px;
+  }
+
+  .x1ifpib {
+    padding: 12px 20px;
+  }
+
+  .xk61eof {
+    padding: 6px 10px;
+  }
+
+  .x153ncpu {
+    padding: 8px 12px;
+  }
+
+  .xjyu79h {
+    padding: var(--astryx-space-3);
+  }
+
+  .xew49mq {
+    padding: var(--astryx-space-6);
+  }
+}
+
+@layer priority3 {
+  .x10hpsqq {
+    border-radius: 9999px;
+  }
+
+  .xjy1p6w {
+    border-radius: var(--astryx-radius-container);
+  }
+
+  .x15bly71 {
+    border-radius: var(--astryx-radius-element);
+  }
+
+  .x1jnr06f {
+    gap: 4px;
+  }
+
+  .ximursj {
+    gap: var(--astryx-space-2);
+  }
+
+  .x172gbdg {
+    gap: var(--astryx-space-3);
+  }
+
+  .x1b26bkr {
+    gap: var(--astryx-space-6);
+  }
+
+  .xi8qq1n {
+    gap: var(--astryx-space-8);
+  }
+
+  .x10im51j {
+    margin-block: 0;
+  }
+
+  .xxkmx1 {
+    margin-block: var(--astryx-space-6);
+  }
+
+  .x1hl2dhg {
+    text-decoration: none;
+  }
+}
+
+@layer priority4 {
+  .x6s0dn4 {
+    align-items: center;
+  }
+
+  .xjbqb8w {
+    background-color: #0000;
+  }
+
+  .x1q20d9l {
+    background-color: var(--astryx-accent);
+  }
+
+  .x10t7qge {
+    background-color: var(--astryx-error);
+  }
+
+  .x16gt4w8 {
+    background-color: var(--astryx-muted);
+  }
+
+  .x1n9ulxa {
+    background-color: var(--astryx-secondary);
+  }
+
+  .xz08xk {
+    background-color: var(--astryx-success);
+  }
+
+  .x1kajz4m {
+    background-color: var(--astryx-surface);
+  }
+
+  .x1vzrpq8 {
+    background-color: var(--astryx-warning);
+  }
+
+  .x118hpnp {
+    border-inline-start-color: var(--astryx-accent);
+  }
+
+  .x1gpeouf {
+    border-inline-start-color: var(--astryx-error);
+  }
+
+  .xn89zs6 {
+    border-inline-start-color: var(--astryx-secondary);
+  }
+
+  .x1msapes {
+    border-inline-start-color: var(--astryx-success);
+  }
+
+  .x1e01vt9 {
+    border-inline-start-color: var(--astryx-warning);
+  }
+
+  .x1t7ytsu {
+    border-inline-start-style: solid;
+  }
+
+  .x56jcm7 {
+    border-inline-start-width: 4px;
+  }
+
+  .xx8erdj {
+    box-shadow: var(--astryx-shadow);
+  }
+
+  .x9f619 {
+    box-sizing: border-box;
+  }
+
+  .x1xk6ftw {
+    color: var(--astryx-on-accent);
+  }
+
+  .x9bm28c {
+    color: var(--astryx-text);
+  }
+
+  .x1awj2ng {
+    color: #fff;
+  }
+
+  .x1ypdohk {
+    cursor: pointer;
+  }
+
+  .xrvj5dj {
+    display: grid;
+  }
+
+  .x1rg5ohu {
+    display: inline-block;
+  }
+
+  .x3nfvp2 {
+    display: inline-flex;
+  }
+
+  .xbh8q5q {
+    fill: none;
+  }
+
+  .x2lah0s {
+    flex-shrink: 0;
+  }
+
+  .xttdc2b {
+    font-family: var(--astryx-font);
+  }
+
+  .xboafo0 {
+    font-size: .75rem;
+  }
+
+  .x1lkfr7t {
+    font-size: 1.0625rem;
+  }
+
+  .xngnso2 {
+    font-size: 1.5rem;
+  }
+
+  .x1h833of {
+    font-size: 2.1875rem;
+  }
+
+  .x1weigxw {
+    font-size: 2.625rem;
+  }
+
+  .x3a5do {
+    font-size: var(--astryx-font-size-body);
+  }
+
+  .x1btsg3b {
+    font-size: var(--astryx-font-size-label);
+  }
+
+  .x88aly3 {
+    font-size: var(--astryx-heading-size, 1.8125rem);
+  }
+
+  .xo1l8bm {
+    font-weight: 400;
+  }
+
+  .xk50ysn {
+    font-weight: 500;
+  }
+
+  .x1s688f {
+    font-weight: 600;
+  }
+
+  .xjvrg09 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .x19i92ox {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
+  .xnby9oq {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl56j7k {
+    justify-content: center;
+  }
+
+  .x3d5eol {
+    line-height: 1.2381;
+  }
+
+  .x1qaoq4 {
+    line-height: 1.25714;
+  }
+
+  .xofdmnd {
+    line-height: 1.33333;
+  }
+
+  .x37zpob {
+    line-height: 1.4;
+  }
+
+  .x1fc57z9 {
+    line-height: 20px;
+  }
+
+  .x1u34134 {
+    line-height: var(--astryx-heading-line, 1.24138);
+  }
+
+  .xr0kew2 {
+    line-height: var(--astryx-line-body);
+  }
+
+  .x1672ciy {
+    line-height: var(--astryx-line-label);
+  }
+
+  .xj0a0fe {
+    overflow-wrap: anywhere;
+  }
+
+  .x73je2i {
+    stroke: currentColor;
+  }
+
+  .xvlca1e {
+    stroke-width: 2px;
+  }
+
+  .x2b8uid {
+    text-align: center;
+  }
+
+  .xp4054r {
+    text-align: end;
+  }
+
+  .xdpxx8g {
+    text-align: left;
+  }
+
+  .x1hr2gdg {
+    text-align: right;
+  }
+
+  .x1yc453h {
+    text-align: start;
+  }
+
+  .x1eo0hed {
+    transition-duration: var(--astryx-duration);
+  }
+
+  .x1e8aii2 {
+    transition-property: background-color, opacity;
+  }
+
+  .xxymvpz {
+    vertical-align: middle;
+  }
+
+  .xuxw1ft {
+    white-space: nowrap;
+  }
+}
+
+@layer priority5 {
+  .x9wr8bx {
+    border-top-color: var(--astryx-border-strong);
+  }
+
+  .x1m4ihsq {
+    border-top-color: var(--astryx-border);
+  }
+
+  .x13fuv20 {
+    border-top-style: solid;
+  }
+
+  .x178xt8z {
+    border-top-width: 1px;
+  }
+
+  .xlup9mm {
+    height: 16px;
+  }
+
+  .x1qx5ct2 {
+    height: 20px;
+  }
+
+  .xxk0z11 {
+    height: 24px;
+  }
+
+  .xdk7pt {
+    height: 8px;
+  }
+
+  .x193iq5w {
+    max-width: 100%;
+  }
+
+  .x1x1rfll {
+    max-width: none;
+  }
+
+  .x1fa9m1o {
+    max-width: var(--astryx-prose-width);
+  }
+
+  .x21xpn4 {
+    min-height: 32px;
+  }
+
+  .x1gg8mnh {
+    min-height: 44px;
+  }
+
+  .x1wxaq2x {
+    min-height: 48px;
+  }
+
+  .xeuugli {
+    min-width: 0;
+  }
+
+  .xh8yej3 {
+    width: 100%;
+  }
+
+  .x1kky2od {
+    width: 16px;
+  }
+
+  .xw4jnvo {
+    width: 20px;
+  }
+
+  .xvy4d1p {
+    width: 24px;
+  }
+
+  .x1xc55vz {
+    width: 8px;
+  }
+}

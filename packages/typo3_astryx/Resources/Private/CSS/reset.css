@@ -1,0 +1,8 @@
+@layer reset {
+  :where(.astryx-root, .astryx-preview, .ck-content) { font-family: var(--astryx-font); color: var(--astryx-text); font-size: var(--astryx-font-size-label); font-weight: 400; line-height: var(--astryx-line-label); }
+  :where(.astryx-root, .astryx-preview, .ck-content) *, :where(.astryx-root, .astryx-preview, .ck-content) *::before, :where(.astryx-root, .astryx-preview, .ck-content) *::after { box-sizing: border-box; }
+  :where(.astryx-root, .astryx-preview, .ck-content) :where(img,video) { max-inline-size: 100%; block-size: auto; }
+  :where(.astryx-root, .astryx-preview, .ck-content) :where(button,input,textarea,select) { font: inherit; }
+  :where(.astryx-root, .astryx-preview, .ck-content) :focus-visible { outline: 2px solid var(--astryx-accent); outline-offset: 3px; }
+  :where(.astryx-root, .astryx-preview, .ck-content) [hidden] { display: none !important; }
+}
