@@ -1,0 +1,5 @@
+@layer astryx-base {
+  .astryx-grid > * { min-inline-size: 0; }
+  @container (max-width: 39.99rem) { .astryx-grid { grid-template-columns: minmax(0,1fr) !important; } }
+  @supports not (container-type: inline-size) { @media (max-width: 45rem) { .astryx-grid { grid-template-columns: minmax(0,1fr) !important; } } }
+}

@@ -2,6 +2,10 @@
 
 Run Node commands from the Composer project root. Required build inputs are StyleX 0.19.1, its unplugin, Vite 7.3, Babel parser, Highlight.js 11.12, and the locked StyleX Connector source. The extension does not have a second node_modules installation.
 
+Store every block-owned style source in `ContentBlocks/ContentElements/<block-name>/src/`, including StyleX recipes and supporting CSS. Keep shared native-component recipes, tokens and themes under `Resources/Private/JavaScript/Stylex/`, and shared supporting CSS under `Resources/Private/CSS/`. Block `assets/` is publicly published; do not put compiler inputs there. The `src/` directory is a project convention, not automatic Content Blocks asset discovery.
+
+Import frontend block recipes from `Resources/Private/JavaScript/Main.entry.js` and frontend block CSS from the shared `main.css` aggregator. Import block preview CSS from `preview.entry.css`; preview-specific styles stay in the owning block's `src/preview.css`. All sources still compile through the same Vite pipeline into extension-wide bundles and one StyleX manifest. Use unique StyleX basenames to retain unambiguous aliases. Moving a recipe changes its canonical path-based manifest keys; rebuild and verify aliases/consumers. `Build/verify-style-ownership.mjs`, included in artifact verification, checks source placement, basename uniqueness and entrypoint reachability.
+
 ```sh
 node packages/typo3_astryx/Build/generate-theme-bridge.mjs
 npx vite build --config packages/typo3_astryx/Build/vite.config.mjs

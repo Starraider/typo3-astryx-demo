@@ -1,0 +1,3 @@
+@layer astryx-base {
+  .astryx-table-scroll { overflow-x: auto; }
+}

@@ -1,0 +1,11 @@
+@layer astryx-base {
+  .astryx-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.5rem; }
+}
+
+@layer astryx-base {
+ .astryx-card-grid[data-gap="small"] { gap: .75rem; }
+ .astryx-card-grid[data-gap="large"] { gap: 2rem; }
+ @container (min-width: 40rem) { .astryx-card-grid[data-columns="two"] { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+ @container (min-width: 54rem) { .astryx-card-grid[data-columns="three"] { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+ @container (min-width: 68rem) { .astryx-card-grid[data-columns="four"] { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+}

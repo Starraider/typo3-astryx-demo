@@ -1,0 +1,10 @@
+@layer astryx-base {
+  .astryx-carousel-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 0 1rem; list-style: none; }
+  .astryx-carousel-track > li { flex: 0 0 min(85%, 22rem); scroll-snap-align: start; }
+  .astryx-carousel-controls { display: flex; gap: .75rem; margin-block: 1rem; }
+  .astryx-carousel-controls button { min-block-size: 44px; min-inline-size: 44px; }
+}
+
+@layer astryx-base {
+ [data-edge-fade="1"] .astryx-carousel-track { mask-image: linear-gradient(to right,transparent,#000 1rem,#000 calc(100% - 1rem),transparent); }
+}

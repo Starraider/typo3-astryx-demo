@@ -1,0 +1,4 @@
+@layer astryx-base {
+  .astryx-preview { padding: 1rem; background: var(--astryx-surface); border-radius: 12px; }
+  .astryx-preview img { max-block-size: 12rem; object-fit: contain; }
+}

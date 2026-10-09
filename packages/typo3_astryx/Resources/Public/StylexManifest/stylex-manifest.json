@@ -12,11 +12,11 @@
     "static-conflicts",
     "null-clearing"
   ],
-  "generation": "4cf037dd916e8e13c2e7993e7b7fb9cd244f934b3106dc6f145a692421d26780",
+  "generation": "99421fd45682ef4a3ea1904ac2a12b94005de2e7901488e0ef6550802c52f13a",
   "artifacts": [
     {
       "path": "../Assets/astryx.css",
-      "sha256": "669956d512ab9a4d781200396380f66cc0f55c39a399aec4561b73d767f4f33c"
+      "sha256": "e788c45536c97561318efc3aa51e12ad7c57f3fcf276546361819828f3fe0400"
     },
     {
       "path": "../Assets/rte.css",
@@ -36,6 +36,242 @@
     }
   ],
   "styles": {
+    "AstryxGrid.columns_auto": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxGrid.columns_four": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxGrid.columns_three": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxGrid.columns_two": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "AstryxGrid.gap_large": {
+      "kind": "compiled",
+      "className": "xi8qq1n",
+      "properties": {
+        "kOIVth": "xi8qq1n"
+      }
+    },
+    "AstryxGrid.gap_normal": {
+      "kind": "compiled",
+      "className": "x1b26bkr",
+      "properties": {
+        "kOIVth": "x1b26bkr"
+      }
+    },
+    "AstryxGrid.gap_small": {
+      "kind": "compiled",
+      "className": "x172gbdg",
+      "properties": {
+        "kOIVth": "x172gbdg"
+      }
+    },
+    "AstryxGrid.ratio_33_66": {
+      "kind": "compiled",
+      "className": "xjvrg09",
+      "properties": {
+        "kumcoG": "xjvrg09"
+      }
+    },
+    "AstryxGrid.ratio_50_50": {
+      "kind": "compiled",
+      "className": "xnby9oq",
+      "properties": {
+        "kumcoG": "xnby9oq"
+      }
+    },
+    "AstryxGrid.ratio_66_33": {
+      "kind": "compiled",
+      "className": "x19i92ox",
+      "properties": {
+        "kumcoG": "x19i92ox"
+      }
+    },
+    "AstryxGrid.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xrvj5dj xeuugli",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "xrvj5dj",
+        "k7Eaqz": "xeuugli"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.columns_auto": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.columns_four": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.columns_three": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.columns_two": {
+      "kind": "compiled",
+      "className": "",
+      "properties": {}
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.gap_large": {
+      "kind": "compiled",
+      "className": "xi8qq1n",
+      "properties": {
+        "kOIVth": "xi8qq1n"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.gap_normal": {
+      "kind": "compiled",
+      "className": "x1b26bkr",
+      "properties": {
+        "kOIVth": "x1b26bkr"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.gap_small": {
+      "kind": "compiled",
+      "className": "x172gbdg",
+      "properties": {
+        "kOIVth": "x172gbdg"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.ratio_33_66": {
+      "kind": "compiled",
+      "className": "xjvrg09",
+      "properties": {
+        "kumcoG": "xjvrg09"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.ratio_50_50": {
+      "kind": "compiled",
+      "className": "xnby9oq",
+      "properties": {
+        "kumcoG": "xnby9oq"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.ratio_66_33": {
+      "kind": "compiled",
+      "className": "x19i92ox",
+      "properties": {
+        "kumcoG": "x19i92ox"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/container-two-col/src/AstryxGrid.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xrvj5dj xeuugli",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "k1xSpc": "xrvj5dj",
+        "k7Eaqz": "xeuugli"
+      }
+    },
+    "AstryxNotice.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xew49mq xjy1p6w x56jcm7 x1t7ytsu x1kajz4m",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kmVPX3": "xew49mq",
+        "kaIpWk": "xjy1p6w",
+        "k2ei4v": "x56jcm7",
+        "kVhnKS": "x1t7ytsu",
+        "kWkggS": "x1kajz4m"
+      }
+    },
+    "AstryxNotice.variant_accent": {
+      "kind": "compiled",
+      "className": "x118hpnp",
+      "properties": {
+        "kGJrpR": "x118hpnp"
+      }
+    },
+    "AstryxNotice.variant_error": {
+      "kind": "compiled",
+      "className": "x1gpeouf",
+      "properties": {
+        "kGJrpR": "x1gpeouf"
+      }
+    },
+    "AstryxNotice.variant_neutral": {
+      "kind": "compiled",
+      "className": "xn89zs6",
+      "properties": {
+        "kGJrpR": "xn89zs6"
+      }
+    },
+    "AstryxNotice.variant_success": {
+      "kind": "compiled",
+      "className": "x1msapes",
+      "properties": {
+        "kGJrpR": "x1msapes"
+      }
+    },
+    "AstryxNotice.variant_warning": {
+      "kind": "compiled",
+      "className": "x1e01vt9",
+      "properties": {
+        "kGJrpR": "x1e01vt9"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/notice/src/AstryxNotice.stylex.styles.root": {
+      "kind": "compiled",
+      "className": "xttdc2b xew49mq xjy1p6w x56jcm7 x1t7ytsu x1kajz4m",
+      "properties": {
+        "kMv6JI": "xttdc2b",
+        "kmVPX3": "xew49mq",
+        "kaIpWk": "xjy1p6w",
+        "k2ei4v": "x56jcm7",
+        "kVhnKS": "x1t7ytsu",
+        "kWkggS": "x1kajz4m"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/notice/src/AstryxNotice.stylex.styles.variant_accent": {
+      "kind": "compiled",
+      "className": "x118hpnp",
+      "properties": {
+        "kGJrpR": "x118hpnp"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/notice/src/AstryxNotice.stylex.styles.variant_error": {
+      "kind": "compiled",
+      "className": "x1gpeouf",
+      "properties": {
+        "kGJrpR": "x1gpeouf"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/notice/src/AstryxNotice.stylex.styles.variant_neutral": {
+      "kind": "compiled",
+      "className": "xn89zs6",
+      "properties": {
+        "kGJrpR": "xn89zs6"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/notice/src/AstryxNotice.stylex.styles.variant_success": {
+      "kind": "compiled",
+      "className": "x1msapes",
+      "properties": {
+        "kGJrpR": "x1msapes"
+      }
+    },
+    "typo3_astryx/ContentBlocks/ContentElements/notice/src/AstryxNotice.stylex.styles.variant_warning": {
+      "kind": "compiled",
+      "className": "x1e01vt9",
+      "properties": {
+        "kGJrpR": "x1e01vt9"
+      }
+    },
     "AstryxBadge.root": {
       "kind": "compiled",
       "className": "xttdc2b x3nfvp2 x6s0dn4 xl56j7k x9f619 x1qx5ct2 xxymvpz x1jnr06f x1xq1gxn x10hpsqq xboafo0 xk50ysn x1fc57z9 xuxw1ft",
@@ -448,148 +684,6 @@
         "kLZC3w": "x1m4ihsq"
       }
     },
-    "AstryxGrid.columns_auto": {
-      "kind": "compiled",
-      "className": "",
-      "properties": {}
-    },
-    "AstryxGrid.columns_four": {
-      "kind": "compiled",
-      "className": "",
-      "properties": {}
-    },
-    "AstryxGrid.columns_three": {
-      "kind": "compiled",
-      "className": "",
-      "properties": {}
-    },
-    "AstryxGrid.columns_two": {
-      "kind": "compiled",
-      "className": "",
-      "properties": {}
-    },
-    "AstryxGrid.gap_large": {
-      "kind": "compiled",
-      "className": "xi8qq1n",
-      "properties": {
-        "kOIVth": "xi8qq1n"
-      }
-    },
-    "AstryxGrid.gap_normal": {
-      "kind": "compiled",
-      "className": "x1b26bkr",
-      "properties": {
-        "kOIVth": "x1b26bkr"
-      }
-    },
-    "AstryxGrid.gap_small": {
-      "kind": "compiled",
-      "className": "x172gbdg",
-      "properties": {
-        "kOIVth": "x172gbdg"
-      }
-    },
-    "AstryxGrid.ratio_33_66": {
-      "kind": "compiled",
-      "className": "xjvrg09",
-      "properties": {
-        "kumcoG": "xjvrg09"
-      }
-    },
-    "AstryxGrid.ratio_50_50": {
-      "kind": "compiled",
-      "className": "xnby9oq",
-      "properties": {
-        "kumcoG": "xnby9oq"
-      }
-    },
-    "AstryxGrid.ratio_66_33": {
-      "kind": "compiled",
-      "className": "x19i92ox",
-      "properties": {
-        "kumcoG": "x19i92ox"
-      }
-    },
-    "AstryxGrid.root": {
-      "kind": "compiled",
-      "className": "xttdc2b xrvj5dj xeuugli",
-      "properties": {
-        "kMv6JI": "xttdc2b",
-        "k1xSpc": "xrvj5dj",
-        "k7Eaqz": "xeuugli"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.columns_auto": {
-      "kind": "compiled",
-      "className": "",
-      "properties": {}
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.columns_four": {
-      "kind": "compiled",
-      "className": "",
-      "properties": {}
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.columns_three": {
-      "kind": "compiled",
-      "className": "",
-      "properties": {}
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.columns_two": {
-      "kind": "compiled",
-      "className": "",
-      "properties": {}
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.gap_large": {
-      "kind": "compiled",
-      "className": "xi8qq1n",
-      "properties": {
-        "kOIVth": "xi8qq1n"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.gap_normal": {
-      "kind": "compiled",
-      "className": "x1b26bkr",
-      "properties": {
-        "kOIVth": "x1b26bkr"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.gap_small": {
-      "kind": "compiled",
-      "className": "x172gbdg",
-      "properties": {
-        "kOIVth": "x172gbdg"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.ratio_33_66": {
-      "kind": "compiled",
-      "className": "xjvrg09",
-      "properties": {
-        "kumcoG": "xjvrg09"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.ratio_50_50": {
-      "kind": "compiled",
-      "className": "xnby9oq",
-      "properties": {
-        "kumcoG": "xnby9oq"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.ratio_66_33": {
-      "kind": "compiled",
-      "className": "x19i92ox",
-      "properties": {
-        "kumcoG": "x19i92ox"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxGrid.stylex.styles.root": {
-      "kind": "compiled",
-      "className": "xttdc2b xrvj5dj xeuugli",
-      "properties": {
-        "kMv6JI": "xttdc2b",
-        "k1xSpc": "xrvj5dj",
-        "k7Eaqz": "xeuugli"
-      }
-    },
     "AstryxHeading.align_center": {
       "kind": "compiled",
       "className": "x2b8uid",
@@ -818,100 +912,6 @@
       "properties": {
         "kzqmXN": "x1kky2od",
         "kZKoxP": "xlup9mm"
-      }
-    },
-    "AstryxNotice.root": {
-      "kind": "compiled",
-      "className": "xttdc2b xew49mq xjy1p6w x56jcm7 x1t7ytsu x1kajz4m",
-      "properties": {
-        "kMv6JI": "xttdc2b",
-        "kmVPX3": "xew49mq",
-        "kaIpWk": "xjy1p6w",
-        "k2ei4v": "x56jcm7",
-        "kVhnKS": "x1t7ytsu",
-        "kWkggS": "x1kajz4m"
-      }
-    },
-    "AstryxNotice.variant_accent": {
-      "kind": "compiled",
-      "className": "x118hpnp",
-      "properties": {
-        "kGJrpR": "x118hpnp"
-      }
-    },
-    "AstryxNotice.variant_error": {
-      "kind": "compiled",
-      "className": "x1gpeouf",
-      "properties": {
-        "kGJrpR": "x1gpeouf"
-      }
-    },
-    "AstryxNotice.variant_neutral": {
-      "kind": "compiled",
-      "className": "xn89zs6",
-      "properties": {
-        "kGJrpR": "xn89zs6"
-      }
-    },
-    "AstryxNotice.variant_success": {
-      "kind": "compiled",
-      "className": "x1msapes",
-      "properties": {
-        "kGJrpR": "x1msapes"
-      }
-    },
-    "AstryxNotice.variant_warning": {
-      "kind": "compiled",
-      "className": "x1e01vt9",
-      "properties": {
-        "kGJrpR": "x1e01vt9"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.root": {
-      "kind": "compiled",
-      "className": "xttdc2b xew49mq xjy1p6w x56jcm7 x1t7ytsu x1kajz4m",
-      "properties": {
-        "kMv6JI": "xttdc2b",
-        "kmVPX3": "xew49mq",
-        "kaIpWk": "xjy1p6w",
-        "k2ei4v": "x56jcm7",
-        "kVhnKS": "x1t7ytsu",
-        "kWkggS": "x1kajz4m"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_accent": {
-      "kind": "compiled",
-      "className": "x118hpnp",
-      "properties": {
-        "kGJrpR": "x118hpnp"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_error": {
-      "kind": "compiled",
-      "className": "x1gpeouf",
-      "properties": {
-        "kGJrpR": "x1gpeouf"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_neutral": {
-      "kind": "compiled",
-      "className": "xn89zs6",
-      "properties": {
-        "kGJrpR": "xn89zs6"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_success": {
-      "kind": "compiled",
-      "className": "x1msapes",
-      "properties": {
-        "kGJrpR": "x1msapes"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/Stylex/AstryxNotice.stylex.styles.variant_warning": {
-      "kind": "compiled",
-      "className": "x1e01vt9",
-      "properties": {
-        "kGJrpR": "x1e01vt9"
       }
     },
     "AstryxStatusDot.root": {

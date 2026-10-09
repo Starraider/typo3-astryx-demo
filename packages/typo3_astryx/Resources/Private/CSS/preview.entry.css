@@ -1,9 +1,4 @@
 @import './rte.entry.css';
-@layer astryx-base { .astryx-preview { padding: 1rem; background: var(--astryx-surface); border-radius: 12px; } .astryx-preview img { max-block-size: 12rem; object-fit: contain; } }
-@layer astryx-base {
-  .astryx-classic-gallery-preview { display: grid; grid-template-columns: repeat(auto-fit,minmax(8rem,1fr)); gap: 1rem; list-style: none; padding: 0; }
-  .astryx-classic-gallery-preview li { display: grid; align-content: start; gap: .25rem; min-inline-size: 0; }
-  .astryx-classic-gallery-preview img { inline-size: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: var(--astryx-radius-container); }
-}
-
-.astryx-preview .astryx-code-preview { margin: 0; max-block-size: 12rem; overflow: auto; padding: .75rem; border: 1px solid var(--astryx-border); border-radius: var(--astryx-radius-element); background: var(--astryx-surface); font: .75rem/1.5 var(--astryx-font-code); white-space: pre; }
+@import './preview-base.css';
+@import '../../../ContentBlocks/ContentElements/classic-gallery/src/preview.css';
+@import '../../../ContentBlocks/ContentElements/code-block/src/preview.css';

@@ -1,0 +1,5 @@
+@layer astryx-base {
+  .astryx-classic-gallery-preview { display: grid; grid-template-columns: repeat(auto-fit,minmax(8rem,1fr)); gap: 1rem; list-style: none; padding: 0; }
+  .astryx-classic-gallery-preview li { display: grid; align-content: start; gap: .25rem; min-inline-size: 0; }
+  .astryx-classic-gallery-preview img { inline-size: 100%; aspect-ratio: 3/2; object-fit: cover; border-radius: var(--astryx-radius-container); }
+}

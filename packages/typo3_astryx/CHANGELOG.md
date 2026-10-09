@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Colocate block-owned StyleX recipes and supporting CSS in each Content Block's private `src/` directory; retain shared component recipes, tokens and themes centrally and validate source ownership during artifact verification.
 - Add TYPO3's core heading Alignment and Link fields to all 20 content types; Default aligns left, and linked headings use the theme link color.
 - Share heading rendering across Card, Hero, Classic Gallery, Code Block, Divider and legacy elements; replace Hero's editor-facing heading alignment control while retaining its stored legacy values.
 - Add a Classic Gallery lightbox with original image proportions, previous/next navigation, image counter, FAL captions and keyboard controls.

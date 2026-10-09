@@ -1,5 +1,5 @@
 import * as stylex from '@stylexjs/stylex';
-import {tokens} from './tokens.stylex.js';
+import {tokens} from '../../../../Resources/Private/JavaScript/Stylex/tokens.stylex.js';
 // Token import guarantees JavaScript-defined defaults reach the compiled output.
 export const styles = stylex.create({
   "root": {

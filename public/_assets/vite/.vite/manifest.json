@@ -21,7 +21,7 @@
     "src": "vendor/skom/typo3-astryx/Resources/Private/Fonts/Figtree-latin.woff2"
   },
   "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Main.entry.js": {
-    "file": "assets/Main.entry-LZCT2MfI.js",
+    "file": "assets/Main.entry-Bj5JuXT_.js",
     "name": "Main.entry",
     "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Main.entry.js",
     "isEntry": true,
@@ -29,7 +29,7 @@
       "vendor/skom/typo3-astryx/Resources/Private/JavaScript/code-highlighter.js"
     ],
     "css": [
-      "assets/Main-DtK_Eatp.css"
+      "assets/Main-BJ2dBVhW.css"
     ],
     "assets": [
       "assets/Figtree-latin-ext-C5tEHAKb.woff2",
