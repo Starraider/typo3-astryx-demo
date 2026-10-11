@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Fix P2-07: propagate caller image sizes through Image/Media and Card slots; use native lazy auto-sizes for actual nested/responsive slots with conservative component fallbacks. Preserve eager policy, FAL crops, source candidates, dimensions and captions; add rendered candidate/byte regressions.
+
 - Fix P2-05: suppress native Heading output when both text and the resolved default slot are empty or whitespace-only. Preserve additive slot markup, escaped text, semantic levels, Typolink and independent subtitles; cover native and scalar-partial empty calls in rendered regressions.
 
 - Fix P2-01: allocate request-scoped occurrence namespaces for repeated content, navigation, native tree lists, Accordions, Carousels and Galleries. Keep one canonical `c<uid>` anchor and distinct repeated wrappers; use complete menu branch paths and independent native Accordion groups. Add real shortcut/nested-container regressions and opt-in authored HTML/plugin ID diagnostics.

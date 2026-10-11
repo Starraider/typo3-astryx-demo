@@ -1,5 +1,6 @@
 <f:layout name="Default" />
 <f:section name="Main">
+    <f:if condition="!{imageSizes}"><f:variable name="imageSizes" value="{ax:imageSizes(profile: 'carousel')}" /></f:if>
     <f:render partial="ContentElements/Header" arguments="{data: data}" />
     <section class="astryx-carousel" data-astryx-carousel data-edge-fade="{data.edge_fade}" aria-label="{data.header}">
         <f:variable name="paginationOnTop" value="0" />
@@ -7,7 +8,7 @@
         <f:if condition="{paginationOnTop}"><f:render section="Pagination" arguments="{data: data, astryxOccurrence: astryxOccurrence}" /></f:if>
         <ul id="{astryxOccurrence.namespace}-carousel" class="astryx-carousel-track" tabindex="0">
             <f:for each="{data.items}" as="item">
-                <li><astryx:card title="{item.title}" body="{item.body}" href="{item.link}" label="{item.label}" badge="{item.badge}"><f:fragment name="media"><f:for each="{item.image}" as="file"><f:render partial="Media/Image" arguments="{file: file}" /></f:for></f:fragment></astryx:card></li>
+                <li><astryx:card title="{item.title}" body="{item.body}" href="{item.link}" label="{item.label}" badge="{item.badge}"><f:fragment name="media"><f:for each="{item.image}" as="file"><f:render partial="Media/Image" arguments="{file: file, sizes: imageSizes}" /></f:for></f:fragment></astryx:card></li>
             </f:for>
         </ul>
         <f:if condition="!{paginationOnTop}"><f:render section="Pagination" arguments="{data: data, astryxOccurrence: astryxOccurrence}" /></f:if>

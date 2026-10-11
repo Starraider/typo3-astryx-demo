@@ -1,5 +1,6 @@
 <f:layout name="Default" />
 <f:section name="Main">
+    <f:if condition="!{imageSizes}"><f:variable name="imageSizes" value="{ax:imageSizes(profile: 'textmedia')}" /></f:if>
     <f:render partial="ContentElements/Header" arguments="{data: data}" />
     <f:variable name="orientation" value="{ax:orientation(value: data.imageorient)}" />
     <f:variable name="textWidth" value="prose" />
@@ -8,10 +9,10 @@
         <f:if condition="{data.assets} || {data.image}">
         <div class="astryx-media">
             <f:for each="{data.assets}" as="file">
-                <f:render partial="Media/Media" arguments="{file: file, aspectRatio: data.aspect_ratio, poster: data.poster.0}" />
+                <f:render partial="Media/Media" arguments="{file: file, aspectRatio: data.aspect_ratio, poster: data.poster.0, sizes: imageSizes}" />
             </f:for>
             <f:for each="{data.image}" as="file">
-                <f:render partial="Media/Image" arguments="{file: file, aspectRatio: data.aspect_ratio}" />
+                <f:render partial="Media/Image" arguments="{file: file, aspectRatio: data.aspect_ratio, sizes: imageSizes}" />
             </f:for>
         </div>
         </f:if>

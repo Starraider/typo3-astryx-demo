@@ -251,3 +251,14 @@ node packages/typo3_astryx/Tests/Browser/identifiers.mjs
 ```
 
 This uses actual TYPO3 rendering and warm page-cache responses for originals, shortcuts, all six repeated container variants and nested lazy areas. Chromium/WebKit check both asset pipelines at 1440/390px, with JavaScript enabled/disabled and reduced motion. Override `ASTRYX_TEST_URL`, `ASTRYX_VITE_ASSET_URL`, `ASTRYX_IDENTIFIERS_FIXTURE`, `ASTRYX_TEST_BROWSERS` or `ASTRYX_TEST_OUTPUT` as needed. Screenshots and JSON evidence default to `/tmp/astryx-identifiers-evidence`. The fixture stores record IDs privately in `var/identifiers-fixture.json`; its page-specific template is excluded from releases with the other tests. See [OccurrenceIdentifiers.md](OccurrenceIdentifiers.md) for the public contract and the independent read-only authored/plugin diagnostic.
+
+
+Responsive image slot regression (P2-07):
+
+```sh
+# Integration project, read-only existing FAL references and actual TYPO3 Fluid rendering.
+ddev exec php packages/typo3_astryx/Tests/Functional/responsive-images.php --html > /tmp/astryx-responsive-images-fixtures.html
+node packages/typo3_astryx/Tests/Browser/responsive-images.mjs
+```
+
+The functional check renders 38 consumers: three Card variants, all Card Grid column/gap choices and a single item, Carousel, one–six-column Gallery and Image Only (plus invalid Image Only fallback), ten Textmedia orientations and its assets-image path. It checks explicit/empty sizes, eager/lazy propagation, the Card slot, FAL metadata and escaped captions. Chromium/WebKit measure actual slots, selected srcset widths and image response-body bytes with packaged/consuming Vite CSS, desktop/mobile/nested hosts and DPR 1/2. Lazy loading stays enabled during measurement; per-consumer query strings avoid reuse of another consumer's cached larger candidate. Additional resolution checks cover Neutral/Stone/Ocean in light/dark modes. The cold-request comparison covers the old/new sizes contract and no-JavaScript output in Stone dark mode; live `/code/images` checks verify loaded assets. Byte counts are response-body sizes, not total network transfer including headers. No-JavaScript rendering can fetch a fallback before layout and a second `auto` candidate; its byte reduction is not asserted. Set `ASTRYX_RESPONSIVE_IMAGES_HTML`, `ASTRYX_RESPONSIVE_IMAGES_PAGE`, `ASTRYX_TEST_URL`, `ASTRYX_TEST_BROWSERS` or `ASTRYX_TEST_OUTPUT` to override defaults; evidence defaults to `/tmp/astryx-responsive-images-evidence`. `ASTRYX_RESPONSIVE_IMAGES_COMPARISON_ONLY=1` runs just the comparison, theme and live-page checks, retaining any earlier matrix report.

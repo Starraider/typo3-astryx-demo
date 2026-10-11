@@ -1,5 +1,6 @@
 <f:layout name="Default" />
 <f:section name="Main">
+    <f:if condition="!{imageSizes}"><f:variable name="imageSizes" value="{ax:imageSizes(profile: 'gallery')}" /></f:if>
     <section class="astryx-classic-gallery" data-astryx-classic-gallery data-columns="{data.columns}" data-gallery-count-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.count', default: 'Images shown: %s')}">
         <header class="astryx-classic-gallery-header">
             <f:if condition="{data.subheader} || ({data.header} && {data.header_layout} != 100)">
@@ -20,7 +21,7 @@
                             <f:variable name="srcset" value="{f:uri.image(image: file, width: '480')} 480w, {f:uri.image(image: file, width: '960')} 960w, {f:uri.image(image: file, width: '1600')} 1600w" />
                             <f:link.external uri="{f:uri.image(image: file, crop: false)}" defaultScheme="" class="astryx-classic-gallery-open" additionalAttributes="{'data-gallery-open': '', 'data-gallery-caption': file.description}">
                                 <span class="astryx-sr-only"><f:translate key="LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.open" default="Open image" /> {file.alternative}</span>
-                                <f:image image="{file}" width="1600" loading="lazy" decoding="async" additionalAttributes="{srcset: srcset, sizes: '(min-width: 75rem) 72rem, 100vw'}" />
+                                <f:image image="{file}" width="1600" loading="lazy" decoding="async" additionalAttributes="{srcset: srcset, sizes: 'auto, {imageSizes}'}" />
                             </f:link.external>
                         </li>
                     </f:if>
