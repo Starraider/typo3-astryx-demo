@@ -1,0 +1,56 @@
+name: Publish to TER
+
+on:
+  push:
+    tags:
+      - '[0-9]*.[0-9]*.[0-9]*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release version tag to publish (e.g. 0.1.0)'
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish Extension to TER
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP and Tailor
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: intl, mbstring, pdo_sqlite, simplexml, xml, zip
+          tools: composer:v2, tailor
+          coverage: none
+
+      - name: Check tag and manifests match
+        env:
+          RELEASE_VERSION: ${{ github.event.inputs.tag || github.ref_name }}
+        run: |
+          [[ "$RELEASE_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          php -r '$c = json_decode(file_get_contents("composer.json"), true, 512, JSON_THROW_ON_ERROR); exit(($c["extra"]["typo3/cms"]["version"] ?? "") === getenv("RELEASE_VERSION") ? 0 : 1);'
+          php -r '$c = json_decode(file_get_contents("composer.json"), true, 512, JSON_THROW_ON_ERROR); $_EXTKEY = $c["extra"]["typo3/cms"]["extension-key"]; include "ext_emconf.php"; exit(($EM_CONF[$_EXTKEY]["version"] ?? "") === getenv("RELEASE_VERSION") ? 0 : 1);'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify metadata and StyleX artifacts
+        run: |
+          composer validate --strict
+          node Build/verify-style-ownership.mjs
+          node Build/verify-artifacts.mjs
+
+      - name: Publish to TER
+        env:
+          TYPO3_API_TOKEN: ${{ secrets.TYPO3_API_TOKEN }}
+          RELEASE_VERSION: ${{ github.event.inputs.tag || github.ref_name }}
+        run: |
+          test -n "$TYPO3_API_TOKEN"
+          tailor ter:publish "$RELEASE_VERSION" typo3_astryx --comment="Release $RELEASE_VERSION"

@@ -29,7 +29,7 @@ with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=
     for source in sorted(extension.rglob('*')):
         if not source.is_file():continue
         relative=source.relative_to(extension)
-        if any(part in {'Tests','vendor','node_modules','.git','.DS_Store','__pycache__'} for part in relative.parts):continue
+        if any(part in {'Tests','vendor','node_modules','.git','.github','.DS_Store','__pycache__'} for part in relative.parts):continue
         for parent in relative.parents:
             if parent.as_posix()!='.':directories.add('typo3_astryx/'+parent.as_posix()+'/')
     for directory in sorted(directories):
@@ -37,7 +37,7 @@ with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=
     for source in sorted(extension.rglob('*')):
         if not source.is_file():continue
         relative=source.relative_to(extension)
-        if any(part in {'Tests','vendor','node_modules','.git','.DS_Store','__pycache__'} for part in relative.parts):continue
+        if any(part in {'Tests','vendor','node_modules','.git','.github','.DS_Store','__pycache__'} for part in relative.parts):continue
         if relative.suffix in {'.zip','.gz','.log','.sql'} and relative.name!='ext_tables.sql':continue
         content=source.read_bytes()
         if relative.as_posix()=='composer.json':

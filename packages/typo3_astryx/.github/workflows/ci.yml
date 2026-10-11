@@ -1,0 +1,58 @@
+name: Extension CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    name: PHP ${{ matrix.php }} Quality Checks
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.3', '8.4']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: intl, mbstring, pdo_sqlite, simplexml, xml, zip
+          tools: composer:v2
+          coverage: none
+
+      - name: Validate Composer metadata
+        run: composer validate --strict
+
+      - name: Lint PHP syntax
+        run: git ls-files -z '*.php' | xargs -0 -r -n1 php -l
+
+      - name: Validate XLIFF XML files
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-utils
+          find Resources/Private/Language ContentBlocks -name '*.xlf' -print0 | xargs -0 -r -n1 xmllint --noout
+
+  artifacts:
+    name: Verify StyleX Artifacts & Ownership
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify Style Ownership
+        run: node Build/verify-style-ownership.mjs
+
+      - name: Verify Build Artifacts & Checksums
+        run: node Build/verify-artifacts.mjs

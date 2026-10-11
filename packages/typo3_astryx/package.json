@@ -1,6 +1,6 @@
 {
   "name": "@skom/typo3-astryx",
-  "version": "0.1.0-rc.2",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "Sources compile from the consuming TYPO3 project root",

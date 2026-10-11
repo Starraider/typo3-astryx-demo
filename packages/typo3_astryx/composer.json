@@ -5,9 +5,17 @@
   "license": "GPL-2.0-or-later",
   "authors": [
     {
-      "name": "Sven Kalbhenn"
+      "name": "Sven Kalbhenn",
+      "email": "sven@skom.de",
+      "role": "Developer"
     }
   ],
+  "homepage": "https://github.com/Starraider/typo3-astryx",
+  "support": {
+    "issues": "https://github.com/Starraider/typo3-astryx/issues",
+    "source": "https://github.com/Starraider/typo3-astryx",
+    "docs": "https://docs.typo3.org/p/skom/typo3-astryx/main/en-us/"
+  },
   "require": {
     "php": ">=8.3 <8.5",
     "typo3/cms-core": "~14.3.0",
@@ -16,7 +24,7 @@
     "typo3/cms-rte-ckeditor": "~14.3.0",
     "friendsoftypo3/content-blocks": "^2.4.10",
     "b13/container": "^4.1",
-    "skom/stylex-connector": "dev-main",
+    "skom/stylex-connector": "^1.0 || dev-main",
     "praetorius/vite-asset-collector": "^1.18"
   },
   "conflict": {
@@ -30,9 +38,18 @@
       "Skom\\Typo3Astryx\\": "Classes/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Skom\\Typo3Astryx\\Tests\\": "Tests/"
+    }
+  },
   "extra": {
     "typo3/cms": {
-      "extension-key": "typo3_astryx"
+      "extension-key": "typo3_astryx",
+      "version": "0.1.0",
+      "Package": {
+        "providesPackages": {}
+      }
     }
   },
   "archive": {
@@ -41,7 +58,8 @@
       "/Documentation/Validation-private",
       "/node_modules",
       "/vendor",
-      "/.git"
+      "/.git",
+      "/.github"
     ]
   }
 }

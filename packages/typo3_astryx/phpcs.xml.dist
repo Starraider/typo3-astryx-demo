@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="TYPO3 Astryx PHPCS check">
+  <description>PSR-12 coding standard check for TYPO3 Astryx.</description>
+  <file>Classes</file>
+  <file>Configuration</file>
+  <file>Tests</file>
+  <arg name="extensions" value="php"/>
+  <rule ref="PSR12"/>
+</ruleset>

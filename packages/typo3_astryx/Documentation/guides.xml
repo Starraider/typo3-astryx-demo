@@ -6,15 +6,15 @@
 >
     <extension class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension"
                project-home="https://astryx.atmeta.com"
-               project-repository="https://github.com/skom/typo3-astryx"
-               project-issues="https://github.com/skom/typo3-astryx/issues"
-               edit-on-github="skom/typo3-astryx"
+               project-repository="https://github.com/Starraider/typo3-astryx"
+               project-issues="https://github.com/Starraider/typo3-astryx/issues"
+               edit-on-github="Starraider/typo3-astryx"
                edit-on-github-branch="main"
                typo3-core-preferred="14"
                interlink-shortcode="skom/typo3-astryx"
     />
     <project title="TYPO3 Astryx"
-             version="0.1.0-rc.2"
+             version="0.1.0"
              copyright="2025-2026 Sven Kalbhenn"
     />
 </guides>

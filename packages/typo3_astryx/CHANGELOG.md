@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.0 - 2026-10-11
 
 - Fix P2-07: propagate caller image sizes through Image/Media and Card slots; use native lazy auto-sizes for actual nested/responsive slots with conservative component fallbacks. Preserve eager policy, FAL crops, source candidates, dimensions and captions; add rendered candidate/byte regressions.
 

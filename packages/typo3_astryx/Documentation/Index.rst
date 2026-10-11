@@ -11,7 +11,7 @@ TYPO3 Astryx
     skom/typo3-astryx
 
 :Version:
-    0.1.0-rc.2
+    0.1.0
 
 :Language:
     en
