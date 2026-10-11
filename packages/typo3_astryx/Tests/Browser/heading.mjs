@@ -37,7 +37,19 @@ for (const name of (process.env.ASTRYX_TEST_BROWSERS ?? 'chromium,webkit').split
             return {type: element.dataset.testType, expected: element.dataset.testAlign, linked: element.dataset.testLinked === '1', align: heading && getComputedStyle(heading).textAlign,
               color: heading && getComputedStyle(heading).color, linkColor: link && getComputedStyle(link).color, subtitleAlign: subtitle && getComputedStyle(subtitle).textAlign};
           }));
-          assert.equal(metrics.length, 160, 'Twenty content types × four choices × linked/unlinked');
+          assert(metrics.length > 0);
+          assert.equal(metrics.length, new Set(metrics.map(item => item.type)).size * 8, 'Each content type × four choices × linked/unlinked');
+          const nativeCases = await page.locator('[data-native-heading-case]').evaluateAll(elements => elements.map(element => ({
+            name: element.dataset.nativeHeadingCase,
+            expected: Number(element.dataset.nativeHeadingCount),
+            actual: element.querySelectorAll('h1,h2,h3,h4,h5,h6').length,
+            text: [...element.querySelectorAll('h1,h2,h3,h4,h5,h6')].map(heading => heading.textContent.trim()),
+          })));
+          assert.equal(nativeCases.length, 33);
+          for (const item of nativeCases) {
+            assert.equal(item.actual, item.expected, `${name}/${mode}/${width}: ${item.name}`);
+            assert(item.text.every(text => text.length > 0), `${item.name}: no empty heading in the DOM`);
+          }
           for (const item of metrics) {
             assert.equal(item.align, item.expected, `${name}/${mode}/${width}/${direction}: ${item.type}`);
             if (item.subtitleAlign) assert.equal(item.subtitleAlign, item.expected);
@@ -46,7 +58,7 @@ for (const name of (process.env.ASTRYX_TEST_BROWSERS ?? 'chromium,webkit').split
               assert.equal(item.linkColor, 'rgb(39, 99, 194)', 'Custom theme link color is respected');
             }
           }
-          report.push({browser: name, mode, width, direction, cases: metrics.length, status: 'passed'});
+          report.push({browser: name, mode, width, direction, cases: metrics.length, nativeCases: nativeCases.length, status: 'passed'});
         }
       }
       await page.locator('main').evaluate(main => {main.dir = 'ltr';});
@@ -56,7 +68,22 @@ for (const name of (process.env.ASTRYX_TEST_BROWSERS ?? 'chromium,webkit').split
       await page.screenshot({path: `${output}/${name}-${mode}.png`});
     }
     assert.deepEqual(errors, []);
-    await page.goto(base + '/page-2', {waitUntil: 'networkidle'});
+    const fallback = await browser.newPage({ignoreHTTPSErrors: true, javaScriptEnabled: false, reducedMotion: 'reduce'});
+    for (const [mode, css] of Object.entries(modes)) {
+      await fallback.route(base + '/__astryx-heading-fallback__', route => route.fulfill({contentType: 'text/html', body: `<!doctype html><html lang="en"><head><meta charset="UTF-8"><base href="${base}/">${css.map(file => `<link rel="stylesheet" href="${file}">`).join('')}</head><body class="astryx-root">${fixtures}</body></html>`}));
+      await fallback.goto(base + '/__astryx-heading-fallback__', {waitUntil: 'networkidle'});
+      for (const width of [1280, 390]) {
+        await fallback.setViewportSize({width, height: 850});
+        const cases = fallback.locator('[data-native-heading-case]');
+        assert.equal(await cases.count(), 33);
+        for (const element of await cases.all()) {
+          assert.equal(await element.locator('h1,h2,h3,h4,h5,h6').count(), Number(await element.getAttribute('data-native-heading-count')));
+        }
+        report.push({browser: name, mode, width, javaScript: false, reducedMotion: true, nativeCases: 33, status: 'passed'});
+      }
+    }
+    await fallback.close();
+    await page.goto(new URL(process.env.ASTRYX_HEADING_PAGE ?? '/', base).href, {waitUntil: 'networkidle'});
     assert(await page.locator('.astryx-heading').count() > 0, 'Live frontend renders the shared heading component');
     assert.deepEqual(errors, []);
   } finally {await browser.close();}

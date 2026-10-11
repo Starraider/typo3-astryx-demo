@@ -25,7 +25,7 @@ $request = (new ServerRequest('https://typo3-astryx.ddev.site/typo3/'))->withAtt
 $request = $request->withAttribute('normalizedParams', NormalizedParams::createFromRequest($request));
 $compiler = GeneralUtility::makeInstance(FormDataCompiler::class);
 $root = dirname(__DIR__, 2);
-$types = ['menu_sitemap','menu_subpages','shortcut','html'];
+$types = ['menu_sitemap','menu_subpages','menu_pages','shortcut','html'];
 foreach (glob($root . '/ContentBlocks/ContentElements/*/config.yaml') as $path) $types[] = Yaml::parseFile($path)['typeName'];
 foreach ($types as $type) {
     $result = $compiler->compile(['request'=>$request,'command'=>'new','tableName'=>'tt_content','vanillaUid'=>1,'defaultValues'=>['tt_content'=>['CType'=>$type]]], GeneralUtility::makeInstance(TcaDatabaseRecord::class));
@@ -36,4 +36,4 @@ foreach ($types as $type) {
     if ($columns['header_position']['label'] !== 'Alignment' || $columns['header_link']['label'] !== 'Link') throw new RuntimeException('Wrong translated labels: ' . $type);
     if ($type === 'astryx_hero' && isset($columns['astryx_hero_alignment'])) throw new RuntimeException('Duplicate Hero alignment control remains visible.');
 }
-echo "Backend forms: all 20 content types expose Alignment and Link with the expected labels/options; Hero shows one alignment control.\n";
+echo "Backend forms: " . count($types) . " content types expose Alignment and Link with the expected labels/options; Hero shows one alignment control.\n";

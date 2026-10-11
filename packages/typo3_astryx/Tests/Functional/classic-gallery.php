@@ -58,11 +58,12 @@ $xpath = new DOMXPath($document);
 if ($xpath->query('//li[@data-gallery-category]')->length !== 11 || $xpath->query('//img[@srcset]')->length !== 11) {
     throw new RuntimeException('Gallery must render all eleven images with responsive sources');
 }
-if ($xpath->query('//button[@aria-controls="gallery9001" and @aria-pressed="true"]')->length !== 1) {
+$listId = $xpath->query('//ul[contains(@class, "astryx-classic-gallery-tiles")]')->item(0)->getAttribute('id');
+if ($xpath->query('//button[@aria-controls="' . $listId . '" and @aria-pressed="true"]')->length !== 1) {
     throw new RuntimeException('Missing accessible All filter');
 }
 $links = $xpath->query('//a[@data-gallery-open]');
-if ($links->length !== 11 || $xpath->query('//dialog[@id="galleryLightbox9001"]')->length !== 1) {
+if ($links->length !== 11 || $xpath->query('//dialog[@data-gallery-lightbox and @id]')->length !== 1) {
     throw new RuntimeException('Each image must have an original-image link and a gallery-specific dialog');
 }
 foreach ($links as $index => $link) {

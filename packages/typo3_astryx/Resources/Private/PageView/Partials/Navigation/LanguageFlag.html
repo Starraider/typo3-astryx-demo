@@ -1,0 +1,21 @@
+<f:variable name="flag" value="" />
+<f:if condition="{language.twoLetterIsoCode} == 'en'">
+    <f:then><f:variable name="flag" value="gb" /></f:then>
+    <f:else>
+        <f:if condition="{language.flag} && {language.flag} != 'empty-empty'">
+            <f:variable name="flag" value="{language.flag -> f:replace(search: 'flags-', replace: '')}" />
+        </f:if>
+    </f:else>
+</f:if>
+<f:if condition="{flag}">
+    <span class="astryx-language-flag" aria-hidden="true">
+        <f:if condition="{flag} == 'gb' || {flag} == 'de'">
+            <f:then>
+                <f:image src="EXT:typo3_astryx/Resources/Public/Icons/Flags/{flag}.svg" width="20" height="20" alt="" />
+            </f:then>
+            <f:else>
+                <f:image src="EXT:core/Resources/Public/Icons/Flags/{flag}.webp" class="astryx-language-flag-bitmap" width="32" height="32" alt="" />
+            </f:else>
+        </f:if>
+    </span>
+</f:if>

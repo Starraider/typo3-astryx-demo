@@ -1,0 +1,6 @@
+<f:if condition="{file}"><f:if condition="{ax:fileAvailable(file: file)}">
+    <f:variable name="srcset" value="{f:uri.image(image: file, width: '640')} 640w, {f:uri.image(image: file, width: '1280')} 1280w, {f:uri.image(image: file, width: '1920')} 1920w" />
+    <div class="astryx-background-media" aria-hidden="true">
+        <f:image image="{file}" width="1920" alt="" title="" loading="lazy" decoding="async" additionalAttributes="{srcset: srcset, sizes: '100vw'}" />
+    </div>
+</f:if></f:if>

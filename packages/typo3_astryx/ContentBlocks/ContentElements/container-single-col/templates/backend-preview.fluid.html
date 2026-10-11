@@ -1,0 +1,14 @@
+<f:layout name="Preview" />
+<f:section name="Header"><strong>{data.header}</strong></f:section>
+<f:section name="Content">
+    <f:variable name="background" value="{f:if(condition: '{data.background} == dark', then: 'dark', else: 'light')}" />
+    <f:variable name="width" value="{f:if(condition: '{data.width} == full-bleed', then: 'full-bleed', else: 'constrained')}" />
+    <f:asset.css identifier="astryx-preview" href="EXT:typo3_astryx/Resources/Public/Css/backend-preview.css" />
+    <div class="astryx-preview astryx-container-single-col-preview" data-astryx-background="{background}">
+        <p><f:translate key="{cb:languagePath()}:background.label" />: <f:translate key="{cb:languagePath()}:background.items.{background}.label" /> · <f:translate key="{cb:languagePath()}:width.items.{width}.label" /></p>
+        <f:if condition="{data.image.0}"><f:if condition="{ax:fileAvailable(file: data.image.0)}">
+            <f:translate key="{cb:languagePath()}:image.label" />
+            <f:image image="{data.image.0}" width="480" alt="" title="" loading="lazy" />
+        </f:if></f:if>
+    </div>
+</f:section>

@@ -1,7 +1,7 @@
 {
-  "_Main-c8_otuTi.css": {
-    "file": "assets/Main-c8_otuTi.css",
-    "src": "_Main-c8_otuTi.css"
+  "_Main-lGiEoRQS.css": {
+    "file": "assets/Main-lGiEoRQS.css",
+    "src": "_Main-lGiEoRQS.css"
   },
   "vendor/skom/astryx-sitepackage/Resources/Private/JavaScript/Main.entry.js": {
     "file": "assets/Main.entry-CRver6y9.js",
@@ -9,7 +9,7 @@
     "src": "vendor/skom/astryx-sitepackage/Resources/Private/JavaScript/Main.entry.js",
     "isEntry": true,
     "css": [
-      "assets/Main-c8_otuTi.css"
+      "assets/Main-lGiEoRQS.css"
     ]
   },
   "vendor/skom/typo3-astryx/Resources/Private/Fonts/Figtree-latin-ext.woff2": {
@@ -20,8 +20,24 @@
     "file": "assets/Figtree-latin-CEHu_veL.woff2",
     "src": "vendor/skom/typo3-astryx/Resources/Private/Fonts/Figtree-latin.woff2"
   },
+  "vendor/skom/typo3-astryx/Resources/Private/Fonts/JetBrainsMono-latin-ext.woff2": {
+    "file": "assets/JetBrainsMono-latin-ext-Bnd2h4Br.woff2",
+    "src": "vendor/skom/typo3-astryx/Resources/Private/Fonts/JetBrainsMono-latin-ext.woff2"
+  },
+  "vendor/skom/typo3-astryx/Resources/Private/Fonts/JetBrainsMono-latin.woff2": {
+    "file": "assets/JetBrainsMono-latin-Db4Uuiha.woff2",
+    "src": "vendor/skom/typo3-astryx/Resources/Private/Fonts/JetBrainsMono-latin.woff2"
+  },
+  "vendor/skom/typo3-astryx/Resources/Private/Fonts/Montserrat-latin-ext.woff2": {
+    "file": "assets/Montserrat-latin-ext-D0hf-lZB.woff2",
+    "src": "vendor/skom/typo3-astryx/Resources/Private/Fonts/Montserrat-latin-ext.woff2"
+  },
+  "vendor/skom/typo3-astryx/Resources/Private/Fonts/Montserrat-latin.woff2": {
+    "file": "assets/Montserrat-latin-Dk9Pm7OY.woff2",
+    "src": "vendor/skom/typo3-astryx/Resources/Private/Fonts/Montserrat-latin.woff2"
+  },
   "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Main.entry.js": {
-    "file": "assets/Main.entry-Bj5JuXT_.js",
+    "file": "assets/Main.entry-xB2IHyJr.js",
     "name": "Main.entry",
     "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Main.entry.js",
     "isEntry": true,
@@ -29,37 +45,49 @@
       "vendor/skom/typo3-astryx/Resources/Private/JavaScript/code-highlighter.js"
     ],
     "css": [
-      "assets/Main-BJ2dBVhW.css"
+      "assets/Main-CWe5la7A.css"
     ],
     "assets": [
       "assets/Figtree-latin-ext-C5tEHAKb.woff2",
-      "assets/Figtree-latin-CEHu_veL.woff2"
+      "assets/Figtree-latin-CEHu_veL.woff2",
+      "assets/JetBrainsMono-latin-ext-Bnd2h4Br.woff2",
+      "assets/JetBrainsMono-latin-Db4Uuiha.woff2",
+      "assets/Montserrat-latin-ext-D0hf-lZB.woff2",
+      "assets/Montserrat-latin-Dk9Pm7OY.woff2"
     ]
   },
   "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Preview.entry.js": {
-    "file": "assets/Preview.entry-BtFGwsrI.js",
+    "file": "assets/Preview.entry-CsyZRYQH.js",
     "name": "Preview.entry",
     "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Preview.entry.js",
     "isEntry": true,
     "css": [
-      "assets/Preview-Dix6sx-b.css"
+      "assets/Preview-BVPGfjef.css"
     ],
     "assets": [
       "assets/Figtree-latin-ext-C5tEHAKb.woff2",
-      "assets/Figtree-latin-CEHu_veL.woff2"
+      "assets/Figtree-latin-CEHu_veL.woff2",
+      "assets/JetBrainsMono-latin-ext-Bnd2h4Br.woff2",
+      "assets/JetBrainsMono-latin-Db4Uuiha.woff2",
+      "assets/Montserrat-latin-ext-D0hf-lZB.woff2",
+      "assets/Montserrat-latin-Dk9Pm7OY.woff2"
     ]
   },
   "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Rte.entry.js": {
-    "file": "assets/Rte.entry-Cl7xKks3.js",
+    "file": "assets/Rte.entry-h92Tkm_z.js",
     "name": "Rte.entry",
     "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Rte.entry.js",
     "isEntry": true,
     "css": [
-      "assets/Rte-BH7DX1st.css"
+      "assets/Rte-xWNfLSQi.css"
     ],
     "assets": [
       "assets/Figtree-latin-ext-C5tEHAKb.woff2",
-      "assets/Figtree-latin-CEHu_veL.woff2"
+      "assets/Figtree-latin-CEHu_veL.woff2",
+      "assets/JetBrainsMono-latin-ext-Bnd2h4Br.woff2",
+      "assets/JetBrainsMono-latin-Db4Uuiha.woff2",
+      "assets/Montserrat-latin-ext-D0hf-lZB.woff2",
+      "assets/Montserrat-latin-Dk9Pm7OY.woff2"
     ]
   },
   "vendor/skom/typo3-astryx/Resources/Private/JavaScript/code-highlighter.js": {

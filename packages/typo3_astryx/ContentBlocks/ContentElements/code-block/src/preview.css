@@ -1,1 +1,3 @@
-.astryx-preview .astryx-code-preview { margin: 0; max-block-size: 12rem; overflow: auto; padding: .75rem; border: 1px solid var(--astryx-border); border-radius: var(--astryx-radius-element); background: var(--astryx-surface); font: .75rem/1.5 var(--astryx-font-code); white-space: pre; }
+.astryx-preview .astryx-code-preview { margin: 0; max-block-size: 12rem; overflow: auto; padding: .75rem; border: 1px solid var(--astryx-border); border-radius: var(--astryx-radius-element); background: var(--astryx-surface); font: var(--astryx-code-preview-size)/var(--astryx-code-preview-line) var(--astryx-font-code); white-space: pre; }
+
+.astryx-preview .astryx-code-preview code { font: inherit; }

@@ -37,11 +37,15 @@ foreach (['single', 'multiple'] as $mode) {
     if ($items->length !== 3 || $xpath->query('//details[@open]')->length !== 2) {
         throw new RuntimeException('Stored default-open flags must render in ' . $mode . ' mode');
     }
+    $namespace = $xpath->query('//*[@data-astryx-occurrence]')->item(0)->getAttribute('data-astryx-occurrence');
     foreach ($items as $index => $item) {
-        $expectedName = $mode === 'single' ? 'astryx-accordion-' . $uid : '';
+        $expectedName = $mode === 'single' ? $namespace . '-accordion' : '';
         $trigger = $item->getElementsByTagName('summary')->item(0);
-        if ($item->getAttribute('name') !== $expectedName || $trigger->getAttribute('aria-controls') !== 'a' . $uid . '-' . $index . '-content') {
+        if ($item->getAttribute('name') !== $expectedName || $trigger->getAttribute('aria-controls') !== $item->getAttribute('id') . '-content') {
             throw new RuntimeException('Incorrect native grouping or trigger association in ' . $mode . ' mode');
+        }
+        if ($xpath->query('//*[@id="' . $trigger->getAttribute('aria-controls') . '"]')->length !== 1) {
+            throw new RuntimeException('Missing or ambiguous Accordion content target.');
         }
     }
     if ($xpath->query('//summary//item')->length !== 0 || !str_contains($rendered, 'First &lt;item&gt;')) {

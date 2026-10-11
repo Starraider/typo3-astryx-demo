@@ -1,0 +1,57 @@
+name: astryx/container-single-col
+typeName: astryx_container_single_col
+group: container
+title: Container 1-col
+saveAndClose: true
+fields:
+  - identifier: header
+    useExistingField: true
+  - identifier: heading_controls
+    type: Palette
+    fields:
+      - identifier: header_layout
+        useExistingField: true
+      - identifier: header_position
+        useExistingField: true
+      - identifier: heading_size
+        type: Select
+        renderType: selectSingle
+        default: medium
+        items:
+          - value: medium
+            label: Medium
+          - value: small
+            label: Small
+          - value: large
+            label: Large
+          - value: display
+            label: Display
+  - identifier: header_link
+    useExistingField: true
+  - identifier: subheader
+    useExistingField: true
+  - identifier: background
+    type: Select
+    renderType: selectSingle
+    default: light
+    items:
+      - value: light
+        label: Lighter
+      - value: dark
+        label: Darker
+  - identifier: image
+    useExistingField: true
+    type: File
+    allowed: common-image-types
+    maxitems: 1
+  - identifier: width
+    type: Select
+    renderType: selectSingle
+    default: constrained
+    items:
+      - value: constrained
+        label: Content width
+      - value: full-bleed
+        label: Full viewport width
+basics:
+  - Astryx/spacing

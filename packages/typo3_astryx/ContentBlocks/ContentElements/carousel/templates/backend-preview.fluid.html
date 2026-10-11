@@ -1,1 +1,12 @@
-<f:layout name="Preview" /><f:section name="Header"><strong>{data.header}</strong></f:section><f:section name="Content"><f:asset.css identifier="astryx-preview" href="EXT:typo3_astryx/Resources/Public/Css/backend-preview.css" /><div class="astryx-preview"><ul><f:for each="{data.items}" as="item"><li><strong>{item.title}{item.text}</strong><f:if condition="{item.body}"><p>{item.body -> f:format.stripTags() -> f:format.crop(maxCharacters: 160)}</p></f:if></li></f:for></ul></div></f:section>
+<f:layout name="Preview" />
+<f:section name="Header"><strong>{data.header}</strong></f:section>
+<f:section name="Content">
+    <f:asset.css identifier="astryx-preview" href="EXT:typo3_astryx/Resources/Public/Css/backend-preview.css" />
+    <div class="astryx-preview">
+        <f:if condition="{data.navigation}">
+            <f:variable name="paginationPosition" value="{f:if(condition: data.pagination_position, then: data.pagination_position, else: 'bottom-center')}" />
+            <p><f:translate key="{cb:languagePath()}:pagination_position.label" />: <f:translate key="{cb:languagePath()}:pagination_position.items.{paginationPosition}.label" /></p>
+        </f:if>
+        <ul><f:for each="{data.items}" as="item"><li><strong>{item.title}{item.text}</strong><f:if condition="{item.body}"><p>{item.body -> f:format.stripTags() -> f:format.crop(maxCharacters: 160)}</p></f:if></li></f:for></ul>
+    </div>
+</f:section>

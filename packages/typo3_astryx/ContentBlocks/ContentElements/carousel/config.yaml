@@ -1,34 +1,60 @@
 name: astryx/carousel
 typeName: astryx_carousel
-group: astryx
+group: default
 title: Astryx Carousel
 fields:
 - identifier: header
   useExistingField: true
-- identifier: header_layout
-  useExistingField: true
-- identifier: header_position
-  useExistingField: true
+- identifier: heading_controls
+  type: Palette
+  fields:
+    - identifier: header_layout
+      useExistingField: true
+    - identifier: header_position
+      useExistingField: true
+    - identifier: heading_size
+      type: Select
+      renderType: selectSingle
+      default: medium
+      items:
+      - value: medium
+        label: Medium
+      - value: small
+        label: Small
+      - value: large
+        label: Large
+      - value: display
+        label: Display
 - identifier: header_link
   useExistingField: true
 - identifier: subheader
   useExistingField: true
-- identifier: heading_size
-  type: Select
-  renderType: selectSingle
-  default: medium
-  items:
-  - value: medium
-    label: Medium
-  - value: small
-    label: Small
-  - value: large
-    label: Large
-  - value: display
-    label: Display
-- identifier: navigation
-  type: Checkbox
-  default: 1
+- identifier: carousel_pagination
+  type: Palette
+  fields:
+    - identifier: navigation
+      type: Checkbox
+      default: 1
+    - identifier: pagination_position
+      type: Select
+      renderType: selectSingle
+      default: bottom-center
+      items:
+      - value: bottom-center
+        label: Bottom center
+      - value: top-left
+        label: Top left
+      - value: top-center
+        label: Top center
+      - value: top-right
+        label: Top right
+      - value: bottom-left
+        label: Bottom left
+      - value: bottom-right
+        label: Bottom right
+    - identifier: edge_fade
+      type: Checkbox
+      default: 0
 - identifier: items
   type: Collection
   table: tx_astryx_carousel_item
@@ -50,8 +76,5 @@ fields:
   - identifier: label
     type: Text
   maxitems: 100
-- identifier: edge_fade
-  type: Checkbox
-  default: 0
 basics:
   - Astryx/spacing

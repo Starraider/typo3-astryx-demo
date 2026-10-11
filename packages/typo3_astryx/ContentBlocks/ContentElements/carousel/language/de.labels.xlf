@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" target-language="de">
+    <body>
+      <trans-unit id="title">
+        <source>Astryx Carousel</source>
+        <target>Astryx Carousel</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Native Astryx carousel</source>
+        <target>Natives Astryx-Karussell</target>
+      </trans-unit>
+      <trans-unit id="header.label">
+        <source>Header</source>
+        <target>Überschrift</target>
+      </trans-unit>
+      <trans-unit id="header_layout.label">
+        <source>Header Layout</source>
+        <target>Überschriftenlayout</target>
+      </trans-unit>
+      <trans-unit id="subheader.label">
+        <source>Subheader</source>
+        <target>Unterüberschrift</target>
+      </trans-unit>
+      <trans-unit id="heading_size.label">
+        <source>Heading Size</source>
+        <target>Überschriftengröße</target>
+      </trans-unit>
+      <trans-unit id="heading_size.items.medium.label">
+        <source>Medium</source>
+        <target>Mittel</target>
+      </trans-unit>
+      <trans-unit id="heading_size.items.small.label">
+        <source>Small</source>
+        <target>Klein</target>
+      </trans-unit>
+      <trans-unit id="heading_size.items.large.label">
+        <source>Large</source>
+        <target>Groß</target>
+      </trans-unit>
+      <trans-unit id="heading_size.items.display.label">
+        <source>Display</source>
+        <target>Display</target>
+      </trans-unit>
+      <trans-unit id="navigation.label">
+        <source>Pagination</source>
+        <target>Seitennavigation</target>
+      </trans-unit>
+      <trans-unit id="items.label">
+        <source>Items</source>
+        <target>Karten</target>
+      </trans-unit>
+      <trans-unit id="items.title.label">
+        <source>Title</source>
+        <target>Titel</target>
+      </trans-unit>
+      <trans-unit id="items.body.label">
+        <source>Body</source>
+        <target>Text</target>
+      </trans-unit>
+      <trans-unit id="items.image.label">
+        <source>Image</source>
+        <target>Bild</target>
+      </trans-unit>
+      <trans-unit id="items.badge.label">
+        <source>Badge</source>
+        <target>Badge</target>
+      </trans-unit>
+      <trans-unit id="items.link.label">
+        <source>Link</source>
+        <target>Link</target>
+      </trans-unit>
+      <trans-unit id="items.label.label">
+        <source>Label</source>
+        <target>Linktext</target>
+      </trans-unit>
+      <trans-unit id="edge_fade.label">
+        <source>Edge Fade</source>
+        <target>Ränder ausblenden</target>
+      </trans-unit>
+      <trans-unit id="pagination_position.label">
+        <source>Pagination Position</source>
+        <target>Position der Seitennavigation</target>
+      </trans-unit>
+      <trans-unit id="pagination_position.items.bottom-center.label">
+        <source>Bottom center</source>
+        <target>Unten mittig</target>
+      </trans-unit>
+      <trans-unit id="pagination_position.items.top-left.label">
+        <source>Top left</source>
+        <target>Oben links</target>
+      </trans-unit>
+      <trans-unit id="pagination_position.items.top-center.label">
+        <source>Top center</source>
+        <target>Oben mittig</target>
+      </trans-unit>
+      <trans-unit id="pagination_position.items.top-right.label">
+        <source>Top right</source>
+        <target>Oben rechts</target>
+      </trans-unit>
+      <trans-unit id="pagination_position.items.bottom-left.label">
+        <source>Bottom left</source>
+        <target>Unten links</target>
+      </trans-unit>
+      <trans-unit id="pagination_position.items.bottom-right.label">
+        <source>Bottom right</source>
+        <target>Unten rechts</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

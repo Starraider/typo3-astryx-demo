@@ -18,13 +18,18 @@
   /* Each row grows independently, including the final row and filtered rows. */
   .astryx-classic-gallery-tile { flex: 1 1 calc((100% - (var(--gallery-columns) - 1) * var(--astryx-space-4)) / var(--gallery-columns)); min-inline-size: 0; aspect-ratio: 3 / 2; position: relative; border-radius: var(--astryx-radius-container); overflow: clip; }
   .astryx-classic-gallery-tile img { position: absolute; inset: 0; display: block; inline-size: 100%; block-size: 100%; object-fit: cover; }
-  .astryx-classic-gallery-open { position: absolute; inset: 0; display: block; color: inherit; cursor: zoom-in; }
-  .astryx-classic-gallery-open:focus-visible { outline: 3px solid var(--astryx-text); outline-offset: -5px; }
+  .astryx-classic-gallery-open { position: absolute; inset: 0; display: block; border-radius: inherit; color: inherit; cursor: zoom-in; }
+  /* Adjacent white/black rings stay distinguishable over any photo and inside tile clipping. */
+  .astryx-classic-gallery-open:focus-visible { outline: 3px solid white; outline-offset: -5px; }
+  .astryx-classic-gallery-open:focus-visible::after { content: ''; position: absolute; inset: 5px; border: 3px solid black; border-radius: inherit; pointer-events: none; }
   .astryx-gallery-lightbox { position: fixed; inset: 0; margin: 0; padding: 0; border: 0; max-inline-size: none; max-block-size: none; inline-size: 100%; block-size: 100%; background: transparent; color: white; overflow: hidden; }
-  .astryx-gallery-lightbox::backdrop { background: rgb(0 0 0 / 50%); backdrop-filter: blur(4px); }
+  /* 54% is the first whole-percent black opacity giving white text 4.5:1 over white.
+     Captions sit below the photo on this backdrop; the photo itself stays undimmed. */
+  .astryx-gallery-lightbox::backdrop { background: rgb(0 0 0 / 54%); backdrop-filter: blur(4px); }
   .astryx-gallery-lightbox[open] { display: grid; grid-template-columns: 56px minmax(0, 1fr) 56px; align-items: center; }
-  .astryx-gallery-lightbox button { display: grid; place-items: center; inline-size: 44px; block-size: 44px; padding: 0; border: 0; border-radius: var(--astryx-radius-element); background: transparent; color: white; cursor: pointer; z-index: 1; }
-  .astryx-gallery-lightbox button:hover { background: rgb(255 255 255 / 12%); }
+  /* Icons need 3:1: 42% black protects even controls that overlap a white photo. */
+  .astryx-gallery-lightbox button { display: grid; place-items: center; inline-size: 44px; block-size: 44px; padding: 0; border: 0; border-radius: var(--astryx-radius-element); background: rgb(0 0 0 / 42%); color: white; cursor: pointer; z-index: 1; }
+  .astryx-gallery-lightbox button:hover { background: rgb(0 0 0 / 46%); }
   .astryx-gallery-lightbox button:focus-visible { outline: 2px solid white; outline-offset: -2px; }
   .astryx-gallery-lightbox button:disabled { opacity: 0.3; cursor: default; }
   .astryx-gallery-lightbox button img { filter: brightness(0) invert(1); }
@@ -33,7 +38,16 @@
   .astryx-gallery-lightbox-media { margin: 0; min-inline-size: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; max-block-size: 100%; }
   .astryx-gallery-lightbox-media > img { display: block; inline-size: auto; block-size: auto; max-inline-size: 100%; max-block-size: calc(100dvh - 80px); object-fit: contain; }
   .astryx-gallery-lightbox-media figcaption { text-align: center; padding: 8px; line-height: 1.5; overflow: auto; max-block-size: 64px; inline-size: 100%; overflow-wrap: anywhere; }
-  .astryx-gallery-lightbox-counter { position: absolute; inset-block-start: 12px; inset-inline-start: 12px; font-size: var(--astryx-font-size-label); pointer-events: none; }
+  .astryx-gallery-lightbox-media figcaption:focus-visible { outline: 2px solid white; outline-offset: -3px; }
+  .astryx-gallery-lightbox-counter { position: absolute; inset-block-start: 12px; inset-inline-start: 12px; padding: 4px 8px; border-radius: var(--astryx-radius-element); background: rgb(0 0 0 / 54%); font-size: var(--astryx-font-size-label); pointer-events: none; }
+  @media (forced-colors: active) {
+    .astryx-classic-gallery-open:focus-visible { outline-color: Highlight; }
+    .astryx-classic-gallery-open:focus-visible::after { border-color: Canvas; }
+    .astryx-gallery-lightbox-media figcaption, .astryx-gallery-lightbox-counter { background: Canvas; color: CanvasText; }
+    .astryx-gallery-lightbox-media figcaption:focus-visible { outline-color: Highlight; }
+    /* External SVG icons cannot inherit system text colors. Preserve a paired icon surface. */
+    .astryx-gallery-lightbox button { forced-color-adjust: none; background: black; color: white; }
+  }
   @media (max-width: 40rem) { .astryx-gallery-lightbox[open] { grid-template-columns: 44px minmax(0, 1fr) 44px; } }
   @container (min-width: 40rem) { .astryx-classic-gallery { --gallery-columns: min(var(--gallery-max-columns), 2); } }
   @container (min-width: 54rem) { .astryx-classic-gallery { --gallery-columns: min(var(--gallery-max-columns), 3); } }

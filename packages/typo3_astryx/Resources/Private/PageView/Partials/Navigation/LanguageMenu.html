@@ -1,18 +1,32 @@
+<f:variable name="occurrence" value="{ax:occurrence(prefix: 'language')}" />
 <nav class="astryx-language-menu" aria-label="{f:translate(key: 'language', extensionName: 'Typo3Astryx', default: 'Language')}">
     <details class="astryx-dropdown" data-astryx-dropdown>
-        <summary class="astryx-header-control" aria-controls="astryx-language-options" aria-label="{f:translate(key: 'language', extensionName: 'Typo3Astryx', default: 'Language')}">
-            <f:for each="{items}" as="language"><f:if condition="{language.active}"><span lang="{language.hreflang}">{language.twoLetterIsoCode -> f:format.case(mode: 'upper')}</span></f:if></f:for>
+        <summary class="astryx-menu-link astryx-language-toggle" aria-controls="{occurrence.namespace}-options" aria-label="{f:translate(key: 'language', extensionName: 'Typo3Astryx', default: 'Language')}">
+            <f:for each="{items}" as="language">
+                <f:if condition="{language.active}">
+                    <f:render partial="Navigation/LanguageFlag" arguments="{language: language}" />
+                    <span lang="{language.hreflang}">{language.twoLetterIsoCode -> f:format.case(mode: 'upper')}</span>
+                </f:if>
+            </f:for>
             <span class="astryx-chevron" aria-hidden="true"></span>
         </summary>
-        <ul class="astryx-dropdown-panel astryx-language-options" id="astryx-language-options">
+        <ul class="astryx-dropdown-panel astryx-language-options {ax:recipe(name: 'Dropdown', options: {part: 'panel'})}" id="{occurrence.namespace}-options">
             <f:for each="{items}" as="language">
-                <li>
+                <li class="{ax:recipe(name: 'Dropdown', options: {part: 'row'})}">
                     <f:if condition="{language.available}">
                         <f:then>
                             <f:variable name="current" value="{f:if(condition: language.active, then: 'true', else: 'false')}" />
-                            <f:link.typolink parameter="{language.link}" additionalAttributes="{hreflang: language.hreflang, lang: language.hreflang, 'aria-current': current}">{language.navigationTitle}</f:link.typolink>
+                            <f:link.typolink parameter="{language.link}" class="{ax:recipe(name: 'Dropdown', options: {part: 'link'})}" additionalAttributes="{hreflang: language.hreflang, lang: language.hreflang, 'aria-current': current}">
+                                <f:render partial="Navigation/LanguageFlag" arguments="{language: language}" />
+                                {language.navigationTitle}
+                            </f:link.typolink>
                         </f:then>
-                        <f:else><span aria-disabled="true" lang="{language.hreflang}">{language.navigationTitle}</span></f:else>
+                        <f:else>
+                            <span class="{ax:recipe(name: 'Dropdown', options: {part: 'link'})}" aria-disabled="true" lang="{language.hreflang}">
+                                <f:render partial="Navigation/LanguageFlag" arguments="{language: language}" />
+                                {language.navigationTitle}
+                            </span>
+                        </f:else>
                     </f:if>
                 </li>
             </f:for>

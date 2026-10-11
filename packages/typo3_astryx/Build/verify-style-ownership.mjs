@@ -10,7 +10,7 @@ const components = path.join(extension, 'Resources/Private/Components');
 const entrypoints = ['Main', 'Preview', 'Rte'].map(name => path.join(extension, `Resources/Private/JavaScript/${name}.entry.js`));
 const blockNames = fs.readdirSync(blocks).filter(name => fs.existsSync(path.join(blocks, name, 'config.yaml')));
 const aliases = new Map();
-const aliasesForBlocks = {'container-two-col': ['grid'], 'table': ['table-scroll'], 'classic-gallery': ['gallery-lightbox'], 'code-block': ['code-copy-buffer', 'code-preview']};
+const aliasesForBlocks = {'table': ['table-scroll'], 'classic-gallery': ['gallery-lightbox'], 'code-block': ['code-copy-buffer', 'code-preview']};
 const componentNames = new Set(fs.readdirSync(components).filter(name => name.endsWith('.html')).map(name => name.slice(0, -5).toLowerCase()));
 const selectorOwners = blockNames.filter(name => !componentNames.has(name)).flatMap(name => [name, ...(aliasesForBlocks[name] ?? [])].map(selector => [selector, name]));
 const usesSelector = (source, selector) => new RegExp(`\\.astryx-${selector}(?=[^a-zA-Z0-9_-]|-|$)`).test(source);
@@ -21,6 +21,18 @@ function files(directory) {
     return entry.isDirectory() ? files(file) : [file];
   });
 }
+
+// Shared block recipes must have multiple independent consumers, not just a generic name.
+const recipeConsumers = new Map();
+for (const block of blockNames) {
+  for (const file of files(path.join(blocks, block)).filter(file => file.endsWith('.html'))) {
+    for (const [, recipe] of fs.readFileSync(file, 'utf8').matchAll(/ax:recipe\(name:\s*'([^']+)'/g)) {
+      if (!recipeConsumers.has(recipe)) recipeConsumers.set(recipe, new Set());
+      recipeConsumers.get(recipe).add(block);
+    }
+  }
+}
+assert((recipeConsumers.get('Grid')?.size ?? 0) >= 2, 'Shared .astryx-grid CSS requires multiple block consumers.');
 
 // Walk the source graph rather than assuming that creating src/ compiles it.
 const reachable = new Set();
@@ -38,11 +50,18 @@ function visit(file) {
 }
 entrypoints.forEach(visit);
 
+// Page chrome (for example header navigation) is reusable extension UI, not block-owned.
+const pageRecipes = new Set(files(path.join(extension, 'Resources/Private/PageView'))
+  .filter(file => file.endsWith('.html'))
+  .flatMap(file => [...fs.readFileSync(file, 'utf8').matchAll(/ax:recipe\(name:\s*'([^']+)'/g)].map(match => match[1])));
+
 for (const file of files(shared)) {
   if (!file.endsWith('.stylex.js')) continue;
   const basename = path.basename(file, '.stylex.js');
   if (basename === 'tokens' || path.dirname(file) === path.join(shared, 'Themes')) continue;
-  assert(basename.startsWith('Astryx') && fs.existsSync(path.join(components, basename.slice(6) + '.html')),
+  assert(basename.startsWith('Astryx') && (fs.existsSync(path.join(components, basename.slice(6) + '.html'))
+    || pageRecipes.has(basename.slice(6))
+    || (recipeConsumers.get(basename.slice(6))?.size ?? 0) >= 2),
     `Block-only recipe must live in its owning block's src/: ${file}`);
 }
 for (const file of files(path.join(extension, 'Resources/Private/CSS'))) {

@@ -48,7 +48,12 @@ export class AccordionController {
       return;
     }
     state.item.open = true;
-    const endHeight = state.trigger.getBoundingClientRect().height + (expanded ? state.content.getBoundingClientRect().height : 0);
+    // Single-mode cards have their own padding and border; include both in the
+    // border-box animation height so content is not clipped before it settles.
+    const itemStyle = getComputedStyle(state.item);
+    const inset = ['paddingTop', 'paddingBottom', 'borderTopWidth', 'borderBottomWidth']
+      .reduce((total, property) => total + parseFloat(itemStyle[property]), 0);
+    const endHeight = inset + state.trigger.getBoundingClientRect().height + (expanded ? state.content.getBoundingClientRect().height : 0);
     const style = getComputedStyle(this.root);
     const duration = style.getPropertyValue('--astryx-duration').trim();
     const milliseconds = parseFloat(duration) * (duration.endsWith('ms') ? 1 : 1000);

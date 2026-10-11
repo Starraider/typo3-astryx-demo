@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 60 60">
+  <defs>
+    <clipPath id="circle"><circle cx="30" cy="30" r="30"/></clipPath>
+    <clipPath id="diagonal-halves"><path d="M0 0v15h60v15zM60 0H30v30H0z"/></clipPath>
+  </defs>
+  <g clip-path="url(#circle)">
+    <g transform="translate(-30 0) scale(2)">
+      <path fill="#012169" d="M0 0h60v30H0z"/>
+      <path stroke="#fff" stroke-width="6" d="m0 0 60 30M60 0 0 30"/>
+      <path stroke="#c8102e" stroke-width="4" clip-path="url(#diagonal-halves)" d="m0 0 60 30M60 0 0 30"/>
+      <path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/>
+      <path stroke="#c8102e" stroke-width="6" d="M30 0v30M0 15h60"/>
+    </g>
+  </g>
+</svg>

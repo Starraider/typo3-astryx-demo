@@ -1,0 +1,16 @@
+@layer astryx-base {
+  .astryx-preview .astryx-notice-preview-icon {
+    display: flex;
+    align-items: center;
+    gap: var(--astryx-space-2);
+  }
+
+  .astryx-preview .astryx-notice-preview-icon svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+}

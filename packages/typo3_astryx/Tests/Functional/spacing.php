@@ -28,7 +28,7 @@ foreach (['space_before_class', 'space_after_class'] as $field) {
         throw new RuntimeException('Incorrect spacing selector: ' . $field);
     }
 }
-$types = ['menu_sitemap', 'menu_subpages', 'shortcut', 'html'];
+$types = ['menu_sitemap', 'menu_subpages', 'menu_pages', 'shortcut', 'html'];
 foreach (glob($root . '/ContentBlocks/ContentElements/*/config.yaml') as $path) {
     $definition = Yaml::parseFile($path);
     $types[] = $definition['typeName'];

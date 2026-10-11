@@ -1,15 +1,28 @@
+<f:if condition="!{nested}">
+    <f:variable name="occurrence" value="{ax:occurrence(prefix: 'menu')}" />
+    <f:variable name="path" value="{occurrence.namespace}" />
+</f:if>
+<f:if condition="{prefix} == 'desktop'">
+    <f:variable name="panelStyle" value="{ax:recipe(name: 'Dropdown', options: {part: 'panel'})}" />
+    <f:if condition="{nested}">
+        <f:variable name="rowStyle" value="{ax:recipe(name: 'Dropdown', options: {part: 'row'})}" />
+        <f:variable name="linkStyle" value="{ax:recipe(name: 'Dropdown', options: {part: 'link'})}" />
+        <f:variable name="toggleStyle" value="{ax:recipe(name: 'Dropdown', options: {part: 'toggle'})}" />
+    </f:if>
+</f:if>
 <ul class="{f:if(condition: nested, then: 'astryx-submenu', else: 'astryx-menu astryx-main-menu')}">
-    <f:for each="{items}" as="item">
-        <li class="astryx-menu-item {f:if(condition: item.active, then: 'astryx-menu-item--active')}">
+    <f:for each="{items}" as="item" iteration="branch">
+        <f:variable name="branchPath" value="{path}-{branch.index}" />
+        <li class="astryx-menu-item {rowStyle} {f:if(condition: item.active, then: 'astryx-menu-item--active')}">
             <f:variable name="current" value="{f:if(condition: item.current, then: 'page', else: 'false')}" />
-            <f:link.typolink parameter="{item.link}" target="{item.target}" class="astryx-menu-link" additionalAttributes="{'aria-current': current}">{item.title}</f:link.typolink>
+            <f:link.typolink parameter="{item.link}" target="{item.target}" class="astryx-menu-link {linkStyle}" additionalAttributes="{'aria-current': current}">{item.title}</f:link.typolink>
             <f:if condition="{item.children}">
                 <details class="astryx-dropdown" data-astryx-dropdown>
-                    <summary class="astryx-submenu-toggle" aria-controls="astryx-submenu-{prefix}-{item.data.uid}" aria-label="{f:translate(key: 'submenu', extensionName: 'Typo3Astryx', default: 'Toggle submenu for %s', arguments: {0: item.title})}">
+                    <summary class="astryx-submenu-toggle {toggleStyle}" aria-controls="{branchPath}-submenu" aria-label="{f:translate(key: 'submenu', extensionName: 'Typo3Astryx', default: 'Toggle submenu for %s', arguments: {0: item.title})}">
                         <span class="astryx-chevron" aria-hidden="true"></span>
                     </summary>
-                    <div class="astryx-dropdown-panel" id="astryx-submenu-{prefix}-{item.data.uid}">
-                        <f:render partial="Navigation/MainMenu" arguments="{items: item.children, prefix: prefix, nested: true}" />
+                    <div class="astryx-dropdown-panel {panelStyle}" id="{branchPath}-submenu">
+                        <f:render partial="Navigation/MainMenu" arguments="{items: item.children, prefix: prefix, nested: true, path: branchPath}" />
                     </div>
                 </details>
             </f:if>

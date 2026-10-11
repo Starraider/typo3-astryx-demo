@@ -1,55 +1,61 @@
 name: astryx/card-grid
 typeName: astryx_card_grid
-group: astryx
+group: default
 title: Astryx Card Grid
 fields:
 - identifier: header
   useExistingField: true
-- identifier: header_layout
-  useExistingField: true
-- identifier: header_position
-  useExistingField: true
+- identifier: heading_controls
+  type: Palette
+  fields:
+    - identifier: header_layout
+      useExistingField: true
+    - identifier: header_position
+      useExistingField: true
+    - identifier: heading_size
+      type: Select
+      renderType: selectSingle
+      default: medium
+      items:
+      - value: medium
+        label: Medium
+      - value: small
+        label: Small
+      - value: large
+        label: Large
+      - value: display
+        label: Display
 - identifier: header_link
   useExistingField: true
 - identifier: subheader
   useExistingField: true
-- identifier: heading_size
-  type: Select
-  renderType: selectSingle
-  default: medium
-  items:
-  - value: medium
-    label: Medium
-  - value: small
-    label: Small
-  - value: large
-    label: Large
-  - value: display
-    label: Display
-- identifier: columns
-  type: Select
-  renderType: selectSingle
-  default: auto
-  items:
-  - value: auto
-    label: Auto
-  - value: two
-    label: Two
-  - value: three
-    label: Three
-  - value: four
-    label: Four
-- identifier: gap
-  type: Select
-  renderType: selectSingle
-  default: normal
-  items:
-  - value: normal
-    label: Normal
-  - value: small
-    label: Small
-  - value: large
-    label: Large
+- identifier: card_grid_layout
+  type: Palette
+  fields:
+    - identifier: columns
+      type: Select
+      renderType: selectSingle
+      default: auto
+      items:
+      - value: auto
+        label: Auto
+      - value: two
+        label: Two
+      - value: three
+        label: Three
+      - value: four
+        label: Four
+    - identifier: gap
+      type: Select
+      renderType: selectSingle
+      default: normal
+      items:
+      - value: normal
+        label: Normal
+      - value: small
+        label: Small
+      - value: large
+        label: Large
 - identifier: items
   type: Collection
   table: tx_astryx_card_grid_item

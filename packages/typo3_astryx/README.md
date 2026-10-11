@@ -12,7 +12,7 @@ Activate Site Set `skom/typo3-astryx`. An existing site package should depend on
 The connector currently needs `dev-main`; pin the tested commit in the consuming project's lockfile. This development dependency prevents an unqualified stable release.
 Packaged frontend/editor assets work without Node or a Vite server. Custom source builds run from the consuming project root.
 
-The extension supplies eight native components, 16 Content Blocks, two-column nested containers, Default/Sidebar/AppShell pages, Neutral/Stone/Ocean themes and system/light/dark modes.
+The extension supplies eight native components, 22 Content Blocks, a single-column container with mode-aware lighter/darker or image backgrounds and content/full viewport width, 50/50, 25/75 and 75/25 two-column nested containers plus equal-width three- and four-column containers, Default/Sidebar/AppShell pages, Neutral/Stone/Ocean themes and system/light/dark modes.
 Ordinary editorial pages load no React. Ocean is a local adaptation, not an official upstream theme package.
 
 Read [installation and migration](Documentation/Installation.md), [component contracts](Documentation/Contracts.md), [editor guide](Documentation/Editors.md), [build and deployment](Documentation/Build.md) and [validation evidence](Documentation/Validation.md) before switching an existing site.

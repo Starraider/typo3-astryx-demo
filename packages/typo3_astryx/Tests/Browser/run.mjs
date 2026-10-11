@@ -32,7 +32,9 @@ for(const name of engines) {
   await verifyAccordion(accordion);
   const carousel=page.locator('[data-astryx-carousel]').first();
   await carousel.locator('[data-next]').click();await page.waitForTimeout(350);
-  assert.match(await carousel.locator('[data-position]').innerText(),/2 \/ 5/);
+  const pages = await carousel.locator('[data-carousel-page]:visible').count();
+  assert.equal(await carousel.locator('[data-position]').innerText(), `Page 2 of ${pages}`);
+  assert.equal(await carousel.locator('[data-carousel-page][aria-current="page"]').getAttribute('data-carousel-page'), '1');
   const modeEvidence=[];
   for(const theme of ['neutral','stone','ocean'])for(const mode of ['system','light','dark']) {
     await page.locator('.astryx-root').evaluate((root,{theme,mode})=>{root.dataset.astryxTheme=theme;root.dataset.astryxMode=mode;},{theme,mode});

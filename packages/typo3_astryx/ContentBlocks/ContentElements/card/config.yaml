@@ -1,49 +1,8 @@
 name: astryx/card
 typeName: astryx_card
-group: astryx
+group: default
 title: Astryx Card
 fields:
-- identifier: header
-  useExistingField: true
-- identifier: header_layout
-  useExistingField: true
-- identifier: header_position
-  useExistingField: true
-- identifier: header_link
-  useExistingField: true
-- identifier: subheader
-  useExistingField: true
-- identifier: heading_size
-  type: Select
-  renderType: selectSingle
-  default: medium
-  items:
-  - value: medium
-    label: Medium
-  - value: small
-    label: Small
-  - value: large
-    label: Large
-  - value: display
-    label: Display
-- identifier: bodytext
-  useExistingField: true
-  type: Textarea
-  enableRichtext: true
-- identifier: image
-  type: File
-  allowed: common-image-types
-  maxitems: 1
-- identifier: badge
-  type: Text
-- identifier: cta_link
-  type: Link
-- identifier: cta_label
-  type: Text
-- identifier: secondary_link
-  type: Link
-- identifier: secondary_label
-  type: Text
 - identifier: variant
   type: Select
   renderType: selectSingle
@@ -55,6 +14,42 @@ fields:
     label: Elevated
   - value: flat
     label: Flat
+- identifier: badge
+  type: Text
+- identifier: header
+  useExistingField: true
+- identifier: heading_controls
+  type: Palette
+  fields:
+    - identifier: header_layout
+      useExistingField: true
+    - identifier: header_position
+      useExistingField: true
+    - identifier: heading_size
+      type: Select
+      renderType: selectSingle
+      default: medium
+      items:
+      - value: medium
+        label: Medium
+      - value: small
+        label: Small
+      - value: large
+        label: Large
+      - value: display
+        label: Display
+- identifier: header_link
+  useExistingField: true
+- identifier: subheader
+  useExistingField: true
+- identifier: bodytext
+  useExistingField: true
+  type: Textarea
+  enableRichtext: true
+- identifier: image
+  type: File
+  allowed: common-image-types
+  maxitems: 1
 - identifier: aspect_ratio
   type: Select
   renderType: selectSingle
@@ -68,5 +63,13 @@ fields:
     label: Landscape (4:3)
   - value: square
     label: Square (1:1)
+- identifier: cta_link
+  type: Link
+- identifier: cta_label
+  type: Text
+- identifier: secondary_link
+  type: Link
+- identifier: secondary_label
+  type: Text
 basics:
   - Astryx/spacing

@@ -91,3 +91,74 @@ Heading/Textmedia follow-up: the native Heading recipe now uses zero margins; su
 All 16 Content Blocks pass lint, extension setup succeeds, all 75 Fluid templates parse and both production asset builds pass. Read-only rendering checks the four core alignment choices and Link field for all 20 CTypes using actual TYPO3/Content Blocks data processing and each frontend template. Actual backend FormEngine compilation confirms the translated Alignment/Link labels and Default/Left/Center/Right choices on all 20 CTypes; the duplicate legacy Hero selector is hidden. All 160 type/alignment/link combinations render one correctly escaped heading; empty and hidden headings stay absent. Semantic h1–h6/default levels, page/URL/email Typolinks and external target/title attributes pass.
 
 Chromium and WebKit verify computed physical left/center/right alignment (including Default = left) in LTR and RTL at 1280px/390px with both packaged and consuming Vite CSS. Subheaders follow the chosen alignment; linked heading text and its anchor match an overridden theme link color. Heading links accept keyboard focus and the live frontend renders without script or local asset errors. Existing spacing, Classic Gallery and Code Block functional checks and the Heading/Textmedia browser spacing regression pass. The dedicated commands are in the build runbook.
+
+## Single-column container checks, 10 October 2026
+
+Container 1-col is registered with one editable column at colPos 201. English/German FormEngine forms and rendered previews pass: Light/Dark choices, content/full viewport width choices, defaults and invalid-value fallbacks, a single core FAL image picker, shared heading/link controls and spacing. Its lazy child area renders each child exactly once on the dedicated TYPO3 fixture page. Copy, move, deletion and joint restoration of the container and child pass in the isolated fixture.
+
+The exact checks run from the integration project were:
+
+```sh
+ddev exec vendor/bin/typo3 cache:flush
+ddev exec vendor/bin/typo3 extension:setup
+ddev exec vendor/bin/typo3 content-blocks:lint
+ddev exec npm run build
+ddev exec php packages/typo3_astryx/Tests/Functional/parse-fluid.php
+ddev exec php packages/typo3_astryx/Tests/Functional/single-column.php
+ddev exec php packages/typo3_astryx/Tests/Functional/containers.php
+ddev exec php packages/typo3_astryx/Tests/Functional/heading.php
+ddev exec php packages/typo3_astryx/Tests/Functional/spacing.php
+ddev exec vendor/bin/typo3 stylex:validate --required-key=AstryxSingleColumn.width_full_bleed
+node packages/typo3_astryx/Tests/Browser/single-column.mjs
+git diff --check
+```
+
+The full build verifies both asset pipelines, paired manifest/CSS checksums, portable assets and style ownership. All 91 Fluid templates parse. Heading and spacing regressions cover all 27 supported CTypes. The isolated fixture was updated through cache flush/extension setup and `Tests/Fixtures/single-column.php`; `Tests/Functional/container-lifecycle.php --single-column` passed there.
+
+Chromium/WebKit pass at 1440px, 900px and 390px with packaged and consuming Vite assets, with/without JavaScript and reduced motion enabled. Checks cover viewport edges, parent-width constraints, zero horizontal overflow, RTL edges, nested resize alignment, decorative FAL alternatives, responsive sources, image loading and cover sizing after content height grows. Nested heading/body palettes match the selected Light/Dark mode across Neutral/Stone/Ocean and both page modes. Child links retain keyboard order. There are no failed local asset requests or browser script errors. Screenshots and the eight-case report remain outside source control at `/tmp/astryx-single-column-evidence`.
+
+Centered main/stage full-bleed sections work without JavaScript. Off-center sidebar/nested sections require the alignment controller for viewport width and remain readable at parent width without JavaScript. Images are decorative and have no automatic contrast overlay; editors choose a readable image/palette combination.
+
+Full-bleed content-width correction: the heading and child area now use the same `astryx-shell-width` wrapper as the page, while the background retains viewport width. `ddev exec npm run build`, `ddev exec php packages/typo3_astryx/Tests/Functional/single-column.php`, `ddev exec php packages/typo3_astryx/Tests/Functional/parse-fluid.php`, `node packages/typo3_astryx/Tests/Browser/single-column.mjs` and `git diff --check` pass after this correction. Chromium/WebKit compare heading/child area edges directly with the normal site shell at 1440px, 900px and 390px, including a 48rem site-width override, RTL, nested containers and both asset/JavaScript paths. Background images still cover the whole viewport-width surface and grow with content. The English/German selector is labeled Background width/Hintergrundbreite.
+
+Section background correction: solid Container 1-col backgrounds and previews now use the local Light/Dark theme surface color with a 1px inset theme-border outline. The section fill differs from the page body in Neutral/Stone/Ocean for both page modes and both container modes; browser checks require a difference of at least eight RGB channel levels and a visible solid 1px outline. `ddev exec npm run build`, `ddev exec php packages/typo3_astryx/Tests/Functional/single-column.php`, `node packages/typo3_astryx/Tests/Browser/single-column.mjs` and `git diff --check` pass. Chromium/WebKit cover both asset pipelines at desktop/mobile sizes, with/without JavaScript. Existing child-width, image-cover, theme-text, resize, RTL and keyboard checks continue to pass. The matching Light-on-Light Stone view is captured in `/tmp/astryx-single-column-evidence/stone-light-sections.png`.
+
+Relative-shade correction: Container 1-col now inherits the active page mode. Stored light/dark values select Lighter/Darker backgrounds, mixing the active theme surface with 8% white/black, rather than imposing a local mode. Both shades remain light in Light mode and dark in Dark mode, and Lighter is brighter than Darker in Neutral/Stone/Ocean. This supersedes the local-mode behavior recorded above. English/German editor labels and previews reflect the relative shade choice. Chromium/WebKit pass with packaged/Vite assets, with/without JavaScript, at 1440px, 900px and 390px. The browser checks require ordered shade luminance, inherited heading/body colors, at least 4.5:1 text contrast over solid fills, distinct section fills and inset outlines. Image coverage, constrained inner content, nested resizing, RTL and keyboard checks continue to pass.
+
+Checks run for this correction: `ddev exec npm run build`, `ddev exec vendor/bin/typo3 cache:flush`, `ddev exec vendor/bin/typo3 content-blocks:lint`, `ddev exec php packages/typo3_astryx/Tests/Functional/parse-fluid.php` (91 templates), `ddev exec php packages/typo3_astryx/Tests/Functional/single-column.php`, `ddev exec vendor/bin/typo3 stylex:validate --required-key=AstryxSingleColumn.background_dark`, `node packages/typo3_astryx/Tests/Browser/single-column.mjs` (eight browser/asset/JavaScript cases) and `git diff --check`. The isolated fixture received the rebuilt extension and a cache flush; no record migration was necessary. Mode-specific screenshots and the report remain in `/tmp/astryx-single-column-evidence`. Image contrast depends on the chosen photograph; there is no automatic overlay.
+
+## Header dropdown reference adaptation — 11 October 2026
+
+The actual `https://typo3-astryx.ddev.site/` page passes the expanded navigation regression in Chromium and WebKit with both consuming Vite and packaged assets. Packaged checks substitute published extension asset URLs into the real TYPO3 response without changing site settings or records. The visual reference displayed DropdownMenu v0.6.8.
+
+Commands run from the integration project root:
+
+```sh
+ddev exec npm run build
+ddev exec php packages/typo3_astryx/Tests/Functional/parse-fluid.php
+ddev exec vendor/bin/typo3 cache:flush
+ddev exec vendor/bin/typo3 stylex:validate --required-key=AstryxDropdown.part_panel
+git diff --check
+ASTRYX_TEST_URL=https://typo3-astryx.ddev.site ASTRYX_TEST_BROWSERS=chromium,webkit node packages/typo3_astryx/Tests/Browser/navigation.mjs
+ASTRYX_TEST_URL=https://typo3-astryx.ddev.site ASTRYX_TEST_BROWSERS=chromium,webkit ASTRYX_NAVIGATION_ASSETS=packaged ASTRYX_TEST_OUTPUT=/tmp/astryx-navigation-packaged-evidence node packages/typo3_astryx/Tests/Browser/navigation.mjs
+```
+
+The full build includes consuming StyleX verification, theme generation, packaged finalization, source-ownership and artifact checks. Fluid parses 92 templates without failures. Artifact verification reports 18 recipes, 208 styles and five paired artifacts; runtime validation reports 212 keys across two registered manifests.
+
+Both engines/pipelines verify 4px panel padding, 32px desktop rows, content-sized widths with longer labels, independent adjacent fly-outs, hover/click activation, crossing the pointer gap, keyboard focus and branch dismissal, viewport-edge flipping, RTL direction, reduced-motion chevrons, current-page links, mobile nested disclosures, desktop resize and native no-JavaScript desktop/mobile disclosure. Existing sticky-header, saved-mode, outside-click, header accessibility and failed-asset checks also pass. No browser errors or failed assets were observed. JSON reports and screenshots are saved under `/tmp/astryx-navigation-evidence` and `/tmp/astryx-navigation-packaged-evidence`; Firefox was not run.
+
+### Language dropdown follow-up — 11 October 2026
+
+The language menu now uses the same Dropdown panel/row/link StyleX recipe. The expanded navigation suite passes in Chromium and WebKit for both Vite and packaged assets: 4px panel padding, 2px row margins, 32px desktop and 44px mobile rows, 6px/8px desktop padding, an 8px flag/label gap, content-based panel widths, loaded circular 20px flags, current-language state and mobile viewport containment. Both enabled links on the site root and disabled translation rows on the child page were rendered; native mobile disclosure without JavaScript and Escape focus recovery pass. Screenshots use the `*-language-*.png` names in the evidence directories above.
+
+Repeated the same full build, Fluid parsing, cache flush, diff check and both browser commands listed above. Runtime validation for this follow-up used:
+
+```sh
+ddev exec vendor/bin/typo3 stylex:validate --required-key=AstryxDropdown.part_link
+```
+
+The initial packaged run caught a timing-sensitive assertion in the existing RTL fly-out check; that assertion now waits for disclosure positioning to finish. The rerun passes both engines. Fluid still parses all 92 templates; all artifact/ownership checks pass. Firefox was not run.
+
+## P2-01 occurrence identifiers — 11 October 2026
+
+The request allocator, shared wrappers and affected native/supporting components passed the focused PHP checks, Content Blocks lint, all 92 Fluid templates and the full production build/artifact verification. The real TYPO3 fixture rendered each source record 14 times through shortcuts and all six repeated/nested container variants. Sixteen Chromium/WebKit combinations covered packaged/Vite assets, desktop/mobile and JavaScript/native behavior, including unique IDs, references targeting their own occurrence, canonical/occurrence fragments, independent state and stable namespaces on warm page-cache hits. The integration-site navigation regression also passed in both browsers. Authored/plugin collisions are diagnosed without rewriting their IDs. See [the exact checks and scope](ComponentAudit/P2-01.md) and [the public identifier contract](OccurrenceIdentifiers.md).

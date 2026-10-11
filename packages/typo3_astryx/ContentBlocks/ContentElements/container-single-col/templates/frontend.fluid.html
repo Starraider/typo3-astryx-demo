@@ -1,0 +1,12 @@
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:variable name="background" value="{f:if(condition: '{data.background} == dark', then: 'dark', else: 'light')}" />
+    <f:variable name="width" value="{f:if(condition: '{data.width} == full-bleed', then: 'full-bleed', else: 'constrained')}" />
+    <div class="astryx-container-single-col {ax:recipe(name: 'SingleColumn', options: {background: background, width: width})}" data-astryx-single-column="{width}" data-astryx-background="{background}">
+        <f:render partial="Media/Background" arguments="{file: data.image.0}" />
+        <div class="astryx-container-single-col-content {f:if(condition: '{width} == full-bleed', then: 'astryx-shell-width')}">
+            <f:render partial="ContentElements/Header" arguments="{data: data}" />
+            <f:if condition="{content.201}">{content.201 -> f:render.contentArea()}</f:if>
+        </div>
+    </div>
+</f:section>

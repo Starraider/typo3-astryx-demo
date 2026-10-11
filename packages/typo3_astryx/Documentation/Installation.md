@@ -23,13 +23,15 @@ Override page hierarchy through `Astryx.pageViewPath`. Override component paths 
 | textmedia, textpic, image | textmedia block; both original image/assets FAL fields retained |
 | div | divider block |
 | uploads | downloads block using original media field |
-| menu_sitemap, menu_subpages | retained CType fields with core menu processors |
+| menu_sitemap, menu_subpages, menu_pages | retained CType fields with core menu processors |
 | shortcut | retained record-reference renderer; TYPO3's RECORDS recursion/visibility handling |
 | html | retained sanitized HTML; remove scripts, handlers and unsafe schemes; restrict editor permissions |
 | bullets, table | manual structured conversion to Collection-based list/table blocks |
 | other menu types | explicit integrator conversion; apply refuses unknown records |
 | legacy list_type | TYPO3 14 removed this column; use the original extension's dedicated CType migration |
 | dedicated plugins | leave installed plugin registrations and configuration unchanged |
+
+For new image grids, choose **Image Only** (`astryx_image_only`) in the content wizard. It reuses the core image relations but has its own column and aspect selectors. The migration command still maps legacy `image` records to Textmedia; it does not automatically translate FSC image-column, link or layout options into Image Only. Review those options before manually switching an existing record.
 
 The shipped command intentionally does not guess at structured data conversion or draft/deleted records. The provided starter has no such variants; see its inventory and rehearsal evidence. Adding support for another existing site requires its own mappings and tests.
 

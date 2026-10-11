@@ -1,9 +1,9 @@
 import * as stylex from '@stylexjs/stylex';
 import {tokens} from './tokens.stylex.js';
-// Token import guarantees JavaScript-defined defaults reach the compiled output.
+// Use public variables so nested theme attributes control the recipe.
 export const styles = stylex.create({
   "root": {
-    "fontFamily": tokens['--astryx-font'],
+    "fontFamily": "var(--astryx-font)",
     "border": 0,
     "borderTopWidth": 1,
     "borderTopStyle": "solid",

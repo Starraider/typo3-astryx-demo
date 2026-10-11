@@ -2,8 +2,26 @@
 <f:argument name="body" type="string" default="" />
 <f:argument name="href" type="string|TYPO3\CMS\Core\LinkHandling\TypolinkParameter" default="" />
 <f:argument name="label" type="string" default="" />
+<f:argument name="secondaryHref" type="string|TYPO3\CMS\Core\LinkHandling\TypolinkParameter" default="" />
+<f:argument name="secondaryLabel" type="string" default="" />
 <f:argument name="badge" type="string" default="" />
 <f:argument name="level" type="int" default="3" />
 <f:argument name="variant" type="string" default="outlined" />
 <f:argument name="padding" type="string" default="normal" />
-<article class="{ax:recipe(name: 'Card', options: {variant: variant, padding: padding})}"><f:slot name="media" /><f:if condition="{badge}"><astryx:badge text="{badge}" /></f:if><f:slot name="heading"><f:if condition="{title}"><astryx:heading text="{title}" level="{level}" size="small" /></f:if></f:slot><astryx:text richText="{body}"><f:slot /></astryx:text><f:if condition="{href} && {label}"><astryx:button href="{href}" label="{label}" size="small" /></f:if><f:slot name="footer" /></article>
+<article class="astryx-card {ax:recipe(name: 'Card', options: {variant: variant, padding: padding})}">
+    <f:slot name="media" />
+    <f:if condition="{badge}"><astryx:badge text="{badge}" /></f:if>
+    <f:variable name="headingSlot" value="{f:slot(name: 'heading')}" />
+    <f:if condition="{headingSlot} === {null}">
+        <f:then><f:if condition="{title}"><astryx:heading text="{title}" level="{level}" size="small" /></f:if></f:then>
+        <f:else>{headingSlot -> f:format.raw()}</f:else>
+    </f:if>
+    <astryx:text richText="{body}"><f:slot /></astryx:text>
+    <f:if condition="({href} && {label}) || ({secondaryHref} && {secondaryLabel})">
+        <div class="astryx-cta-group">
+            <f:if condition="{href} && {label}"><astryx:button href="{href}" label="{label}" size="small" /></f:if>
+            <f:if condition="{secondaryHref} && {secondaryLabel}"><astryx:button href="{secondaryHref}" label="{secondaryLabel}" variant="secondary" size="small" /></f:if>
+        </div>
+    </f:if>
+    <f:slot name="footer" />
+</article>

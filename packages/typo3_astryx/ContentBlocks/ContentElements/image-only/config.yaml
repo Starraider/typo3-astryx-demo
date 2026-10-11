@@ -1,0 +1,43 @@
+name: astryx/image-only
+typeName: astryx_image_only
+group: default
+title: Image Only
+fields:
+  - identifier: image
+    useExistingField: true
+    type: File
+    allowed: common-image-types
+    maxitems: 100
+  - identifier: columns
+    type: Select
+    renderType: selectSingle
+    default: three
+    items:
+      - value: one
+        label: '1'
+      - value: two
+        label: '2'
+      - value: three
+        label: '3'
+      - value: four
+        label: '4'
+      - value: five
+        label: '5'
+      - value: six
+        label: '6'
+  - identifier: aspect_ratio
+    type: Select
+    renderType: selectSingle
+    default: auto
+    items:
+      - value: auto
+        label: Original
+      - value: landscape
+        label: '4:3'
+      - value: wide
+        label: '16:9'
+      - value: square
+        label: '1:1'
+basics:
+  - Astryx/heading
+  - Astryx/spacing

@@ -1,0 +1,1453 @@
+@layer product{.astryx-logo img{max-height:2.75rem;width:auto}}
+
+@layer priority1 {
+  :root, .x15xvuy5 {
+    --astryx-accent: var(--lightningcss-light, #1b1b1b) var(--lightningcss-dark, #f1f1f1);
+    --astryx-on-accent: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-body: var(--lightningcss-light, #f1f1f1) var(--lightningcss-dark, #1b1b1b);
+    --astryx-surface: var(--lightningcss-light, #fff) var(--lightningcss-dark, #262626);
+    --astryx-muted: var(--lightningcss-light, #f1f1f1) var(--lightningcss-dark, #1b1b1b);
+    --astryx-text: var(--lightningcss-light, #15110c) var(--lightningcss-dark, #dfe2e5);
+    --astryx-secondary: var(--lightningcss-light, #4e606f) var(--lightningcss-dark, #aaafb5);
+    --astryx-border: var(--lightningcss-light, #00000014) var(--lightningcss-dark, #ffffff1a);
+    --astryx-border-strong: var(--lightningcss-light, #d4d4d4) var(--lightningcss-dark, #525252);
+    --astryx-success: var(--lightningcss-light, #00490b) var(--lightningcss-dark, #a4d6a3);
+    --astryx-warning: var(--lightningcss-light, #4b3900) var(--lightningcss-dark, #f8d36a);
+    --astryx-error: var(--lightningcss-light, #76000c) var(--lightningcss-dark, #ffc4be);
+    --astryx-shadow-color: var(--lightningcss-light, #0000001a) var(--lightningcss-dark, #0000004d);
+    --astryx-font: Figtree, "Figtree Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --astryx-link: var(--lightningcss-light, #15110c) var(--lightningcss-dark, #dfe2e5);
+    --astryx-font-size-body: 1.0625rem;
+    --astryx-font-size-label: .875rem;
+    --astryx-font-size-supporting: .75rem;
+    --astryx-line-body: 1.64706;
+    --astryx-line-label: 1.42857;
+    --astryx-font-code: "SF Mono", Monaco, Consolas, monospace;
+    --astryx-radius-element: 8px;
+    --astryx-radius-container: 12px;
+    --astryx-radius-page: 28px;
+    --astryx-space-1: 4px;
+    --astryx-space-2: 8px;
+    --astryx-space-3: 12px;
+    --astryx-space-4: 16px;
+    --astryx-space-6: 24px;
+    --astryx-space-8: 32px;
+    --astryx-space-12: 48px;
+    --astryx-content-width: 72rem;
+    --astryx-prose-width: 68ch;
+    --astryx-nav-hover: var(--lightningcss-light, #0000000d) var(--lightningcss-dark, #ffffff0d);
+    --astryx-nav-pressed: var(--lightningcss-light, #0000001a) var(--lightningcss-dark, #ffffff1a);
+    --astryx-nav-selected: var(--lightningcss-light, #0000000f) var(--lightningcss-dark, #ffffff1a);
+    --astryx-nav-width: 16rem;
+    --astryx-detail-width: 20rem;
+    --astryx-duration: .125s;
+    --astryx-easing: cubic-bezier(.24, 1, .4, 1);
+    --astryx-shadow: 0 2px 12px var(--astryx-shadow-color);
+    --astryx-font-heading: var(--astryx-font);
+    --astryx-line-supporting: 1.66667;
+    --astryx-radius-inner: 4px;
+    --astryx-radius-full: 9999px;
+    --astryx-card: var(--astryx-surface);
+    --astryx-popover: var(--astryx-surface);
+    --astryx-overlay: #0008;
+    --astryx-card-border: var(--astryx-border-strong);
+    --astryx-card-padding: var(--astryx-space-6);
+    --astryx-header-shadow: 0 2px 12px #00000008;
+    --astryx-popover-shadow: 0 12px 32px #00000018;
+    --astryx-button-radius: var(--astryx-radius-element);
+    --astryx-button-secondary-background: var(--astryx-muted);
+    --astryx-button-secondary-hover: var(--astryx-nav-hover);
+    --astryx-button-destructive-background: var(--lightningcss-light, #76000c) var(--lightningcss-dark, #ffc4be);
+    --astryx-button-destructive-text: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-button-small-size: .75rem;
+    --astryx-button-large-size: 1.0625rem;
+    --astryx-badge-line: 20px;
+    --astryx-badge-border-width: 1px;
+    --astryx-notice-border-width: 4px;
+    --astryx-notice-padding: var(--astryx-space-6);
+    --astryx-code-background: var(--astryx-surface);
+    --astryx-h1-size: 2.625rem;
+    --astryx-h1-line: 1.2381;
+    --astryx-h1-weight: 600;
+    --astryx-h2-size: 1.8125rem;
+    --astryx-h2-line: 1.24138;
+    --astryx-h2-weight: 600;
+    --astryx-h3-size: 1.5rem;
+    --astryx-h3-line: 1.33333;
+    --astryx-h3-weight: 600;
+    --astryx-h4-size: 1.25rem;
+    --astryx-h4-line: 1.4;
+    --astryx-h4-weight: 600;
+    --astryx-h5-size: 1.0625rem;
+    --astryx-h5-line: 1.41176;
+    --astryx-h5-weight: 600;
+    --astryx-h6-size: .875rem;
+    --astryx-h6-line: 1.42857;
+    --astryx-h6-weight: 600;
+    --astryx-display-size: 2.625rem;
+    --astryx-display-line: 1.2381;
+    --astryx-display-weight: 600;
+    --astryx-heading-large-size: 2.1875rem;
+    --astryx-heading-large-line: 1.25714;
+    --astryx-badge-neutral-background: var(--astryx-muted);
+    --astryx-badge-neutral-text: var(--astryx-text);
+    --astryx-badge-neutral-border: var(--astryx-secondary);
+    --astryx-notice-neutral-background: var(--astryx-surface);
+    --astryx-notice-neutral-text: var(--astryx-text);
+    --astryx-notice-neutral-secondary: var(--astryx-secondary);
+    --astryx-notice-neutral-border: var(--astryx-secondary);
+    --astryx-badge-accent-background: var(--astryx-muted);
+    --astryx-badge-accent-text: var(--astryx-text);
+    --astryx-badge-accent-border: var(--astryx-accent);
+    --astryx-notice-accent-background: var(--astryx-surface);
+    --astryx-notice-accent-text: var(--astryx-text);
+    --astryx-notice-accent-secondary: var(--astryx-secondary);
+    --astryx-notice-accent-border: var(--astryx-accent);
+    --astryx-badge-success-background: var(--astryx-muted);
+    --astryx-badge-success-text: var(--astryx-text);
+    --astryx-badge-success-border: var(--astryx-success);
+    --astryx-notice-success-background: var(--astryx-surface);
+    --astryx-notice-success-text: var(--astryx-text);
+    --astryx-notice-success-secondary: var(--astryx-secondary);
+    --astryx-notice-success-border: var(--astryx-success);
+    --astryx-badge-warning-background: var(--astryx-muted);
+    --astryx-badge-warning-text: var(--astryx-text);
+    --astryx-badge-warning-border: var(--astryx-warning);
+    --astryx-notice-warning-background: var(--astryx-surface);
+    --astryx-notice-warning-text: var(--astryx-text);
+    --astryx-notice-warning-secondary: var(--astryx-secondary);
+    --astryx-notice-warning-border: var(--astryx-warning);
+    --astryx-badge-error-background: var(--astryx-muted);
+    --astryx-badge-error-text: var(--astryx-text);
+    --astryx-badge-error-border: var(--astryx-error);
+    --astryx-notice-error-background: var(--astryx-surface);
+    --astryx-notice-error-text: var(--astryx-text);
+    --astryx-notice-error-secondary: var(--astryx-secondary);
+    --astryx-notice-error-border: var(--astryx-error);
+    --astryx-accent-muted: var(--astryx-muted);
+    --astryx-text-disabled: var(--astryx-text);
+    --astryx-text-accent: var(--astryx-text);
+    --astryx-on-dark: var(--astryx-text);
+    --astryx-on-light: var(--astryx-text);
+    --astryx-on-success: var(--astryx-text);
+    --astryx-on-error: var(--astryx-text);
+    --astryx-on-warning: var(--astryx-text);
+    --astryx-icon-accent: var(--astryx-text);
+    --astryx-icon-primary: var(--astryx-text);
+    --astryx-icon-secondary: var(--astryx-text);
+    --astryx-icon-disabled: var(--astryx-text);
+    --astryx-background-inverted: var(--astryx-muted);
+    --astryx-success-muted: var(--astryx-muted);
+    --astryx-error-muted: var(--astryx-muted);
+    --astryx-warning-muted: var(--astryx-muted);
+    --astryx-skeleton: var(--astryx-muted);
+    --astryx-tint-hover: var(--lightningcss-light, #000) var(--lightningcss-dark, #fff);
+    --astryx-background-blue: var(--astryx-muted);
+    --astryx-border-blue: var(--astryx-border);
+    --astryx-icon-blue: var(--astryx-text);
+    --astryx-text-blue: var(--astryx-text);
+    --astryx-background-cyan: var(--astryx-muted);
+    --astryx-border-cyan: var(--astryx-border);
+    --astryx-icon-cyan: var(--astryx-text);
+    --astryx-text-cyan: var(--astryx-text);
+    --astryx-background-gray: var(--astryx-muted);
+    --astryx-border-gray: var(--astryx-border);
+    --astryx-icon-gray: var(--astryx-text);
+    --astryx-text-gray: var(--astryx-text);
+    --astryx-background-green: var(--astryx-muted);
+    --astryx-border-green: var(--astryx-border);
+    --astryx-icon-green: var(--astryx-text);
+    --astryx-text-green: var(--astryx-text);
+    --astryx-background-orange: var(--astryx-muted);
+    --astryx-border-orange: var(--astryx-border);
+    --astryx-icon-orange: var(--astryx-text);
+    --astryx-text-orange: var(--astryx-text);
+    --astryx-background-pink: var(--astryx-muted);
+    --astryx-border-pink: var(--astryx-border);
+    --astryx-icon-pink: var(--astryx-text);
+    --astryx-text-pink: var(--astryx-text);
+    --astryx-background-purple: var(--astryx-muted);
+    --astryx-border-purple: var(--astryx-border);
+    --astryx-icon-purple: var(--astryx-text);
+    --astryx-text-purple: var(--astryx-text);
+    --astryx-background-red: var(--astryx-muted);
+    --astryx-border-red: var(--astryx-border);
+    --astryx-icon-red: var(--astryx-text);
+    --astryx-text-red: var(--astryx-text);
+    --astryx-background-teal: var(--astryx-muted);
+    --astryx-border-teal: var(--astryx-border);
+    --astryx-icon-teal: var(--astryx-text);
+    --astryx-text-teal: var(--astryx-text);
+    --astryx-background-yellow: var(--astryx-muted);
+    --astryx-border-yellow: var(--astryx-border);
+    --astryx-icon-yellow: var(--astryx-text);
+    --astryx-text-yellow: var(--astryx-text);
+    --astryx-radius-none: 0px;
+    --astryx-shadow-med: var(--astryx-shadow);
+    --astryx-shadow-high: var(--astryx-shadow);
+    --astryx-shadow-inset-hover: var(--astryx-shadow);
+    --astryx-shadow-inset-selected: var(--astryx-shadow);
+    --astryx-shadow-inset-success: var(--astryx-shadow);
+    --astryx-shadow-inset-warning: var(--astryx-shadow);
+    --astryx-shadow-inset-error: var(--astryx-shadow);
+    --astryx-syntax-keyword: var(--lightningcss-light, #a626a4) var(--lightningcss-dark, #d2a8ff);
+    --astryx-syntax-string: var(--lightningcss-light, #116329) var(--lightningcss-dark, #a7cfa0);
+    --astryx-syntax-comment: var(--lightningcss-light, #57606a) var(--lightningcss-dark, #a0a0a0);
+    --astryx-syntax-number: var(--lightningcss-light, #0550ae) var(--lightningcss-dark, #a5c8ff);
+    --astryx-syntax-function: var(--lightningcss-light, #6639ba) var(--lightningcss-dark, #b9c7ef);
+    --astryx-syntax-type: var(--lightningcss-light, #0550ae) var(--lightningcss-dark, #a5c8ff);
+    --astryx-syntax-variable: var(--lightningcss-light, #0550ae) var(--lightningcss-dark, #a5c8ff);
+    --astryx-syntax-operator: var(--astryx-text);
+    --astryx-syntax-constant: var(--lightningcss-light, #a626a4) var(--lightningcss-dark, #d2a8ff);
+    --astryx-syntax-tag: var(--lightningcss-light, #6639ba) var(--lightningcss-dark, #b9c7ef);
+    --astryx-syntax-attribute: var(--lightningcss-light, #0550ae) var(--lightningcss-dark, #a5c8ff);
+    --astryx-syntax-property: var(--astryx-text);
+    --astryx-syntax-punctuation: var(--astryx-text);
+    --astryx-syntax-background: var(--astryx-muted);
+    --astryx-header-selected: color-mix(in srgb, var(--astryx-accent) 8%, transparent);
+    --astryx-header-hover: color-mix(in srgb, var(--astryx-text) 6%, transparent);
+    --astryx-code-border: var(--lightningcss-light, var(--astryx-border-strong)) var(--lightningcss-dark, var(--astryx-border));
+    --astryx-code-header: var(--lightningcss-light, color-mix(in srgb, var(--astryx-muted) 92%, var(--astryx-text))) var(--lightningcss-dark, var(--astryx-muted));
+    --astryx-code-title: var(--lightningcss-light, color-mix(in srgb, var(--astryx-secondary) 85%, var(--astryx-text))) var(--lightningcss-dark, var(--astryx-secondary));
+    --astryx-button-small-height: auto;
+    --astryx-button-small-min-height: 32px;
+    --astryx-button-small-padding: 6px 10px;
+    --astryx-button-medium-height: auto;
+    --astryx-button-medium-min-height: 44px;
+    --astryx-button-medium-padding: 8px 12px;
+    --astryx-button-large-height: auto;
+    --astryx-button-large-min-height: 48px;
+    --astryx-button-large-padding: 12px 20px;
+    --astryx-button-border-width: 1px;
+    --astryx-button-secondary-border-width: 1px;
+    --astryx-button-secondary-border-color: transparent;
+    --astryx-code-preview-size: .75rem;
+    --astryx-code-preview-line: 1.5;
+  }
+
+  .x1gpd43z.x1gpd43z, .x1gpd43z.x1gpd43z:root {
+    --astryx-accent: var(--lightningcss-light, #005a85) var(--lightningcss-dark, #8edafa);
+    --astryx-body: var(--lightningcss-light, #eef7fb) var(--lightningcss-dark, #071b27);
+    --astryx-border: var(--lightningcss-light, #b7d3e0) var(--lightningcss-dark, #365c6e);
+    --astryx-border-strong: var(--lightningcss-light, #d4d4d4) var(--lightningcss-dark, #525252);
+    --astryx-button-destructive-background: var(--lightningcss-light, #76000c) var(--lightningcss-dark, #ffc4be);
+    --astryx-button-destructive-text: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-content-width: 72rem;
+    --astryx-detail-width: 20rem;
+    --astryx-duration: .125s;
+    --astryx-easing: cubic-bezier(.24, 1, .4, 1);
+    --astryx-error: var(--lightningcss-light, #76000c) var(--lightningcss-dark, #ffc4be);
+    --astryx-font: Figtree, "Figtree Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --astryx-font-code: "SF Mono", Monaco, Consolas, monospace;
+    --astryx-muted: var(--lightningcss-light, #dceef6) var(--lightningcss-dark, #193d4e);
+    --astryx-nav-hover: var(--lightningcss-light, #0000000d) var(--lightningcss-dark, #ffffff0d);
+    --astryx-nav-pressed: var(--lightningcss-light, #0000001a) var(--lightningcss-dark, #ffffff1a);
+    --astryx-nav-selected: var(--lightningcss-light, #0000000f) var(--lightningcss-dark, #ffffff1a);
+    --astryx-nav-width: 16rem;
+    --astryx-on-accent: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-prose-width: 68ch;
+    --astryx-radius-container: 12px;
+    --astryx-radius-element: 8px;
+    --astryx-radius-page: 28px;
+    --astryx-secondary: var(--lightningcss-light, #4e606f) var(--lightningcss-dark, #aaafb5);
+    --astryx-shadow: 0 2px 12px var(--astryx-shadow-color);
+    --astryx-shadow-color: var(--lightningcss-light, #0000001a) var(--lightningcss-dark, #0000004d);
+    --astryx-space-1: 4px;
+    --astryx-space-12: 48px;
+    --astryx-space-2: 8px;
+    --astryx-space-3: 12px;
+    --astryx-space-4: 16px;
+    --astryx-space-6: 24px;
+    --astryx-space-8: 32px;
+    --astryx-success: var(--lightningcss-light, #00490b) var(--lightningcss-dark, #a4d6a3);
+    --astryx-surface: var(--lightningcss-light, #fff) var(--lightningcss-dark, #102b3a);
+    --astryx-text: var(--lightningcss-light, #15110c) var(--lightningcss-dark, #dfe2e5);
+    --astryx-warning: var(--lightningcss-light, #4b3900) var(--lightningcss-dark, #f8d36a);
+  }
+
+  .x1byets8.x1byets8, .x1byets8.x1byets8:root {
+    --astryx-accent: var(--lightningcss-light, #1b1b1b) var(--lightningcss-dark, #f1f1f1);
+    --astryx-body: var(--lightningcss-light, #f1f1f1) var(--lightningcss-dark, #1b1b1b);
+    --astryx-border: var(--lightningcss-light, #00000014) var(--lightningcss-dark, #ffffff1a);
+    --astryx-border-strong: var(--lightningcss-light, #d4d4d4) var(--lightningcss-dark, #525252);
+    --astryx-button-destructive-background: var(--lightningcss-light, #76000c) var(--lightningcss-dark, #ffc4be);
+    --astryx-button-destructive-text: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-content-width: 72rem;
+    --astryx-detail-width: 20rem;
+    --astryx-duration: .125s;
+    --astryx-easing: cubic-bezier(.24, 1, .4, 1);
+    --astryx-error: var(--lightningcss-light, #76000c) var(--lightningcss-dark, #ffc4be);
+    --astryx-font: Figtree, "Figtree Variable", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --astryx-font-code: "SF Mono", Monaco, Consolas, monospace;
+    --astryx-muted: var(--lightningcss-light, #f1f1f1) var(--lightningcss-dark, #1b1b1b);
+    --astryx-nav-hover: var(--lightningcss-light, #0000000d) var(--lightningcss-dark, #ffffff0d);
+    --astryx-nav-pressed: var(--lightningcss-light, #0000001a) var(--lightningcss-dark, #ffffff1a);
+    --astryx-nav-selected: var(--lightningcss-light, #0000000f) var(--lightningcss-dark, #ffffff1a);
+    --astryx-nav-width: 16rem;
+    --astryx-on-accent: var(--lightningcss-light, #fff) var(--lightningcss-dark, #15110c);
+    --astryx-prose-width: 68ch;
+    --astryx-radius-container: 12px;
+    --astryx-radius-element: 8px;
+    --astryx-radius-page: 28px;
+    --astryx-secondary: var(--lightningcss-light, #4e606f) var(--lightningcss-dark, #aaafb5);
+    --astryx-shadow: 0 2px 12px var(--astryx-shadow-color);
+    --astryx-shadow-color: var(--lightningcss-light, #0000001a) var(--lightningcss-dark, #0000004d);
+    --astryx-space-1: 4px;
+    --astryx-space-12: 48px;
+    --astryx-space-2: 8px;
+    --astryx-space-3: 12px;
+    --astryx-space-4: 16px;
+    --astryx-space-6: 24px;
+    --astryx-space-8: 32px;
+    --astryx-success: var(--lightningcss-light, #00490b) var(--lightningcss-dark, #a4d6a3);
+    --astryx-surface: var(--lightningcss-light, #fff) var(--lightningcss-dark, #262626);
+    --astryx-text: var(--lightningcss-light, #15110c) var(--lightningcss-dark, #dfe2e5);
+    --astryx-warning: var(--lightningcss-light, #4b3900) var(--lightningcss-dark, #f8d36a);
+  }
+
+  .x1ggumqb.x1ggumqb, .x1ggumqb.x1ggumqb:root {
+    --astryx-accent: var(--lightningcss-light, #25252a) var(--lightningcss-dark, #f3f3f5);
+    --astryx-accent-muted: var(--lightningcss-light, #25252a14) var(--lightningcss-dark, #f3f3f520);
+    --astryx-background-blue: var(--lightningcss-light, #d7e4f5) var(--lightningcss-dark, #485362);
+    --astryx-background-cyan: var(--lightningcss-light, #cce8e5) var(--lightningcss-dark, #3e5755);
+    --astryx-background-gray: var(--lightningcss-light, #e2e2e8) var(--lightningcss-dark, #525257);
+    --astryx-background-green: var(--lightningcss-light, #d0e9ce) var(--lightningcss-dark, #425841);
+    --astryx-background-inverted: var(--lightningcss-light, #25252a) var(--lightningcss-dark, #f3f3f5);
+    --astryx-background-orange: var(--lightningcss-light, #ffdcbb) var(--lightningcss-dark, #684d32);
+    --astryx-background-pink: var(--lightningcss-light, #f0dde8) var(--lightningcss-dark, #5e4e57);
+    --astryx-background-purple: var(--lightningcss-light, #e8dff3) var(--lightningcss-dark, #564f60);
+    --astryx-background-red: var(--lightningcss-light, #f9dcd7) var(--lightningcss-dark, #644d49);
+    --astryx-background-teal: var(--lightningcss-light, #d4e7dc) var(--lightningcss-dark, #46564d);
+    --astryx-background-yellow: var(--lightningcss-light, #f4e1b7) var(--lightningcss-dark, #5e512d);
+    --astryx-badge-accent-background: var(--astryx-background-blue);
+    --astryx-badge-accent-border: var(--astryx-border-blue);
+    --astryx-badge-accent-text: var(--astryx-text-blue);
+    --astryx-badge-border-width: 0px;
+    --astryx-badge-error-background: var(--astryx-background-red);
+    --astryx-badge-error-border: var(--astryx-border-red);
+    --astryx-badge-error-text: var(--astryx-text-red);
+    --astryx-badge-line: 1.4545;
+    --astryx-badge-neutral-background: var(--astryx-background-gray);
+    --astryx-badge-neutral-border: var(--astryx-border-gray);
+    --astryx-badge-neutral-text: var(--astryx-text-gray);
+    --astryx-badge-success-background: var(--astryx-background-green);
+    --astryx-badge-success-border: var(--astryx-border-green);
+    --astryx-badge-success-text: var(--astryx-text-green);
+    --astryx-badge-warning-background: var(--astryx-background-yellow);
+    --astryx-badge-warning-border: var(--astryx-border-yellow);
+    --astryx-badge-warning-text: var(--astryx-text-yellow);
+    --astryx-body: var(--lightningcss-light, #f3f3f5) var(--lightningcss-dark, #111015);
+    --astryx-border: var(--lightningcss-light, #e2e2e8) var(--lightningcss-dark, #f3f3f51a);
+    --astryx-border-blue: var(--lightningcss-light, #c9d6e7) var(--lightningcss-dark, #313c4a);
+    --astryx-border-cyan: var(--lightningcss-light, #bedad7) var(--lightningcss-dark, #28403e);
+    --astryx-border-gray: var(--lightningcss-light, #d4d4da) var(--lightningcss-dark, #3b3b3f);
+    --astryx-border-green: var(--lightningcss-light, #c2dbc0) var(--lightningcss-dark, #2b402b);
+    --astryx-border-orange: var(--lightningcss-light, #f1ceae) var(--lightningcss-dark, #4f361c);
+    --astryx-border-pink: var(--lightningcss-light, #e2cfda) var(--lightningcss-dark, #463740);
+    --astryx-border-purple: var(--lightningcss-light, #d9d1e5) var(--lightningcss-dark, #3f3949);
+    --astryx-border-red: var(--lightningcss-light, #ebcec9) var(--lightningcss-dark, #4c3633);
+    --astryx-border-strong: var(--lightningcss-light, #83838a) var(--lightningcss-dark, #5e5e61);
+    --astryx-border-teal: var(--lightningcss-light, #c6d9ce) var(--lightningcss-dark, #303f36);
+    --astryx-border-yellow: var(--lightningcss-light, #e5d3a9) var(--lightningcss-dark, #463a18);
+    --astryx-button-border-width: 0px;
+    --astryx-button-destructive-background: var(--astryx-background-red);
+    --astryx-button-destructive-text: var(--astryx-text-red);
+    --astryx-button-large-height: 36px;
+    --astryx-button-large-min-height: 0px;
+    --astryx-button-large-padding: 8px 12px;
+    --astryx-button-large-size: 14px;
+    --astryx-button-medium-height: 32px;
+    --astryx-button-medium-min-height: 0px;
+    --astryx-button-medium-padding: 8px 12px;
+    --astryx-button-radius: 9999px;
+    --astryx-button-secondary-background: transparent;
+    --astryx-button-secondary-border-color: var(--astryx-border-strong);
+    --astryx-button-secondary-border-width: 1.5px;
+    --astryx-button-secondary-hover: var(--astryx-nav-selected);
+    --astryx-button-small-height: 28px;
+    --astryx-button-small-min-height: 0px;
+    --astryx-button-small-padding: 8px 12px;
+    --astryx-button-small-size: 14px;
+    --astryx-card: var(--lightningcss-light, #fff) var(--lightningcss-dark, #242325);
+    --astryx-card-border: var(--astryx-border);
+    --astryx-card-padding: 12px;
+    --astryx-code-background: var(--astryx-syntax-background);
+    --astryx-code-border: var(--astryx-border);
+    --astryx-code-header: var(--astryx-muted);
+    --astryx-code-preview-line: 1.4286;
+    --astryx-code-preview-size: 14px;
+    --astryx-code-title: var(--astryx-secondary);
+    --astryx-content-width: 72rem;
+    --astryx-detail-width: 20rem;
+    --astryx-display-line: 1.2093;
+    --astryx-display-size: 43px;
+    --astryx-display-weight: 400;
+    --astryx-duration: .125s;
+    --astryx-easing: cubic-bezier(.24, 1, .4, 1);
+    --astryx-error: var(--lightningcss-light, #58413e) var(--lightningcss-dark, #dcc0bc);
+    --astryx-error-muted: var(--lightningcss-light, #f9dcd7) var(--lightningcss-dark, #dcc0bc);
+    --astryx-font: Figtree, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --astryx-font-code: "JetBrains Mono", "SF Mono", Monaco, Consolas, monospace;
+    --astryx-font-heading: Montserrat, "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --astryx-font-size-body: 14px;
+    --astryx-font-size-label: 14px;
+    --astryx-font-size-supporting: 12px;
+    --astryx-h1-line: 1.3333;
+    --astryx-h1-size: 27px;
+    --astryx-h1-weight: 400;
+    --astryx-h2-line: 1.4545;
+    --astryx-h2-size: 22px;
+    --astryx-h2-weight: 400;
+    --astryx-h3-line: 1.5556;
+    --astryx-h3-size: 18px;
+    --astryx-h3-weight: 400;
+    --astryx-h4-line: 1.4286;
+    --astryx-h4-size: 14px;
+    --astryx-h4-weight: 400;
+    --astryx-h5-line: 1.4545;
+    --astryx-h5-size: 11px;
+    --astryx-h5-weight: 400;
+    --astryx-h6-line: 1.7778;
+    --astryx-h6-size: 9px;
+    --astryx-h6-weight: 400;
+    --astryx-header-hover: var(--astryx-nav-hover);
+    --astryx-header-selected: var(--astryx-nav-selected);
+    --astryx-header-shadow: var(--astryx-shadow);
+    --astryx-heading-large-line: 1.3333;
+    --astryx-heading-large-size: 27px;
+    --astryx-icon-accent: var(--lightningcss-light, #25252a) var(--lightningcss-dark, #f3f3f5);
+    --astryx-icon-blue: var(--lightningcss-light, #3c4856) var(--lightningcss-dark, #d7e4f5);
+    --astryx-icon-cyan: var(--lightningcss-light, #334b49) var(--lightningcss-dark, #cce8e5);
+    --astryx-icon-disabled: var(--lightningcss-light, #d7d7da) var(--lightningcss-dark, #5e5e61);
+    --astryx-icon-gray: var(--lightningcss-light, #46464b) var(--lightningcss-dark, #e2e2e8);
+    --astryx-icon-green: var(--lightningcss-light, #374c36) var(--lightningcss-dark, #d0e9ce);
+    --astryx-icon-orange: var(--lightningcss-light, #5b4227) var(--lightningcss-dark, #ffdcbb);
+    --astryx-icon-pink: var(--lightningcss-light, #52424c) var(--lightningcss-dark, #f0dde8);
+    --astryx-icon-primary: var(--lightningcss-light, #25252a) var(--lightningcss-dark, #f3f3f5);
+    --astryx-icon-purple: var(--lightningcss-light, #4b4454) var(--lightningcss-dark, #e8dff3);
+    --astryx-icon-red: var(--lightningcss-light, #58413e) var(--lightningcss-dark, #f9dcd7);
+    --astryx-icon-secondary: var(--lightningcss-light, #83838a) var(--lightningcss-dark, #9d9da3);
+    --astryx-icon-teal: var(--lightningcss-light, #3b4a41) var(--lightningcss-dark, #d4e7dc);
+    --astryx-icon-yellow: var(--lightningcss-light, #524622) var(--lightningcss-dark, #f4e1b7);
+    --astryx-line-body: 1.4286;
+    --astryx-line-label: 1.4286;
+    --astryx-line-supporting: 1.4545;
+    --astryx-link: var(--lightningcss-light, #25252a) var(--lightningcss-dark, #f3f3f5);
+    --astryx-muted: var(--lightningcss-light, #e2e2e8) var(--lightningcss-dark, #3b3b3f);
+    --astryx-nav-hover: var(--lightningcss-light, #25252a0d) var(--lightningcss-dark, #f3f3f50d);
+    --astryx-nav-pressed: var(--lightningcss-light, #25252a1a) var(--lightningcss-dark, #f3f3f51a);
+    --astryx-nav-selected: var(--lightningcss-light, #25252a0f) var(--lightningcss-dark, #f3f3f51a);
+    --astryx-nav-width: 16rem;
+    --astryx-notice-accent-background: var(--astryx-background-blue);
+    --astryx-notice-accent-border: var(--astryx-border-blue);
+    --astryx-notice-accent-secondary: var(--astryx-text-blue);
+    --astryx-notice-accent-text: var(--astryx-text-blue);
+    --astryx-notice-border-width: 0px;
+    --astryx-notice-error-background: var(--astryx-background-red);
+    --astryx-notice-error-border: var(--astryx-border-red);
+    --astryx-notice-error-secondary: var(--astryx-text-red);
+    --astryx-notice-error-text: var(--astryx-text-red);
+    --astryx-notice-neutral-background: var(--astryx-background-gray);
+    --astryx-notice-neutral-border: var(--astryx-border-gray);
+    --astryx-notice-neutral-secondary: var(--astryx-text-gray);
+    --astryx-notice-neutral-text: var(--astryx-text-gray);
+    --astryx-notice-padding: 12px;
+    --astryx-notice-success-background: var(--astryx-background-green);
+    --astryx-notice-success-border: var(--astryx-border-green);
+    --astryx-notice-success-secondary: var(--astryx-text-green);
+    --astryx-notice-success-text: var(--astryx-text-green);
+    --astryx-notice-warning-background: var(--astryx-background-yellow);
+    --astryx-notice-warning-border: var(--astryx-border-yellow);
+    --astryx-notice-warning-secondary: var(--astryx-text-yellow);
+    --astryx-notice-warning-text: var(--astryx-text-yellow);
+    --astryx-on-accent: var(--lightningcss-light, #fff) var(--lightningcss-dark, #25252a);
+    --astryx-on-dark: #fff;
+    --astryx-on-error: var(--lightningcss-light, #58413e) var(--lightningcss-dark, #f9dcd7);
+    --astryx-on-light: var(--lightningcss-light, #25252a) var(--lightningcss-dark, #28282a);
+    --astryx-on-success: var(--lightningcss-light, #374c36) var(--lightningcss-dark, #d0e9ce);
+    --astryx-on-warning: var(--lightningcss-light, #524622) var(--lightningcss-dark, #f4e1b7);
+    --astryx-overlay: var(--lightningcss-light, #25252a80) var(--lightningcss-dark, #28282acc);
+    --astryx-popover: var(--lightningcss-light, #fff) var(--lightningcss-dark, #25252a);
+    --astryx-popover-shadow: var(--astryx-shadow-high);
+    --astryx-prose-width: 68ch;
+    --astryx-radius-container: .75rem;
+    --astryx-radius-element: .5rem;
+    --astryx-radius-full: 9999px;
+    --astryx-radius-inner: .25rem;
+    --astryx-radius-none: 0px;
+    --astryx-radius-page: 1.5rem;
+    --astryx-secondary: var(--lightningcss-light, #5e5e63) var(--lightningcss-dark, #ababb0);
+    --astryx-shadow: 0 2px 4px #28282a0d, 0 4px 8px #28282a1a;
+    --astryx-shadow-color: var(--lightningcss-light, #25252a1a) var(--lightningcss-dark, #0000004d);
+    --astryx-shadow-high: 0 4px 6px #28282a1a, 0 12px 24px #28282a26;
+    --astryx-shadow-inset-error: inset 0px 0px 0px 2px #83838a30;
+    --astryx-shadow-inset-hover: inset 0px 0px 0px 2px #28282a30;
+    --astryx-shadow-inset-selected: inset 0px 0px 0px 2px #28282a50;
+    --astryx-shadow-inset-success: inset 0px 0px 0px 2px #83838a30;
+    --astryx-shadow-inset-warning: inset 0px 0px 0px 2px #83838a30;
+    --astryx-shadow-med: 0 2px 4px #28282a0d, 0 4px 12px #28282a1a;
+    --astryx-skeleton: var(--lightningcss-light, #d4d4da) var(--lightningcss-dark, #5e5e64);
+    --astryx-space-1: 4px;
+    --astryx-space-12: 48px;
+    --astryx-space-2: 8px;
+    --astryx-space-3: 12px;
+    --astryx-space-4: 16px;
+    --astryx-space-6: 24px;
+    --astryx-space-8: 32px;
+    --astryx-success: var(--lightningcss-light, #374c36) var(--lightningcss-dark, #b4cdb2);
+    --astryx-success-muted: var(--lightningcss-light, #d0e9ce) var(--lightningcss-dark, #b4cdb2);
+    --astryx-surface: var(--lightningcss-light, #fff) var(--lightningcss-dark, #1b1b1f);
+    --astryx-syntax-attribute: var(--lightningcss-light, #79693f) var(--lightningcss-dark, #b6aa90);
+    --astryx-syntax-background: var(--lightningcss-light, #f3f3f5) var(--lightningcss-dark, #171719);
+    --astryx-syntax-comment: var(--lightningcss-light, #5e5e5e) var(--lightningcss-dark, #ababb0);
+    --astryx-syntax-constant: var(--lightningcss-light, #755752) var(--lightningcss-dark, #bea792);
+    --astryx-syntax-function: var(--lightningcss-light, #506072) var(--lightningcss-dark, #99adc6);
+    --astryx-syntax-keyword: var(--lightningcss-light, #645a72) var(--lightningcss-dark, #b2a7c1);
+    --astryx-syntax-number: var(--lightningcss-light, #755752) var(--lightningcss-dark, #bea792);
+    --astryx-syntax-operator: var(--lightningcss-light, #5e5e5e) var(--lightningcss-dark, #ababb0);
+    --astryx-syntax-property: var(--lightningcss-light, #4e6357) var(--lightningcss-dark, #94b2a0);
+    --astryx-syntax-punctuation: var(--lightningcss-light, #5e5e5e) var(--lightningcss-dark, #ababb0);
+    --astryx-syntax-string: var(--lightningcss-light, #4e6357) var(--lightningcss-dark, #9bb19a);
+    --astryx-syntax-tag: var(--lightningcss-light, #775751) var(--lightningcss-dark, #c7a39d);
+    --astryx-syntax-type: var(--lightningcss-light, #645a72) var(--lightningcss-dark, #b2a7c1);
+    --astryx-syntax-variable: var(--lightningcss-light, #5e5e5e) var(--lightningcss-dark, #ababb0);
+    --astryx-text: var(--lightningcss-light, #25252a) var(--lightningcss-dark, #f3f3f5);
+    --astryx-text-accent: var(--lightningcss-light, #25252a) var(--lightningcss-dark, #f3f3f5);
+    --astryx-text-blue: var(--lightningcss-light, #3c4856) var(--lightningcss-dark, #d7e4f5);
+    --astryx-text-cyan: var(--lightningcss-light, #334b49) var(--lightningcss-dark, #cce8e5);
+    --astryx-text-disabled: var(--lightningcss-light, #d7d7da) var(--lightningcss-dark, #5e5e61);
+    --astryx-text-gray: var(--lightningcss-light, #46464b) var(--lightningcss-dark, #e2e2e8);
+    --astryx-text-green: var(--lightningcss-light, #374c36) var(--lightningcss-dark, #d0e9ce);
+    --astryx-text-orange: var(--lightningcss-light, #5b4227) var(--lightningcss-dark, #ffdcbb);
+    --astryx-text-pink: var(--lightningcss-light, #52424c) var(--lightningcss-dark, #f0dde8);
+    --astryx-text-purple: var(--lightningcss-light, #4b4454) var(--lightningcss-dark, #e8dff3);
+    --astryx-text-red: var(--lightningcss-light, #58413e) var(--lightningcss-dark, #f9dcd7);
+    --astryx-text-teal: var(--lightningcss-light, #3b4a41) var(--lightningcss-dark, #d4e7dc);
+    --astryx-text-yellow: var(--lightningcss-light, #524622) var(--lightningcss-dark, #f4e1b7);
+    --astryx-tint-hover: var(--lightningcss-light, #000) var(--lightningcss-dark, #fff);
+    --astryx-warning: var(--lightningcss-light, #524622) var(--lightningcss-dark, #d7c59c);
+    --astryx-warning-muted: var(--lightningcss-light, #f4e1b7) var(--lightningcss-dark, #d7c59c);
+  }
+
+  .x114n3ei {
+    --astryx-secondary: var(--astryx-notice-accent-secondary);
+  }
+
+  .xdncp8p {
+    --astryx-secondary: var(--astryx-notice-error-secondary);
+  }
+
+  .x1dfeiqk {
+    --astryx-secondary: var(--astryx-notice-neutral-secondary);
+  }
+
+  .x1frjlfe {
+    --astryx-secondary: var(--astryx-notice-success-secondary);
+  }
+
+  .xd0hdlz {
+    --astryx-secondary: var(--astryx-notice-warning-secondary);
+  }
+
+  .x1e88xhv {
+    --astryx-text: var(--astryx-notice-accent-text);
+  }
+
+  .x16nrwul {
+    --astryx-text: var(--astryx-notice-error-text);
+  }
+
+  .xeymuzs {
+    --astryx-text: var(--astryx-notice-neutral-text);
+  }
+
+  .xt9dzlf {
+    --astryx-text: var(--astryx-notice-success-text);
+  }
+
+  .x1lgzmjo {
+    --astryx-text: var(--astryx-notice-warning-text);
+  }
+
+  .x10l24vl {
+    --astryx-tree-indent: var(--astryx-space-4);
+  }
+}
+
+@layer priority2 {
+  .x1ghz6dp {
+    margin: 0;
+  }
+
+  .x1xq1gxn {
+    padding: 0 8px;
+  }
+
+  .x1717udv {
+    padding: 0;
+  }
+
+  .xfawy5m {
+    padding: 4px;
+  }
+
+  .xqlejgw {
+    padding: var(--astryx-button-large-padding);
+  }
+
+  .xomg4jq {
+    padding: var(--astryx-button-medium-padding);
+  }
+
+  .xrtk43m {
+    padding: var(--astryx-button-small-padding);
+  }
+
+  .xn7zump {
+    padding: var(--astryx-card-padding);
+  }
+
+  .xtzew9z {
+    padding: var(--astryx-notice-padding);
+  }
+
+  .xjyu79h {
+    padding: var(--astryx-space-3);
+  }
+}
+
+@layer priority3 {
+  .x9r1u3d {
+    border-color: #0000;
+  }
+
+  .x95it37 {
+    border-color: var(--astryx-badge-accent-border);
+  }
+
+  .xalvskd {
+    border-color: var(--astryx-badge-error-border);
+  }
+
+  .x7fyype {
+    border-color: var(--astryx-badge-neutral-border);
+  }
+
+  .x1wjsyj0 {
+    border-color: var(--astryx-badge-success-border);
+  }
+
+  .xqdvmeq {
+    border-color: var(--astryx-badge-warning-border);
+  }
+
+  .x1joj6an {
+    border-color: var(--astryx-button-secondary-border-color);
+  }
+
+  .xq7xuvh {
+    border-color: var(--astryx-card-border);
+  }
+
+  .x1q4ynmn {
+    border-radius: 10px;
+  }
+
+  .x12oqio5 {
+    border-radius: 4px;
+  }
+
+  .x16rqkct {
+    border-radius: 50%;
+  }
+
+  .x10hpsqq {
+    border-radius: 9999px;
+  }
+
+  .x1pfyw5 {
+    border-radius: var(--astryx-button-radius);
+  }
+
+  .xjy1p6w {
+    border-radius: var(--astryx-radius-container);
+  }
+
+  .x15bly71 {
+    border-radius: var(--astryx-radius-element);
+  }
+
+  .x1y0btm7 {
+    border-style: solid;
+  }
+
+  .xc342km {
+    border-width: 0;
+  }
+
+  .xmkeg23 {
+    border-width: 1px;
+  }
+
+  .x1yrkawg {
+    border-width: var(--astryx-badge-border-width);
+  }
+
+  .x1yxhy0n {
+    border-width: var(--astryx-button-border-width);
+  }
+
+  .xybn6f5 {
+    border-width: var(--astryx-button-secondary-border-width);
+  }
+
+  .x195vfkc {
+    gap: 2px;
+  }
+
+  .x1jnr06f {
+    gap: 4px;
+  }
+
+  .ximursj {
+    gap: var(--astryx-space-2);
+  }
+
+  .x172gbdg {
+    gap: var(--astryx-space-3);
+  }
+
+  .x115qfrb {
+    gap: var(--astryx-space-4);
+  }
+
+  .x1b26bkr {
+    gap: var(--astryx-space-6);
+  }
+
+  .xi8qq1n {
+    gap: var(--astryx-space-8);
+  }
+
+  .xe8uvvx {
+    list-style: none;
+  }
+
+  .x10im51j {
+    margin-block: 0;
+  }
+
+  .xotl0p9 {
+    margin-block: 1px;
+  }
+
+  .x8q42hb {
+    margin-block: 2px;
+  }
+
+  .xncb7kg {
+    margin-block: var(--astryx-space-4);
+  }
+
+  .xxkmx1 {
+    margin-block: var(--astryx-space-6);
+  }
+
+  .xp59q4u {
+    padding-block: 10px;
+  }
+
+  .x1t0vds8 {
+    padding-block: 6px;
+  }
+
+  .x1vvogim {
+    padding-block: 8px;
+  }
+
+  .xhmvnfs {
+    padding-block: var(--astryx-space-6);
+  }
+
+  .xnjsko4 {
+    padding-inline: 0;
+  }
+
+  .xdqyycr {
+    padding-inline: 8px;
+  }
+
+  .x9ewhq5 {
+    padding-inline: var(--astryx-space-6);
+  }
+
+  .x1hl2dhg {
+    text-decoration: none;
+  }
+
+  @media (width >= 60rem) {
+    .x1dydj2o.x1dydj2o {
+      padding-block: 6px;
+    }
+  }
+}
+
+@layer priority4 {
+  .x6s0dn4 {
+    align-items: center;
+  }
+
+  .x7a106z {
+    align-items: start;
+  }
+
+  .x1v3lopj {
+    background-color: color-mix(in srgb,var(--astryx-surface) 92%,black);
+  }
+
+  .xkaolcn {
+    background-color: color-mix(in srgb,var(--astryx-surface) 92%,white);
+  }
+
+  .xjbqb8w {
+    background-color: #0000;
+  }
+
+  .x1q20d9l {
+    background-color: var(--astryx-accent);
+  }
+
+  .x1qf8kci {
+    background-color: var(--astryx-badge-accent-background);
+  }
+
+  .x1anfv18 {
+    background-color: var(--astryx-badge-error-background);
+  }
+
+  .x1si5av0 {
+    background-color: var(--astryx-badge-neutral-background);
+  }
+
+  .xnb3k0y {
+    background-color: var(--astryx-badge-success-background);
+  }
+
+  .x12vwrrv {
+    background-color: var(--astryx-badge-warning-background);
+  }
+
+  .xpj2r21 {
+    background-color: var(--astryx-button-destructive-background);
+  }
+
+  .xfrlr8e {
+    background-color: var(--astryx-button-secondary-background);
+  }
+
+  .x1xujtwt {
+    background-color: var(--astryx-card);
+  }
+
+  .xmwxs2b {
+    background-color: var(--astryx-carousel-dot-color, var(--astryx-secondary));
+  }
+
+  .x10t7qge {
+    background-color: var(--astryx-error);
+  }
+
+  .xk9yxhe {
+    background-color: var(--astryx-notice-accent-background);
+  }
+
+  .xtzujhh {
+    background-color: var(--astryx-notice-error-background);
+  }
+
+  .xdrvg70 {
+    background-color: var(--astryx-notice-neutral-background);
+  }
+
+  .x1wd7kkm {
+    background-color: var(--astryx-notice-success-background);
+  }
+
+  .xhoparl {
+    background-color: var(--astryx-notice-warning-background);
+  }
+
+  .x1ip5ame {
+    background-color: var(--astryx-popover);
+  }
+
+  .x1n9ulxa {
+    background-color: var(--astryx-secondary);
+  }
+
+  .xz08xk {
+    background-color: var(--astryx-success);
+  }
+
+  .x1kajz4m {
+    background-color: var(--astryx-surface);
+  }
+
+  .x1vzrpq8 {
+    background-color: var(--astryx-warning);
+  }
+
+  .x4uflts {
+    border-inline-start-color: var(--astryx-notice-accent-border);
+  }
+
+  .x1btgmh4 {
+    border-inline-start-color: var(--astryx-notice-error-border);
+  }
+
+  .x1pei7zk {
+    border-inline-start-color: var(--astryx-notice-neutral-border);
+  }
+
+  .x1108zzb {
+    border-inline-start-color: var(--astryx-notice-success-border);
+  }
+
+  .x1rkwje5 {
+    border-inline-start-color: var(--astryx-notice-warning-border);
+  }
+
+  .x1t7ytsu {
+    border-inline-start-style: solid;
+  }
+
+  .x16p3nx6 {
+    border-inline-start-width: var(--astryx-notice-border-width);
+  }
+
+  .xruwc90 {
+    box-shadow: var(--astryx-popover-shadow),inset 0 0 0 1px var(--astryx-border);
+  }
+
+  .xx8erdj {
+    box-shadow: var(--astryx-shadow);
+  }
+
+  .x9f619 {
+    box-sizing: border-box;
+  }
+
+  .x1fd7uf2 {
+    color: var(--astryx-badge-accent-text);
+  }
+
+  .xbj0k97 {
+    color: var(--astryx-badge-error-text);
+  }
+
+  .xlq5hf9 {
+    color: var(--astryx-badge-neutral-text);
+  }
+
+  .x1vry3n3 {
+    color: var(--astryx-badge-success-text);
+  }
+
+  .x160mvew {
+    color: var(--astryx-badge-warning-text);
+  }
+
+  .x17lzsve {
+    color: var(--astryx-button-destructive-text);
+  }
+
+  .x1xk6ftw {
+    color: var(--astryx-on-accent);
+  }
+
+  .x9bm28c {
+    color: var(--astryx-text);
+  }
+
+  .x1ypdohk {
+    cursor: pointer;
+  }
+
+  .x1lliihq {
+    display: block;
+  }
+
+  .x78zum5 {
+    display: flex;
+  }
+
+  .xrvj5dj {
+    display: grid;
+  }
+
+  .x1rg5ohu {
+    display: inline-block;
+  }
+
+  .x3nfvp2 {
+    display: inline-flex;
+  }
+
+  .xbh8q5q {
+    fill: none;
+  }
+
+  .xdt5ytf {
+    flex-direction: column;
+  }
+
+  .x1iyjqo2 {
+    flex-grow: 1;
+  }
+
+  .x2lah0s {
+    flex-shrink: 0;
+  }
+
+  .x14y5k4f {
+    font-family: var(--astryx-font-heading);
+  }
+
+  .xttdc2b {
+    font-family: var(--astryx-font);
+  }
+
+  .x9a1s1b {
+    font-size: var(--astryx-button-large-size);
+  }
+
+  .xyrpitn {
+    font-size: var(--astryx-button-small-size);
+  }
+
+  .xdiu0t3 {
+    font-size: var(--astryx-display-size);
+  }
+
+  .x3a5do {
+    font-size: var(--astryx-font-size-body);
+  }
+
+  .x1btsg3b {
+    font-size: var(--astryx-font-size-label);
+  }
+
+  .x1kydctb {
+    font-size: var(--astryx-font-size-supporting);
+  }
+
+  .x1233jpe {
+    font-size: var(--astryx-h3-size);
+  }
+
+  .xe31399 {
+    font-size: var(--astryx-heading-large-size);
+  }
+
+  .x1e2c3ww {
+    font-size: var(--astryx-heading-size, var(--astryx-h2-size));
+  }
+
+  .xo1l8bm {
+    font-weight: 400;
+  }
+
+  .xk50ysn {
+    font-weight: 500;
+  }
+
+  .xe38qq1 {
+    font-weight: var(--astryx-display-weight);
+  }
+
+  .xzi7q40 {
+    font-weight: var(--astryx-h1-weight);
+  }
+
+  .x8e7vj4 {
+    font-weight: var(--astryx-h3-weight);
+  }
+
+  .x7h2sm0 {
+    font-weight: var(--astryx-heading-weight, var(--astryx-h2-weight));
+  }
+
+  .xjvrg09 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  }
+
+  .x6huwds {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  }
+
+  .x19i92ox {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
+  .x1fyyslm {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  }
+
+  .x11klgcs {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .xnby9oq {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .x185a7wo {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .x1sipb5g {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .x16u84gf {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .x1jl941j {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .xc8icb0 {
+    isolation: isolate;
+  }
+
+  .xl56j7k {
+    justify-content: center;
+  }
+
+  .x1rfj78v {
+    justify-content: left;
+  }
+
+  .x1lvf691 {
+    justify-content: right;
+  }
+
+  .x37zpob {
+    line-height: 1.4;
+  }
+
+  .x1k0tcle {
+    line-height: var(--astryx-badge-line);
+  }
+
+  .xokdcdv {
+    line-height: var(--astryx-display-line);
+  }
+
+  .xdcyfn4 {
+    line-height: var(--astryx-h3-line);
+  }
+
+  .xrvgz4o {
+    line-height: var(--astryx-heading-large-line);
+  }
+
+  .x1ro284w {
+    line-height: var(--astryx-heading-line, var(--astryx-h2-line));
+  }
+
+  .xr0kew2 {
+    line-height: var(--astryx-line-body);
+  }
+
+  .x1672ciy {
+    line-height: var(--astryx-line-label);
+  }
+
+  .x14z9mp {
+    margin-inline-end: 0;
+  }
+
+  .xw4egjh {
+    margin-inline-start: var(--astryx-single-bleed-offset, calc((100% - var(--astryx-single-viewport-width, 100vw)) / 2));
+  }
+
+  .x8igp6z {
+    margin-inline-start: var(--astryx-tree-indent);
+  }
+
+  .x17ify70 {
+    outline-color: var(--astryx-border);
+  }
+
+  .x1g40iwv {
+    outline-offset: -1px;
+  }
+
+  .xaatb59 {
+    outline-style: solid;
+  }
+
+  .x1qgsegg {
+    outline-width: 1px;
+  }
+
+  .xj0a0fe {
+    overflow-wrap: anywhere;
+  }
+
+  .xf159sx {
+    padding-inline-end: 8px;
+  }
+
+  .xmzvs34 {
+    padding-inline-start: 8px;
+  }
+
+  .x1n2onr6 {
+    position: relative;
+  }
+
+  .x73je2i {
+    stroke: currentColor;
+  }
+
+  .xvlca1e {
+    stroke-width: 2px;
+  }
+
+  .x2b8uid {
+    text-align: center;
+  }
+
+  .xp4054r {
+    text-align: end;
+  }
+
+  .xdpxx8g {
+    text-align: left;
+  }
+
+  .x1hr2gdg {
+    text-align: right;
+  }
+
+  .x1yc453h {
+    text-align: start;
+  }
+
+  .x1eo0hed {
+    transition-duration: var(--astryx-duration);
+  }
+
+  .x1e8aii2 {
+    transition-property: background-color, opacity;
+  }
+
+  .xxymvpz {
+    vertical-align: middle;
+  }
+
+  .xuxw1ft {
+    white-space: nowrap;
+  }
+
+  .xjciwcr:is(:hover, :focus-within, :has( > details[open])) {
+    background-color: var(--astryx-nav-hover);
+  }
+
+  .x17jvtjl.astryx-menu-item--active, .x1ayw93w:is([aria-current="page"], [data-active="true"]), .xk6u9l5:is([aria-current="page"], [data-active="true"]):is(:hover, :active), .xzurmlp:is([aria-current="page"], [aria-current="true"]) {
+    background-color: var(--astryx-nav-selected);
+  }
+
+  .x1c8nfo1[aria-current="page"], .x6tty0r:is([aria-current="page"], [data-active="true"]) {
+    font-weight: 500;
+  }
+
+  .x7gaobw:is([aria-current="page"], [aria-current="true"]) {
+    font-weight: 600;
+  }
+
+  .xl3qqs0:not(:has( > [data-tree-toggle])) {
+    padding-inline-start: calc(8px + var(--astryx-tree-leaf-inset, 0px));
+  }
+
+  .xa6jq3d:has( > [aria-current="page"]) {
+    background-color: var(--astryx-nav-selected);
+  }
+
+  .xv8ueh:has( > [data-tree-toggle][hidden]) {
+    padding-inline-start: 36px;
+  }
+
+  .x1n5bzlp:hover {
+    background-color: #0000;
+  }
+
+  .x1pkjghf:hover {
+    background-color: var(--astryx-button-secondary-hover);
+  }
+
+  .x1kn105q:hover {
+    background-color: var(--astryx-nav-hover);
+  }
+
+  .x1925eo2:active {
+    background-color: var(--astryx-nav-pressed);
+  }
+
+  @media (forced-colors: active) {
+    .x14l5364.x14l5364:is([aria-current="page"], [data-active="true"]), .x15mombr.x15mombr:is([aria-current="page"], [data-active="true"]):is(:hover, :active) {
+      background-color: highlight;
+    }
+  }
+
+  @media (hover: hover) {
+    .xqfavm5.xqfavm5.xqfavm5:hover:where(:not(:active, [aria-current="page"], [data-active="true"])) {
+      background-color: var(--astryx-nav-hover);
+    }
+  }
+
+  @media (forced-colors: active) {
+    .x14sjcit.x14sjcit[aria-current="page"], .x1c8ke3q.x1c8ke3q:is([aria-current="page"], [data-active="true"]) {
+      color: highlighttext;
+    }
+
+    .x1y1uy4v.x1y1uy4v:has( > [aria-current="page"]) {
+      background-color: highlight;
+    }
+  }
+}
+
+@layer priority5 {
+  .x9wr8bx {
+    border-top-color: var(--astryx-border-strong);
+  }
+
+  .x1m4ihsq {
+    border-top-color: var(--astryx-border);
+  }
+
+  .x13fuv20 {
+    border-top-style: solid;
+  }
+
+  .x178xt8z {
+    border-top-width: 1px;
+  }
+
+  .xlup9mm {
+    height: 16px;
+  }
+
+  .x1qx5ct2 {
+    height: 20px;
+  }
+
+  .xxk0z11 {
+    height: 24px;
+  }
+
+  .xc9qbxq {
+    height: 36px;
+  }
+
+  .xn3w4p2 {
+    height: 44px;
+  }
+
+  .xdk7pt {
+    height: 8px;
+  }
+
+  .x1xt2kpb {
+    height: var(--astryx-button-large-height);
+  }
+
+  .x54herv {
+    height: var(--astryx-button-medium-height);
+  }
+
+  .x18jr5br {
+    height: var(--astryx-button-small-height);
+  }
+
+  .x193iq5w {
+    max-width: 100%;
+  }
+
+  .x1x1rfll {
+    max-width: none;
+  }
+
+  .x1fa9m1o {
+    max-width: var(--astryx-prose-width);
+  }
+
+  .x21xpn4 {
+    min-height: 32px;
+  }
+
+  .xu0aao5 {
+    min-height: 36px;
+  }
+
+  .x1gg8mnh {
+    min-height: 44px;
+  }
+
+  .x1s1c9ms {
+    min-height: var(--astryx-button-large-min-height);
+  }
+
+  .xytbvae {
+    min-height: var(--astryx-button-medium-min-height);
+  }
+
+  .x1rmjgge {
+    min-height: var(--astryx-button-small-min-height);
+  }
+
+  .xeuugli {
+    min-width: 0;
+  }
+
+  .x1264ykn {
+    min-width: 28px;
+  }
+
+  .xh8yej3 {
+    width: 100%;
+  }
+
+  .x1kky2od {
+    width: 16px;
+  }
+
+  .xw4jnvo {
+    width: 20px;
+  }
+
+  .xvy4d1p {
+    width: 24px;
+  }
+
+  .x187nhsf {
+    width: 44px;
+  }
+
+  .x1xc55vz {
+    width: 8px;
+  }
+
+  .xe7ekrb {
+    width: var(--astryx-single-bleed-width, var(--astryx-single-viewport-width, 100vw));
+  }
+
+  @media (width >= 60rem) {
+    .xoiwfo.xoiwfo {
+      min-height: 32px;
+    }
+  }
+}

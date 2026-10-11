@@ -12,7 +12,12 @@ lib.contentElement {
     dataProcessing.1770716912 = record-transformation
 }
 lib.astryxContentElement =< lib.contentElement
+tt_content.astryx_container_single_col.dataProcessing.100 = B13\Container\DataProcessing\ContentAreaProcessor
 tt_content.astryx_container_two_col.dataProcessing.100 = B13\Container\DataProcessing\ContentAreaProcessor
+tt_content.astryx_container_two_col_25_75.dataProcessing.100 = B13\Container\DataProcessing\ContentAreaProcessor
+tt_content.astryx_container_two_col_75_25.dataProcessing.100 = B13\Container\DataProcessing\ContentAreaProcessor
+tt_content.astryx_container_three_col.dataProcessing.100 = B13\Container\DataProcessing\ContentAreaProcessor
+tt_content.astryx_container_four_col.dataProcessing.100 = B13\Container\DataProcessing\ContentAreaProcessor
 
 # Inventoried legacy menu records retain their core fields and links.
 tt_content.menu_sitemap =< lib.contentElement
@@ -20,15 +25,30 @@ tt_content.menu_sitemap {
     templateName = Menu
     dataProcessing.10 = menu
     dataProcessing.10.levels = 7
+    dataProcessing.10.expandAll = 1
     dataProcessing.10.as = menu
 }
 tt_content.menu_subpages =< lib.contentElement
 tt_content.menu_subpages {
-    templateName = Menu
+    templateName = Subpages
     dataProcessing.10 = menu
     dataProcessing.10.special = directory
     dataProcessing.10.special.value.field = pages
     dataProcessing.10.as = menu
+}
+# Selected pages use the identical wrapper, heading and SideNav rendering.
+tt_content.menu_pages =< lib.contentElement
+tt_content.menu_pages {
+    templateName = Subpages
+    dataProcessing.10 = menu
+    dataProcessing.10 {
+        special = list
+        special.value.field = pages
+        levels = 1
+        as = menu
+        # An empty picker must not fall back to the current page.
+        if.isTrue.field = pages
+    }
 }
 tt_content.shortcut =< lib.contentElement
 tt_content.shortcut {

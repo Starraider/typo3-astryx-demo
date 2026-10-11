@@ -1,16 +1,19 @@
 name: astryx/code-block
 typeName: astryx_code_block
-group: astryx
+group: special
 title: Code Block
 prefixFields: true
 prefixType: full
 fields:
   - identifier: header
     useExistingField: true
-  - identifier: header_layout
-    useExistingField: true
-  - identifier: header_position
-    useExistingField: true
+  - identifier: heading_controls
+    type: Palette
+    fields:
+      - identifier: header_layout
+        useExistingField: true
+      - identifier: header_position
+        useExistingField: true
   - identifier: header_link
     useExistingField: true
   - identifier: language

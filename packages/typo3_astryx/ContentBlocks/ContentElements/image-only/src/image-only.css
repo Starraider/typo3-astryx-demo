@@ -1,0 +1,6 @@
+@layer astryx-base {
+  .astryx-image-only > .astryx-media { min-inline-size: 0; }
+  .astryx-image-only figcaption { overflow-wrap: anywhere; }
+  /* Keep the whole row aligned even when source proportions or captions differ. */
+  .astryx-image-only img { block-size: auto; }
+}

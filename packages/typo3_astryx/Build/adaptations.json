@@ -5,14 +5,21 @@
     "Native Fluid instead of React",
     "Finite static recipes instead of dynamic StyleX",
     "Public tokens renamed to --astryx-*",
-    "Editorial body text uses 16px for prose",
-    "System fonts without bundled font downloads",
-    "Native details/summary accordions styled after the Collapsible overview, with animated single/multiple modes and native grouping without JavaScript",
+    "Stone H1–H6 headings use font weight 400 instead of the upstream 600/700 weights, including frontend, rich text and editor previews.",
+    "Neutral/Ocean retain the existing 17px editorial body scale; Stone follows the upstream 14px body scale.",
+    "Figtree is bundled for body text; Stone additionally bundles Montserrat headings and JetBrains Mono code under SIL OFL 1.1.",
+    "Native details/summary accordions: Single uses separate compact cards with 8px gaps after the CollapsibleGroup v0.6.8 overview; Multiple retains the Collapsible overview's shared card with 16px gaps. Both animate disclosure and preserve native grouping without JavaScript.",
     "Scroll-snap card carousel without autoplay",
     "Ocean derived from verified blue/cyan tokens",
+    "Neutral/Ocean destructive buttons pair dark red with white in light mode and pale red with dark text in dark mode; Stone retains its upstream categorical red pair.",
     "CSS attribute bridge reapplies complete theme tokens at each nested boundary",
-    "Hero image-only contract; protected text overlay background with 70% transparency; Textmedia supports standard controlled media and poster",
+    "Hero image-only contract; 54% transparent white panels with black foregrounds protect overlay content and normal-flow image captions in every theme/mode; Textmedia supports standard controlled media and poster",
     "Shared image display aspect presets retain the default FAL crop variant",
-    "Original small SVG icon set and system fonts; no upstream fonts bundled"
+    "Original small SVG icon set and portable, locally bundled fonts.",
+    "Carousel uses 8px dots inspired by the Pagination v0.6.6 reference, native scroll-snap with unique reachable page positions, larger touch targets and six editor-selectable positions (including top placement)",
+    "Subpages use native Fluid SideNav links matching the v0.6.7 reference typography and Neutral hover/selected colors, without icons/sections; container width replaces fixed sidebar width and long labels wrap.",
+    "Sitemap adapts TreeList v0.6.7 with native linked lists, vertical guides, 16px indentation, 24px-wide disclosure targets and an ARIA tree enhanced with roving focus, arrow keys and type-ahead. Enter follows links and Space toggles branches; the complete hierarchy remains linked without JavaScript.",
+    "Stone follows the v0.6.7 theme preview and CLI template: exact heading/body/supporting scale, light/dark semantic/categorical/syntax colors, pill Button variants, pastel Badge/Notice variants and Card surfaces/padding. Fluid size=medium follows the semantic heading level; small maps to h3, large to h1 and display to display2. Notice is the native editorial adaptation of Banner. TYPO3 page layouts and editorial structure remain extension-owned.",
+    "Header navigation visually adapts DropdownMenu v0.6.8 with native Fluid links/disclosures, 4px panel padding, 32px desktop rows, content-sized independent flyouts, hover/arrow navigation and edge flipping. Mobile retains in-flow 44px disclosures; no action-menu semantics or React runtime."
   ]
 }

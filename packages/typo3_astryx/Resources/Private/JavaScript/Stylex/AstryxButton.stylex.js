@@ -1,15 +1,17 @@
 import * as stylex from '@stylexjs/stylex';
 import {tokens} from './tokens.stylex.js';
-// Token import guarantees JavaScript-defined defaults reach the compiled output.
+// Use public variables so nested theme attributes control the recipe.
 export const styles = stylex.create({
   "root": {
-    "fontFamily": tokens['--astryx-font'],
+    "fontFamily": "var(--astryx-font)",
     "display": "inline-flex",
     "alignItems": "center",
     "justifyContent": "center",
     "gap": "var(--astryx-space-2)",
-    "border": "1px solid transparent",
-    "borderRadius": "var(--astryx-radius-element)",
+    "borderWidth": "var(--astryx-button-border-width)",
+    "borderStyle": "solid",
+    "borderColor": "transparent",
+    "borderRadius": "var(--astryx-button-radius)",
     "fontWeight": 500,
     "lineHeight": "var(--astryx-line-label)",
     "minWidth": 0,
@@ -24,7 +26,9 @@ export const styles = stylex.create({
     "color": "var(--astryx-on-accent)"
   },
   "variant_secondary": {
-    "backgroundColor": "var(--astryx-muted)",
+    "backgroundColor": {"default": "var(--astryx-button-secondary-background)", ":hover": "var(--astryx-button-secondary-hover)"},
+    "borderWidth": "var(--astryx-button-secondary-border-width)",
+    "borderColor": "var(--astryx-button-secondary-border-color)",
     "color": "var(--astryx-text)"
   },
   "variant_ghost": {
@@ -32,22 +36,25 @@ export const styles = stylex.create({
     "color": "var(--astryx-text)"
   },
   "variant_destructive": {
-    "backgroundColor": "var(--astryx-error)",
-    "color": "white"
+    "backgroundColor": "var(--astryx-button-destructive-background)",
+    "color": "var(--astryx-button-destructive-text)"
   },
   "size_small": {
-    "padding": "6px 10px",
-    "minHeight": 32,
-    "fontSize": ".75rem"
+    "padding": "var(--astryx-button-small-padding)",
+    "height": "var(--astryx-button-small-height)",
+    "minHeight": "var(--astryx-button-small-min-height)",
+    "fontSize": "var(--astryx-button-small-size)"
   },
   "size_medium": {
-    "padding": "8px 12px",
-    "minHeight": 44,
+    "padding": "var(--astryx-button-medium-padding)",
+    "height": "var(--astryx-button-medium-height)",
+    "minHeight": "var(--astryx-button-medium-min-height)",
     "fontSize": "var(--astryx-font-size-label)"
   },
   "size_large": {
-    "padding": "12px 20px",
-    "minHeight": 48,
-    "fontSize": "1.0625rem"
+    "padding": "var(--astryx-button-large-padding)",
+    "height": "var(--astryx-button-large-height)",
+    "minHeight": "var(--astryx-button-large-min-height)",
+    "fontSize": "var(--astryx-button-large-size)"
   }
 });

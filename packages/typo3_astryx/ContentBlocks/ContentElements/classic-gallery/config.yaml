@@ -1,31 +1,34 @@
 name: astryx/classic-gallery
 typeName: astryx_classic_gallery
-group: astryx
+group: default
 title: Classic Gallery
 fields:
   - identifier: header
     useExistingField: true
-  - identifier: header_layout
-    useExistingField: true
-  - identifier: header_position
-    useExistingField: true
+  - identifier: heading_controls
+    type: Palette
+    fields:
+      - identifier: header_layout
+        useExistingField: true
+      - identifier: header_position
+        useExistingField: true
+      - identifier: heading_size
+        type: Select
+        renderType: selectSingle
+        default: small
+        items:
+          - value: small
+            label: Small
+          - value: medium
+            label: Medium
+          - value: large
+            label: Large
+          - value: display
+            label: Display
   - identifier: header_link
     useExistingField: true
   - identifier: subheader
     useExistingField: true
-  - identifier: heading_size
-    type: Select
-    renderType: selectSingle
-    default: small
-    items:
-      - value: small
-        label: Small
-      - value: medium
-        label: Medium
-      - value: large
-        label: Large
-      - value: display
-        label: Display
   - identifier: columns
     type: Select
     renderType: selectSingle

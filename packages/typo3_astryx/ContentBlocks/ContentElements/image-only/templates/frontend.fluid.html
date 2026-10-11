@@ -1,0 +1,11 @@
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:render partial="ContentElements/Header" arguments="{data: data}" />
+    <f:if condition="{data.image}">
+        <div class="astryx-image-only {ax:recipe(name: 'ImageOnly', options: {columns: data.columns})}">
+            <f:for each="{data.image}" as="file">
+                <f:render partial="Media/Image" arguments="{file: file, aspectRatio: data.aspect_ratio}" />
+            </f:for>
+        </div>
+    </f:if>
+</f:section>

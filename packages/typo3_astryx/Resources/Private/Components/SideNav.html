@@ -1,0 +1,8 @@
+<f:argument name="items" type="array" default="{}" />
+<ul class="astryx-side-nav {ax:recipe(name: 'SideNav', options: {part: 'list'})}">
+    <f:for each="{items}" as="item">
+        <li>
+            <f:link.typolink parameter="{item.link}" target="{item.target}" class="astryx-side-nav-item {ax:recipe(name: 'SideNav', options: {part: 'item'})}" additionalAttributes="{aria-current: '{f:if(condition: item.current, then: \'page\', else: \'false\')}', data-active: '{f:if(condition: item.active, then: \'true\', else: \'false\')}'}">{item.title}</f:link.typolink>
+        </li>
+    </f:for>
+</ul>

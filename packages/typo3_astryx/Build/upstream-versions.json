@@ -17617,5 +17617,41 @@
     "tag": "v0.6.5",
     "commit": "e730c899bb470a6e24128df3c58560a0d2d69871",
     "repository": "https://github.com/facebook/astryx"
+  },
+  "paginationReference": {
+    "url": "https://astryx.atmeta.com/components/Pagination",
+    "displayedVersion": "0.6.6",
+    "checkedAt": "2026-10-09",
+    "adaptation": "Visual reference for Carousel dots; existing source baseline remains v0.6.5"
+  },
+  "sideNavReference": {
+    "url": "https://astryx.atmeta.com/components/SideNav",
+    "displayedVersion": "0.6.7",
+    "checkedAt": "2026-10-10",
+    "source": "@astryxdesign/core@0.6.7 src/NavItem/navItemStyles.stylex.ts and src/SideNav/SideNavItem.tsx",
+    "adaptation": "Native Fluid links without icons or sections; fluid container width and wrapping labels; visual Neutral theme colors/radius from the reference site. Existing source baseline remains v0.6.5."
+  },
+  "treeList": {
+    "url": "https://astryx.atmeta.com/components/TreeList",
+    "version": "0.6.7",
+    "package": "@astryxdesign/core",
+    "integrity": "sha512-3pK1DdbYvVB4fOIQNsIbCf/FJPofQIsqjVRhwW5pEj9EMGy7MrG2Upw1dFe/OlGM//StMuf20l2mgCDp2YEvCg==",
+    "source": "@astryxdesign/core@0.6.7 src/TreeList/TreeList.tsx, TreeListItem.tsx and TreeListBranches.tsx",
+    "adaptation": "Native Fluid and progressive enhancement; linked sitemap with guide lines and keyboard tree navigation."
+  },
+  "stoneReference": {
+    "url": "https://astryx.atmeta.com/themes?theme=stone",
+    "checkedAt": "2026-10-10",
+    "version": "0.6.7",
+    "package": "@astryxdesign/cli",
+    "source": "assets/templates/themes/stone/stoneTheme.ts",
+    "integrity": "sha512-WvnUSFqg6nN1z/McVTAzL/6WdNBJf2iNRu4MNE7F7/721jEMpbKEdyetSUEc0RHcrewJErHWmXcYWLmEsqHbXw==",
+    "adaptation": "Complete semantic/categorical/syntax palette, typography and implemented component overrides. Montserrat/Figtree/JetBrains Mono are bundled locally. Existing Neutral baseline stays v0.6.5."
+  },
+  "dropdownMenuReference": {
+    "url": "https://astryx.atmeta.com/components/DropdownMenu",
+    "displayedVersion": "0.6.8",
+    "checkedAt": "2026-10-11",
+    "adaptation": "Measured visual reference for header navigation: 4px panels, 32px rows with 6px/8px padding, 2px row gaps and side flyouts. Native Fluid navigation, content-sized panels and mobile disclosure hierarchy; existing source baseline remains v0.6.5."
   }
 }

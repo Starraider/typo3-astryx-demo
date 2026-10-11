@@ -1,1 +1,5 @@
-<f:layout name="Default" /><f:section name="Main"><f:render partial="ContentElements/Header" arguments="{data: data}" /><f:render partial="Navigation/Menu" arguments="{items: menu}" /></f:section>
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:render partial="ContentElements/Header" arguments="{data: data}" />
+    <astryx:treeList items="{menu}" id="astryx-sitemap-{data.uid}" />
+</f:section>

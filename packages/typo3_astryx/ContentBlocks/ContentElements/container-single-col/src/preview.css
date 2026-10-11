@@ -1,0 +1,6 @@
+@layer astryx-base {
+  .astryx-container-single-col-preview { color: var(--astryx-text); outline: 1px solid var(--astryx-border); outline-offset: -1px; }
+  .astryx-container-single-col-preview[data-astryx-background="light"] { background: color-mix(in srgb, var(--astryx-surface) 92%, white); }
+  .astryx-container-single-col-preview[data-astryx-background="dark"] { background: color-mix(in srgb, var(--astryx-surface) 92%, black); }
+  .astryx-container-single-col-preview img { display: block; inline-size: 100%; max-block-size: 8rem; object-fit: cover; margin-block-start: var(--astryx-space-2); }
+}

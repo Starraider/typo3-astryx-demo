@@ -1,11 +1,21 @@
 # Third-party notices
 
 Tokens and selected component rules adapt Meta Astryx 0.6.5, MIT licensed.
+Header dropdowns visually adapt the [Astryx DropdownMenu v0.6.8](https://astryx.atmeta.com/components/DropdownMenu) reference: compact padding, rows, rounded surfaces and adjacent fly-outs. Native Fluid page links and disclosures replace action-menu semantics; panels fit their labels, and mobile navigation keeps its existing dialog and expandable hierarchy.
+Carousel dot pagination follows the visual reference from [Astryx Pagination v0.6.6](https://astryx.atmeta.com/components/Pagination), with native scroll-snap behavior, larger touch targets and configurable top/bottom placement.
+Subpages SideNav styling adapts the [Astryx Side Nav v0.6.7](https://astryx.atmeta.com/components/SideNav) reference and MIT-licensed NavItem/SideNavItem rules; Fluid renders plain links without icons or sections, at the available container width.
+Sitemap TreeList adapts the [Astryx Tree List v0.6.7](https://astryx.atmeta.com/components/TreeList) reference and MIT-licensed TreeList, TreeListItem and TreeListBranches rules. Native Fluid renders linked lists and vertical guide lines; progressive-enhancement JavaScript adds an ARIA tree with roving focus. Expand controls have wider targets, Enter follows page links, Space toggles branches, and all descendants remain visible without JavaScript.
+Stone typography, semantic/categorical/syntax palettes and supported component overrides adapt the [Stone v0.6.7 preview](https://astryx.atmeta.com/themes?theme=stone) and MIT-licensed `@astryxdesign/cli@0.6.7` Stone template. Source/version/integrity are recorded in Build/upstream-versions.json.
 React code is not shipped or executed. Neutral and Stone refer to the official themes.
+Neutral/Ocean destructive-button foregrounds and Hero’s 54% transparent overlay/caption panels with black foregrounds are local accessibility adaptations. Stone’s categorical destructive-button pair remains unchanged.
 Ocean is an extension-owned adaptation. No upstream Ocean package exists.
 Figtree variable fonts are bundled for frontend and editor typography under the SIL Open Font License 1.1.
 Copyright 2022 The Figtree Project Authors (https://github.com/erikdkennedy/figtree).
 The full license is included in Resources/Private/Fonts/Figtree-OFL.txt.
+Montserrat and JetBrains Mono variable fonts are bundled under SIL Open Font License 1.1.
+Copyright 2024 The Montserrat.Git Project Authors (https://github.com/JulietaUla/Montserrat.git).
+Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono).
+Full licenses: Resources/Private/Fonts/Montserrat-OFL.txt and JetBrainsMono-OFL.txt. Download sources and SHA-256 checksums: Build/stone-fonts.json.
 Icons are simple original SVG drawings.
 
 MIT License

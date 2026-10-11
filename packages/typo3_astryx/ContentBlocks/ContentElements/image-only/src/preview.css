@@ -1,0 +1,14 @@
+@layer astryx-base {
+  .astryx-image-only-preview { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--astryx-space-4); align-items: start; }
+  .astryx-image-only-preview[data-columns="one"] { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .astryx-image-only-preview[data-columns="two"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .astryx-image-only-preview[data-columns="four"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .astryx-image-only-preview[data-columns="five"] { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .astryx-image-only-preview[data-columns="six"] { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .astryx-image-only-preview figure { margin: 0; min-inline-size: 0; }
+  .astryx-image-only-preview img { display: block; inline-size: 100%; block-size: auto; max-block-size: none; object-fit: cover; border-radius: var(--astryx-radius-element); }
+  .astryx-image-only-preview[data-aspect="landscape"] img { aspect-ratio: 4 / 3; }
+  .astryx-image-only-preview[data-aspect="wide"] img { aspect-ratio: 16 / 9; }
+  .astryx-image-only-preview[data-aspect="square"] img { aspect-ratio: 1; }
+  .astryx-image-only-preview figcaption { overflow-wrap: anywhere; color: var(--astryx-secondary); font-size: var(--astryx-font-size-supporting); }
+}

@@ -74,6 +74,7 @@ export class ClassicGalleryController {
     let savedOverflow;
 
     const show = target => {
+      const captionWasFocused = media.contains(document.activeElement);
       index = Math.max(0, Math.min(links.length - 1, target));
       const link = links[index];
       const thumbnail = link.querySelector('img');
@@ -85,7 +86,10 @@ export class ClassicGalleryController {
       const caption = document.createElement('figcaption');
       caption.textContent = link.dataset.galleryCaption || '';
       caption.hidden = !caption.textContent;
+      // Let keyboard users scroll long descriptions in every supported browser.
+      if (!caption.hidden) caption.tabIndex = 0;
       media.replaceChildren(image, caption);
+      if (captionWasFocused) (caption.hidden ? close : caption).focus();
       counter.textContent = `${index + 1} / ${links.length}`;
       previous.disabled = index === 0;
       next.disabled = index === links.length - 1;
@@ -116,7 +120,8 @@ export class ClassicGalleryController {
     });
     dialog.addEventListener('keydown', event => {
       if (event.key === 'Tab') {
-        const controls = [close, previous, next].filter(button => !button.disabled);
+        const caption = media.querySelector('figcaption:not([hidden])');
+        const controls = [close, previous, caption, next].filter(control => control && !control.disabled);
         const first = controls[0];
         const last = controls[controls.length - 1];
         if (event.shiftKey && document.activeElement === first) {

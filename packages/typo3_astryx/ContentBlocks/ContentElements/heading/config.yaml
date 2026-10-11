@@ -1,30 +1,33 @@
 name: astryx/heading
 typeName: astryx_heading
-group: astryx
+group: default
 title: Astryx Heading
 fields:
 - identifier: header
   useExistingField: true
-- identifier: header_layout
-  useExistingField: true
-- identifier: header_position
-  useExistingField: true
+- identifier: heading_controls
+  type: Palette
+  fields:
+    - identifier: header_layout
+      useExistingField: true
+    - identifier: header_position
+      useExistingField: true
+    - identifier: heading_size
+      type: Select
+      renderType: selectSingle
+      default: medium
+      items:
+      - value: medium
+        label: Medium
+      - value: small
+        label: Small
+      - value: large
+        label: Large
+      - value: display
+        label: Display
 - identifier: header_link
   useExistingField: true
 - identifier: subheader
   useExistingField: true
-- identifier: heading_size
-  type: Select
-  renderType: selectSingle
-  default: medium
-  items:
-  - value: medium
-    label: Medium
-  - value: small
-    label: Small
-  - value: large
-    label: Large
-  - value: display
-    label: Display
 basics:
   - Astryx/spacing

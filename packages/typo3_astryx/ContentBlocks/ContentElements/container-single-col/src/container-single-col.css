@@ -1,0 +1,19 @@
+/* Resolve the page width once, before nested element query containers. This
+   excludes classic scrollbars and keeps the centered no-JavaScript breakout. */
+@property --astryx-single-viewport-width {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 100vw;
+}
+@layer astryx-base {
+  .astryx-main:has([data-astryx-single-column="full-bleed"]) { container-type: inline-size; }
+  .astryx-main:has([data-astryx-single-column="full-bleed"]) > * { --astryx-single-viewport-width: 100cqw; }
+  /* Off-center areas keep readable content until the controller can align them. */
+  :is(.astryx-grid, .astryx-regions--sidebar, .astryx-regions--app) [data-astryx-single-column="full-bleed"] {
+    --astryx-single-bleed-width: 100%;
+    --astryx-single-bleed-offset: 0px;
+  }
+  .astryx-container-single-col-content { position: relative; min-inline-size: 0; }
+  .astryx-container-single-col > .astryx-background-media { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+  .astryx-container-single-col > .astryx-background-media img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; }
+}

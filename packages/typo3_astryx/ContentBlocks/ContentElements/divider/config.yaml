@@ -1,14 +1,17 @@
 name: astryx/divider
 typeName: astryx_divider
-group: astryx
+group: special
 title: Astryx Divider
 fields:
 - identifier: header
   useExistingField: true
-- identifier: header_layout
-  useExistingField: true
-- identifier: header_position
-  useExistingField: true
+- identifier: heading_controls
+  type: Palette
+  fields:
+    - identifier: header_layout
+      useExistingField: true
+    - identifier: header_position
+      useExistingField: true
 - identifier: header_link
   useExistingField: true
 - identifier: variant

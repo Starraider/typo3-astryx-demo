@@ -1,0 +1,32 @@
+<f:argument name="items" type="array" default="{}" />
+<f:argument name="id" type="string" default="tree" />
+<f:argument name="label" type="string" default="" />
+<f:if condition="{items}">
+    <f:variable name="occurrence" value="{ax:occurrence(prefix: id)}" />
+    <nav id="{occurrence.namespace}" data-astryx-tree-prefix="{id}" class="astryx-tree-list {ax:recipe(name: 'TreeList')}" data-astryx-tree-list aria-label="{f:if(condition: label, then: label, else: '{f:translate(key: \'treeList.label\', extensionName: \'Typo3Astryx\', default: \'Sitemap\')}')}">
+        <ul class="astryx-tree-list-group {ax:recipe(name: 'TreeList', options: {part: 'list'})}" data-tree-root>
+            <f:render section="Items" arguments="{items: items, path: occurrence.namespace}" />
+        </ul>
+    </nav>
+</f:if>
+
+<f:section name="Items">
+    <f:for each="{items}" as="item" iteration="iterator">
+        <f:variable name="itemId" value="{path}-{iterator.index}" />
+        <li class="astryx-tree-list-item" data-tree-item>
+            <div class="astryx-tree-list-row {ax:recipe(name: 'TreeList', options: {part: 'row'})}">
+                <f:if condition="{item.children}">
+                    <button type="button" class="astryx-tree-list-toggle {ax:recipe(name: 'TreeList', options: {part: 'toggle'})}" data-tree-toggle aria-expanded="true" aria-controls="{itemId}-children" aria-label="{f:translate(key: 'treeList.toggle', extensionName: 'Typo3Astryx', arguments: {0: item.title}, default: 'Toggle child pages for %s')}" hidden>
+                        <f:image src="EXT:typo3_astryx/Resources/Public/Icons/tree-chevron.svg" class="astryx-tree-list-chevron" width="16" height="16" alt="" />
+                    </button>
+                </f:if>
+                <f:link.typolink parameter="{item.link}" target="{item.target}" class="astryx-tree-list-link {ax:recipe(name: 'TreeList', options: {part: 'link'})}" additionalAttributes="{id: '{itemId}-label', aria-current: '{f:if(condition: item.current, then: \'page\', else: \'false\')}', data-active: '{f:if(condition: item.active, then: \'true\', else: \'false\')}'}">{item.title}</f:link.typolink>
+            </div>
+            <f:if condition="{item.children}">
+                <ul id="{itemId}-children" class="astryx-tree-list-group {ax:recipe(name: 'TreeList', options: {part: 'group'})}">
+                    <f:render section="Items" arguments="{items: item.children, path: itemId}" />
+                </ul>
+            </f:if>
+        </li>
+    </f:for>
+</f:section>

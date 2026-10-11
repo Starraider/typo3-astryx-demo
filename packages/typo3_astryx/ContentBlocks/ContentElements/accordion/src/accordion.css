@@ -2,6 +2,9 @@
   /* Collapsible overview: one compact Card around a Stack with gap-4. */
   .astryx-accordion { display: grid; gap: var(--astryx-space-4); padding: calc(var(--astryx-space-3) - 1px); border: 1px solid var(--astryx-border); border-radius: var(--astryx-radius-container); background: var(--astryx-surface); }
   .astryx-accordion > details { min-inline-size: 0; }
+  /* Collapsible Group overview: single mode gives each disclosure its own Card. */
+  .astryx-accordion[data-mode="single"] { gap: var(--astryx-space-2); padding: 0; border: 0; border-radius: 0; background: transparent; }
+  .astryx-accordion[data-mode="single"] > details { padding: calc(var(--astryx-space-3) - 1px); border: 1px solid var(--astryx-border); border-radius: var(--astryx-radius-container); background: var(--astryx-surface); }
   .astryx-accordion > details > summary { display: flex; align-items: center; justify-content: space-between; gap: var(--astryx-space-2); list-style: none; cursor: pointer; color: var(--astryx-text); font-size: var(--astryx-font-size-label); font-weight: 600; line-height: var(--astryx-line-label); }
   .astryx-accordion > details > summary::-webkit-details-marker { display: none; }
   .astryx-accordion-label { min-inline-size: 0; overflow-wrap: anywhere; }

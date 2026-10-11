@@ -31,7 +31,7 @@ if ($position['type'] !== 'select' || $position['renderType'] !== 'selectSingle'
     throw new RuntimeException('Expected the four core alignment choices in editor order.');
 }
 if ($tca['columns']['header_link']['config']['type'] !== 'link') throw new RuntimeException('Expected the core link browser.');
-$types = ['menu_sitemap' => 'Menu', 'menu_subpages' => 'Menu', 'shortcut' => 'Shortcut', 'html' => 'Html'];
+$types = ['menu_sitemap' => 'Menu', 'menu_subpages' => 'Subpages', 'menu_pages' => 'Subpages', 'shortcut' => 'Shortcut', 'html' => 'Html'];
 foreach (glob($root . '/ContentBlocks/ContentElements/*/config.yaml') as $path) {
     $definition = Yaml::parseFile($path);
     $types[$definition['typeName']] = dirname($path) . '/templates/frontend.fluid.html';
@@ -103,4 +103,53 @@ foreach (['t3://page?uid=1', 't3://url?url=https%3A%2F%2Fexample.org%2Fheading',
     $anchors = (new DOMXPath($document))->query('//h2/a[@href]');
     if ($anchors->length !== 1) throw new RuntimeException('TYPO3 link did not resolve: ' . $link);
 }
-echo in_array('--html', $argv, true) ? $html : 'Headings: ' . count($types) . " CTypes, four alignments, linked/unlinked, hidden/empty, semantic levels and escaped text pass.\n";
+$renderNative = static function (string $source, array $arguments = []) use ($factory, $root, $request): string {
+    $context = $factory->create([], $request);
+    $context->getTemplatePaths()->setTemplateSource($source);
+    $context->getTemplatePaths()->setPartialRootPaths([$root . '/Resources/Private/Partials']);
+    $view = new TemplateView($context);
+    $view->assignMultiple($arguments);
+    return $view->render();
+};
+$nativeCases = [
+    'default' => ['<astryx:heading />', [], []],
+    'empty-text' => ['<astryx:heading text="" />', [], []],
+    'whitespace-text' => ['<astryx:heading text="{text}" />', ['text' => " \t\n\r "], []],
+    'empty-slot' => ['<astryx:heading><f:fragment /></astryx:heading>', [], []],
+    'whitespace-slot' => ["<astryx:heading> \t\n </astryx:heading>", [], []],
+    'empty-runtime-slot' => ['<astryx:heading><f:if condition="{show}">Hidden</f:if></astryx:heading>', ['show' => false], []],
+    'empty-linked' => ['<astryx:heading link="https://example.org" />', [], []],
+    'subtitle-only' => ['<astryx:heading subtitle="Supporting text" />', [], []],
+    'escaped-text' => ['<astryx:heading text="{text}" />', ['text' => '<script>alert(1)</script> & title'], [['h2', '<script>alert(1)</script> & title']]],
+    'slot-markup' => ['<astryx:heading level="3"><em>Slot &amp; title</em></astryx:heading>', [], [['h3', 'Slot & title']]],
+    'combined' => ['<astryx:heading text="Title"><em> and slot</em></astryx:heading>', [], [['h2', 'Title and slot']]],
+    'linked-slot' => ['<astryx:heading text="Title" level="5" link="{link}"><em> and slot</em></astryx:heading>', ['link' => 'https://example.org/heading _blank heading-custom "Heading destination"'], [['h5', 'Title and slot']]],
+    'text-empty-slot' => ['<astryx:heading text="Title"><f:fragment /></astryx:heading>', [], [['h2', 'Title']]],
+    'slot-escaping' => ['<astryx:heading>{text}</astryx:heading>', ['text' => '<script>alert(1)</script> & slot'], [['h2', '<script>alert(1)</script> & slot']]],
+    'zero-text' => ['<astryx:heading text="0" />', [], [['h2', '0']]],
+    'zero-slot' => ['<astryx:heading>0</astryx:heading>', [], [['h2', '0']]],
+    'partial-empty' => ['<f:render partial="Astryx/Heading" />', [], []],
+    'partial-whitespace' => ['<f:render partial="Astryx/Heading" arguments="{text: text}" />', ['text' => " \t\n "], []],
+    'partial-text' => ['<f:render partial="Astryx/Heading" arguments="{text: text, level: 4}" />', ['text' => 'Bridge & title'], [['h4', 'Bridge & title']]],
+];
+foreach ([1, 2, 3, 4, 5, 6, 99] as $level) {
+    $nativeCases['level-' . $level] = ['<astryx:heading text="Title" level="{level}" />', ['level' => $level], [['h' . ($level === 99 ? 2 : $level), 'Title']]];
+    $nativeCases['empty-level-' . $level] = ['<astryx:heading level="{level}" />', ['level' => $level], []];
+}
+foreach ($nativeCases as $name => [$source, $arguments, $expected]) {
+    $rendered = $renderNative($source, $arguments);
+    $document = new DOMDocument();
+    @$document->loadHTML('<?xml encoding="UTF-8"><main>' . $rendered . '</main>');
+    $xpath = new DOMXPath($document);
+    $headings = array_map(static fn(DOMNode $node): array => [$node->nodeName, $node->textContent], iterator_to_array($xpath->query('//h1|//h2|//h3|//h4|//h5|//h6')));
+    if ($headings !== $expected || $xpath->query('//script')->length !== 0) throw new RuntimeException('Native heading regression: ' . $name);
+    if ($expected === [] && $xpath->query('//a')->length !== 0) throw new RuntimeException('Empty heading left a link: ' . $name);
+    if ($name === 'subtitle-only' && $xpath->query('//p')->item(0)?->textContent !== 'Supporting text') throw new RuntimeException('Independent subtitle was lost.');
+    if (in_array($name, ['slot-markup', 'combined'], true) && $xpath->query('//h2/em|//h3/em')->length !== 1) throw new RuntimeException('Slot markup was escaped or duplicated.');
+    if ($name === 'linked-slot') {
+        $anchor = $xpath->query('//h5/a')->item(0);
+        if (!$anchor instanceof DOMElement || $anchor->getAttribute('href') !== 'https://example.org/heading' || $anchor->getAttribute('target') !== '_blank' || $anchor->getAttribute('title') !== 'Heading destination' || $xpath->query('//h5/a/em')->length !== 1) throw new RuntimeException('Linked slot lost markup or Typolink options.');
+    }
+    $html .= '<section data-native-heading-case="' . $name . '" data-native-heading-count="' . count($expected) . '">' . $rendered . '</section>';
+}
+echo in_array('--html', $argv, true) ? $html : 'Headings: ' . count($types) . ' CTypes and ' . count($nativeCases) . " native/partial cases; alignments, links, hidden/empty/whitespace output, slots, levels and escaping pass.\n";

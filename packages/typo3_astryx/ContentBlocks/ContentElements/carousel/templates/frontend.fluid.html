@@ -1,1 +1,29 @@
-<f:layout name="Default" /><f:section name="Main"><f:render partial="ContentElements/Header" arguments="{data: data}" /><section data-astryx-carousel data-edge-fade="{data.edge_fade}" aria-label="{data.header}"><f:if condition="{data.navigation}"><div class="astryx-carousel-controls" hidden><button type="button" data-prev aria-controls="carousel{data.uid}" aria-label="{f:translate(key: 'previous', extensionName: 'Typo3Astryx')}"><astryx:icon name="arrow-left" /></button><button type="button" data-next aria-controls="carousel{data.uid}" aria-label="{f:translate(key: 'next', extensionName: 'Typo3Astryx')}"><astryx:icon name="arrow-right" /></button><span data-position role="status" aria-live="polite" aria-atomic="true"></span></div></f:if><ul id="carousel{data.uid}" class="astryx-carousel-track" tabindex="0"><f:for each="{data.items}" as="item"><li><astryx:card title="{item.title}" body="{item.body}" href="{item.link}" label="{item.label}" badge="{item.badge}"><f:fragment name="media"><f:for each="{item.image}" as="file"><f:render partial="Media/Image" arguments="{file: file}" /></f:for></f:fragment></astryx:card></li></f:for></ul></section></f:section>
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:render partial="ContentElements/Header" arguments="{data: data}" />
+    <section class="astryx-carousel" data-astryx-carousel data-edge-fade="{data.edge_fade}" aria-label="{data.header}">
+        <f:variable name="paginationOnTop" value="0" />
+        <f:if condition="{data.pagination_position} == 'top-left' || {data.pagination_position} == 'top-center' || {data.pagination_position} == 'top-right'"><f:variable name="paginationOnTop" value="1" /></f:if>
+        <f:if condition="{paginationOnTop}"><f:render section="Pagination" arguments="{data: data, astryxOccurrence: astryxOccurrence}" /></f:if>
+        <ul id="{astryxOccurrence.namespace}-carousel" class="astryx-carousel-track" tabindex="0">
+            <f:for each="{data.items}" as="item">
+                <li><astryx:card title="{item.title}" body="{item.body}" href="{item.link}" label="{item.label}" badge="{item.badge}"><f:fragment name="media"><f:for each="{item.image}" as="file"><f:render partial="Media/Image" arguments="{file: file}" /></f:for></f:fragment></astryx:card></li>
+            </f:for>
+        </ul>
+        <f:if condition="!{paginationOnTop}"><f:render section="Pagination" arguments="{data: data, astryxOccurrence: astryxOccurrence}" /></f:if>
+    </section>
+</f:section>
+<f:section name="Pagination">
+    <f:if condition="{data.navigation}">
+        <nav class="astryx-carousel-controls {ax:recipe(name: 'CarouselPagination', options: {position: data.pagination_position})}" hidden aria-label="{f:translate(key: 'carousel.pagination', extensionName: 'Typo3Astryx')}">
+            <button class="{ax:recipe(name: 'CarouselControl', options: {kind: 'arrow'})}" type="button" data-prev aria-controls="{astryxOccurrence.namespace}-carousel" aria-label="{f:translate(key: 'previous', extensionName: 'Typo3Astryx')}"><astryx:icon name="arrow-left" /></button>
+            <div class="astryx-carousel-dots">
+                <f:for each="{data.items}" as="item" iteration="iteration">
+                    <button class="astryx-carousel-dot {ax:recipe(name: 'CarouselControl', options: {kind: 'dot'})}" type="button" data-carousel-page="{iteration.index}" aria-controls="{astryxOccurrence.namespace}-carousel" aria-label="{f:translate(key: 'carousel.goToPage', extensionName: 'Typo3Astryx', arguments: {0: iteration.cycle})}"><span class="{ax:recipe(name: 'CarouselIndicator')}" aria-hidden="true"></span></button>
+                </f:for>
+            </div>
+            <button class="{ax:recipe(name: 'CarouselControl', options: {kind: 'arrow'})}" type="button" data-next aria-controls="{astryxOccurrence.namespace}-carousel" aria-label="{f:translate(key: 'next', extensionName: 'Typo3Astryx')}"><astryx:icon name="arrow-right" /></button>
+            <span class="astryx-carousel-status" data-position data-position-label="{f:translate(key: 'carousel.position', extensionName: 'Typo3Astryx')}" role="status" aria-live="polite" aria-atomic="true"></span>
+        </nav>
+    </f:if>
+</f:section>

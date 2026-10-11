@@ -2,21 +2,21 @@
   :where(.astryx-prose,.ck-content) { font-size: var(--astryx-font-size-body); font-weight: 400; line-height: var(--astryx-line-body); overflow-wrap: anywhere; }
   :where(.astryx-prose,.ck-content) > :first-child { margin-block-start: 0; }
   :where(.astryx-prose,.ck-content) > :last-child { margin-block-end: 0; }
-  /* The documentation page's display title and section heading scale. */
-  :where(.astryx-root,.astryx-preview,.ck-content) :where(h1) { --astryx-heading-size: 2.625rem; --astryx-heading-line: 1.2380952381; }
-  :where(.astryx-root,.astryx-preview,.ck-content) :where(h2) { --astryx-heading-size: 1.8125rem; --astryx-heading-line: 1.2413793103; }
-  :where(.astryx-root,.astryx-preview,.ck-content) :where(h3) { --astryx-heading-size: 1.5rem; --astryx-heading-line: 1.3333333333; }
-  :where(.astryx-root,.astryx-preview,.ck-content) :where(h4) { --astryx-heading-size: 1.25rem; --astryx-heading-line: 1.4; }
-  :where(.astryx-root,.astryx-preview,.ck-content) :where(h5) { --astryx-heading-size: 1.0625rem; --astryx-heading-line: 1.4117647059; }
-  :where(.astryx-root,.astryx-preview,.ck-content) :where(h6) { --astryx-heading-size: .875rem; --astryx-heading-line: 1.4285714286; }
-  :where(.astryx-root,.astryx-preview,.ck-content) :where(h1,h2,h3,h4,h5,h6) { font-family: var(--astryx-font); color: var(--astryx-text); font-size: var(--astryx-heading-size); font-weight: 600; line-height: var(--astryx-heading-line); }
+  /* Theme-specific semantic heading scale, shared by frontend and editors. */
+  :where(.astryx-root,.astryx-preview,.ck-content) :where(h1) { --astryx-heading-size: var(--astryx-h1-size); --astryx-heading-line: var(--astryx-h1-line); --astryx-heading-weight: var(--astryx-h1-weight); }
+  :where(.astryx-root,.astryx-preview,.ck-content) :where(h2) { --astryx-heading-size: var(--astryx-h2-size); --astryx-heading-line: var(--astryx-h2-line); --astryx-heading-weight: var(--astryx-h2-weight); }
+  :where(.astryx-root,.astryx-preview,.ck-content) :where(h3) { --astryx-heading-size: var(--astryx-h3-size); --astryx-heading-line: var(--astryx-h3-line); --astryx-heading-weight: var(--astryx-h3-weight); }
+  :where(.astryx-root,.astryx-preview,.ck-content) :where(h4) { --astryx-heading-size: var(--astryx-h4-size); --astryx-heading-line: var(--astryx-h4-line); --astryx-heading-weight: var(--astryx-h4-weight); }
+  :where(.astryx-root,.astryx-preview,.ck-content) :where(h5) { --astryx-heading-size: var(--astryx-h5-size); --astryx-heading-line: var(--astryx-h5-line); --astryx-heading-weight: var(--astryx-h5-weight); }
+  :where(.astryx-root,.astryx-preview,.ck-content) :where(h6) { --astryx-heading-size: var(--astryx-h6-size); --astryx-heading-line: var(--astryx-h6-line); --astryx-heading-weight: var(--astryx-h6-weight); }
+  :where(.astryx-root,.astryx-preview,.ck-content) :where(h1,h2,h3,h4,h5,h6) { font-family: var(--astryx-font-heading); color: var(--astryx-text); font-size: var(--astryx-heading-size); font-weight: var(--astryx-heading-weight); line-height: var(--astryx-heading-line); }
   :where(.astryx-prose,.ck-content) :where(h1,h2,h3,h4,h5,h6) { margin-block: 1.5em .5em; }
   :where(.astryx-prose,.ck-content) a { color: var(--astryx-link); text-underline-offset: .2em; }
   :where(.astryx-prose,.ck-content) :where(strong,b,th) { font-weight: 700; }
-  :where(.astryx-prose,.ck-content) small { font-size: var(--astryx-font-size-supporting); color: var(--astryx-secondary); line-height: 1.6666666667; }
+  :where(.astryx-prose,.ck-content) small { font-size: var(--astryx-font-size-supporting); color: var(--astryx-secondary); line-height: var(--astryx-line-supporting); }
   :where(.astryx-prose,.ck-content) :where(ul,ol) { padding-inline-start: 1.6em; }
   :where(.astryx-prose,.ck-content) blockquote { border-inline-start: 3px solid var(--astryx-accent); margin-inline: 0; padding-inline: 1.2em; }
-  :where(.astryx-prose,.ck-content) :where(code,pre) { font-family: var(--astryx-font-code); font-size: var(--astryx-font-size-label); font-weight: 400; background: var(--astryx-muted); border-radius: 4px; }
+  :where(.astryx-prose,.ck-content) :where(code,pre) { font-family: var(--astryx-font-code); font-size: var(--astryx-font-size-label); font-weight: 400; background: var(--astryx-syntax-background); border-radius: var(--astryx-radius-inner); }
   :where(.astryx-prose,.ck-content) pre { padding: 1em; line-height: var(--astryx-line-label); overflow: auto; }
   :where(.astryx-prose,.ck-content) table { border-collapse: collapse; inline-size: 100%; }
   :where(.astryx-prose,.ck-content) :where(th,td) { text-align: start; padding: .7em; border: 1px solid var(--astryx-border-strong); }

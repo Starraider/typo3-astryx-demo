@@ -76,7 +76,9 @@
     "ratio": [
       "50-50",
       "66-33",
-      "33-66"
+      "33-66",
+      "25-75",
+      "75-25"
     ],
     "gap": [
       "normal",
@@ -104,6 +106,66 @@
       "small",
       "medium",
       "large"
+    ]
+  },
+  "CarouselPagination": {
+    "position": [
+      "bottom-center",
+      "top-left",
+      "top-center",
+      "top-right",
+      "bottom-left",
+      "bottom-right"
+    ]
+  },
+  "CarouselIndicator": {},
+  "CarouselControl": {
+    "kind": [
+      "dot",
+      "arrow"
+    ]
+  },
+  "ImageOnly": {
+    "columns": [
+      "three",
+      "one",
+      "two",
+      "four",
+      "five",
+      "six"
+    ]
+  },
+  "SideNav": {
+    "part": [
+      "list",
+      "item"
+    ]
+  },
+  "TreeList": {
+    "part": [
+      "list",
+      "group",
+      "row",
+      "link",
+      "toggle"
+    ]
+  },
+  "SingleColumn": {
+    "background": [
+      "light",
+      "dark"
+    ],
+    "width": [
+      "constrained",
+      "full-bleed"
+    ]
+  },
+  "Dropdown": {
+    "part": [
+      "panel",
+      "row",
+      "link",
+      "toggle"
     ]
   }
 }

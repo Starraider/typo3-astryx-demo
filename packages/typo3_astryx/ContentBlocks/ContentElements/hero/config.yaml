@@ -1,60 +1,67 @@
 name: astryx/hero
 typeName: astryx_hero
-group: astryx
+group: default
 title: Astryx Hero
 fields:
+- identifier: hero_layout
+  type: Palette
+  fields:
+    - identifier: layout
+      type: Select
+      renderType: selectSingle
+      default: split
+      items:
+      - value: split
+        label: Split
+      - value: centered
+        label: Centered
+      - value: overlay
+        label: Image with transparent text panel
+    - identifier: variant
+      type: Select
+      renderType: selectSingle
+      default: neutral
+      items:
+      - value: neutral
+        label: Neutral
+      - value: accent
+        label: Accent
+- identifier: eyebrow
+  type: Text
 - identifier: header
   useExistingField: true
-- identifier: header_layout
-  useExistingField: true
-- identifier: header_position
-  useExistingField: true
+- identifier: heading_controls
+  type: Palette
+  fields:
+    - identifier: header_layout
+      useExistingField: true
+    - identifier: header_position
+      useExistingField: true
+    - identifier: heading_size
+      type: Select
+      renderType: selectSingle
+      default: medium
+      items:
+      - value: medium
+        label: Medium
+      - value: small
+        label: Small
+      - value: large
+        label: Large
+      - value: display
+        label: Display
 - identifier: header_link
   useExistingField: true
 - identifier: subheader
   useExistingField: true
-- identifier: heading_size
-  type: Select
-  renderType: selectSingle
-  default: medium
-  items:
-  - value: medium
-    label: Medium
-  - value: small
-    label: Small
-  - value: large
-    label: Large
-  - value: display
-    label: Display
 - identifier: bodytext
   useExistingField: true
   type: Textarea
   enableRichtext: true
-- identifier: eyebrow
-  type: Text
 - identifier: image
   type: File
   allowed: common-image-types
   maxitems: 1
-- identifier: layout
-  type: Select
-  renderType: selectSingle
-  default: split
-  items:
-  - value: split
-    label: Split
-  - value: centered
-    label: Centered
-  - value: overlay
-    label: Image with protected text overlay
-- identifier: cta_link
-  type: Link
-- identifier: cta_label
-  type: Text
-- identifier: secondary_link
-  type: Link
-- identifier: secondary_label
-  type: Text
 - identifier: aspect_ratio
   type: Select
   renderType: selectSingle
@@ -68,15 +75,14 @@ fields:
     label: Landscape (4:3)
   - value: square
     label: Square (1:1)
-- identifier: variant
-  type: Select
-  renderType: selectSingle
-  default: neutral
-  items:
-  - value: neutral
-    label: Neutral
-  - value: accent
-    label: Accent
+- identifier: cta_link
+  type: Link
+- identifier: cta_label
+  type: Text
+- identifier: secondary_link
+  type: Link
+- identifier: secondary_label
+  type: Text
 - identifier: alignment
   # Keep stored legacy values; heading alignment is now controlled by header_position.
   displayCond: 'FIELD:CType:!=:astryx_hero'

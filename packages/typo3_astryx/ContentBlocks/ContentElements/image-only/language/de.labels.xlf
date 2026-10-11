@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" target-language="de">
+    <body>
+      <trans-unit id="title">
+        <source>Image Only</source>
+        <target>Nur Bilder</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Multiple images in a fixed column grid with a shared aspect ratio.</source>
+        <target>Mehrere Bilder in einem Raster mit fester Spaltenanzahl und gemeinsamem Seitenverhältnis.</target>
+      </trans-unit>
+      <trans-unit id="image.label">
+        <source>Images</source>
+        <target>Bilder</target>
+      </trans-unit>
+      <trans-unit id="columns.label">
+        <source>Number of columns</source>
+        <target>Spaltenanzahl</target>
+      </trans-unit>
+      <trans-unit id="columns.description">
+        <source>The selected number of columns is retained at every screen width.</source>
+        <target>Die gewählte Spaltenanzahl bleibt bei jeder Bildschirmbreite erhalten.</target>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.label">
+        <source>Image aspect ratio</source>
+        <target>Bildseitenverhältnis</target>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.description">
+        <source>Original retains image proportions and FAL cropping. Fixed ratios fill the frame by cropping.</source>
+        <target>Original behält die Bildproportionen und den FAL-Beschnitt bei. Feste Seitenverhältnisse füllen den Rahmen durch Beschneiden.</target>
+      </trans-unit>
+      <trans-unit id="preview.columns">
+        <source>Columns</source>
+        <target>Spalten</target>
+      </trans-unit>
+      <trans-unit id="columns.items.one.label">
+        <source>1</source>
+        <target>1</target>
+      </trans-unit>
+      <trans-unit id="columns.items.two.label">
+        <source>2</source>
+        <target>2</target>
+      </trans-unit>
+      <trans-unit id="columns.items.three.label">
+        <source>3</source>
+        <target>3</target>
+      </trans-unit>
+      <trans-unit id="columns.items.four.label">
+        <source>4</source>
+        <target>4</target>
+      </trans-unit>
+      <trans-unit id="columns.items.five.label">
+        <source>5</source>
+        <target>5</target>
+      </trans-unit>
+      <trans-unit id="columns.items.six.label">
+        <source>6</source>
+        <target>6</target>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.items.auto.label">
+        <source>Original</source>
+        <target>Original</target>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.items.landscape.label">
+        <source>4:3</source>
+        <target>4:3</target>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.items.wide.label">
+        <source>16:9</source>
+        <target>16:9</target>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.items.square.label">
+        <source>1:1</source>
+        <target>1:1</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

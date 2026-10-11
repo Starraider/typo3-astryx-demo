@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="messages">
+    <body>
+      <trans-unit id="icon.label">
+        <source>Icon</source>
+        <target>Symbol</target>
+      </trans-unit>
+      <trans-unit id="icon.items.label">
+        <source>None</source>
+        <target>Keines</target>
+      </trans-unit>
+      <trans-unit id="icon.items.check.label">
+        <source>Check</source>
+        <target>Häkchen</target>
+      </trans-unit>
+      <trans-unit id="icon.items.warning.label">
+        <source>Warning</source>
+        <target>Warnung</target>
+      </trans-unit>
+      <trans-unit id="icon.items.error.label">
+        <source>Error</source>
+        <target>Fehler</target>
+      </trans-unit>
+      <trans-unit id="icon.items.info.label">
+        <source>Information</source>
+        <target>Information</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

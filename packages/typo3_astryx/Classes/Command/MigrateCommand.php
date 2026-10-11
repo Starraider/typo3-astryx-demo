@@ -16,7 +16,7 @@ final class MigrateCommand extends Command
 {
     private const MAP = ['header'=>'astryx_heading','text'=>'astryx_text','textmedia'=>'astryx_textmedia',
         'textpic'=>'astryx_textmedia','image'=>'astryx_textmedia','div'=>'astryx_divider','uploads'=>'astryx_downloads'];
-    private const RETAINED = ['menu_sitemap','menu_subpages','shortcut','html'];
+    private const RETAINED = ['menu_sitemap','menu_subpages','menu_pages','shortcut','html'];
     public function __construct(private readonly ConnectionPool $connections) { parent::__construct(); }
     protected function configure(): void
     {

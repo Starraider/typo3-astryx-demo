@@ -1,3 +1,4 @@
 @import './PageTsConfig/backend_layouts.tsconfig'
+@import './PageTsConfig/content_types.tsconfig'
 @import './PageTsConfig/rte.tsconfig'
 tx_content_blocks.view.partialRootPaths.10 = EXT:typo3_astryx/Resources/Private/Partials/

@@ -1,26 +1,28 @@
 import * as stylex from '@stylexjs/stylex';
 import {tokens} from './tokens.stylex.js';
-// Token import guarantees JavaScript-defined defaults reach the compiled output.
+// Use public variables so nested theme attributes control the recipe.
 export const styles = stylex.create({
   "root": {
-    "fontFamily": tokens['--astryx-font'],
+    "fontFamily": "var(--astryx-font)",
     "minWidth": 0,
     "borderRadius": "var(--astryx-radius-container)",
-    "backgroundColor": "var(--astryx-surface)",
+    "backgroundColor": "var(--astryx-card)",
     "color": "var(--astryx-text)",
     "overflowWrap": "anywhere"
   },
   "variant_outlined": {
-    "border": "1px solid var(--astryx-border-strong)"
+    "borderWidth": 1,
+    "borderStyle": "solid",
+    "borderColor": "var(--astryx-card-border)"
   },
   "variant_elevated": {
     "boxShadow": "var(--astryx-shadow)"
   },
   "variant_flat": {
-    "border": 0
+    "borderWidth": 0
   },
   "padding_normal": {
-    "padding": "var(--astryx-space-6)"
+    "padding": "var(--astryx-card-padding)"
   },
   "padding_compact": {
     "padding": "var(--astryx-space-3)"

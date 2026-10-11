@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages">
+    <body>
+      <trans-unit id="title">
+        <source>Image Only</source>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>Multiple images in a fixed column grid with a shared aspect ratio.</source>
+      </trans-unit>
+      <trans-unit id="image.label">
+        <source>Images</source>
+      </trans-unit>
+      <trans-unit id="columns.label">
+        <source>Number of columns</source>
+      </trans-unit>
+      <trans-unit id="columns.description">
+        <source>The selected number of columns is retained at every screen width.</source>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.label">
+        <source>Image aspect ratio</source>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.description">
+        <source>Original retains image proportions and FAL cropping. Fixed ratios fill the frame by cropping.</source>
+      </trans-unit>
+      <trans-unit id="preview.columns">
+        <source>Columns</source>
+      </trans-unit>
+      <trans-unit id="columns.items.one.label">
+        <source>1</source>
+      </trans-unit>
+      <trans-unit id="columns.items.two.label">
+        <source>2</source>
+      </trans-unit>
+      <trans-unit id="columns.items.three.label">
+        <source>3</source>
+      </trans-unit>
+      <trans-unit id="columns.items.four.label">
+        <source>4</source>
+      </trans-unit>
+      <trans-unit id="columns.items.five.label">
+        <source>5</source>
+      </trans-unit>
+      <trans-unit id="columns.items.six.label">
+        <source>6</source>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.items.auto.label">
+        <source>Original</source>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.items.landscape.label">
+        <source>4:3</source>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.items.wide.label">
+        <source>16:9</source>
+      </trans-unit>
+      <trans-unit id="aspect_ratio.items.square.label">
+        <source>1:1</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

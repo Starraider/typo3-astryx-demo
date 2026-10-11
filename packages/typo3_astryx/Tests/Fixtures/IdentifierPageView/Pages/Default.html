@@ -1,0 +1,14 @@
+<f:layout name="AstryxPageLayout" />
+<f:section name="Main">
+    <f:render partial="Header" arguments="{_all}" />
+    <div class="astryx-shell-width">
+        <div data-identifier-duplicate-branches>
+            <f:render partial="Navigation/MainMenu" arguments="{items: {0: navigation.0, 1: navigation.0}, prefix: 'desktop', nested: false}" />
+        </div>
+        <astryx:treeList items="{navigation}" id="repeated-tree" />
+        <astryx:treeList items="{navigation}" id="repeated-tree" />
+        <f:render partial="Navigation/LanguageMenu" arguments="{items: languageMenu}" />
+        <f:render partial="Navigation/LanguageMenu" arguments="{items: languageMenu}" />
+        <f:render partial="Content" arguments="{area: content.main}" />
+    </div>
+</f:section>

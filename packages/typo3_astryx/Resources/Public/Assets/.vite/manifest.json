@@ -7,6 +7,22 @@
     "file": "Figtree-latin.woff2",
     "src": "packages/typo3_astryx/Resources/Private/Fonts/Figtree-latin.woff2"
   },
+  "packages/typo3_astryx/Resources/Private/Fonts/JetBrainsMono-latin-ext.woff2": {
+    "file": "JetBrainsMono-latin-ext.woff2",
+    "src": "packages/typo3_astryx/Resources/Private/Fonts/JetBrainsMono-latin-ext.woff2"
+  },
+  "packages/typo3_astryx/Resources/Private/Fonts/JetBrainsMono-latin.woff2": {
+    "file": "JetBrainsMono-latin.woff2",
+    "src": "packages/typo3_astryx/Resources/Private/Fonts/JetBrainsMono-latin.woff2"
+  },
+  "packages/typo3_astryx/Resources/Private/Fonts/Montserrat-latin-ext.woff2": {
+    "file": "Montserrat-latin-ext.woff2",
+    "src": "packages/typo3_astryx/Resources/Private/Fonts/Montserrat-latin-ext.woff2"
+  },
+  "packages/typo3_astryx/Resources/Private/Fonts/Montserrat-latin.woff2": {
+    "file": "Montserrat-latin.woff2",
+    "src": "packages/typo3_astryx/Resources/Private/Fonts/Montserrat-latin.woff2"
+  },
   "packages/typo3_astryx/Resources/Private/JavaScript/Main.entry.js": {
     "file": "astryx.js",
     "name": "astryx",
@@ -20,7 +36,11 @@
     ],
     "assets": [
       "Figtree-latin-ext.woff2",
-      "Figtree-latin.woff2"
+      "Figtree-latin.woff2",
+      "JetBrainsMono-latin-ext.woff2",
+      "JetBrainsMono-latin.woff2",
+      "Montserrat-latin-ext.woff2",
+      "Montserrat-latin.woff2"
     ]
   },
   "packages/typo3_astryx/Resources/Private/JavaScript/Preview.entry.js": {
@@ -33,7 +53,11 @@
     ],
     "assets": [
       "Figtree-latin-ext.woff2",
-      "Figtree-latin.woff2"
+      "Figtree-latin.woff2",
+      "JetBrainsMono-latin-ext.woff2",
+      "JetBrainsMono-latin.woff2",
+      "Montserrat-latin-ext.woff2",
+      "Montserrat-latin.woff2"
     ]
   },
   "packages/typo3_astryx/Resources/Private/JavaScript/Rte.entry.js": {
@@ -46,7 +70,11 @@
     ],
     "assets": [
       "Figtree-latin-ext.woff2",
-      "Figtree-latin.woff2"
+      "Figtree-latin.woff2",
+      "JetBrainsMono-latin-ext.woff2",
+      "JetBrainsMono-latin.woff2",
+      "Montserrat-latin-ext.woff2",
+      "Montserrat-latin.woff2"
     ]
   },
   "packages/typo3_astryx/Resources/Private/JavaScript/code-highlighter.js": {

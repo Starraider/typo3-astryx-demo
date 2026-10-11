@@ -2,17 +2,17 @@
 <f:section name="Main">
     <f:render partial="ContentElements/Header" arguments="{data: data}" />
     <div class="astryx-accordion" data-astryx-accordion data-mode="{data.mode}">
-        <f:variable name="groupName" value="{f:if(condition: '{data.mode} == \'single\'', then: 'astryx-accordion-{data.uid}', else: '')}" />
+        <f:variable name="groupName" value="{f:if(condition: '{data.mode} == \'single\'', then: '{astryxOccurrence.namespace}-accordion', else: '')}" />
         <f:for each="{data.items}" as="item" iteration="i">
             <f:if condition="{item.open}">
                 <f:then>
-                    <details open id="a{data.uid}-{i.index}" name="{groupName}">
-                        <f:render section="ItemContent" arguments="{item: item, id: 'a{data.uid}-{i.index}'}" />
+                    <details open id="{astryxOccurrence.namespace}-accordion-{i.index}" name="{groupName}">
+                        <f:render section="ItemContent" arguments="{item: item, id: '{astryxOccurrence.namespace}-accordion-{i.index}'}" />
                     </details>
                 </f:then>
                 <f:else>
-                    <details id="a{data.uid}-{i.index}" name="{groupName}">
-                        <f:render section="ItemContent" arguments="{item: item, id: 'a{data.uid}-{i.index}'}" />
+                    <details id="{astryxOccurrence.namespace}-accordion-{i.index}" name="{groupName}">
+                        <f:render section="ItemContent" arguments="{item: item, id: '{astryxOccurrence.namespace}-accordion-{i.index}'}" />
                     </details>
                 </f:else>
             </f:if>

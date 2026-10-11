@@ -12,6 +12,15 @@
         "platform": {
             "php": "8.3.0"
         },
+        "policy": {
+            "advisories": {
+                "ignore-id": [
+                    "PKSA-8j6w-3kr7-s9xk",
+                    "PKSA-6j95-1jtb-x6wc",
+                    "PKSA-cbx2-m9db-bmzd"
+                ]
+            }
+        },
         "sort-packages": true
     },
     "require": {

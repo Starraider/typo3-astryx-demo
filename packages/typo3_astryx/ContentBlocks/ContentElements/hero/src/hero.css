@@ -5,6 +5,12 @@
   }
 }
 
+/* The overlay protection must also contain an enlarged/localized eyebrow.
+   This consumer override follows the shared Badge's StyleX priority layers. */
+@layer astryx-theme {
+ .astryx-hero[data-layout="overlay"] .astryx-hero-content .astryx-badge { height: auto; min-block-size: 20px; max-inline-size: 100%; white-space: normal; overflow-wrap: anywhere; }
+}
+
 @layer astryx-base {
  .astryx-hero[data-layout="centered"] { text-align: center; }
  .astryx-hero[data-layout="centered"] .astryx-prose { margin-inline: auto; }
@@ -23,7 +29,11 @@
  .astryx-hero[data-align="end"] .astryx-cta-group { justify-content: end; }
  .astryx-hero[data-variant="accent"] { border: 2px solid var(--astryx-accent); }
  .astryx-hero[data-layout="overlay"] { position: relative; isolation: isolate; overflow: hidden; }
- .astryx-hero[data-layout="overlay"] > div:first-child { background: color-mix(in srgb, var(--astryx-surface) 30%, transparent); padding: 1.5rem; border-radius: var(--astryx-radius-element); max-inline-size: 42rem; z-index: 1; }
- .astryx-hero[data-layout="overlay"] > div:last-child { position: absolute; inset: 0; z-index: -1; }
- .astryx-hero[data-layout="overlay"] .astryx-media, .astryx-hero[data-layout="overlay"] img { block-size: 100%; inline-size: 100%; object-fit: cover; }
+ /* Black text over 46% white guarantees >= 4.5:1 even over black image pixels.
+    The panel remains 54% transparent in every theme/mode; controls keep their own pairs. */
+ .astryx-hero[data-layout="overlay"] .astryx-hero-content { --astryx-button-medium-height: auto; --astryx-text: #000; --astryx-secondary: #000; --astryx-link: #000; --astryx-syntax-background: transparent; --astryx-badge-neutral-background: transparent; --astryx-badge-neutral-text: #000; --astryx-badge-neutral-border: #000; --astryx-button-secondary-background: transparent; --astryx-button-secondary-hover: #ffffff30; --astryx-button-secondary-border-color: #000; background: rgb(255 255 255 / 46%); padding: clamp(.75rem, 3vw, 1.5rem); border-radius: var(--astryx-radius-element); min-inline-size: 0; max-inline-size: 42rem; overflow-wrap: anywhere; z-index: 1; }
+ /* Only the image leaves normal flow; captions still grow the Hero below its content. */
+ .astryx-hero[data-layout="overlay"] .astryx-hero-media img { position: absolute; inset: 0; z-index: -1; block-size: 100%; inline-size: 100%; object-fit: cover; }
+ .astryx-hero[data-layout="overlay"] :focus-visible { outline-color: #000; }
+ .astryx-hero[data-layout="overlay"] .astryx-hero-media figcaption { --astryx-secondary: #000; position: relative; background: rgb(255 255 255 / 46%); padding: .75rem 1rem; border-radius: var(--astryx-radius-element); max-inline-size: 42rem; overflow-wrap: anywhere; }
 }

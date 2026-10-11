@@ -1,35 +1,8 @@
 name: astryx/notice
 typeName: astryx_notice
-group: astryx
+group: default
 title: Astryx Notice
 fields:
-- identifier: header
-  useExistingField: true
-- identifier: header_layout
-  useExistingField: true
-- identifier: header_position
-  useExistingField: true
-- identifier: header_link
-  useExistingField: true
-- identifier: subheader
-  useExistingField: true
-- identifier: heading_size
-  type: Select
-  renderType: selectSingle
-  default: medium
-  items:
-  - value: medium
-    label: Medium
-  - value: small
-    label: Small
-  - value: large
-    label: Large
-  - value: display
-    label: Display
-- identifier: bodytext
-  useExistingField: true
-  type: Textarea
-  enableRichtext: true
 - identifier: status
   type: Select
   renderType: selectSingle
@@ -46,7 +19,57 @@ fields:
   - value: error
     label: Error
 - identifier: icon
-  type: Text
+  type: Select
+  renderType: selectSingle
+  default: ''
+  fieldWizard:
+    selectIcons:
+      disabled: false
+  items:
+  - value: ''
+    label: None
+  - value: check
+    label: Check
+    icon: EXT:typo3_astryx/Resources/Public/ContentBlocks/astryx/notice/icons/check.svg
+  - value: warning
+    label: Warning
+    icon: EXT:typo3_astryx/Resources/Public/ContentBlocks/astryx/notice/icons/warning.svg
+  - value: error
+    label: Error
+    icon: EXT:typo3_astryx/Resources/Public/ContentBlocks/astryx/notice/icons/error.svg
+  - value: info
+    label: Information
+    icon: EXT:typo3_astryx/Resources/Public/ContentBlocks/astryx/notice/icons/info.svg
+- identifier: header
+  useExistingField: true
+- identifier: heading_controls
+  type: Palette
+  fields:
+    - identifier: header_layout
+      useExistingField: true
+    - identifier: header_position
+      useExistingField: true
+    - identifier: heading_size
+      type: Select
+      renderType: selectSingle
+      default: medium
+      items:
+      - value: medium
+        label: Medium
+      - value: small
+        label: Small
+      - value: large
+        label: Large
+      - value: display
+        label: Display
+- identifier: header_link
+  useExistingField: true
+- identifier: subheader
+  useExistingField: true
+- identifier: bodytext
+  useExistingField: true
+  type: Textarea
+  enableRichtext: true
 - identifier: cta_link
   type: Link
 - identifier: cta_label

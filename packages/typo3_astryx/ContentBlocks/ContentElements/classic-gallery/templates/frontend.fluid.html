@@ -9,10 +9,10 @@
                 </div>
             </f:if>
             <div class="astryx-classic-gallery-filters" data-gallery-filters role="group" aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.filters', default: 'Filter images by category')}" hidden>
-                <button type="button" aria-pressed="true" aria-controls="gallery{data.uid}"><f:translate key="LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.all" default="All" /></button>
+                <button type="button" aria-pressed="true" aria-controls="{astryxOccurrence.namespace}-gallery"><f:translate key="LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.all" default="All" /></button>
             </div>
         </header>
-        <ul id="gallery{data.uid}" class="astryx-classic-gallery-tiles" aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.images', default: 'Gallery images')}">
+        <ul id="{astryxOccurrence.namespace}-gallery" class="astryx-classic-gallery-tiles" aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.images', default: 'Gallery images')}">
             <f:for each="{data.items}" as="item">
                 <f:for each="{item.image}" as="file">
                     <f:if condition="{ax:fileAvailable(file: file)}">
@@ -27,7 +27,7 @@
                 </f:for>
             </f:for>
         </ul>
-        <dialog id="galleryLightbox{data.uid}" class="astryx-gallery-lightbox" data-gallery-lightbox aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.lightbox', default: 'Image gallery')}">
+        <dialog id="{astryxOccurrence.namespace}-lightbox" class="astryx-gallery-lightbox" data-gallery-lightbox aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.lightbox', default: 'Image gallery')}">
             <button type="button" class="astryx-gallery-lightbox-close" data-lightbox-close autofocus aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.close', default: 'Close')}"><f:image src="EXT:typo3_astryx/Resources/Public/Icons/close.svg" width="16" height="16" alt="" /></button>
             <button type="button" class="astryx-gallery-lightbox-previous" data-lightbox-previous aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.previous', default: 'Previous')}"><f:image src="EXT:typo3_astryx/Resources/Public/Icons/chevron-left.svg" width="16" height="16" alt="" /></button>
             <figure class="astryx-gallery-lightbox-media" data-lightbox-media></figure>

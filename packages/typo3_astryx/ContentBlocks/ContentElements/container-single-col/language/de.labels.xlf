@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" target-language="de">
+    <body>
+      <trans-unit id="title">
+        <source>Container 1-col</source>
+        <target>Container 1-spaltig</target>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>One editable content column at normal content width, with lighter/darker backgrounds following the page mode or a cover image at content or full viewport width.</source>
+        <target>Eine Inhaltsspalte in normaler Inhaltsbreite, mit hellerer/dunklerer Hintergrundabstufung passend zum Seitenmodus oder Hintergrundbild in Inhalts- oder voller Fensterbreite.</target>
+      </trans-unit>
+      <trans-unit id="header.label">
+        <source>Header</source>
+        <target>Überschrift</target>
+      </trans-unit>
+      <trans-unit id="subheader.label">
+        <source>Subheader</source>
+        <target>Unterüberschrift</target>
+      </trans-unit>
+      <trans-unit id="heading_size.label">
+        <source>Heading size</source>
+        <target>Überschriftgröße</target>
+      </trans-unit>
+      <trans-unit id="heading_size.items.medium.label">
+        <source>Medium</source>
+        <target>Mittel</target>
+      </trans-unit>
+      <trans-unit id="heading_size.items.small.label">
+        <source>Small</source>
+        <target>Klein</target>
+      </trans-unit>
+      <trans-unit id="heading_size.items.large.label">
+        <source>Large</source>
+        <target>Groß</target>
+      </trans-unit>
+      <trans-unit id="heading_size.items.display.label">
+        <source>Display</source>
+        <target>Display</target>
+      </trans-unit>
+      <trans-unit id="background.label">
+        <source>Background shade</source>
+        <target>Hintergrundabstufung</target>
+      </trans-unit>
+      <trans-unit id="background.description">
+        <source>Lighter and Darker are relative shades within the active page mode; both adapt when the mode changes.</source>
+        <target>Heller und Dunkler sind relative Abstufungen innerhalb des aktiven Seitenmodus; beide passen sich bei einem Moduswechsel an.</target>
+      </trans-unit>
+      <trans-unit id="background.items.light.label">
+        <source>Lighter</source>
+        <target>Heller</target>
+      </trans-unit>
+      <trans-unit id="background.items.dark.label">
+        <source>Darker</source>
+        <target>Dunkler</target>
+      </trans-unit>
+      <trans-unit id="image.label">
+        <source>Background image</source>
+        <target>Hintergrundbild</target>
+      </trans-unit>
+      <trans-unit id="image.description">
+        <source>Optional. Covers the entire container and replaces the solid background. Text follows the page mode; choose an image that remains readable in both modes. The image is decorative.</source>
+        <target>Optional. Füllt den gesamten Container und ersetzt die Hintergrundfarbe. Die Textfarben folgen dem Seitenmodus; wählen Sie ein Bild, auf dem der Text in beiden Modi lesbar bleibt. Das Bild ist dekorativ.</target>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Background width</source>
+        <target>Hintergrundbreite</target>
+      </trans-unit>
+      <trans-unit id="width.items.constrained.label">
+        <source>Content width</source>
+        <target>Inhaltsbreite</target>
+      </trans-unit>
+      <trans-unit id="width.items.full-bleed.label">
+        <source>Full viewport width</source>
+        <target>Volle Fensterbreite</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -14,9 +14,17 @@ final class RecipeViewHelper extends AbstractViewHelper
         'Text' => ['width' => ['prose', 'full'], 'density' => ['normal', 'compact']],
         'Divider' => ['variant' => ['subtle', 'strong']],
         'Card' => ['variant' => ['outlined', 'elevated', 'flat'], 'padding' => ['normal', 'compact']],
-        'Grid' => ['ratio' => ['50-50', '66-33', '33-66'], 'gap' => ['normal', 'small', 'large'], 'columns' => ['auto', 'two', 'three', 'four']],
+        'Grid' => ['ratio' => ['50-50', '66-33', '33-66', '25-75', '75-25'], 'gap' => ['normal', 'small', 'large'], 'columns' => ['auto', 'two', 'three', 'four']],
+        'SingleColumn' => ['background' => ['light', 'dark'], 'width' => ['constrained', 'full-bleed']],
         'Notice' => ['variant' => ['neutral', 'accent', 'success', 'warning', 'error']],
-        'Icon' => ['size' => ['small', 'medium', 'large']]
+        'CarouselPagination' => ['position' => ['bottom-center', 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-right']],
+        'CarouselControl' => ['kind' => ['dot', 'arrow']],
+        'CarouselIndicator' => [],
+        'ImageOnly' => ['columns' => ['three', 'one', 'two', 'four', 'five', 'six']],
+        'Icon' => ['size' => ['small', 'medium', 'large']],
+        'SideNav' => ['part' => ['list', 'item']],
+        'Dropdown' => ['part' => ['panel', 'row', 'link', 'toggle']],
+        'TreeList' => ['part' => ['list', 'group', 'row', 'link', 'toggle']]
     ];
     public function __construct(private readonly StylexManifestService $manifest) {}
     public function initializeArguments(): void

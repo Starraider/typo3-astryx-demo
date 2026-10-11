@@ -18,11 +18,26 @@ function executeMap(array $data=[],array $commands=[]): DataHandler {
 }
 function check(bool $condition,string $message): void { if(!$condition)throw new RuntimeException($message); }
 $source=(int)$db->select(['uid'],'tt_content',['pid'=>12,'CType'=>'astryx_container_two_col','deleted'=>0],[],[],1)->fetchOne();
+$sources = [$source => 2];
+if (in_array('--all-variants', $argv, true)) {
+    $fixture = json_decode(file_get_contents(getcwd() . '/var/containers-fixture.json'), true, flags: JSON_THROW_ON_ERROR);
+    $sources = [];
+    foreach (['50-50-normal', '25-75-small', '75-25-normal', 'three-normal', 'four-small'] as $key) {
+        $record = $fixture['records'][$key];
+        $sources[(int)$record['uid']] = count($record['sides']);
+    }
+}
+if (in_array('--single-column', $argv, true)) {
+    $fixture = json_decode(file_get_contents(getcwd() . '/var/single-column-fixture.json'), true, flags: JSON_THROW_ON_ERROR);
+    $sources = [(int)$fixture['records']['dark-full-bleed-image']['uid'] => 1];
+}
+foreach ($sources as $source => $columnCount) {
+check($source > 0, 'Missing container fixture');
 $copy=executeMap([],['tt_content'=>[$source=>['copy'=>['action'=>'paste','target'=>13,'update'=>['tx_container_parent'=>0,'colPos'=>0]]]]]);$new=(int)$copy->copyMappingArray_merged['tt_content'][$source];
 $children=$db->fetchAllAssociative('SELECT uid,colPos FROM tt_content WHERE tx_container_parent=? AND deleted=0',[$new]);
-check(count($children)===2,'Copy must include both children: '.json_encode(['source'=>$source,'copy'=>$new,'children'=>$children,'mapping'=>$copy->copyMappingArray_merged]));check(count(array_unique(array_column($children,'colPos')))===2,'Copied children must retain both columns');
-$left=(int)$children[0]['uid'];executeMap(['tt_content'=>[$left=>['colPos'=>202]]]);
-check((int)$db->fetchOne('SELECT colPos FROM tt_content WHERE uid=?',[$left])===202,'Column move failed');
+check(count($children)===$columnCount,'Copy must include every child: '.json_encode(['source'=>$source,'copy'=>$new,'children'=>$children,'mapping'=>$copy->copyMappingArray_merged]));check(count(array_unique(array_column($children,'colPos')))===$columnCount,'Copied children must retain every column');
+$left=(int)$children[0]['uid'];$lastColumn=200+$columnCount;executeMap(['tt_content'=>[$left=>['colPos'=>$lastColumn]]]);
+check((int)$db->fetchOne('SELECT colPos FROM tt_content WHERE uid=?',[$left])===$lastColumn,'Column move failed');
 executeMap([],['tt_content'=>[$new=>['move'=>14]]]);
 foreach(array_merge([$new],array_column($children,'uid')) as $id)check((int)$db->fetchOne('SELECT pid FROM tt_content WHERE uid=?',[$id])===14,'Moving container must move its children');
 executeMap([],['tt_content'=>[$new=>['delete'=>1]]]);
@@ -31,4 +46,5 @@ $restore=[];foreach(array_merge([$new],array_column($children,'uid')) as $id)$re
 executeMap([],['tt_content'=>$restore]);
 foreach(array_merge([$new],array_column($children,'uid')) as $id)check((int)$db->fetchOne('SELECT deleted FROM tt_content WHERE uid=?',[$id])===0,'Restoring must restore children');
 executeMap([],['tt_content'=>[$new=>['delete'=>1]]]);
-echo "Container copy, column move, page move, delete and restore passed\n";
+}
+echo "Container copy, column move, page move, delete and restore passed for " . count($sources) . " variant(s)\n";

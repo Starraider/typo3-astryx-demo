@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<xliff version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages">
+    <body>
+      <trans-unit id="title">
+        <source>Container 1-col</source>
+      </trans-unit>
+      <trans-unit id="description">
+        <source>One editable content column at normal content width, with lighter/darker backgrounds following the page mode or a cover image at content or full viewport width.</source>
+      </trans-unit>
+      <trans-unit id="header.label">
+        <source>Header</source>
+      </trans-unit>
+      <trans-unit id="subheader.label">
+        <source>Subheader</source>
+      </trans-unit>
+      <trans-unit id="heading_size.label">
+        <source>Heading size</source>
+      </trans-unit>
+      <trans-unit id="heading_size.items.medium.label">
+        <source>Medium</source>
+      </trans-unit>
+      <trans-unit id="heading_size.items.small.label">
+        <source>Small</source>
+      </trans-unit>
+      <trans-unit id="heading_size.items.large.label">
+        <source>Large</source>
+      </trans-unit>
+      <trans-unit id="heading_size.items.display.label">
+        <source>Display</source>
+      </trans-unit>
+      <trans-unit id="background.label">
+        <source>Background shade</source>
+      </trans-unit>
+      <trans-unit id="background.description">
+        <source>Lighter and Darker are relative shades within the active page mode; both adapt when the mode changes.</source>
+      </trans-unit>
+      <trans-unit id="background.items.light.label">
+        <source>Lighter</source>
+      </trans-unit>
+      <trans-unit id="background.items.dark.label">
+        <source>Darker</source>
+      </trans-unit>
+      <trans-unit id="image.label">
+        <source>Background image</source>
+      </trans-unit>
+      <trans-unit id="image.description">
+        <source>Optional. Covers the entire container and replaces the solid background. Text follows the page mode; choose an image that remains readable in both modes. The image is decorative.</source>
+      </trans-unit>
+      <trans-unit id="width.label">
+        <source>Background width</source>
+      </trans-unit>
+      <trans-unit id="width.items.constrained.label">
+        <source>Content width</source>
+      </trans-unit>
+      <trans-unit id="width.items.full-bleed.label">
+        <source>Full viewport width</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

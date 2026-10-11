@@ -1,0 +1,6 @@
+# Hide core types without an Astryx renderer in both the CType selector and wizard.
+# Keep the supported core menus, shortcut, HTML and installed plugins available.
+TCEFORM.tt_content.CType.removeItems := addToList(header,text,textpic,image,textmedia,bullets,table,uploads,menu_abstract,menu_categorized_content,menu_categorized_pages,menu_recently_updated,menu_related_pages,menu_section,menu_section_pages,menu_sitemap_pages,div)
+
+# New records outside the wizard must also start with a supported content type.
+TCAdefaults.tt_content.CType = astryx_text
