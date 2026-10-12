@@ -25,13 +25,13 @@ for artifact in manifest['artifacts']:
     if not path.is_relative_to(extension/'Resources/Public') or hashlib.sha256(path.read_bytes()).hexdigest()!=artifact['sha256']:
         raise RuntimeError('Invalid packaged artifact: '+artifact['path'])
 with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as result:
-    directories={'typo3_astryx/'}
+    directories=set()
     for source in sorted(extension.rglob('*')):
         if not source.is_file():continue
         relative=source.relative_to(extension)
         if any(part in {'Tests','vendor','node_modules','.git','.github','.DS_Store','__pycache__'} for part in relative.parts):continue
         for parent in relative.parents:
-            if parent.as_posix()!='.':directories.add('typo3_astryx/'+parent.as_posix()+'/')
+            if parent.as_posix()!='.':directories.add(parent.as_posix()+'/')
     for directory in sorted(directories):
         entry=zipfile.ZipInfo(directory,(2026,10,5,0,0,0));entry.external_attr=0o40755<<16;result.writestr(entry,b'')
     for source in sorted(extension.rglob('*')):
@@ -43,7 +43,7 @@ with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=
         if relative.as_posix()=='composer.json':
             package=json.loads(content);package['version']=version
             content=(json.dumps(package,indent=2)+'\n').encode()
-        entry=zipfile.ZipInfo('typo3_astryx/'+relative.as_posix(),(2026,10,5,0,0,0))
+        entry=zipfile.ZipInfo(relative.as_posix(),(2026,10,5,0,0,0))
         entry.compress_type=zipfile.ZIP_DEFLATED;entry.external_attr=0o100644<<16
         result.writestr(entry,content)
 checksum=hashlib.sha256(archive.read_bytes()).hexdigest()
