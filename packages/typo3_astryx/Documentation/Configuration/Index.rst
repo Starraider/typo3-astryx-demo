@@ -23,56 +23,56 @@ Available Site Settings
 ..  table:: Astryx Site Settings Reference
     :widths: 25 15 15 45
 
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | Setting Key                   | Type    | Default                                 | Description & Usage                                          |
-    +===============================+=========+=========================================+==============================================================+
-    | ``Astryx.theme``              | string  | ``"neutral"``                           | The default design theme for the site. Available values:     |
-    |                               |         |                                         | ``"neutral"``, ``"stone"``, or ``"ocean"``. Can be overridden|
-    |                               |         |                                         | on individual pages via page properties.                     |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.mode``               | string  | ``"system"``                            | The default color mode. Available values: ``"system"``,      |
-    |                               |         |                                         | ``"light"``, or ``"dark"``. ``system`` follows the visitor's |
-    |                               |         |                                         | OS/browser preference.                                       |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.allowUserMode``      | bool    | ``true``                                | Shows the light/dark mode switcher button in the header and  |
-    |                               |         |                                         | saves the visitor's choice in browser local storage. Set to  |
-    |                               |         |                                         | ``false`` to enforce the configured page or site color mode. |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.showLanguageMenu``   | bool    | ``true``                                | Shows the language selector in the header when the site has  |
-    |                               |         |                                         | more than one enabled language in its site configuration.    |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.contentWidth``       | string  | ``"72rem"``                             | Maximum content container width (e.g. ``"72rem"``,           |
-    |                               |         |                                         | ``"1280px"``). Constrains standard page and container grids. |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.navigationRoot``     | int     | ``0``                                   | UID of the root page for the main top navigation menu.       |
-    |                               |         |                                         | Value ``0`` defaults to the current site root.               |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.footerRoot``         | int     | ``0``                                   | UID of the parent page for the footer navigation menu.      |
-    |                               |         |                                         | Value ``0`` disables the footer link menu.                   |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.footerContentPage``  | int     | ``0``                                   | UID of a page containing editorial content elements (in     |
-    |                               |         |                                         | ``colPos = 0``) to render as footer content. Value ``0``     |
-    |                               |         |                                         | disables editorial footer rendering.                         |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.logo``               | string  | ``""``                                  | Relative path or extension reference to the site logo image  |
-    |                               |         |                                         | (e.g. ``"EXT:my_site/Resources/Public/Images/logo.svg"``).   |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.logoAlt``            | string  | ``"Home"``                              | Accessible alternative text for the logo link. Defaults to   |
-    |                               |         |                                         | ``"Home"``.                                                  |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.pageViewPath``       | string  | ``"EXT:typo3_astryx/Resources/Private/``| Path override for the PAGEVIEW template hierarchy (contains  |
-    |                               |         | ``PageView/"``                          | ``Pages/``, ``Layouts/``, and ``Partials/``).                |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.pinnedHeader``       | bool    | ``true``                                | When enabled, keeps the main navigation header pinned to the |
-    |                               |         |                                         | top of the viewport during scrolling.                        |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.pinnedFooter``       | bool    | ``false``                               | When enabled, keeps the footer bar pinned to the bottom of   |
-    |                               |         |                                         | the viewport.                                                |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
-    | ``Astryx.useVite``            | bool    | ``false``                               | When enabled, loads frontend bundles built by the consuming  |
-    |                               |         |                                         | project's Vite pipeline (``public/_assets/vite/``) rather    |
-    |                               |         |                                         | than packaged extension assets.                              |
-    +-------------------------------+---------+-----------------------------------------+--------------------------------------------------------------+
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | Setting Key                   | Type    | Default                                     | Description & Usage                                                |
+    +===============================+=========+=============================================+====================================================================+
+    | ``Astryx.theme``              | string  | ``"neutral"``                               | The default design theme for the site. Available values:           |
+    |                               |         |                                             | ``"neutral"``, ``"stone"``, or ``"ocean"``. Can be overridden      |
+    |                               |         |                                             | on individual pages via page properties.                           |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.mode``               | string  | ``"system"``                                | The default color mode. Available values: ``"system"``,            |
+    |                               |         |                                             | ``"light"``, or ``"dark"``. ``system`` follows the visitor's       |
+    |                               |         |                                             | OS/browser preference.                                             |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.allowUserMode``      | bool    | ``true``                                    | Shows the light/dark mode switcher button in the header and        |
+    |                               |         |                                             | saves the visitor's choice in browser local storage. Set to        |
+    |                               |         |                                             | ``false`` to enforce the configured page or site color mode.       |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.showLanguageMenu``   | bool    | ``true``                                    | Shows the language selector in the header when the site has        |
+    |                               |         |                                             | more than one enabled language in its site configuration.          |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.contentWidth``       | string  | ``"72rem"``                                 | Maximum content container width (e.g. ``"72rem"``,                 |
+    |                               |         |                                             | ``"1280px"``). Constrains standard page and container grids.       |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.navigationRoot``     | int     | ``0``                                       | UID of the root page for the main top navigation menu.             |
+    |                               |         |                                             | Value ``0`` defaults to the current site root.                     |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.footerRoot``         | int     | ``0``                                       | UID of the parent page for the footer navigation menu.             |
+    |                               |         |                                             | Value ``0`` disables the footer link menu.                         |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.footerContentPage``  | int     | ``0``                                       | UID of a page containing editorial content elements (in            |
+    |                               |         |                                             | ``colPos = 0``) to render as footer content. Value ``0``           |
+    |                               |         |                                             | disables editorial footer rendering.                               |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.logo``               | string  | ``""``                                      | Relative path or extension reference to the site logo image        |
+    |                               |         |                                             | (e.g. ``"EXT:my_site/Resources/Public/Images/logo.svg"``).         |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.logoAlt``            | string  | ``"Home"``                                  | Accessible alternative text for the logo link. Defaults to         |
+    |                               |         |                                             | ``"Home"``.                                                        |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.pageViewPath``       | string  | ``"EXT:typo3_astryx/Resources/Private/``    | Path override for the PAGEVIEW template hierarchy (contains        |
+    |                               |         | ``PageView/"``                              | ``Pages/``, ``Layouts/``, and ``Partials/``).                      |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.pinnedHeader``       | bool    | ``true``                                    | When enabled, keeps the main navigation header pinned to the       |
+    |                               |         |                                             | top of the viewport during scrolling.                              |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.pinnedFooter``       | bool    | ``false``                                   | When enabled, keeps the footer bar pinned to the bottom of         |
+    |                               |         |                                             | the viewport.                                                      |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
+    | ``Astryx.useVite``            | bool    | ``false``                                   | When enabled, loads frontend bundles built by the consuming        |
+    |                               |         |                                             | project's Vite pipeline (``public/_assets/vite/``) rather          |
+    |                               |         |                                             | than packaged extension assets.                                    |
+    +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
 
 Example ``config/sites/<site-identifier>/settings.yaml``
 --------------------------------------------------------

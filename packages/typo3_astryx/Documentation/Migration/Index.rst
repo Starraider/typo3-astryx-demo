@@ -155,35 +155,35 @@ Detailed CType Mapping Reference
 ..  table:: Automatic and Manual CType Mappings
     :widths: 20 25 55
 
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | FSC CType             | Astryx CType          | Migration Behavior                                        |
-    +=======================+=======================+===========================================================+
-    | ``header``            | ``astryx_heading``    | Reuses core header, layout, position, and link.           |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``text``              | ``astryx_text``       | Reuses core bodytext; styled with Astryx typography.      |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``textmedia``,        | ``astryx_textmedia``  | Reuses core bodytext, image/assets relations, and image   |
-    | ``textpic``,          |                       | orientation settings.                                     |
-    | ``image``             |                       |                                                           |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``div``               | ``astryx_divider``    | Maps to Astryx horizontal divider.                        |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``uploads``           | ``astryx_downloads``  | Reuses core ``media`` FAL relation.                       |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``menu_sitemap``      | ``menu_sitemap``      | Retained CType; rendered via ``astryx:treeList``.         |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``menu_subpages``     | ``menu_subpages``     | Retained CType; rendered via ``astryx:sideNav``.          |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``menu_pages``        | ``menu_pages``        | Retained CType; rendered via ``astryx:sideNav``.          |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``shortcut``          | ``shortcut``          | Retained CType; rendered via RECORDS content object.      |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``html``              | ``html``              | Retained CType; rendered with ``htmlSanitize = 1``.       |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``bullets``           | Manual (``astryx_list``)| Convert manually to the Collection-based List block.    |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
-    | ``table``             | Manual (``astryx_table``)| Convert manually to the Collection-based Table block.   |
-    +-----------------------+-----------------------+-----------------------------------------------------------+
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | FSC CType             | Astryx CType                | Migration Behavior                                        |
+    +=======================+=============================+===========================================================+
+    | ``header``            | ``astryx_heading``          | Reuses core header, layout, position, and link.           |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``text``              | ``astryx_text``             | Reuses core bodytext; styled with Astryx typography.      |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``textmedia``,        | ``astryx_textmedia``        | Reuses core bodytext, image/assets relations, and image   |
+    | ``textpic``,          |                             | orientation settings.                                     |
+    | ``image``             |                             |                                                           |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``div``               | ``astryx_divider``          | Maps to Astryx horizontal divider.                        |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``uploads``           | ``astryx_downloads``        | Reuses core ``media`` FAL relation.                       |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``menu_sitemap``      | ``menu_sitemap``            | Retained CType; rendered via ``astryx:treeList``.         |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``menu_subpages``     | ``menu_subpages``           | Retained CType; rendered via ``astryx:sideNav``.          |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``menu_pages``        | ``menu_pages``              | Retained CType; rendered via ``astryx:sideNav``.          |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``shortcut``          | ``shortcut``                | Retained CType; rendered via RECORDS content object.      |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``html``              | ``html``                    | Retained CType; rendered with ``htmlSanitize = 1``.       |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``bullets``           | Manual (``astryx_list``)    | Convert manually to the Collection-based List block.      |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
+    | ``table``             | Manual (``astryx_table``)   | Convert manually to the Collection-based Table block.     |
+    +-----------------------+-----------------------------+-----------------------------------------------------------+
 
 Handling Legacy ``image`` Records
 ---------------------------------

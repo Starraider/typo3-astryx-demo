@@ -4,6 +4,11 @@
 TYPO3 Astryx
 ============
 
+.. image:: Images/Extension.svg
+   :alt: TYPO3 Astryx Logo
+   :width: 180px
+   :class: typo3-astryx-logo
+
 :Extension key:
     typo3_astryx
 
