@@ -1,5 +1,7 @@
 # TYPO3 Astryx (`typo3_astryx`)
 
+<img src="Resources/Public/Icons/Extension.svg" alt="TYPO3 Astryx Logo" width="160" height="160">
+
 Native Fluid and Content Blocks adaptation of Meta Astryx for TYPO3 14.3 and PHP 8.3–8.4, styled with **StyleX**.
 
 This package replaces `typo3/cms-fluid-styled-content` (FSC) and explicitly conflicts with it.

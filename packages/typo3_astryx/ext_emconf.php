@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
     'title' => 'TYPO3 Astryx',
-    'description' => 'Native Astryx editorial components and page layouts',
+    'description' => 'Native Astryx components, Content Blocks and page layouts for TYPO3 14.3',
     'category' => 'fe',
     'state' => 'beta',
     'author' => 'Sven Kalbhenn',
@@ -13,7 +13,7 @@ $EM_CONF[$_EXTKEY] = [
             'php' => '8.3.0-8.4.99',
             'content_blocks' => '2.4.10-2.99.99',
             'container' => '4.1.0-4.99.99',
-            'stylex_connector' => '1.0.0-2.99.99',
+            'stylex_connector' => '1.1.2-2.99.99',
             'vite_asset_collector' => '1.18.0-1.99.99',
         ],
         'conflicts' => [
