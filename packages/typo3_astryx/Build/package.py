@@ -6,7 +6,8 @@ extension=Path(__file__).resolve().parent.parent
 version=json.loads((extension/'package.json').read_text())['version']
 output=Path(sys.argv[1] if len(sys.argv)>1 else 'var/releases').resolve()
 output.mkdir(parents=True,exist_ok=True)
-archive=output/f'typo3-astryx-{version}.zip'
+ext_key=json.loads((extension/'composer.json').read_text()).get('extra',{}).get('typo3/cms',{}).get('extension-key','typo3_astryx')
+archive=output/f'{ext_key}_{version}.zip'
 manifest=json.loads((extension/'Resources/Public/StylexManifest/stylex-manifest.json').read_text())
 recipes=json.loads((extension/'Build/recipes.json').read_text())
 css=(extension/'Resources/Public/Assets/astryx.css').read_text()
@@ -48,4 +49,7 @@ with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=
         result.writestr(entry,content)
 checksum=hashlib.sha256(archive.read_bytes()).hexdigest()
 (archive.with_suffix('.zip.sha256')).write_text(checksum+'  '+archive.name+'\n')
+legacy_archive=output/f'typo3-astryx-{version}.zip'
+legacy_archive.write_bytes(archive.read_bytes())
+(legacy_archive.with_suffix('.zip.sha256')).write_text(checksum+'  '+legacy_archive.name+'\n')
 print(json.dumps({'archive':str(archive),'version':version,'sha256':checksum,'bytes':archive.stat().st_size},indent=2))
