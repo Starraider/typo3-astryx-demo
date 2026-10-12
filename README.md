@@ -17,7 +17,7 @@ Then run `ddev typo3 stylex:validate --required-key Site.shell --required-key Si
 and `ddev typo3 cache:flush`. Installation and dependency updates run these commands automatically.
 The manifest adapter comes from the Composer-installed connector. Legacy aliases keep
 the supplied Fluid keys working alongside canonical module/object keys.
-The root Composer requirement is `skom/stylex-connector:dev-main#701d870b9ae55e8c434af24532b95c10f7e54ef2`.
+The root Composer requirement is `skom/stylex-connector:^1.1.2`.
 Deploy `public/_assets/vite/` and
 `packages/astryx_sitepackage/Resources/Public/StylexManifest/stylex-manifest.json` together.
 Development disables page caching so Fluid class names follow live StyleX edits.

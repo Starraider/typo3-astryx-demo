@@ -27,7 +27,7 @@ TYPO3 Astryx requires the following Composer packages:
 
 * ``friendsoftypo3/content-blocks``: ``^2.4.10`` (provides the Content Blocks schema and rendering)
 * ``b13/container``: ``^4.1`` (powers multi-column and single-column container elements)
-* ``skom/stylex-connector``: ``dev-main`` (bridges TYPO3 Fluid with the StyleX manifest)
+* ``skom/stylex-connector``: ``^1.1.2`` (bridges TYPO3 Fluid with the StyleX manifest)
 * ``praetorius/vite-asset-collector``: ``^1.18`` (asset collection and Vite integration)
 
 Conflict with Fluid Styled Content
@@ -68,13 +68,13 @@ Run Composer from your project root:
     # Require TYPO3 Astryx and its pinned dependencies:
     composer require skom/typo3-astryx
 
-Ensure that ``skom/stylex-connector`` is pinned to ``dev-main`` in your root ``composer.json``:
+Ensure that ``skom/stylex-connector`` is referenced at ``^1.1.2`` in your root ``composer.json``:
 
 ..  code-block:: json
 
     "require": {
         "skom/typo3-astryx": "^0.1.0",
-        "skom/stylex-connector": "dev-main"
+        "skom/stylex-connector": "^1.1.2"
     }
 
 Step 2: Activate the Site Set

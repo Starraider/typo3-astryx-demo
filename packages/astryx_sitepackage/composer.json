@@ -21,7 +21,7 @@
         "typo3/cms-core": "^14.0",
         "typo3/cms-rte-ckeditor": "^14.0",
         "praetorius/vite-asset-collector": "^1.18",
-        "skom/stylex-connector": "dev-main",
+        "skom/stylex-connector": "^1.1.2",
         "skom/typo3-astryx": "@dev"
     },
     "suggest": {

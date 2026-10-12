@@ -30,7 +30,7 @@
         "helhum/typo3-console": "^9.0",
         "praetorius/vite-asset-collector": "^1.18",
         "skom/astryx-sitepackage": "@dev",
-        "skom/stylex-connector": "dev-main#701d870b9ae55e8c434af24532b95c10f7e54ef2",
+        "skom/stylex-connector": "^1.1.2",
         "typo3/cms-backend": "^14.3",
         "typo3/cms-belog": "^14.3",
         "typo3/cms-beuser": "^14.3",

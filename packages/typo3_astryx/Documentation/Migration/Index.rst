@@ -76,7 +76,7 @@ Remove ``typo3/cms-fluid-styled-content`` and require ``skom/typo3-astryx`` in t
     composer require skom/typo3-astryx
     composer update
 
-Ensure ``skom/stylex-connector`` is pinned to ``dev-main`` in your root ``composer.json``.
+Ensure ``skom/stylex-connector`` is referenced at ``^1.1.2`` in your root ``composer.json``.
 
 Step 5: Update Database Schema and Clear Caches
 -----------------------------------------------

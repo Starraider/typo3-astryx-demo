@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d7431321e0d0cfc98029d759bc5abf69",
+    "content-hash": "01fffe8f04fabe8edfc0db63be87ff58",
     "packages": [
         {
             "name": "b13/container",
@@ -2805,11 +2805,11 @@
             "dist": {
                 "type": "path",
                 "url": "packages/astryx_sitepackage",
-                "reference": "82882f89527c12645084219eaf4b52ff6f42effb"
+                "reference": "1a750e0981e34476739651fd8e9738313d163453"
             },
             "require": {
                 "praetorius/vite-asset-collector": "^1.18",
-                "skom/stylex-connector": "dev-main",
+                "skom/stylex-connector": "^1.1.2",
                 "skom/typo3-astryx": "@dev",
                 "typo3/cms-core": "^14.0",
                 "typo3/cms-rte-ckeditor": "^14.0"
@@ -2852,16 +2852,16 @@
         },
         {
             "name": "skom/stylex-connector",
-            "version": "dev-main",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Starraider/stylex-connector.git",
-                "reference": "701d870b9ae55e8c434af24532b95c10f7e54ef2"
+                "reference": "1958ebcfd52a42fd01778ec4f72db1c2607e901a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Starraider/stylex-connector/zipball/701d870b9ae55e8c434af24532b95c10f7e54ef2",
-                "reference": "701d870b9ae55e8c434af24532b95c10f7e54ef2",
+                "url": "https://api.github.com/repos/Starraider/stylex-connector/zipball/1958ebcfd52a42fd01778ec4f72db1c2607e901a",
+                "reference": "1958ebcfd52a42fd01778ec4f72db1c2607e901a",
                 "shasum": ""
             },
             "require": {
@@ -2880,14 +2880,13 @@
                 "bk2k/bootstrap-package": "When using Bootstrap Package alongside StyleX.",
                 "praetorius/vite-asset-collector": "For Vite-based asset management in TYPO3."
             },
-            "default-branch": true,
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
                     "Package": {
                         "providesPackages": []
                     },
-                    "version": "1.0.0",
+                    "version": "1.1.2",
                     "extension-key": "stylex_connector"
                 }
             },
@@ -2922,7 +2921,7 @@
                 "issues": "https://github.com/Starraider/stylex-connector/issues",
                 "source": "https://github.com/Starraider/stylex-connector"
             },
-            "time": "2026-10-04T08:09:42+00:00"
+            "time": "2026-10-11T14:52:55+00:00"
         },
         {
             "name": "skom/typo3-astryx",
@@ -2930,14 +2929,14 @@
             "dist": {
                 "type": "path",
                 "url": "packages/typo3_astryx",
-                "reference": "9c6ecd60392f9f4e6e7a6c9a83f2813776d6650d"
+                "reference": "6f808079d4c28daae7ae9d2cba389ef1f5231034"
             },
             "require": {
                 "b13/container": "^4.1",
                 "friendsoftypo3/content-blocks": "^2.4.10",
                 "php": ">=8.3 <8.5",
                 "praetorius/vite-asset-collector": "^1.18",
-                "skom/stylex-connector": "dev-main",
+                "skom/stylex-connector": "^1.1.2",
                 "typo3/cms-core": "~14.3.0",
                 "typo3/cms-fluid": "~14.3.0",
                 "typo3/cms-frontend": "~14.3.0",
@@ -2952,12 +2951,21 @@
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
-                    "extension-key": "typo3_astryx"
+                    "extension-key": "typo3_astryx",
+                    "version": "0.1.0",
+                    "Package": {
+                        "providesPackages": []
+                    }
                 }
             },
             "autoload": {
                 "psr-4": {
                     "Skom\\Typo3Astryx\\": "Classes/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Skom\\Typo3Astryx\\Tests\\": "Tests/"
                 }
             },
             "archive": {
@@ -2966,7 +2974,8 @@
                     "/Documentation/Validation-private",
                     "/node_modules",
                     "/vendor",
-                    "/.git"
+                    "/.git",
+                    "/.github"
                 ]
             },
             "license": [
@@ -2974,10 +2983,18 @@
             ],
             "authors": [
                 {
-                    "name": "Sven Kalbhenn"
+                    "name": "Sven Kalbhenn",
+                    "email": "sven@skom.de",
+                    "role": "Developer"
                 }
             ],
             "description": "Native Astryx components, Content Blocks and page layouts for TYPO3 14.3",
+            "homepage": "https://github.com/Starraider/typo3-astryx",
+            "support": {
+                "issues": "https://github.com/Starraider/typo3-astryx/issues",
+                "source": "https://github.com/Starraider/typo3-astryx",
+                "docs": "https://docs.typo3.org/p/skom/typo3-astryx/main/en-us/"
+            },
             "transport-options": {
                 "relative": true
             }
@@ -9275,7 +9292,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "skom/astryx-sitepackage": 20,
-        "skom/stylex-connector": 20,
         "skom/typo3-astryx": 20
     },
     "prefer-stable": false,
