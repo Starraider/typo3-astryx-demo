@@ -24,8 +24,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
-          extensions: intl, mbstring, pdo_sqlite, simplexml, xml, zip
-          tools: composer:v2, tailor
+          extensions: intl, mbstring, pdo_sqlite, simplexml, xml, zip, curl
+          tools: composer:v2, typo3/tailor
           coverage: none
 
       - name: Check tag and manifests match
