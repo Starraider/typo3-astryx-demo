@@ -12,3 +12,4 @@ Thumbs.db
 /vendor/
 /.phpunit.cache/
 .phpunit.result.cache
+typo3-astryx.code-workspace
