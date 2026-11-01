@@ -1,7 +1,7 @@
 {
-  "_site-BGIqaPJC.css": {
-    "file": "assets/site-BGIqaPJC.css",
-    "src": "_site-BGIqaPJC.css"
+  "_site-DpQVEUS6.css": {
+    "file": "assets/site-DpQVEUS6.css",
+    "src": "_site-DpQVEUS6.css"
   },
   "_stylex-DS3CntOa.js": {
     "file": "assets/stylex-DS3CntOa.js",
@@ -16,7 +16,7 @@
       "_stylex-DS3CntOa.js"
     ],
     "css": [
-      "assets/site-BGIqaPJC.css"
+      "assets/site-DpQVEUS6.css"
     ]
   },
   "vendor/skom/typo3-astryx/Resources/Private/Fonts/Figtree-latin-ext.woff2": {
@@ -67,7 +67,7 @@
     "isDynamicEntry": true
   },
   "vendor/skom/typo3-astryx/Resources/Private/JavaScript/frontend.entry.js": {
-    "file": "assets/frontend.entry-C2ee5QR4.js",
+    "file": "assets/frontend.entry-ByM48ZV9.js",
     "name": "frontend.entry",
     "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/frontend.entry.js",
     "isEntry": true,

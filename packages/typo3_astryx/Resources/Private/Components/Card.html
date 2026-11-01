@@ -19,7 +19,7 @@
     </f:if>
     <astryx:text richText="{body}"><f:slot /></astryx:text>
     <f:if condition="({href} && {label}) || ({secondaryHref} && {secondaryLabel})">
-        <div class="astryx-cta-group">
+        <div class="astryx-cta-group {ax:recipe(name: 'Utility', options: {part: 'card-cta'})}">
             <f:if condition="{href} && {label}"><astryx:button href="{href}" label="{label}" size="small" /></f:if>
             <f:if condition="{secondaryHref} && {secondaryLabel}"><astryx:button href="{secondaryHref}" label="{secondaryLabel}" variant="secondary" size="small" /></f:if>
         </div>

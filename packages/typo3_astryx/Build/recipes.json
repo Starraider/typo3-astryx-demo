@@ -71,7 +71,7 @@
     "part": ["root", "main", "width", "header", "pinned-header", "footer", "pinned-footer", "header-inner", "logo", "logo-image", "stage", "element", "regions", "sidebar-regions", "app-regions", "region-child", "detail", "skip", "header-actions"]
   },
   "Navigation": {
-    "part": ["root", "navigation", "navigation-enhanced", "main-menu", "mobile-menu-enhanced", "submenu", "row", "link", "link-active", "link-has-submenu", "disclosure", "mobile-disclosure", "nested-disclosure", "summary", "toggle", "submenu-toggle", "header-control", "mobile-toggle", "mobile-toggle-enabled", "dropdown-panel", "nested-panel", "flyout-panel", "flyout-bridge", "last-panel", "dialog", "dialog-header", "dialog-menu", "dialog-row", "dialog-panel", "chevron", "theme-switcher", "theme-icon", "theme-icon-inverse", "language-menu", "language-toggle", "language-panel", "language-option", "flag", "flag-image", "flag-bitmap", "menu-icon", "menu-icon-line"]
+    "part": ["root", "navigation", "navigation-enhanced", "main-menu", "mobile-menu-enhanced", "submenu", "row", "link", "link-active", "link-has-submenu", "disclosure", "mobile-disclosure", "nested-disclosure", "summary", "toggle", "submenu-toggle", "header-control", "mobile-toggle", "mobile-toggle-enabled", "dropdown-panel", "nested-panel", "flyout-panel", "flyout-bridge", "last-panel", "dialog", "dialog-header", "dialog-menu", "dialog-row", "dialog-panel", "chevron", "theme-switcher", "theme-icon", "language-menu", "language-toggle", "language-panel", "language-option", "flag", "flag-image", "flag-bitmap", "menu-icon", "menu-icon-line"]
   },
   "Breadcrumb": {
     "part": ["root", "list", "item", "link", "separator", "current"]
@@ -80,7 +80,7 @@
     "align": ["start", "center", "end", "left", "right"]
   },
   "Utility": {
-    "part": ["root", "visually-hidden", "button-label", "status", "card-media", "badge-heading-gap"]
+    "part": ["root", "visually-hidden", "button-label", "status", "card-media", "card-cta", "badge-heading-gap"]
   },
   "Hero": {
     "part": ["root", "content"]

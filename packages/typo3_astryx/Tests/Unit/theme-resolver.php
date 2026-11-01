@@ -8,6 +8,9 @@ expect($resolver->resolve([], [])['theme'], 'neutral');
 expect($resolver->resolve([], [])['allowUserMode'], true);
 expect($resolver->resolve([], ['Astryx.allowUserMode'=>false])['allowUserMode'], false);
 expect($resolver->resolve([], ['Astryx.theme'=>'invalid','Astryx.mode'=>'invalid'])['mode'], 'system');
+foreach (ThemeResolver::THEMES as $theme) {
+    expect($resolver->resolve([], ['Astryx.theme' => $theme])['theme'], $theme);
+}
 $result=$resolver->resolve([
  ['uid'=>3,'tx_astryx_theme'=>'ocean','tx_astryx_mode'=>''],
  ['uid'=>2,'tx_astryx_theme'=>'invalid','tx_astryx_mode'=>'dark'],

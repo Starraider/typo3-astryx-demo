@@ -77,6 +77,7 @@ export class DropdownController {
       syncChevron(dropdown);
       dropdown.addEventListener('toggle', () => {
         summary(dropdown).setAttribute('aria-expanded', String(dropdown.open));
+        syncChevron(dropdown);
         if (dropdown.open) open(dropdown);
         else dropdown.querySelectorAll('[data-astryx-dropdown]').forEach(close);
       });

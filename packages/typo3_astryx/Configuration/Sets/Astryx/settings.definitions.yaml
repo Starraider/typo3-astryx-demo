@@ -6,6 +6,8 @@ settings:
     type: string
     default: "neutral"
     label: Theme
+    description: >-
+      Set this site's theme to the exact lowercase identifier neutral, stone or ocean (for YAML, Astryx.theme: stone). This overrides the extension default. A page's Astryx Theme field overrides the site setting.
     category: Astryx
   Astryx.mode:
     type: string

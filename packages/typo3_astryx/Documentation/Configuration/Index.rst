@@ -26,9 +26,10 @@ Available Site Settings
     +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
     | Setting Key                   | Type    | Default                                     | Description & Usage                                                |
     +===============================+=========+=============================================+====================================================================+
-    | ``Astryx.theme``              | string  | ``"neutral"``                               | The default design theme for the site. Available values:           |
-    |                               |         |                                             | ``"neutral"``, ``"stone"``, or ``"ocean"``. Can be overridden      |
-    |                               |         |                                             | on individual pages via page properties.                           |
+    | ``Astryx.theme``              | string  | ``"neutral"``                               | Enter exactly ``neutral``, ``stone``, or ``ocean`` in lowercase     |
+    |                               |         |                                             | (for example, ``Astryx.theme: stone`` in the site's                 |
+    |                               |         |                                             | ``settings.yaml``). A page-level Astryx Theme selection overrides  |
+    |                               |         |                                             | this site default.                                                  |
     +-------------------------------+---------+---------------------------------------------+--------------------------------------------------------------------+
     | ``Astryx.mode``               | string  | ``"system"``                                | The default color mode. Available values: ``"system"``,            |
     |                               |         |                                             | ``"light"``, or ``"dark"``. ``system`` follows the visitor's       |

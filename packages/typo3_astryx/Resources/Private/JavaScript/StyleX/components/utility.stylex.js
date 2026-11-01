@@ -28,6 +28,7 @@ export const styles = stylex.create({
     gap: spacingTokens['--astryx-spacing-2'],
   },
   part_card_media: { marginBlockEnd: spacingTokens['--astryx-spacing-4'] },
+  part_card_cta: { marginBlockStart: spacingTokens['--astryx-spacing-2'] },
   part_badge_heading_gap: {
     ':has(+ :is(h1, h2, h3, h4, h5, h6))': { marginBlockEnd: spacingTokens['--astryx-spacing-3'] },
   },

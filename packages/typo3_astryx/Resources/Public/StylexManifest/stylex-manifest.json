@@ -12,27 +12,27 @@
     "static-conflicts",
     "null-clearing"
   ],
-  "generation": "d8b4d821df4de371ebab9d4bc386fbaaac358d89ed76b9c6d027b3b5d81ad80e",
+  "generation": "7f704734e47b19afecc1e1144e6ed4b2cad5c5e612cc17fbb14084bb72b29295",
   "artifacts": [
     {
       "path": "../Assets/astryx.css",
-      "sha256": "fed251106e3e76889075930d8670463fa1589a5edfa8a028793086b479565caa"
+      "sha256": "1aa7943711defa28bf92e80308a70bb5d8813321fd6a048aafb3b7d33de97f35"
     },
     {
       "path": "../Assets/rte.css",
-      "sha256": "b4575a175a737c1714445d1c7419f4985b9854534d4ded7373c330f5c08cdc37"
+      "sha256": "0dba5ea80fc2cea12ca32f438c0c096a7f7081843410c88626d237e46db362e2"
     },
     {
       "path": "../Assets/preview.css",
-      "sha256": "b4575a175a737c1714445d1c7419f4985b9854534d4ded7373c330f5c08cdc37"
+      "sha256": "0dba5ea80fc2cea12ca32f438c0c096a7f7081843410c88626d237e46db362e2"
     },
     {
       "path": "../Css/rte-tokens.css",
-      "sha256": "581d8dceeb0785186688757081f9368ddb7096a2ef030f2435dc33fbc9cb54e3"
+      "sha256": "622e200322355a300fdf36d0e26bfc7886606953fb27b4b67685717800fdfb34"
     },
     {
       "path": "../Css/backend-preview.css",
-      "sha256": "581d8dceeb0785186688757081f9368ddb7096a2ef030f2435dc33fbc9cb54e3"
+      "sha256": "622e200322355a300fdf36d0e26bfc7886606953fb27b4b67685717800fdfb34"
     }
   ],
   "styles": {
@@ -4176,7 +4176,7 @@
     },
     "navigation.part_chevron": {
       "kind": "compiled",
-      "className": "x1rg5ohu xci0xqf x1hagigm x1onim1n x16hg961 x18b5jzi x1273586 x1pzews7 x1q0q8m5 x1tnzt7h xcvopwv x1fww39d x1fcg3hq xfx0ven xppsv x5rlycf x11xpdln xx6bhzk xwji4o3",
+      "className": "x1rg5ohu xci0xqf x1hagigm x1onim1n x16hg961 x18b5jzi x1273586 x1pzews7 x1q0q8m5 x1tnzt7h xcvopwv x1fww39d x18kl5x0 xmyjv6a xlazewf x1flo0c0 x12pfavo xx6bhzk xwji4o3",
       "properties": {
         "k1xSpc": "x1rg5ohu",
         "kzqmXN": "xci0xqf",
@@ -4188,8 +4188,8 @@
         "kt9PQ7": "x1pzews7",
         "kfdmCh": "x1q0q8m5",
         "kL6WhQ": "x1tnzt7h",
-        "k3aq6I": "xcvopwv x1fww39d x1fcg3hq xfx0ven xppsv x5rlycf",
-        "k1ekBW": "x11xpdln",
+        "k3aq6I": "xcvopwv x1fww39d x18kl5x0 xmyjv6a xlazewf x1flo0c0",
+        "k1ekBW": "x12pfavo",
         "kIyJzY": "xx6bhzk",
         "kAMwcw": "xwji4o3"
       }
@@ -4267,7 +4267,7 @@
     },
     "navigation.part_dropdown_panel": {
       "kind": "compiled",
-      "className": "x10l6tqk x1kq3sn5 x1o0tod xf5e64p xezivpi xlm99nl x1glul6l x1j65ot3 xysyzu8 x1zxkft xmkeg23 x1y0btm7 x1vyk6nf x1lakhtd x14thn2w xn1ze8n x156sydx xzqn2zj xhcjh2q x1sd4djh xmxulhz x3e5d43 xe1ls4f x1k6odqi x168ifui",
+      "className": "x10l6tqk x1kq3sn5 x1o0tod xf5e64p xezivpi xlm99nl x1glul6l x7ab17h x1rea2x4 x1zxkft xmkeg23 x1y0btm7 x1vyk6nf x1lakhtd x14thn2w xn1ze8n x156sydx xzqn2zj xhcjh2q x1sd4djh xmxulhz x101mm4h x1wz43ha xe1ls4f x1k6odqi x168ifui",
       "properties": {
         "kVAEAm": "x10l6tqk",
         "k87sOh": "x1kq3sn5",
@@ -4276,8 +4276,8 @@
         "kzqmXN": "xezivpi",
         "k7Eaqz": "xlm99nl",
         "ks0D6T": "x1glul6l",
-        "kskxy": "x1j65ot3",
-        "kVQacm": "xysyzu8",
+        "kskxy": "x7ab17h",
+        "kVQacm": "x1rea2x4",
         "kmVPX3": "x1zxkft",
         "kMzoRj": "xmkeg23",
         "ksu8eU": "x1y0btm7",
@@ -4290,7 +4290,8 @@
         "k2MwvC": "xhcjh2q",
         "kF5IOA": "x1sd4djh",
         "kL9xVA": "xmxulhz",
-        "kED7xf": "x3e5d43",
+        "kED7xf": "x101mm4h",
+        "k9Zzmj": "x1wz43ha",
         "ka8FRt": "xe1ls4f",
         "kKantx": "x1k6odqi",
         "kQcfgx": "x168ifui"
@@ -4625,11 +4626,18 @@
     },
     "navigation.part_submenu_toggle": {
       "kind": "compiled",
-      "className": "x1nb6za0 x1o5h2z1 xjbqb8w x14ndus3 x1felpku x1bx8jej",
+      "className": "x1nb6za0 x1o5h2z1 xc342km x1y0btm7 x9r1u3d xjbqb8w x1iyxhf x1n5bzlp x1xfd4ba x1rq09ez x14ndus3 x1felpku x1bx8jej",
       "properties": {
         "k7Eaqz": "x1nb6za0",
         "kg3NbH": "x1o5h2z1",
+        "kMzoRj": "xc342km",
+        "ksu8eU": "x1y0btm7",
+        "kVAM5u": "x9r1u3d",
         "kWkggS": "xjbqb8w",
+        "kMwMTN": "x1iyxhf",
+        "kGzVvX": "x1n5bzlp",
+        "kaVNsj": "x1xfd4ba",
+        "kDPRdz": "x1rq09ez",
         "k91WH7": "x14ndus3",
         "k9A309": "x1felpku",
         "k4jxPe": "x1bx8jej"
@@ -4644,30 +4652,21 @@
     },
     "navigation.part_theme_icon": {
       "kind": "compiled",
-      "className": "x1lliihq xw4jnvo x1qx5ct2 x1r2v6tr x1ejh6ix x1c5kbcx x17vsdmt",
+      "className": "x1lliihq xw4jnvo x1qx5ct2 xbh8q5q x73je2i xvlca1e x1owpc8m x1f6yumg",
       "properties": {
         "k1xSpc": "x1lliihq",
         "kzqmXN": "xw4jnvo",
         "kZKoxP": "x1qx5ct2",
-        "ku685b": "x1r2v6tr",
-        "kSvYkp": "x1ejh6ix",
-        "kO6drA": "x1c5kbcx",
-        "k2kSxG": "x17vsdmt"
-      }
-    },
-    "navigation.part_theme_icon_inverse": {
-      "kind": "compiled",
-      "className": "x8achws x1ejh6ix x1c5kbcx x17vsdmt",
-      "properties": {
-        "ku685b": "x8achws",
-        "kSvYkp": "x1ejh6ix",
-        "kO6drA": "x1c5kbcx",
-        "k2kSxG": "x17vsdmt"
+        "kDwRjp": "xbh8q5q",
+        "kjVXCG": "x73je2i",
+        "kfJifR": "xvlca1e",
+        "kU5bRw": "x1owpc8m",
+        "kJdQPc": "x1f6yumg"
       }
     },
     "navigation.part_theme_switcher": {
       "kind": "compiled",
-      "className": "x3nfvp2 x6s0dn4 xl56j7k x2lah0s x187nhsf xn3w4p2 x9if86o xc342km xlbhytw xjbqb8w x1kv94w7 x1ypdohk x111cce1",
+      "className": "x3nfvp2 x6s0dn4 xl56j7k x2lah0s x187nhsf xn3w4p2 x9if86o xc342km xlbhytw xjbqb8w x1iyxhf x1ypdohk x111cce1",
       "properties": {
         "k1xSpc": "x3nfvp2",
         "kGNEyG": "x6s0dn4",
@@ -4679,7 +4678,7 @@
         "kMzoRj": "xc342km",
         "kaIpWk": "xlbhytw",
         "kWkggS": "xjbqb8w",
-        "kMwMTN": "x1kv94w7",
+        "kMwMTN": "x1iyxhf",
         "kkrTdU": "x1ypdohk",
         "kGzVvX": "x111cce1"
       }
@@ -4717,7 +4716,7 @@
     },
     "typo3_astryx/Resources/Private/JavaScript/StyleX/components/navigation.stylex.styles.part_chevron": {
       "kind": "compiled",
-      "className": "x1rg5ohu xci0xqf x1hagigm x1onim1n x16hg961 x18b5jzi x1273586 x1pzews7 x1q0q8m5 x1tnzt7h xcvopwv x1fww39d x1fcg3hq xfx0ven xppsv x5rlycf x11xpdln xx6bhzk xwji4o3",
+      "className": "x1rg5ohu xci0xqf x1hagigm x1onim1n x16hg961 x18b5jzi x1273586 x1pzews7 x1q0q8m5 x1tnzt7h xcvopwv x1fww39d x18kl5x0 xmyjv6a xlazewf x1flo0c0 x12pfavo xx6bhzk xwji4o3",
       "properties": {
         "k1xSpc": "x1rg5ohu",
         "kzqmXN": "xci0xqf",
@@ -4729,8 +4728,8 @@
         "kt9PQ7": "x1pzews7",
         "kfdmCh": "x1q0q8m5",
         "kL6WhQ": "x1tnzt7h",
-        "k3aq6I": "xcvopwv x1fww39d x1fcg3hq xfx0ven xppsv x5rlycf",
-        "k1ekBW": "x11xpdln",
+        "k3aq6I": "xcvopwv x1fww39d x18kl5x0 xmyjv6a xlazewf x1flo0c0",
+        "k1ekBW": "x12pfavo",
         "kIyJzY": "xx6bhzk",
         "kAMwcw": "xwji4o3"
       }
@@ -4808,7 +4807,7 @@
     },
     "typo3_astryx/Resources/Private/JavaScript/StyleX/components/navigation.stylex.styles.part_dropdown_panel": {
       "kind": "compiled",
-      "className": "x10l6tqk x1kq3sn5 x1o0tod xf5e64p xezivpi xlm99nl x1glul6l x1j65ot3 xysyzu8 x1zxkft xmkeg23 x1y0btm7 x1vyk6nf x1lakhtd x14thn2w xn1ze8n x156sydx xzqn2zj xhcjh2q x1sd4djh xmxulhz x3e5d43 xe1ls4f x1k6odqi x168ifui",
+      "className": "x10l6tqk x1kq3sn5 x1o0tod xf5e64p xezivpi xlm99nl x1glul6l x7ab17h x1rea2x4 x1zxkft xmkeg23 x1y0btm7 x1vyk6nf x1lakhtd x14thn2w xn1ze8n x156sydx xzqn2zj xhcjh2q x1sd4djh xmxulhz x101mm4h x1wz43ha xe1ls4f x1k6odqi x168ifui",
       "properties": {
         "kVAEAm": "x10l6tqk",
         "k87sOh": "x1kq3sn5",
@@ -4817,8 +4816,8 @@
         "kzqmXN": "xezivpi",
         "k7Eaqz": "xlm99nl",
         "ks0D6T": "x1glul6l",
-        "kskxy": "x1j65ot3",
-        "kVQacm": "xysyzu8",
+        "kskxy": "x7ab17h",
+        "kVQacm": "x1rea2x4",
         "kmVPX3": "x1zxkft",
         "kMzoRj": "xmkeg23",
         "ksu8eU": "x1y0btm7",
@@ -4831,7 +4830,8 @@
         "k2MwvC": "xhcjh2q",
         "kF5IOA": "x1sd4djh",
         "kL9xVA": "xmxulhz",
-        "kED7xf": "x3e5d43",
+        "kED7xf": "x101mm4h",
+        "k9Zzmj": "x1wz43ha",
         "ka8FRt": "xe1ls4f",
         "kKantx": "x1k6odqi",
         "kQcfgx": "x168ifui"
@@ -5166,11 +5166,18 @@
     },
     "typo3_astryx/Resources/Private/JavaScript/StyleX/components/navigation.stylex.styles.part_submenu_toggle": {
       "kind": "compiled",
-      "className": "x1nb6za0 x1o5h2z1 xjbqb8w x14ndus3 x1felpku x1bx8jej",
+      "className": "x1nb6za0 x1o5h2z1 xc342km x1y0btm7 x9r1u3d xjbqb8w x1iyxhf x1n5bzlp x1xfd4ba x1rq09ez x14ndus3 x1felpku x1bx8jej",
       "properties": {
         "k7Eaqz": "x1nb6za0",
         "kg3NbH": "x1o5h2z1",
+        "kMzoRj": "xc342km",
+        "ksu8eU": "x1y0btm7",
+        "kVAM5u": "x9r1u3d",
         "kWkggS": "xjbqb8w",
+        "kMwMTN": "x1iyxhf",
+        "kGzVvX": "x1n5bzlp",
+        "kaVNsj": "x1xfd4ba",
+        "kDPRdz": "x1rq09ez",
         "k91WH7": "x14ndus3",
         "k9A309": "x1felpku",
         "k4jxPe": "x1bx8jej"
@@ -5185,30 +5192,21 @@
     },
     "typo3_astryx/Resources/Private/JavaScript/StyleX/components/navigation.stylex.styles.part_theme_icon": {
       "kind": "compiled",
-      "className": "x1lliihq xw4jnvo x1qx5ct2 x1r2v6tr x1ejh6ix x1c5kbcx x17vsdmt",
+      "className": "x1lliihq xw4jnvo x1qx5ct2 xbh8q5q x73je2i xvlca1e x1owpc8m x1f6yumg",
       "properties": {
         "k1xSpc": "x1lliihq",
         "kzqmXN": "xw4jnvo",
         "kZKoxP": "x1qx5ct2",
-        "ku685b": "x1r2v6tr",
-        "kSvYkp": "x1ejh6ix",
-        "kO6drA": "x1c5kbcx",
-        "k2kSxG": "x17vsdmt"
-      }
-    },
-    "typo3_astryx/Resources/Private/JavaScript/StyleX/components/navigation.stylex.styles.part_theme_icon_inverse": {
-      "kind": "compiled",
-      "className": "x8achws x1ejh6ix x1c5kbcx x17vsdmt",
-      "properties": {
-        "ku685b": "x8achws",
-        "kSvYkp": "x1ejh6ix",
-        "kO6drA": "x1c5kbcx",
-        "k2kSxG": "x17vsdmt"
+        "kDwRjp": "xbh8q5q",
+        "kjVXCG": "x73je2i",
+        "kfJifR": "xvlca1e",
+        "kU5bRw": "x1owpc8m",
+        "kJdQPc": "x1f6yumg"
       }
     },
     "typo3_astryx/Resources/Private/JavaScript/StyleX/components/navigation.stylex.styles.part_theme_switcher": {
       "kind": "compiled",
-      "className": "x3nfvp2 x6s0dn4 xl56j7k x2lah0s x187nhsf xn3w4p2 x9if86o xc342km xlbhytw xjbqb8w x1kv94w7 x1ypdohk x111cce1",
+      "className": "x3nfvp2 x6s0dn4 xl56j7k x2lah0s x187nhsf xn3w4p2 x9if86o xc342km xlbhytw xjbqb8w x1iyxhf x1ypdohk x111cce1",
       "properties": {
         "k1xSpc": "x3nfvp2",
         "kGNEyG": "x6s0dn4",
@@ -5220,7 +5218,7 @@
         "kMzoRj": "xc342km",
         "kaIpWk": "xlbhytw",
         "kWkggS": "xjbqb8w",
-        "kMwMTN": "x1kv94w7",
+        "kMwMTN": "x1iyxhf",
         "kkrTdU": "x1ypdohk",
         "kGzVvX": "x111cce1"
       }
@@ -6253,6 +6251,13 @@
         "k7Eaqz": "xeuugli"
       }
     },
+    "typo3_astryx/Resources/Private/JavaScript/StyleX/components/utility.stylex.styles.part_card_cta": {
+      "kind": "compiled",
+      "className": "x19asiak",
+      "properties": {
+        "keoZOQ": "x19asiak"
+      }
+    },
     "typo3_astryx/Resources/Private/JavaScript/StyleX/components/utility.stylex.styles.part_card_media": {
       "kind": "compiled",
       "className": "xy0lm8",
@@ -6308,6 +6313,13 @@
         "kg5iWk": "xlyipyv",
         "khDVqt": "xuxw1ft",
         "k7Eaqz": "xeuugli"
+      }
+    },
+    "utility.part_card_cta": {
+      "kind": "compiled",
+      "className": "x19asiak",
+      "properties": {
+        "keoZOQ": "x19asiak"
       }
     },
     "utility.part_card_media": {
