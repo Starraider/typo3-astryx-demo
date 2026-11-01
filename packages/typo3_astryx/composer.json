@@ -46,7 +46,7 @@
   "extra": {
     "typo3/cms": {
       "extension-key": "typo3_astryx",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "Package": {
         "providesPackages": {}
       }
