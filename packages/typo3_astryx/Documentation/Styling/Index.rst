@@ -11,6 +11,8 @@ consuming sitepackage.
 
 StyleX and upstream Astryx document APIs and design principles; neither mandates a particular
 folder hierarchy for this TYPO3 project. The conventions below are the project's source contract.
+For the CSS exception policy and the exact frontend, RTE and backend-preview import graph, see
+:ref:`styling_css_entrypoints`.
 
 .. _styling_architecture:
 
@@ -37,14 +39,19 @@ that is used only by that block. The consuming sitepackage owns its brand styles
         ContentBlocks/ContentElements/<block-name>/
           src/                      # styles owned by this block only
         Resources/Private/CSS/
-          themes.css                # generated complete CSS token bridge
-          layers.css                # cascade layer contract
+          main.css                  # import aggregator; no component rules
+          rte.entry.css             # reset, fonts, themes and prose foundations
+          preview.entry.css         # imports the shared RTE foundation
+          themes.css                # GENERATED complete CSS token bridge
+          layers.css                # cascade-layer order
+          prose.css                 # CKEditor and arbitrary prose markup
+          navigation-backdrop.css   # native dialog ::backdrop exception
       astryx_sitepackage/
         Resources/Private/JavaScript/
           site.entry.js
           StyleX/components/        # sitepackage-owned recipes, when needed
         Resources/Private/CSS/
-          main.css                  # product-layer overrides and site CSS
+          main.css                  # declaration-free Vite layer anchor
 
 Use lowercase kebab-case for StyleX source folders and filenames. Give every ``.stylex.js``
 file a unique basename within its package manifest because the connector also creates basename
@@ -142,8 +149,15 @@ When adding a theme:
    it into the frontend manifest.
 #. Run ``Build/generate-theme-bridge.mjs``. It validates the static source contract and generates
    the fully resolved theme map and scoped CSS bridge.
+#. Add the theme to ``Classes/Configuration/ThemeResolver.php`` and to the page-theme choices in
+   ``Configuration/TCA/Overrides/pages.php``. Add or update the matching label in
+   ``Resources/Private/Language/locallang.xlf`` and the available-theme list in
+   :doc:`../Configuration/Index`.
+#. Record upstream attribution and local changes in ``Build/upstream-versions.json``,
+   ``Build/adaptations.json`` and ``THIRD_PARTY_NOTICES.md`` when the theme is adapted from another
+   design system.
 #. Build and verify frontend, RTE and backend preview output. Check the new theme in light and dark
-   modes and in a nested theme boundary.
+   modes and at nested theme boundaries.
 
 Theme variables are scoped to ``[data-astryx-theme="<name>"]``. The Neutral values also provide
 the default scope for ``.ck-content`` and ``.astryx-preview``. Keep editor and preview styling
@@ -162,25 +176,14 @@ provenance files.
 Sitepackage overrides
 =====================
 
-Put product branding in the consuming site's CSS and the final ``product`` layer. This is useful
-for packaged and Vite assets alike:
-
-..  code-block:: css
-
-    @layer product {
-      :root {
-        --astryx-color-accent: light-dark(#6a287e, #e9acf7);
-        --astryx-color-on-accent: light-dark(#ffffff, #31103b);
-        --astryx-shape-radius-element: 6px;
-        --astryx-layout-content-max-width: 80rem;
-      }
-    }
-
-Prefer overriding semantic variables to targeting generated atomic class names. Keep the source
-under the sitepackage; do not copy extension token modules or generated styles into the consuming
-package. If the site needs its own reusable StyleX recipe, place it under
-``astryx_sitepackage/Resources/Private/JavaScript/StyleX/components/`` and import it from that
-package's ``site.entry.js``.
+For product branding, prefer a site-owned StyleX recipe for site-specific component styling and the
+extension's semantic theme/token contracts for shared appearance. Do not copy extension token
+modules into the sitepackage. Place reusable site-only recipes under
+``astryx_sitepackage/Resources/Private/JavaScript/StyleX/components/`` and import them from that
+package's ``site.entry.js``. Keep its ``Resources/Private/CSS/main.css`` declaration-free; it is a
+Vite layer anchor, not the product styling surface. Use product-layer CSS only for a specific
+browser or integration surface that cannot be represented through the StyleX build path, and
+document that reason beside the exception. Never target generated atomic class names.
 
 Recipe ownership and naming
 ===========================
@@ -199,6 +202,11 @@ Use these ownership rules:
   token index and their scoped CSS entrypoint.
 * Use finite static recipe keys. Keep the Fluid ``ax:recipe`` allowlist, module exports and
   ``Build/recipes.json`` synchronized; never hard-code generated atomic class names.
+
+Tokens define reusable themeable values; recipes apply values to elements and express layout,
+states and variants. A one-off display or layout declaration belongs in its recipe rather than in a
+new public token. Avoid hand-authored CSS for controlled Content Block markup; the exception policy
+and file-by-file CSS wiring are documented in :ref:`styling_css_entrypoints`.
 
 The connector exposes aliases based on the lowercase module basename, for example
 ``button.root``, ``notice.variant_error`` and ``carousel-control.kind_arrow``. Public Fluid
@@ -230,9 +238,11 @@ the resulting CSS, JavaScript, fonts, lazy chunks and manifests together. If a r
 source path changes, rebuild both manifests and flush TYPO3 caches so Fluid resolves the new
 aliases.
 
-For additional StyleX and integration details, see the [build runbook](../../../../doc/Build.md).
+For the CSS import and output map, see :ref:`styling_css_entrypoints`. For site theme settings, see
+:doc:`../Configuration/Index`.
 
 .. toctree::
     :hidden:
 
     TokenMigration
+    CSSAndEntrypoints
