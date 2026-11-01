@@ -1,15 +1,22 @@
 {
-  "_Main-lGiEoRQS.css": {
-    "file": "assets/Main-lGiEoRQS.css",
-    "src": "_Main-lGiEoRQS.css"
+  "_site-BGIqaPJC.css": {
+    "file": "assets/site-BGIqaPJC.css",
+    "src": "_site-BGIqaPJC.css"
   },
-  "vendor/skom/astryx-sitepackage/Resources/Private/JavaScript/Main.entry.js": {
-    "file": "assets/Main.entry-CRver6y9.js",
-    "name": "Main.entry",
-    "src": "vendor/skom/astryx-sitepackage/Resources/Private/JavaScript/Main.entry.js",
+  "_stylex-DS3CntOa.js": {
+    "file": "assets/stylex-DS3CntOa.js",
+    "name": "stylex"
+  },
+  "vendor/skom/astryx-sitepackage/Resources/Private/JavaScript/site.entry.js": {
+    "file": "assets/site.entry-DM1R0dNa.js",
+    "name": "site.entry",
+    "src": "vendor/skom/astryx-sitepackage/Resources/Private/JavaScript/site.entry.js",
     "isEntry": true,
+    "imports": [
+      "_stylex-DS3CntOa.js"
+    ],
     "css": [
-      "assets/Main-lGiEoRQS.css"
+      "assets/site-BGIqaPJC.css"
     ]
   },
   "vendor/skom/typo3-astryx/Resources/Private/Fonts/Figtree-latin-ext.woff2": {
@@ -36,50 +43,13 @@
     "file": "assets/Montserrat-latin-Dk9Pm7OY.woff2",
     "src": "vendor/skom/typo3-astryx/Resources/Private/Fonts/Montserrat-latin.woff2"
   },
-  "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Main.entry.js": {
-    "file": "assets/Main.entry-xB2IHyJr.js",
-    "name": "Main.entry",
-    "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Main.entry.js",
-    "isEntry": true,
-    "dynamicImports": [
-      "vendor/skom/typo3-astryx/Resources/Private/JavaScript/code-highlighter.js"
-    ],
-    "css": [
-      "assets/Main-CWe5la7A.css"
-    ],
-    "assets": [
-      "assets/Figtree-latin-ext-C5tEHAKb.woff2",
-      "assets/Figtree-latin-CEHu_veL.woff2",
-      "assets/JetBrainsMono-latin-ext-Bnd2h4Br.woff2",
-      "assets/JetBrainsMono-latin-Db4Uuiha.woff2",
-      "assets/Montserrat-latin-ext-D0hf-lZB.woff2",
-      "assets/Montserrat-latin-Dk9Pm7OY.woff2"
-    ]
-  },
-  "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Preview.entry.js": {
-    "file": "assets/Preview.entry-CsyZRYQH.js",
-    "name": "Preview.entry",
-    "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Preview.entry.js",
+  "vendor/skom/typo3-astryx/Resources/Private/JavaScript/backend-preview.entry.js": {
+    "file": "assets/backend-preview.entry-CS7PSDbe.js",
+    "name": "backend-preview.entry",
+    "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/backend-preview.entry.js",
     "isEntry": true,
     "css": [
-      "assets/Preview-BVPGfjef.css"
-    ],
-    "assets": [
-      "assets/Figtree-latin-ext-C5tEHAKb.woff2",
-      "assets/Figtree-latin-CEHu_veL.woff2",
-      "assets/JetBrainsMono-latin-ext-Bnd2h4Br.woff2",
-      "assets/JetBrainsMono-latin-Db4Uuiha.woff2",
-      "assets/Montserrat-latin-ext-D0hf-lZB.woff2",
-      "assets/Montserrat-latin-Dk9Pm7OY.woff2"
-    ]
-  },
-  "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Rte.entry.js": {
-    "file": "assets/Rte.entry-h92Tkm_z.js",
-    "name": "Rte.entry",
-    "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/Rte.entry.js",
-    "isEntry": true,
-    "css": [
-      "assets/Rte-xWNfLSQi.css"
+      "assets/backend-preview-W2K1whn9.css"
     ],
     "assets": [
       "assets/Figtree-latin-ext-C5tEHAKb.woff2",
@@ -95,5 +65,45 @@
     "name": "code-highlighter",
     "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/code-highlighter.js",
     "isDynamicEntry": true
+  },
+  "vendor/skom/typo3-astryx/Resources/Private/JavaScript/frontend.entry.js": {
+    "file": "assets/frontend.entry-C2ee5QR4.js",
+    "name": "frontend.entry",
+    "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/frontend.entry.js",
+    "isEntry": true,
+    "imports": [
+      "_stylex-DS3CntOa.js"
+    ],
+    "dynamicImports": [
+      "vendor/skom/typo3-astryx/Resources/Private/JavaScript/code-highlighter.js"
+    ],
+    "css": [
+      "assets/frontend-C42fdeUq.css"
+    ],
+    "assets": [
+      "assets/Figtree-latin-ext-C5tEHAKb.woff2",
+      "assets/Figtree-latin-CEHu_veL.woff2",
+      "assets/JetBrainsMono-latin-ext-Bnd2h4Br.woff2",
+      "assets/JetBrainsMono-latin-Db4Uuiha.woff2",
+      "assets/Montserrat-latin-ext-D0hf-lZB.woff2",
+      "assets/Montserrat-latin-Dk9Pm7OY.woff2"
+    ]
+  },
+  "vendor/skom/typo3-astryx/Resources/Private/JavaScript/rte-editor.entry.js": {
+    "file": "assets/rte-editor.entry-CS7PSDbe.js",
+    "name": "rte-editor.entry",
+    "src": "vendor/skom/typo3-astryx/Resources/Private/JavaScript/rte-editor.entry.js",
+    "isEntry": true,
+    "css": [
+      "assets/backend-preview-W2K1whn9.css"
+    ],
+    "assets": [
+      "assets/Figtree-latin-ext-C5tEHAKb.woff2",
+      "assets/Figtree-latin-CEHu_veL.woff2",
+      "assets/JetBrainsMono-latin-ext-Bnd2h4Br.woff2",
+      "assets/JetBrainsMono-latin-Db4Uuiha.woff2",
+      "assets/Montserrat-latin-ext-D0hf-lZB.woff2",
+      "assets/Montserrat-latin-Dk9Pm7OY.woff2"
+    ]
   }
 }

@@ -13,7 +13,7 @@ fs.mkdirSync(output, {recursive: true});
 const asset = fs.readdirSync('public/_assets').find(name => fs.lstatSync(`public/_assets/${name}`).isSymbolicLink() && /typo3[-_]astryx/.test(fs.readlinkSync(`public/_assets/${name}`)));
 assert(asset);
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json', 'utf8'));
-const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))?.[1];
+const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))?.[1];
 assert(entry);
 const shared = Object.values(manifest).filter(item => item.src?.startsWith('_') && item.file.endsWith('.css')).map(item => item.file);
 const paths = {packaged: [`_assets/${asset}/Assets/astryx.css`], vite: [...new Set([...entry.css, ...shared])].map(file => `_assets/vite/${file}`), rte: [`_assets/${asset}/Css/rte-tokens.css`], preview: [`_assets/${asset}/Css/backend-preview.css`]};
@@ -72,7 +72,7 @@ for (const name of (process.env.ASTRYX_TEST_BROWSERS ?? 'chromium,webkit').split
           }
           const primary = await style(page,'[data-button="primary"] button'); assert.equal(primary.backgroundColor,c.text); assert.equal(primary.color,c.on); assert.equal(primary.fontSize,'14px'); assert.equal(primary.borderRadius,'9999px'); assert.equal(primary.height,'32px');
           const secondary = await style(page,'[data-button="secondary"] button'); assert.equal(secondary.backgroundColor,'rgba(0, 0, 0, 0)'); // Engines snap fractional borders to device pixels; the theme value must stay exact.
-          assert.equal(await page.locator('[data-button="secondary"] button').evaluate(el=>getComputedStyle(el).getPropertyValue('--astryx-button-secondary-border-width').trim()),'1.5px');
+          assert.equal(await page.locator('[data-button="secondary"] button').evaluate(el=>getComputedStyle(el).getPropertyValue('--astryx-component-button-variant-secondary-border-width').trim()),'1.5px');
           assert(['1px','1.5px','2px'].includes(secondary.borderTopWidth),`${name}/${pipeline}/${mode} fractional border`); assert.equal(secondary.borderTopColor,c.strong);
           const destructive = await style(page,'[data-button="destructive"] button'); assert.equal(destructive.backgroundColor,c.hues.error[0]); assert.equal(destructive.color,c.hues.error[1]);
           const card = await style(page,'.astryx-card'); assert.equal(card.backgroundColor,c.card); assert.equal(card.borderTopColor,c.border); assert.equal(card.paddingTop,'12px');

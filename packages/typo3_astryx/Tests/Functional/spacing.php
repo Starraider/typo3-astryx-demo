@@ -71,7 +71,7 @@ $render = static function (string $type, string $before, string $after) use ($ro
     $view = new TemplateView($context);
     $view->assignMultiple(['data' => $data, 'content' => '<p>Spacing fixture</p>']);
     $html = $view->render();
-    $expected = 'class="astryx-element frame-space-before-' . ($before ?: 'medium') . ' frame-space-after-' . ($after ?: 'medium') . '"';
+    $expected = 'class="astryx-element frame-space-before-' . ($before ?: 'medium') . ' frame-space-after-' . ($after ?: 'medium') . ' ';
     if (!str_contains($html, $expected) || substr_count($html, 'id="c' . $uid . '"') !== 1) {
         throw new RuntimeException('Spacing values lost during record transformation/rendering: ' . $type . ' ' . $before . '/' . $after);
     }

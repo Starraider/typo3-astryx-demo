@@ -2,6 +2,7 @@
 """Assemble a reproducible Composer archive; never include runtime or fixture data."""
 from pathlib import Path
 import hashlib,json,sys,zipfile
+import re
 extension=Path(__file__).resolve().parent.parent
 version=json.loads((extension/'package.json').read_text())['version']
 output=Path(sys.argv[1] if len(sys.argv)>1 else 'var/releases').resolve()
@@ -12,8 +13,9 @@ manifest=json.loads((extension/'Resources/Public/StylexManifest/stylex-manifest.
 recipes=json.loads((extension/'Build/recipes.json').read_text())
 css=(extension/'Resources/Public/Assets/astryx.css').read_text()
 for name,dimensions in recipes.items():
-    keys=[f'Astryx{name}.root']
-    keys.extend(f'Astryx{name}.{dimension}_{value.replace("-","_")}'
+    module=re.sub(r'(?<!^)(?=[A-Z])','-',name).lower()
+    keys=[f'{module}.root']
+    keys.extend(f'{module}.{dimension}_{value.replace("-","_")}'
                 for dimension,values in dimensions.items() for value in values)
     for key in keys:
         entry=manifest['styles'].get(key)

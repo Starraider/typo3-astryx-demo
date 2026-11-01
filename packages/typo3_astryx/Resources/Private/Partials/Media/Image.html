@@ -1,11 +1,13 @@
 <f:if condition="{ax:fileAvailable(file: file)}">
+    <f:variable name="heroLayout" value="{f:if(condition: heroLayout, then: heroLayout, else: '')}" />
+    <f:variable name="previewImageClass" value="{f:if(condition: preview, then: '{ax:recipe(name: \'Preview\', options: {part: \'image\'})}', else: '')}" />
     <f:variable name="imageSizes" value="{f:if(condition: sizes, then: sizes, else: '100vw')}" />
     <f:variable name="srcset" value="{f:uri.image(image: file, width: '480')} 480w, {f:uri.image(image: file, width: '960')} 960w, {f:uri.image(image: file, width: '1200')} 1200w" />
-    <figure class="astryx-media" data-aspect="{aspectRatio}">
+    <figure class="astryx-media {ax:recipe(name: 'Media', options: {part: 'figure'})}" data-aspect="{aspectRatio}">
         <f:if condition="{eager}">
-            <f:then><f:image image="{file}" width="1200" loading="eager" decoding="async" additionalAttributes="{fetchpriority: 'high', srcset: srcset, sizes: imageSizes}" /></f:then>
-            <f:else><f:image image="{file}" width="960" loading="lazy" decoding="async" additionalAttributes="{srcset: srcset, sizes: 'auto, {imageSizes}'}" /></f:else>
+            <f:then><f:image image="{file}" width="1200" loading="eager" decoding="async" class="{ax:recipe(name: 'Media', options: {part: 'image', aspect: aspectRatio})} {previewImageClass}" additionalAttributes="{fetchpriority: 'high', srcset: srcset, sizes: imageSizes, data-hero-layout: heroLayout}" /></f:then>
+            <f:else><f:image image="{file}" width="960" loading="lazy" decoding="async" class="{ax:recipe(name: 'Media', options: {part: 'image', aspect: aspectRatio})} {previewImageClass}" additionalAttributes="{srcset: srcset, sizes: 'auto, {imageSizes}', data-hero-layout: heroLayout}" /></f:else>
         </f:if>
-        <f:if condition="{file.description}"><figcaption>{file.description}</figcaption></f:if>
+        <f:if condition="{file.description}"><figcaption class="{ax:recipe(name: 'Media', options: {part: 'caption'})}" data-hero-layout="{heroLayout}">{file.description}</figcaption></f:if>
     </figure>
 </f:if>

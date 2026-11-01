@@ -9,7 +9,8 @@
 <f:argument name="variant" type="string" default="outlined" />
 <f:argument name="padding" type="string" default="normal" />
 <article class="astryx-card {ax:recipe(name: 'Card', options: {variant: variant, padding: padding})}">
-    <f:slot name="media" />
+    <f:variable name="mediaSlot" value="{f:slot(name: 'media')}" />
+    <f:if condition="{mediaSlot}"><div class="{ax:recipe(name: 'Utility', options: {part: 'card-media'})}">{mediaSlot -> f:format.raw()}</div></f:if>
     <f:if condition="{badge}"><astryx:badge text="{badge}" /></f:if>
     <f:variable name="headingSlot" value="{f:slot(name: 'heading')}" />
     <f:if condition="{headingSlot} === {null}">

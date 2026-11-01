@@ -1,1 +1,14 @@
-<ul class="astryx-menu"><f:for each="{items}" as="item"><li><f:if condition="{item.current}"><f:then><a href="{item.link}" aria-current="page">{item.title}</a></f:then><f:else><a href="{item.link}">{item.title}</a></f:else></f:if><f:if condition="{item.children}"><f:render partial="Navigation/Menu" arguments="{items: item.children}" /></f:if></li></f:for></ul>
+<f:variable name="menuPart" value="{f:if(condition: nested, then: 'submenu', else: 'main-menu')}" />
+<ul class="{f:if(condition: nested, then: 'astryx-submenu', else: 'astryx-menu')} {ax:recipe(name: 'Navigation', options: {part: menuPart})}">
+    <f:for each="{items}" as="item">
+        <li class="astryx-menu-item {ax:recipe(name: 'Navigation', options: {part: 'row'})}">
+            <f:if condition="{item.current}">
+                <f:then><a href="{item.link}" class="astryx-menu-link {ax:recipe(name: 'Navigation', options: {part: 'link'})}" aria-current="page">{item.title}</a></f:then>
+                <f:else><a href="{item.link}" class="astryx-menu-link {ax:recipe(name: 'Navigation', options: {part: 'link'})}">{item.title}</a></f:else>
+            </f:if>
+            <f:if condition="{item.children}">
+                <f:render partial="Navigation/Menu" arguments="{items: item.children, nested: true}" />
+            </f:if>
+        </li>
+    </f:for>
+</ul>

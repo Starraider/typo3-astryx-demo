@@ -8,13 +8,13 @@
     </f:else>
 </f:if>
 <f:if condition="{flag}">
-    <span class="astryx-language-flag" aria-hidden="true">
+    <span class="astryx-language-flag {ax:recipe(name: 'Navigation', options: {part: 'flag'})}" aria-hidden="true">
         <f:if condition="{flag} == 'gb' || {flag} == 'de'">
             <f:then>
-                <f:image src="EXT:typo3_astryx/Resources/Public/Icons/Flags/{flag}.svg" width="20" height="20" alt="" />
+                <f:image src="EXT:typo3_astryx/Resources/Public/Icons/Flags/{flag}.svg" class="{ax:recipe(name: 'Navigation', options: {part: 'flag-image'})}" width="20" height="20" alt="" />
             </f:then>
             <f:else>
-                <f:image src="EXT:core/Resources/Public/Icons/Flags/{flag}.webp" class="astryx-language-flag-bitmap" width="32" height="32" alt="" />
+                <f:image src="EXT:core/Resources/Public/Icons/Flags/{flag}.webp" class="astryx-language-flag-bitmap {ax:recipe(name: 'Navigation', options: {part: 'flag-image'})} {ax:recipe(name: 'Navigation', options: {part: 'flag-bitmap'})}" width="32" height="32" alt="" />
             </f:else>
         </f:if>
     </span>

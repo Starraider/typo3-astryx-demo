@@ -22,6 +22,7 @@ export class ClassicGalleryController {
     for (const [key, label] of categories) {
       const button = document.createElement('button');
       button.type = 'button';
+      button.className = allButton.className;
       button.textContent = label;
       button.setAttribute('aria-pressed', 'false');
       button.setAttribute('aria-controls', allButton.getAttribute('aria-controls'));
@@ -80,10 +81,12 @@ export class ClassicGalleryController {
       const thumbnail = link.querySelector('img');
       // Use the original, uncropped FAL URL rather than the thumbnail's srcset.
       const image = new Image();
+      image.className = media.dataset.imageClass;
       image.src = link.href;
       image.alt = thumbnail.alt;
       image.decoding = 'async';
       const caption = document.createElement('figcaption');
+      caption.className = media.dataset.captionClass;
       caption.textContent = link.dataset.galleryCaption || '';
       caption.hidden = !caption.textContent;
       // Let keyboard users scroll long descriptions in every supported browser.

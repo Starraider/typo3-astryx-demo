@@ -44,13 +44,13 @@ for(const name of engines) {
   // Nested boundaries must override inherited values without changing the parent.
   const nested=await page.locator('.astryx-root').evaluate(root=>{
    root.dataset.astryxTheme='neutral';root.dataset.astryxMode='light';
-   const outer=getComputedStyle(root).getPropertyValue('--astryx-accent');
+   const outer=getComputedStyle(root).getPropertyValue('--astryx-color-accent');
    const child=document.createElement('div');child.dataset.astryxTheme='ocean';root.append(child);
-   const inner=getComputedStyle(child).getPropertyValue('--astryx-accent');child.remove();return {outer,inner};
+   const inner=getComputedStyle(child).getPropertyValue('--astryx-color-accent');child.remove();return {outer,inner};
   });assert.notEqual(nested.outer,nested.inner);
   await page.addStyleTag({content:brandCss});
   await page.locator('.astryx-root').evaluate(root=>root.classList.add('product-brand'));
-  assert.match(await page.locator('.astryx-root').evaluate(root=>getComputedStyle(root).getPropertyValue('--astryx-radius-element')),/6px/);
+  assert.match(await page.locator('.astryx-root').evaluate(root=>getComputedStyle(root).getPropertyValue('--astryx-shape-radius-element')),/6px/);
   await page.locator('.astryx-root').evaluate(root=>root.classList.remove('product-brand'));
   const axe=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
   const violations=axe.violations.map(v=>({id:v.id,impact:v.impact,help:v.help,nodes:v.nodes.map(n=>n.target)}));

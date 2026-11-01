@@ -12,7 +12,7 @@ const extension = fs.readdirSync('public/_assets').find(name => {
   try { return fs.realpathSync(`public/_assets/${name}`) === path.join(process.cwd(), 'packages/typo3_astryx/Resources/Public'); } catch { return false; }
 });
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json'));
-const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))?.[1];
+const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))?.[1];
 assert(extension && entry, 'Published extension and Vite assets required');
 const css = new Set(entry.css);
 for (const [key, item] of Object.entries(manifest)) if (key.startsWith('_') && item.file.endsWith('.css')) css.add(item.file);

@@ -11,7 +11,7 @@ const assets = process.env.ASTRYX_NAVIGATION_ASSETS ?? 'vite';
 async function useAssets(context) {
   if (assets !== 'packaged') return;
   const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json', 'utf8'));
-  const entry = Object.values(manifest).find(e => e.src?.includes('typo3-astryx/') && e.src.endsWith('/Main.entry.js'));
+  const entry = Object.values(manifest).find(e => e.src?.includes('typo3-astryx/') && e.src.endsWith('/frontend.entry.js'));
   assert(entry, 'Consuming extension entry exists');
   const shared = Object.values(manifest).filter(e => e.file.endsWith('.css') && e.src?.startsWith('_Main-')).map(e => e.file);
   const published = fs.readdirSync('public/_assets').find(d => {

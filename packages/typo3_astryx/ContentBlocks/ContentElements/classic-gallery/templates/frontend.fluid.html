@@ -1,39 +1,39 @@
 <f:layout name="Default" />
 <f:section name="Main">
     <f:if condition="!{imageSizes}"><f:variable name="imageSizes" value="{ax:imageSizes(profile: 'gallery')}" /></f:if>
-    <section class="astryx-classic-gallery" data-astryx-classic-gallery data-columns="{data.columns}" data-gallery-count-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.count', default: 'Images shown: %s')}">
-        <header class="astryx-classic-gallery-header">
+    <section class="astryx-classic-gallery {ax:recipe(name: 'ClassicGallery', options: {part: 'gallery'})}" data-astryx-classic-gallery data-columns="{data.columns}" data-gallery-count-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.count', default: 'Images shown: %s')}">
+        <header class="astryx-classic-gallery-header {ax:recipe(name: 'ClassicGallery', options: {part: 'header'})}">
             <f:if condition="{data.subheader} || ({data.header} && {data.header_layout} != 100)">
-                <div class="astryx-classic-gallery-intro">
+                <div class="astryx-classic-gallery-intro {ax:recipe(name: 'ClassicGallery', options: {part: 'intro'})}">
                     <f:render partial="ContentElements/Header" arguments="{data: data}" />
-                    <f:if condition="{data.subheader} && (!{data.header} || {data.header_layout} == 100)"><p>{data.subheader}</p></f:if>
+                    <f:if condition="{data.subheader} && (!{data.header} || {data.header_layout} == 100)"><p class="{ax:recipe(name: 'ClassicGallery', options: {part: 'intro-text'})}">{data.subheader}</p></f:if>
                 </div>
             </f:if>
-            <div class="astryx-classic-gallery-filters" data-gallery-filters role="group" aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.filters', default: 'Filter images by category')}" hidden>
-                <button type="button" aria-pressed="true" aria-controls="{astryxOccurrence.namespace}-gallery"><f:translate key="LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.all" default="All" /></button>
+            <div class="astryx-classic-gallery-filters {ax:recipe(name: 'ClassicGallery', options: {part: 'filters'})}" data-gallery-filters role="group" aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.filters', default: 'Filter images by category')}" hidden>
+                <button type="button" class="astryx-classic-gallery-filter {ax:recipe(name: 'ClassicGallery', options: {part: 'filter'})}" aria-pressed="true" aria-controls="{astryxOccurrence.namespace}-gallery"><f:translate key="LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.all" default="All" /></button>
             </div>
         </header>
-        <ul id="{astryxOccurrence.namespace}-gallery" class="astryx-classic-gallery-tiles" aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.images', default: 'Gallery images')}">
+        <ul id="{astryxOccurrence.namespace}-gallery" class="astryx-classic-gallery-tiles {ax:recipe(name: 'ClassicGallery', options: {part: 'tiles'})}" aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.images', default: 'Gallery images')}">
             <f:for each="{data.items}" as="item">
                 <f:for each="{item.image}" as="file">
                     <f:if condition="{ax:fileAvailable(file: file)}">
-                        <li class="astryx-classic-gallery-tile" data-gallery-category="{item.category}">
+                        <li class="astryx-classic-gallery-tile {ax:recipe(name: 'ClassicGallery', options: {part: 'tile'})}" data-gallery-category="{item.category}">
                             <f:variable name="srcset" value="{f:uri.image(image: file, width: '480')} 480w, {f:uri.image(image: file, width: '960')} 960w, {f:uri.image(image: file, width: '1600')} 1600w" />
-                            <f:link.external uri="{f:uri.image(image: file, crop: false)}" defaultScheme="" class="astryx-classic-gallery-open" additionalAttributes="{'data-gallery-open': '', 'data-gallery-caption': file.description}">
+                            <f:link.external uri="{f:uri.image(image: file, crop: false)}" defaultScheme="" class="astryx-classic-gallery-open {ax:recipe(name: 'ClassicGallery', options: {part: 'open'})}" additionalAttributes="{'data-gallery-open': '', 'data-gallery-caption': file.description}">
                                 <span class="astryx-sr-only"><f:translate key="LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.open" default="Open image" /> {file.alternative}</span>
-                                <f:image image="{file}" width="1600" loading="lazy" decoding="async" additionalAttributes="{srcset: srcset, sizes: 'auto, {imageSizes}'}" />
+                                <f:image image="{file}" width="1600" loading="lazy" decoding="async" class="{ax:recipe(name: 'ClassicGallery', options: {part: 'image'})}" additionalAttributes="{srcset: srcset, sizes: 'auto, {imageSizes}'}" />
                             </f:link.external>
                         </li>
                     </f:if>
                 </f:for>
             </f:for>
         </ul>
-        <dialog id="{astryxOccurrence.namespace}-lightbox" class="astryx-gallery-lightbox" data-gallery-lightbox aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.lightbox', default: 'Image gallery')}">
-            <button type="button" class="astryx-gallery-lightbox-close" data-lightbox-close autofocus aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.close', default: 'Close')}"><f:image src="EXT:typo3_astryx/Resources/Public/Icons/close.svg" width="16" height="16" alt="" /></button>
-            <button type="button" class="astryx-gallery-lightbox-previous" data-lightbox-previous aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.previous', default: 'Previous')}"><f:image src="EXT:typo3_astryx/Resources/Public/Icons/chevron-left.svg" width="16" height="16" alt="" /></button>
-            <figure class="astryx-gallery-lightbox-media" data-lightbox-media></figure>
-            <button type="button" class="astryx-gallery-lightbox-next" data-lightbox-next aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.next', default: 'Next')}"><f:image src="EXT:typo3_astryx/Resources/Public/Icons/chevron-right.svg" width="16" height="16" alt="" /></button>
-            <span class="astryx-gallery-lightbox-counter" data-lightbox-counter role="status" aria-live="polite" aria-atomic="true"></span>
+        <dialog id="{astryxOccurrence.namespace}-lightbox" class="astryx-gallery-lightbox {ax:recipe(name: 'ClassicGallery', options: {part: 'dialog'})}" data-gallery-lightbox aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.lightbox', default: 'Image gallery')}">
+            <button type="button" class="astryx-gallery-lightbox-close {ax:recipe(name: 'ClassicGallery', options: {part: 'control'})} {ax:recipe(name: 'ClassicGallery', options: {part: 'close'})}" data-lightbox-close autofocus aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.close', default: 'Close')}"><f:image src="EXT:typo3_astryx/Resources/Public/Icons/close.svg" width="16" height="16" alt="" class="{ax:recipe(name: 'ClassicGallery', options: {part: 'icon'})}" /></button>
+            <button type="button" class="astryx-gallery-lightbox-previous {ax:recipe(name: 'ClassicGallery', options: {part: 'control'})} {ax:recipe(name: 'ClassicGallery', options: {part: 'step'})}" data-lightbox-previous aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.previous', default: 'Previous')}"><f:image src="EXT:typo3_astryx/Resources/Public/Icons/chevron-left.svg" width="16" height="16" alt="" class="{ax:recipe(name: 'ClassicGallery', options: {part: 'icon'})}" /></button>
+            <figure class="astryx-gallery-lightbox-media {ax:recipe(name: 'ClassicGallery', options: {part: 'media'})}" data-lightbox-media data-image-class="{ax:recipe(name: 'ClassicGallery', options: {part: 'lightbox-image'})}" data-caption-class="{ax:recipe(name: 'ClassicGallery', options: {part: 'caption'})}"></figure>
+            <button type="button" class="astryx-gallery-lightbox-next {ax:recipe(name: 'ClassicGallery', options: {part: 'control'})} {ax:recipe(name: 'ClassicGallery', options: {part: 'step'})}" data-lightbox-next aria-label="{f:translate(key: 'LLL:EXT:typo3_astryx/ContentBlocks/ContentElements/classic-gallery/language/labels.xlf:frontend.next', default: 'Next')}"><f:image src="EXT:typo3_astryx/Resources/Public/Icons/chevron-right.svg" width="16" height="16" alt="" class="{ax:recipe(name: 'ClassicGallery', options: {part: 'icon'})}" /></button>
+            <span class="astryx-gallery-lightbox-counter {ax:recipe(name: 'ClassicGallery', options: {part: 'counter'})}" data-lightbox-counter role="status" aria-live="polite" aria-atomic="true"></span>
         </dialog>
         <span class="astryx-sr-only" data-gallery-status role="status" aria-live="polite" aria-atomic="true"></span>
     </section>

@@ -1,17 +1,17 @@
 <f:layout name="Default" />
 <f:section name="Main">
     <f:render partial="ContentElements/Header" arguments="{data: data}" />
-    <div class="astryx-accordion" data-astryx-accordion data-mode="{data.mode}">
+    <div class="astryx-accordion {ax:recipe(name: 'Accordion')}" data-astryx-accordion data-mode="{data.mode}">
         <f:variable name="groupName" value="{f:if(condition: '{data.mode} == \'single\'', then: '{astryxOccurrence.namespace}-accordion', else: '')}" />
         <f:for each="{data.items}" as="item" iteration="i">
             <f:if condition="{item.open}">
                 <f:then>
-                    <details open id="{astryxOccurrence.namespace}-accordion-{i.index}" name="{groupName}">
+                    <details class="{ax:recipe(name: 'Accordion', options: {part: 'item'})}" data-mode="{data.mode}" open id="{astryxOccurrence.namespace}-accordion-{i.index}" name="{groupName}">
                         <f:render section="ItemContent" arguments="{item: item, id: '{astryxOccurrence.namespace}-accordion-{i.index}'}" />
                     </details>
                 </f:then>
                 <f:else>
-                    <details id="{astryxOccurrence.namespace}-accordion-{i.index}" name="{groupName}">
+                    <details class="{ax:recipe(name: 'Accordion', options: {part: 'item'})}" data-mode="{data.mode}" id="{astryxOccurrence.namespace}-accordion-{i.index}" name="{groupName}">
                         <f:render section="ItemContent" arguments="{item: item, id: '{astryxOccurrence.namespace}-accordion-{i.index}'}" />
                     </details>
                 </f:else>
@@ -20,11 +20,11 @@
     </div>
 </f:section>
 <f:section name="ItemContent">
-    <summary id="{id}-trigger" aria-controls="{id}-content">
-        <span class="astryx-accordion-label">{item.title}</span>
-        <span class="astryx-accordion-chevron" aria-hidden="true"></span>
+    <summary class="{ax:recipe(name: 'Accordion', options: {part: 'trigger'})}" id="{id}-trigger" aria-controls="{id}-content" aria-expanded="{f:if(condition: item.open, then: 'true', else: 'false')}">
+        <span class="astryx-accordion-label {ax:recipe(name: 'Accordion', options: {part: 'label'})}">{item.title}</span>
+        <span class="astryx-accordion-chevron {ax:recipe(name: 'Accordion', options: {part: 'chevron'})}" data-expanded="{f:if(condition: item.open, then: 'true', else: 'false')}" aria-hidden="true"></span>
     </summary>
-    <div id="{id}-content" class="astryx-accordion-content astryx-prose">
+    <div id="{id}-content" class="astryx-accordion-content astryx-prose {ax:recipe(name: 'Accordion', options: {part: 'content'})}">
         <f:if condition="{item.body}">{item.body -> f:format.html()}</f:if>
     </div>
 </f:section>

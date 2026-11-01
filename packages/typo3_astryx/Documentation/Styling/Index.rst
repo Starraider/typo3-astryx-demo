@@ -4,330 +4,235 @@
 Styling
 =======
 
-TYPO3 Astryx uses **StyleX** for component styling, backed by ``skom/stylex-connector`` to
-integrate compiled atomic classes seamlessly into TYPO3 Fluid templates.
-
-This chapter details the styling architecture, the design token system, and how to adapt,
-customize, and extend styles for your project.
-
-.. _styling_stylex_architecture:
-
-StyleX Architecture in TYPO3
-============================
-
-Why StyleX?
------------
-
-* **Atomic CSS**: Every CSS declaration is compiled to a single atomic utility class. No CSS
-  is duplicated, keeping bundle sizes minimal regardless of site scale.
-* **Deterministic Specificity**: Specificity collisions are eliminated at compile time by sorting
-  declarations into CSS Cascade Layers (``priority1`` through ``priority5``).
-* **Zero Runtime Overhead**: All class names and CSS rules are computed ahead of time during
-  the Vite build. The browser executes no styling JavaScript at runtime.
-* **Type-Safe Design Tokens**: Colors, spacing, radii, and typography are defined in structured
-  JavaScript modules and shared across components and themes.
-
-How ``skom/stylex-connector`` Works
-------------------------------------
-
-The connector bridges the Vite/StyleX build pipeline with TYPO3's PHP rendering engine:
-
-1. **Build Step**: During the build, the StyleX unplugin compiles all ``.stylex.js`` modules
-   and generates a JSON manifest (``Resources/Public/StylexManifest/stylex-manifest.json``).
-   This manifest maps human-readable recipe keys (such as ``AstryxButton.root`` or
-   ``AstryxButton.variant_primary``) to generated atomic class strings (e.g. ``x1j234 x5k998``).
-2. **Registration in TYPO3**: The extension registers its manifest in ``ext_localconf.php``:
-
-   ..  code-block:: php
-
-       \Vendor\StylexConnector\Configuration\StylexRegistry::registerManifest(
-           'typo3_astryx',
-           'EXT:typo3_astryx/Resources/Public/StylexManifest/stylex-manifest.json'
-       );
-
-3. **Fluid Resolution**: Fluid templates resolve classes dynamically through the connector:
-
-   Using the Recipe ViewHelper (Recommended for Astryx components):
-
-   ..  code-block:: html
-
-       <button class="{ax:recipe(name: 'Button', options: {variant: 'primary', size: 'large'})}">
-           Click Me
-       </button>
-
-   Using the Connector's Direct ViewHelper:
-
-   ..  code-block:: html
-
-       <div class="{stylex:class(key: 'AstryxCard.root')}">
-           Card Content
-       </div>
-
-.. _styling_cascade_layers:
-
-CSS Cascade Layers and Specificity
-==================================
-
-Astryx organizes all styles into explicit CSS cascade layers defined in
-``Resources/Private/CSS/layers.css``:
-
-..  code-block:: css
-
-    @layer reset, astryx-base, priority1, priority2, priority3, priority4, priority5, astryx-theme, product;
-
-Layer Hierarchy (from lowest to highest priority):
-1. ``reset``: Box sizing, baseline normalization, and margin resets.
-2. ``astryx-base``: Core typography, prose rules, and layout containers.
-3. ``priority1`` to ``priority5``: **Reserved for StyleX atomic CSS rules.** The compiler assigns
-   classes to priority layers based on property importance.
-4. ``astryx-theme``: Scoped theme variables (``--astryx-*``) generated from theme sources.
-5. ``product``: **Reserved for sitepackage branding and integrator overrides.**
-
-..  important::
-    Because ``product`` is the highest cascade layer, any CSS written in ``@layer product``
-    overrides StyleX atomic rules cleanly and deterministically—without resorting to
-    ``!important`` or overly complex CSS selectors.
-
-.. _styling_design_tokens:
-
-Design Tokens and Themes
-========================
-
-Built-in Themes
----------------
-
-Astryx includes three pre-configured themes in ``Resources/Private/JavaScript/Stylex/Themes/``:
-
-* **Neutral** (Default): A clean, modern neutral palette with Figtree typography and balanced
-  grays.
-* **Stone**: Adapted from upstream Astryx design system (v0.6.7). Uses **Montserrat** for headings,
-  **Figtree** for body text, and **JetBrains Mono** for code. Features warm neutral backgrounds,
-  pill buttons, and pastel status surfaces.
-* **Ocean**: A cool, refined corporate palette featuring ocean blues and crisp borders.
-
-Color Modes
------------
-
-Each theme defines complete token sets for both **Light** and **Dark** modes:
-
-* Selected via ``Astryx.mode`` site setting (``system``, ``light``, ``dark``).
-* Inherited per page via the ``tx_astryx_mode`` page property.
-* Toggled interactively by visitors via the header theme toggle (when ``Astryx.allowUserMode`` is true).
-* Stored in the browser's ``localStorage`` and applied via ``data-astryx-mode="dark|light"`` on the
-  ``<html>`` element.
-
-Core Token Reference (``--astryx-*``)
---------------------------------------
-
-Tokens are declared in ``tokens.stylex.js`` and exposed as CSS custom properties:
-
-* **Surfaces & Backgrounds**: ``--astryx-body``, ``--astryx-surface``, ``--astryx-card``,
-  ``--astryx-popover``
-* **Text & Accents**: ``--astryx-text``, ``--astryx-text-secondary``, ``--astryx-accent``,
-  ``--astryx-on-accent``
-* **Borders**: ``--astryx-border``, ``--astryx-border-emphasis``
-* **Border Radii**: ``--astryx-radius-sm``, ``--astryx-radius-md``, ``--astryx-radius-lg``,
-  ``--astryx-radius-pill``
-* **Spacing Tokens**: ``--astryx-space-1`` (2px), ``--astryx-space-2`` (4px), ``--astryx-space-3`` (8px),
-  ``--astryx-space-4`` (16px), ``--astryx-space-5`` (24px)
-* **Status Colors**: Categorical pairs for neutral, accent, success, warning, and error states.
-
-.. _styling_adaptation_methods:
-
-How to Adapt Styles to Your Requirements
-========================================
-
-Depending on your project's needs, there are three primary ways to customize Astryx styles:
-
-Method 1: Sitepackage Branding via ``@layer product`` (No Build Required)
---------------------------------------------------------------------------
-
-If you use packaged assets and want to adjust brand colors, fonts, or element radii, you can
-simply override CSS tokens in your sitepackage stylesheet wrapped in ``@layer product``.
-
-Example: ``packages/my_sitepackage/Resources/Public/Css/brand.css``:
-
-..  code-block:: css
-
-    @layer product {
-        :root {
-            /* Change primary brand accent */
-            --astryx-accent: light-dark(#6a287e, #e9acf7);
-            --astryx-on-accent: light-dark(#ffffff, #31103b);
-
-            /* Adjust button and card corner roundness */
-            --astryx-radius-element: 6px;
-
-            /* Override site content maximum width */
-            --astryx-content-width: 80rem;
-        }
-
-        /* Scoped brand theme for specific sections */
-        .my-brand-section {
-            --astryx-surface: light-dark(#fdf8ff, #1d1421);
-            --astryx-border: light-dark(#e3d0eb, #43304d);
-        }
-    }
-
-Include this CSS in your sitepackage's layout or TypoScript after the Astryx stylesheet.
-
-Method 2: Customizing Themes and Tokens in JavaScript
------------------------------------------------------
-
-To modify the core token declarations or add a new theme:
-
-1. **Edit or Add Theme Sources**:
-   Create a new theme file under ``Resources/Private/JavaScript/Stylex/Themes/Custom.stylex.js``:
-
-   ..  code-block:: javascript
-
-       import * as stylex from '@stylexjs/stylex';
-       import { colors, tokens } from '../tokens.stylex.js';
-
-       export const customTheme = stylex.createTheme(tokens, {
-           accent: { default: '#0066cc', [stylex.media.dark]: '#66b2ff' },
-           onAccent: { default: '#ffffff', [stylex.media.dark]: '#001a33' },
-           body: { default: '#f8fafc', [stylex.media.dark]: '#0f172a' },
-           surface: { default: '#ffffff', [stylex.media.dark]: '#1e293b' },
-       });
-
-2. **Regenerate the Theme Bridge**:
-   Run the theme bridge script from the Composer project root:
-
-   ..  code-block:: bash
-
-       node packages/typo3_astryx/Build/generate-theme-bridge.mjs
-
-   This updates ``Resources/Private/CSS/themes.css`` and ``Build/theme-tokens.json``.
-3. **Rebuild the Frontend Assets**:
-
-   ..  code-block:: bash
-
-       npm run build:astryx
-
-Method 3: Creating and Extending StyleX Recipes
------------------------------------------------
-
-When building new Content Blocks or extending existing components with custom StyleX styles,
-follow these project conventions:
-
-Style Ownership Rules
-~~~~~~~~~~~~~~~~~~~~~
-
-* **Block-Owned Styles**: Any style or recipe used exclusively by one Content Block **must** be
-  placed in ``ContentBlocks/ContentElements/<block-name>/src/Astryx<BlockName>.stylex.js``.
-* **Shared Styles**: Recipes used by multiple independent blocks or native Fluid components live in
-  ``Resources/Private/JavaScript/Stylex/``.
-* **Unique Basenames**: Every ``.stylex.js`` file must have an extension-wide unique basename
-  (e.g. ``AstryxNotice.stylex.js``).
-* **Entrypoint Reachability**: All recipes must be imported in
-  ``Resources/Private/JavaScript/Main.entry.js`` so Vite and the StyleX compiler process them.
-
-Creating a Recipe
-~~~~~~~~~~~~~~~~~
-
-Example: ``ContentBlocks/ContentElements/promo-banner/src/AstryxPromoBanner.stylex.js``:
+TYPO3 Astryx uses **StyleX** for component recipes and design variables, with
+``skom/stylex-connector`` resolving compiled classes in native Fluid templates. This guide
+defines the source layout, naming rules, theme model and build steps for the extension and its
+consuming sitepackage.
+
+StyleX and upstream Astryx document APIs and design principles; neither mandates a particular
+folder hierarchy for this TYPO3 project. The conventions below are the project's source contract.
+
+.. _styling_architecture:
+
+Architecture and source layout
+==============================
+
+Keep authored sources under the package that owns them. The reusable extension owns shared UI,
+semantic token families and built-in themes. A Content Block owns a recipe or supporting rule
+that is used only by that block. The consuming sitepackage owns its brand styles and assets.
+
+..  code-block:: text
+
+    packages/
+      typo3_astryx/
+        Resources/Private/JavaScript/
+          frontend.entry.js
+          rte-editor.entry.js
+          backend-preview.entry.js
+          StyleX/
+            components/             # reusable native Fluid and page recipes
+            tokens/                 # defineVars modules grouped by semantic family
+              components/           # component-specific public token families
+            themes/                 # one lowercase theme module per theme identity
+        ContentBlocks/ContentElements/<block-name>/
+          src/                      # styles owned by this block only
+        Resources/Private/CSS/
+          themes.css                # generated complete CSS token bridge
+          layers.css                # cascade layer contract
+      astryx_sitepackage/
+        Resources/Private/JavaScript/
+          site.entry.js
+          StyleX/components/        # sitepackage-owned recipes, when needed
+        Resources/Private/CSS/
+          main.css                  # product-layer overrides and site CSS
+
+Use lowercase kebab-case for StyleX source folders and filenames. Give every ``.stylex.js``
+file a unique basename within its package manifest because the connector also creates basename
+aliases from those names. Fluid component filenames and the public Fluid recipe names remain
+PascalCase; their manifest keys use the lowercase recipe module basename, for example ``Button``
+resolves to ``button.root``.
+
+Use the source folder for authored files and the ``Resources/Public`` folders for generated
+assets. Never edit the generated StyleX manifests, compiled CSS or JavaScript, checksums,
+``Build/theme-tokens.json`` or ``Resources/Private/CSS/themes.css`` by hand.
+
+Token groups and StyleX recipes
+===============================
+
+Token sources use ``stylex.defineVars`` and one named export per file. The family is both a
+discovery boundary and a variable group that themes may override. ``Build/design-tokens.json``
+lists every family and theme source; the bridge and ownership verifier use this explicit contract.
+
+..  list-table:: Token source families
+    :header-rows: 1
+
+    * - Family
+      - Source location
+      - Example public names
+    * - Color roles
+      - ``StyleX/tokens/color-tokens.stylex.js``
+      - ``--astryx-color-text-primary``, ``--astryx-color-background-surface``
+    * - Category and code colors
+      - ``StyleX/tokens/category-color-tokens.stylex.js`` and ``code-color-tokens.stylex.js``
+      - ``--astryx-color-category-blue-background``, ``--astryx-color-code-syntax-keyword``
+    * - Typography, spacing, layout, shape, shadow and motion
+      - ``StyleX/tokens/<family>-tokens.stylex.js``
+      - ``--astryx-typography-heading-1-font-size``, ``--astryx-spacing-4``
+    * - Component tokens
+      - ``StyleX/tokens/components/<component>-tokens.stylex.js``
+      - ``--astryx-component-button-size-large-font-size``
+
+Name public CSS variables with the stable namespace ``--astryx-`` followed by lowercase
+kebab-case semantic segments. Use a predictable order:
+
+``--astryx-{domain}-{role}-{variant-or-state}-{property}``
+
+Not every token needs every segment. Examples include ``--astryx-color-accent``,
+``--astryx-color-status-success``, ``--astryx-shape-radius-container``,
+``--astryx-motion-duration-fast`` and ``--astryx-component-notice-variant-error-foreground``.
+Choose names by intended role, not by a current hex value, theme, mode or a component's incidental
+CSS declaration. Add a component segment only for a deliberate themeable component contract.
+
+Keep mode and theme identity out of token names. A semantic token such as
+``--astryx-color-text-primary`` resolves in Neutral, Stone and Ocean and may use paired
+``light-dark()`` values. This keeps recipes independent of a selected theme.
+
+In StyleX recipes, import the ``defineVars`` export and reference the token directly. Avoid
+spelling public ``var(--astryx-...)`` references in recipe declarations:
 
 ..  code-block:: javascript
 
     import * as stylex from '@stylexjs/stylex';
-    import { tokens } from '../../../../Resources/Private/JavaScript/Stylex/tokens.stylex.js';
+    import {colorTokens} from '../tokens/color-tokens.stylex.js';
 
-    export const promoBanner = stylex.create({
-        root: {
-            display: 'flex',
-            alignItems: 'center',
-            padding: tokens.space4,
-            borderRadius: tokens.radiusMd,
-            backgroundColor: tokens.surface,
-            border: `1px solid ${tokens.border}`,
-        },
-        variant_highlight: {
-            backgroundColor: tokens.accent,
-            color: tokens.onAccent,
-        },
-        variant_subtle: {
-            backgroundColor: tokens.body,
-        },
+    export const styles = stylex.create({
+      root: {
+        color: colorTokens['--astryx-color-text-primary'],
+        backgroundColor: colorTokens['--astryx-color-background-surface'],
+      },
     });
 
-Registering the Recipe in ``Build/recipes.json``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use CSS custom properties in supporting CSS where CSS must consume a public token. A recipe-local
+custom property is an implementation detail: keep it in its owning recipe or block stylesheet and
+do not add it to the public token families. Site-specific overrides belong in the final
+``product`` cascade layer.
 
-Update ``Build/recipes.json`` to define the finite allowed options:
+.. _styling_themes:
 
-..  code-block:: json
+Theme strategy
+==============
 
-    {
-      "PromoBanner": {
-        "variant": ["highlight", "subtle"]
+Theme identity and color mode are independent axes. **Neutral**, **Stone** and **Ocean** are
+theme identities; ``system``, ``light`` and ``dark`` are modes. The selected theme maps stable
+semantic roles to values, while mode-aware color values use ``light-dark()`` and the element's
+``color-scheme``. Do not create separate Ocean Light/Ocean Dark theme identities.
+
+Each theme lives in a lowercase kebab-case file under ``StyleX/themes/`` and uses
+``stylex.createTheme`` to override the relevant variable groups. Keep theme inputs sparse when a
+token should inherit its default. Themes share the same public token schema; the bridge resolves
+all defaults and overrides into a complete set for each theme. This complete output is required
+for nested theme boundaries and for TYPO3 editor/preview CSS.
+
+When adding a theme:
+
+#. Create a file such as ``themes/forest-theme.stylex.js``. Import only the token groups it
+   overrides and export a named ``createTheme`` value for each changed group.
+#. Add its lowercase name and source path to ``Build/design-tokens.json``.
+#. Import the theme module from ``Resources/Private/JavaScript/frontend.entry.js`` so StyleX compiles
+   it into the frontend manifest.
+#. Run ``Build/generate-theme-bridge.mjs``. It validates the static source contract and generates
+   the fully resolved theme map and scoped CSS bridge.
+#. Build and verify frontend, RTE and backend preview output. Check the new theme in light and dark
+   modes and in a nested theme boundary.
+
+Theme variables are scoped to ``[data-astryx-theme="<name>"]``. The Neutral values also provide
+the default scope for ``.ck-content`` and ``.astryx-preview``. Keep editor and preview styling
+scoped so theme values do not leak into unrelated TYPO3 backend chrome. The page theme and mode
+fields, system settings and optional visitor preference are resolved by the extension; preserve
+that runtime contract when changing the theme catalogue.
+
+The palettes should map to semantic roles such as text, surface, border, accent, status, code and
+category colors. Review foreground/background pairings together for contrast. Treat generated
+palette values as candidates: map them to roles and review the resulting pairings before adding
+them to a theme. Record upstream sources, licenses and local adaptations in the existing
+provenance files.
+
+.. _styling_site_overrides:
+
+Sitepackage overrides
+=====================
+
+Put product branding in the consuming site's CSS and the final ``product`` layer. This is useful
+for packaged and Vite assets alike:
+
+..  code-block:: css
+
+    @layer product {
+      :root {
+        --astryx-color-accent: light-dark(#6a287e, #e9acf7);
+        --astryx-color-on-accent: light-dark(#ffffff, #31103b);
+        --astryx-shape-radius-element: 6px;
+        --astryx-layout-content-max-width: 80rem;
       }
     }
 
-Registering in ``RecipeViewHelper.php``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Prefer overriding semantic variables to targeting generated atomic class names. Keep the source
+under the sitepackage; do not copy extension token modules or generated styles into the consuming
+package. If the site needs its own reusable StyleX recipe, place it under
+``astryx_sitepackage/Resources/Private/JavaScript/StyleX/components/`` and import it from that
+package's ``site.entry.js``.
 
-Add the recipe to ``Classes/ViewHelpers/RecipeViewHelper.php``:
+Recipe ownership and naming
+===========================
 
-..  code-block:: php
+Use these ownership rules:
 
-    'PromoBanner' => [
-        'variant' => ['highlight', 'subtle'],
-    ],
+* Keep reusable native Fluid component recipes such as ``button.stylex.js`` and
+  ``heading.stylex.js`` in ``Resources/Private/JavaScript/StyleX/components/``.
+* Keep page chrome recipes centrally when they are consumed by page templates.
+* Keep recipes used only by one Content Block in
+  ``ContentBlocks/ContentElements/<block-name>/src/<recipe-name>.stylex.js``. Name the module
+  after its component or styling responsibility. A generic name does not make a one-block recipe
+  shared.
+* Keep block-owned CSS and preview CSS in the same block's ``src/`` directory.
+* Import every frontend recipe from ``frontend.entry.js``. RTE and preview entrypoints import the
+  token index and their scoped CSS entrypoint.
+* Use finite static recipe keys. Keep the Fluid ``ax:recipe`` allowlist, module exports and
+  ``Build/recipes.json`` synchronized; never hard-code generated atomic class names.
 
-Importing in ``Main.entry.js``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The connector exposes aliases based on the lowercase module basename, for example
+``button.root``, ``notice.variant_error`` and ``carousel-control.kind_arrow``. Public Fluid
+components can retain PascalCase names such as ``Button`` for template readability.
 
-Add the import to ``Resources/Private/JavaScript/Main.entry.js``:
+The public CSS variable rename in this refactor is breaking for custom CSS, templates and themes
+that used the former token names. There are no compatibility aliases. Update those consumers using
+the [token migration table](TokenMigration.rst).
 
-..  code-block:: javascript
+Build and verification
+======================
 
-    import '../../../ContentBlocks/ContentElements/promo-banner/src/AstryxPromoBanner.stylex.js';
-
-Consuming in Fluid
-~~~~~~~~~~~~~~~~~~
-
-In the Content Block's frontend template:
-
-..  code-block:: html
-
-    <div class="{ax:recipe(name: 'PromoBanner', options: {variant: data.banner_variant})}">
-        <f:format.raw>{data.bodytext}</f:format.raw>
-    </div>
-
-.. _styling_build_pipeline:
-
-Building and Verifying Assets
-=============================
-
-Available Build Commands
-------------------------
-
-Run commands from the consuming project root (e.g. within DDEV via ``ddev exec``):
+Run commands from the consuming TYPO3 project root, using DDEV for the project's pinned runtime:
 
 ..  code-block:: bash
 
-    # Full production build: consuming Vite bundles + packaged extension assets
-    ddev exec npm run build
-
-    # Packaged extension assets only: theme bridge, Vite, finalization, verification
-    ddev exec npm run build:astryx
-
-    # Regenerate theme bridge CSS from StyleX token sources
+    # Regenerate complete theme CSS from source tokens and sparse theme overrides.
     ddev exec node packages/typo3_astryx/Build/generate-theme-bridge.mjs
 
-Pipeline Verification Commands
-------------------------------
+    # Full Vite and extension asset build, finalization and verification.
+    ddev exec npm run build
 
-Verify your StyleX assets, recipes, and manifest integrity:
-
-..  code-block:: bash
-
-    # Validate that StyleX manifest contains required component keys:
-    ddev exec vendor/bin/typo3 stylex:validate --required-key=AstryxButton.root
-
-    # Verify style ownership conventions (checks location and unique basenames):
+    # Run the StyleX source ownership and generated artifact audits directly.
     ddev exec node packages/typo3_astryx/Build/verify-style-ownership.mjs
-
-    # Verify built artifacts and checksums:
     ddev exec node packages/typo3_astryx/Build/verify-artifacts.mjs
+
+The build updates the consuming site's and extension's Vite assets and StyleX manifests. Deploy
+the resulting CSS, JavaScript, fonts, lazy chunks and manifests together. If a recipe basename or
+source path changes, rebuild both manifests and flush TYPO3 caches so Fluid resolves the new
+aliases.
+
+For additional StyleX and integration details, see the [build runbook](../../../../doc/Build.md).
+
+.. toctree::
+    :hidden:
+
+    TokenMigration

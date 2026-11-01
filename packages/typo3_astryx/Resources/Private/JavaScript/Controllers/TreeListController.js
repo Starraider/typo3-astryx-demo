@@ -62,6 +62,8 @@ export class TreeListController {
     group.hidden = !expanded;
     item.setAttribute('aria-expanded', String(expanded));
     this.toggle(item).setAttribute('aria-expanded', String(expanded));
+    const chevron = this.toggle(item).querySelector('.astryx-tree-list-chevron');
+    if (chevron) chevron.dataset.expanded = String(expanded);
     // A collapsed subtree must never own the tree's only tab stop.
     if (!expanded && group.querySelector('[tabindex="0"]')) this.setTabStop(item);
   }

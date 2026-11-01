@@ -12,7 +12,7 @@ const asset = fs.readdirSync('public/_assets').find(name => {
   return fs.lstatSync(path).isSymbolicLink() && /typo3[-_]astryx/.test(fs.readlinkSync(path));
 });
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json', 'utf8'));
-const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))?.[1];
+const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))?.[1];
 assert(asset && entry);
 const sharedCss = Object.values(manifest).filter(item => item.src?.startsWith('_') && item.file.endsWith('.css')).map(item => item.file);
 const modes = {packaged: [`_assets/${asset}/Assets/astryx.css`], vite: [...new Set([...sharedCss, ...entry.css])].map(file => `_assets/vite/${file}`)};
@@ -25,7 +25,7 @@ for (const name of (process.env.ASTRYX_TEST_BROWSERS ?? 'chromium,webkit').split
     page.on('pageerror', error => errors.push(error.message));
     page.on('response', response => {if (response.status() >= 400) errors.push(response.url());});
     for (const [mode, css] of Object.entries(modes)) {
-      const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><base href="${base}/"><title>Heading alignment and links</title>${css.map(file => `<link rel="stylesheet" href="${file}">`).join('')}<style>main{max-width:1000px;margin:auto;padding:16px}body{--astryx-link:#2763c2}</style></head><body class="astryx-root" data-astryx-theme="neutral" data-astryx-mode="light"><main>${fixtures}</main></body></html>`;
+      const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><base href="${base}/"><title>Heading alignment and links</title>${css.map(file => `<link rel="stylesheet" href="${file}">`).join('')}<style>main{max-width:1000px;margin:auto;padding:16px}body{--astryx-color-text-link:#2763c2}</style></head><body class="astryx-root" data-astryx-theme="neutral" data-astryx-mode="light"><main>${fixtures}</main></body></html>`;
       await page.route(base + '/__astryx-heading-test__', route => route.fulfill({contentType: 'text/html', body: html}));
       await page.goto(base + '/__astryx-heading-test__', {waitUntil: 'networkidle'});
       for (const width of [1280, 390]) {

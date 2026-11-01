@@ -3,6 +3,14 @@ export class DropdownController {
     const dropdowns = [...root.querySelectorAll('[data-astryx-dropdown]')];
     const summary = dropdown => dropdown.querySelector(':scope > summary');
     const panel = dropdown => dropdown.querySelector(':scope > .astryx-dropdown-panel');
+    const chevron = dropdown => summary(dropdown)?.querySelector('.astryx-chevron');
+    const syncChevron = dropdown => {
+      const icon = chevron(dropdown);
+      if (!icon) return;
+      icon.dataset.open = String(dropdown.open);
+      icon.dataset.flyout = String(nested(dropdown) && desktop(dropdown));
+      icon.dataset.direction = getComputedStyle(dropdown).direction;
+    };
     const nested = dropdown => dropdown.parentElement.parentElement.classList.contains('astryx-submenu');
     const desktop = dropdown => dropdown.closest('.astryx-navigation > .astryx-main-menu') && matchMedia('(min-width: 60rem)').matches;
     const timers = new Map();
@@ -11,18 +19,25 @@ export class DropdownController {
       cancelClose(dropdown);
       dropdown.open = false;
       summary(dropdown).setAttribute('aria-expanded', 'false');
+      syncChevron(dropdown);
       dropdown.querySelectorAll('[data-astryx-dropdown]').forEach(child => {
         cancelClose(child);
         child.open = false;
         summary(child).setAttribute('aria-expanded', 'false');
+        syncChevron(child);
       });
     };
     const position = dropdown => {
       const surface = panel(dropdown);
-      surface.style.removeProperty('--astryx-dropdown-offset');
-      surface.style.removeProperty('--astryx-flyout-offset');
-      surface.style.removeProperty('--astryx-flyout-max-width');
+      surface.style.removeProperty('--navigation-dropdown-offset');
+      surface.style.removeProperty('--navigation-flyout-offset');
+      surface.style.removeProperty('--navigation-flyout-max-width');
+      surface.style.removeProperty('inset-inline-start');
+      surface.style.removeProperty('inset-inline-end');
       delete dropdown.dataset.side;
+      delete surface.dataset.side;
+      surface.querySelector('.astryx-dropdown-flyout-bridge')?.removeAttribute('data-side');
+      syncChevron(dropdown);
       if (getComputedStyle(surface).position !== 'absolute') return;
       if (nested(dropdown) && desktop(dropdown)) {
         const item = dropdown.parentElement.getBoundingClientRect();
@@ -32,14 +47,18 @@ export class DropdownController {
         const width = surface.getBoundingClientRect().width;
         const flip = width > endSpace && startSpace > endSpace;
         dropdown.dataset.side = flip ? 'start' : 'end';
-        surface.style.setProperty('--astryx-flyout-max-width', `${Math.max(1, flip ? startSpace : endSpace)}px`);
+        if (flip) {
+          surface.dataset.side = 'start';
+          surface.querySelector('.astryx-dropdown-flyout-bridge')?.setAttribute('data-side', 'start');
+        }
+        surface.style.setProperty('--navigation-flyout-max-width', `${Math.max(1, flip ? startSpace : endSpace)}px`);
         const bounds = surface.getBoundingClientRect();
         const offset = bounds.top < 16 ? 16 - bounds.top : Math.min(0, innerHeight - 16 - bounds.bottom);
-        surface.style.setProperty('--astryx-flyout-offset', `${offset}px`);
+        surface.style.setProperty('--navigation-flyout-offset', `${offset}px`);
       } else {
         const bounds = surface.getBoundingClientRect();
         const offset = bounds.left < 16 ? 16 - bounds.left : Math.min(0, innerWidth - 16 - bounds.right);
-        surface.style.setProperty('--astryx-dropdown-offset', `${offset}px`);
+        surface.style.setProperty('--navigation-dropdown-offset', `${offset}px`);
       }
     };
     const open = dropdown => {
@@ -49,11 +68,13 @@ export class DropdownController {
       }
       dropdown.open = true;
       summary(dropdown).setAttribute('aria-expanded', 'true');
+      syncChevron(dropdown);
       position(dropdown);
     };
     const firstLink = dropdown => panel(dropdown).querySelector(':scope > ul > li > a');
     for (const dropdown of dropdowns) {
       summary(dropdown).setAttribute('aria-expanded', String(dropdown.open));
+      syncChevron(dropdown);
       dropdown.addEventListener('toggle', () => {
         summary(dropdown).setAttribute('aria-expanded', String(dropdown.open));
         if (dropdown.open) open(dropdown);

@@ -9,7 +9,7 @@ const fixture = JSON.parse(fs.readFileSync(process.env.ASTRYX_CONTAINERS_FIXTURE
 const output = process.env.ASTRYX_TEST_OUTPUT ?? '/tmp/astryx-containers-evidence';
 fs.mkdirSync(output, {recursive: true});
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json'));
-const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))?.[1];
+const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))?.[1];
 assert(entry, 'Missing consuming Vite entrypoint');
 const viteCss = [...new Set([...entry.css, ...Object.entries(manifest).filter(([key, value]) => key.startsWith('_') && value.file.endsWith('.css')).map(([, value]) => value.file)])];
 const report = [];
@@ -52,7 +52,7 @@ for (const name of (process.env.ASTRYX_TEST_BROWSERS ?? 'chromium,webkit').split
               return {width: box.width, top: box.top};
             });
             const style = getComputedStyle(grid);
-            return {width: grid.clientWidth, columns, gap: parseFloat(style.columnGap), normal: style.getPropertyValue('--astryx-space-6'), small: style.getPropertyValue('--astryx-space-3'), large: style.getPropertyValue('--astryx-space-8')};
+            return {width: grid.clientWidth, columns, gap: parseFloat(style.columnGap), normal: style.getPropertyValue('--astryx-spacing-6'), small: style.getPropertyValue('--astryx-spacing-3'), large: style.getPropertyValue('--astryx-spacing-8')};
           });
           const weights = {'50-50': [1, 1], '25-75': [1, 3], '75-25': [3, 1], '66-33': [2, 1], '33-66': [1, 2], three: [1, 1, 1], four: [1, 1, 1, 1]}[record.ratio];
           assert.equal(dimensions.columns.length, weights.length, `${key}: column count`);

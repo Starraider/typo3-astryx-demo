@@ -2,10 +2,10 @@
 <f:section name="Header"><strong>{data.header}</strong></f:section>
 <f:section name="Content">
     <f:asset.css identifier="astryx-preview" href="EXT:typo3_astryx/Resources/Public/Css/backend-preview.css" />
-    <div class="astryx-preview">
+    <div class="astryx-preview {ax:recipe(name: 'Preview')}">
         <f:if condition="{data.icon}">
-            <p class="astryx-notice-preview-icon">
-                <astryx:icon name="{data.icon}" />
+            <p class="astryx-notice-preview-icon {ax:recipe(name: 'NoticePreview', options: {part: 'icon'})}">
+                <astryx:icon name="{data.icon}" size="large" />
                 {f:translate(key: 'status.{data.status}', extensionName: 'Typo3Astryx')}
             </p>
         </f:if>

@@ -19,6 +19,7 @@ export class AccordionController {
         firstOpen = true;
       }
       state.trigger.setAttribute('aria-expanded', String(state.expanded));
+      state.trigger.querySelector('.astryx-accordion-chevron')?.setAttribute('data-expanded', String(state.expanded));
       state.trigger.addEventListener('click', event => {
         event.preventDefault();
         this.setExpanded(state, !state.expanded);
@@ -39,6 +40,7 @@ export class AccordionController {
     state.animation = null;
     state.expanded = expanded;
     state.trigger.setAttribute('aria-expanded', String(expanded));
+    state.trigger.querySelector('.astryx-accordion-chevron')?.setAttribute('data-expanded', String(expanded));
     // Hidden content cannot receive focus while its closing animation is running.
     state.content.inert = !expanded;
     if (!expanded && state.content.contains(document.activeElement)) state.trigger.focus();
@@ -55,12 +57,12 @@ export class AccordionController {
       .reduce((total, property) => total + parseFloat(itemStyle[property]), 0);
     const endHeight = inset + state.trigger.getBoundingClientRect().height + (expanded ? state.content.getBoundingClientRect().height : 0);
     const style = getComputedStyle(this.root);
-    const duration = style.getPropertyValue('--astryx-duration').trim();
+    const duration = style.getPropertyValue('--astryx-motion-duration-fast').trim();
     const milliseconds = parseFloat(duration) * (duration.endsWith('ms') ? 1 : 1000);
     state.item.dataset.animating = '';
     const animation = state.item.animate(
       [{height: `${startHeight}px`}, {height: `${endHeight}px`}],
-      {duration: Number.isFinite(milliseconds) ? milliseconds : 125, easing: style.getPropertyValue('--astryx-easing').trim() || 'ease', fill: 'both'},
+      {duration: Number.isFinite(milliseconds) ? milliseconds : 125, easing: style.getPropertyValue('--astryx-motion-easing-standard').trim() || 'ease', fill: 'both'},
     );
     state.animation = animation;
     animation.finished.then(() => {

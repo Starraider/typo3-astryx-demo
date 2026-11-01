@@ -9,7 +9,7 @@ const stylexManifestPath = "packages/astryx_sitepackage/Resources/Public/StylexM
 const stylex = JSON.parse(fs.readFileSync(stylexManifestPath, "utf8"));
 assert.equal(stylex.version, "2.0", "Rebuild with the connector's maintained version 2 manifest adapter");
 const entry = Object.values(manifest).find(item =>
-    item.isEntry && item.src?.includes("/astryx-sitepackage/Resources/Private/JavaScript/Main.entry.js"),
+    item.isEntry && item.src?.includes("/astryx-sitepackage/Resources/Private/JavaScript/site.entry.js"),
 );
 assert(entry, "Vite did not build the sitepackage entrypoint");
 const cssFiles = new Set();
@@ -30,7 +30,7 @@ function collect(item) {
 collect(entry);
 assert(cssFiles.size > 0, "Vite emitted no CSS for the entrypoint");
 const css = [...cssFiles].map(file => fs.readFileSync(path.join(output, file), "utf8")).join("\n");
-for (const key of ["Site.shell", "Site.content"]) {
+for (const key of ["site-shell.logo_image"]) {
     const classes = stylex.styles?.[key]?.className;
     assert(classes?.trim(), `Missing StyleX classes for ${key}`);
     for (const className of classes.split(/\s+/)) {
@@ -65,12 +65,16 @@ console.log('Astryx recipe selectors are present in the consuming Vite build.');
 // Pages using vite:asset load the project bundles, independently of the
 // extension's packaged Resources/Public/Assets. Verify the gallery is delivered.
 const astryxEntry = Object.values(manifest).find(item =>
-  item.isEntry && item.src?.includes('/typo3-astryx/Resources/Private/JavaScript/Main.entry.js'),
+  item.isEntry && item.src?.includes('/typo3-astryx/Resources/Private/JavaScript/frontend.entry.js'),
 );
 assert(astryxEntry, 'Vite did not build the Astryx frontend entrypoint');
-const galleryCss = (astryxEntry.css ?? []).map(file => fs.readFileSync(path.join(output, file), 'utf8')).join('\n');
-for (const selector of ['.astryx-classic-gallery-tiles', '.astryx-classic-gallery-tile']) {
-  assert(galleryCss.includes(selector), `Consuming Vite CSS is missing ${selector}`);
+const galleryCss = sharedCss;
+for (const key of ['classic-gallery.part_tiles', 'classic-gallery.part_tile']) {
+  const classNames = astryx.styles[key]?.className.split(/\s+/).filter(Boolean) ?? [];
+  assert(classNames.length > 0, `StyleX manifest is missing ${key}`);
+  for (const className of classNames) {
+    assert(galleryCss.includes(`.${className}`), `Consuming Vite CSS is missing the StyleX selector for ${key}: ${className}`);
+  }
 }
 const galleryChunks = new Set();
 function collectGalleryScripts(item) {

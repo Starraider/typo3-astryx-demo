@@ -1,28 +1,29 @@
 <f:variable name="headerOccurrence" value="{ax:occurrence(prefix: 'header')}" />
-<header class="astryx-header" data-astryx-dropdowns>
-    <div class="astryx-shell-width astryx-header-inner">
-        <f:link.page pageUid="{site.rootPageId}" class="astryx-logo">
+<f:variable name="pinnedHeaderClass" value="{f:if(condition: settings.Astryx.pinnedHeader, then: ax:recipe(name: 'PageShell', options: {part: 'pinned-header'}))}" />
+<header class="astryx-header {ax:recipe(name: 'PageShell', options: {part: 'header'})} {pinnedHeaderClass}" data-pinned="{f:if(condition: settings.Astryx.pinnedHeader, then: 'true', else: 'false')}" data-astryx-dropdowns>
+    <div class="astryx-shell-width {ax:recipe(name: 'PageShell', options: {part: 'width'})} astryx-header-inner {ax:recipe(name: 'PageShell', options: {part: 'header-inner'})}">
+        <f:link.page pageUid="{site.rootPageId}" class="astryx-logo {ax:recipe(name: 'PageShell', options: {part: 'logo'})}">
             <f:if condition="{settings.Astryx.logo}">
-                <f:then><f:image src="{settings.Astryx.logo}" alt="{settings.Astryx.logoAlt}" width="200" /></f:then>
+                <f:then><f:image src="{settings.Astryx.logo}" alt="{settings.Astryx.logoAlt}" width="200" class="{ax:recipe(name: 'PageShell', options: {part: 'logo-image'})}" /></f:then>
                 <f:else>{site.configuration.websiteTitle}</f:else>
             </f:if>
         </f:link.page>
-        <nav class="astryx-navigation" data-astryx-mobile-nav aria-label="{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}">
+        <nav class="astryx-navigation {ax:recipe(name: 'Navigation', options: {part: 'navigation'})}" data-astryx-mobile-nav data-navigation-enhanced-class="{ax:recipe(name: 'Navigation', options: {part: 'navigation-enhanced'})}" data-mobile-menu-enhanced-class="{ax:recipe(name: 'Navigation', options: {part: 'mobile-menu-enhanced'})}" data-mobile-toggle-enabled-class="{ax:recipe(name: 'Navigation', options: {part: 'mobile-toggle-enabled'})}" aria-label="{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}">
             <f:render partial="Navigation/MainMenu" arguments="{items: navigation, prefix: 'desktop', nested: false}" />
-            <button class="astryx-mobile-toggle astryx-header-control" type="button" data-nav-open aria-haspopup="dialog" aria-expanded="false" aria-controls="{headerOccurrence.namespace}-dialog">
-                <span class="astryx-menu-icon" aria-hidden="true"></span>
-                <span class="astryx-sr-only">{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}</span>
+            <button class="astryx-mobile-toggle {ax:recipe(name: 'Navigation', options: {part: 'mobile-toggle'})} astryx-header-control {ax:recipe(name: 'Navigation', options: {part: 'header-control'})}" type="button" data-nav-open data-enhanced-class="{ax:recipe(name: 'Navigation', options: {part: 'mobile-toggle-enabled'})}" aria-haspopup="dialog" aria-expanded="false" aria-controls="{headerOccurrence.namespace}-dialog">
+                <span class="astryx-menu-icon {ax:recipe(name: 'Navigation', options: {part: 'menu-icon'})}" aria-hidden="true"><span class="{ax:recipe(name: 'Navigation', options: {part: 'menu-icon-line'})}"></span><span class="{ax:recipe(name: 'Navigation', options: {part: 'menu-icon-line'})}"></span><span class="{ax:recipe(name: 'Navigation', options: {part: 'menu-icon-line'})}"></span></span>
+                <span class="astryx-sr-only {ax:recipe(name: 'Utility', options: {part: 'visually-hidden'})}">{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}</span>
             </button>
-            <dialog class="astryx-dialog" id="{headerOccurrence.namespace}-dialog" aria-label="{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}">
-                <div class="astryx-dialog-header">
+            <dialog class="astryx-dialog {ax:recipe(name: 'Navigation', options: {part: 'dialog'})}" id="{headerOccurrence.namespace}-dialog" aria-label="{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}">
+                <div class="astryx-dialog-header {ax:recipe(name: 'Navigation', options: {part: 'dialog-header'})}">
                     <span>{f:translate(key: 'navigation', extensionName: 'Typo3Astryx')}</span>
-                    <button type="button" data-nav-close class="astryx-header-control">{f:translate(key: 'close', extensionName: 'Typo3Astryx')}</button>
+                    <button type="button" data-nav-close class="astryx-header-control {ax:recipe(name: 'Navigation', options: {part: 'header-control'})}">{f:translate(key: 'close', extensionName: 'Typo3Astryx')}</button>
                 </div>
                 <f:render partial="Navigation/MainMenu" arguments="{items: navigation, prefix: 'mobile', nested: false}" />
             </dialog>
         </nav>
         <f:if condition="{astryx.allowUserMode} || {settings.Astryx.showLanguageMenu}">
-            <div class="astryx-header-actions">
+            <div class="astryx-header-actions {ax:recipe(name: 'PageShell', options: {part: 'header-actions'})}">
                 <f:if condition="{astryx.allowUserMode}">
                     <f:render partial="ThemeSwitcher" />
                 </f:if>

@@ -3,6 +3,10 @@ export class MobileNavController {
     const dialog = root.querySelector('dialog');
     const open = root.querySelector('[data-nav-open]');
     if (!dialog || typeof dialog.showModal !== 'function') return;
+    const addClass = (element, classNames) => classNames?.trim().split(/\s+/).filter(Boolean).forEach(name => element.classList.add(name));
+    addClass(root, root.dataset.navigationEnhancedClass);
+    addClass(root.querySelector(':scope > .astryx-main-menu'), root.dataset.mobileMenuEnhancedClass);
+    addClass(open, open.dataset.enhancedClass);
     const close = () => { if (dialog.open) dialog.close(); };
     open.addEventListener('click', () => { dialog.showModal(); open.setAttribute('aria-expanded', 'true'); });
     dialog.querySelector('[data-nav-close]').addEventListener('click', close);

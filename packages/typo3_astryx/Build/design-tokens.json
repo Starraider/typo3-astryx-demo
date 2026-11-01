@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "customPropertyPrefix": "--astryx-",
+  "namingPattern": "domain-role-modifier",
+  "groups": [
+    {
+      "name": "color",
+      "source": "tokens/color-tokens.stylex.js",
+      "export": "colorTokens"
+    },
+    {
+      "name": "category-color",
+      "source": "tokens/category-color-tokens.stylex.js",
+      "export": "categoryColorTokens"
+    },
+    {
+      "name": "code-color",
+      "source": "tokens/code-color-tokens.stylex.js",
+      "export": "codeColorTokens"
+    },
+    {
+      "name": "typography",
+      "source": "tokens/typography-tokens.stylex.js",
+      "export": "typographyTokens"
+    },
+    {
+      "name": "spacing",
+      "source": "tokens/spacing-tokens.stylex.js",
+      "export": "spacingTokens"
+    },
+    {
+      "name": "layout",
+      "source": "tokens/layout-tokens.stylex.js",
+      "export": "layoutTokens"
+    },
+    {
+      "name": "shape",
+      "source": "tokens/shape-tokens.stylex.js",
+      "export": "shapeTokens"
+    },
+    {
+      "name": "shadow",
+      "source": "tokens/shadow-tokens.stylex.js",
+      "export": "shadowTokens"
+    },
+    {
+      "name": "motion",
+      "source": "tokens/motion-tokens.stylex.js",
+      "export": "motionTokens"
+    },
+    {
+      "name": "component-button",
+      "source": "tokens/components/button-tokens.stylex.js",
+      "export": "buttonTokens"
+    },
+    {
+      "name": "component-badge",
+      "source": "tokens/components/badge-tokens.stylex.js",
+      "export": "badgeTokens"
+    },
+    {
+      "name": "component-notice",
+      "source": "tokens/components/notice-tokens.stylex.js",
+      "export": "noticeTokens"
+    },
+    {
+      "name": "component-card",
+      "source": "tokens/components/card-tokens.stylex.js",
+      "export": "cardTokens"
+    },
+    {
+      "name": "component-header",
+      "source": "tokens/components/header-tokens.stylex.js",
+      "export": "headerTokens"
+    },
+    {
+      "name": "component-popover",
+      "source": "tokens/components/popover-tokens.stylex.js",
+      "export": "popoverTokens"
+    },
+    {
+      "name": "component-code",
+      "source": "tokens/components/code-tokens.stylex.js",
+      "export": "codeTokens"
+    }
+  ],
+  "themes": [
+    {
+      "name": "neutral",
+      "source": "themes/neutral-theme.stylex.js"
+    },
+    {
+      "name": "stone",
+      "source": "themes/stone-theme.stylex.js"
+    },
+    {
+      "name": "ocean",
+      "source": "themes/ocean-theme.stylex.js"
+    }
+  ]
+}

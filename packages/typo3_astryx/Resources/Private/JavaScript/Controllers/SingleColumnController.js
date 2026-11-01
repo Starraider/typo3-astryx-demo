@@ -11,8 +11,8 @@ export class SingleColumnController {
       const offset = getComputedStyle(root).direction === 'rtl'
         ? box.right + window.scrollX - viewport
         : -box.left - window.scrollX;
-      root.style.setProperty('--astryx-single-bleed-width', `${viewport}px`);
-      root.style.setProperty('--astryx-single-bleed-offset', `${offset}px`);
+      root.style.setProperty('--single-column-bleed-width', `${viewport}px`);
+      root.style.setProperty('--single-column-bleed-offset', `${offset}px`);
     };
     const schedule = () => { if (frame === undefined) frame = requestAnimationFrame(update); };
     update();

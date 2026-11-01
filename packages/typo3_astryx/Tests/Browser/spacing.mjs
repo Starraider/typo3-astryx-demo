@@ -13,7 +13,7 @@ const assetDirectory = fs.readdirSync('public/_assets').find(name => {
 });
 assert(assetDirectory, 'Missing published extension assets');
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json', 'utf8'));
-const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))?.[1];
+const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))?.[1];
 assert(entry, 'Missing consuming Vite entrypoint');
 const modes = {
   packaged: [`_assets/${assetDirectory}/Assets/astryx.css`],

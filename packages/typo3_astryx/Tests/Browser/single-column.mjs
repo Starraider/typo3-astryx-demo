@@ -8,7 +8,7 @@ const fixture = JSON.parse(fs.readFileSync(process.env.ASTRYX_SINGLE_COLUMN_FIXT
 const output = process.env.ASTRYX_TEST_OUTPUT ?? '/tmp/astryx-single-column-evidence';
 fs.mkdirSync(output, {recursive: true});
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json'));
-const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))?.[1];
+const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))?.[1];
 assert(entry, 'Missing consuming Vite entrypoint');
 const viteCss = [...new Set([...entry.css, ...Object.entries(manifest).filter(([key, value]) => key.startsWith('_') && value.file.endsWith('.css')).map(([, value]) => value.file)])];
 const report = [];
@@ -155,8 +155,8 @@ for (const name of (process.env.ASTRYX_TEST_BROWSERS ?? 'chromium,webkit').split
           await page.setViewportSize({width, height: 900});
         }
         // Honor the configured site content width instead of a fixed recipe width.
-        const configuredWidth = await page.locator('.astryx-root').evaluate(root => root.style.getPropertyValue('--astryx-content-width'));
-        await page.locator('.astryx-root').evaluate(root => root.style.setProperty('--astryx-content-width', '48rem'));
+        const configuredWidth = await page.locator('.astryx-root').evaluate(root => root.style.getPropertyValue('--astryx-layout-content-max-width'));
+        await page.locator('.astryx-root').evaluate(root => root.style.setProperty('--astryx-layout-content-max-width', '48rem'));
         for (const [key, record] of Object.entries(fixture.records)) {
           if (record.width !== 'full-bleed' || (!javascript && key === 'nested')) continue;
           await expect.poll(async () => {
@@ -165,7 +165,7 @@ for (const name of (process.env.ASTRYX_TEST_BROWSERS ?? 'chromium,webkit').split
             return Math.abs(box.x - shell.x) < 1 && Math.abs(box.width - shell.width) < 1;
           }, `${key}: configured content width`).toBe(true);
         }
-        await page.locator('.astryx-root').evaluate((root, value) => root.style.setProperty('--astryx-content-width', value), configuredWidth);
+        await page.locator('.astryx-root').evaluate((root, value) => root.style.setProperty('--astryx-layout-content-max-width', value), configuredWidth);
         await page.evaluate(() => window.scrollTo(0, 0));
         await page.screenshot({path: `${output}/${name}-${mode}-${javascript ? 'js' : 'no-js'}-${width}.png`, fullPage: true});
       }

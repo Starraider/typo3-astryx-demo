@@ -12,7 +12,7 @@ const extension = fs.readdirSync('public/_assets').find(name => {
 });
 assert(extension, 'Published extension assets required');
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json'));
-const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))[1];
+const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))[1];
 const css = new Set();
 const collect = item => { for (const file of item.css || []) css.add(file); for (const key of item.imports || []) collect(manifest[key]); if (item.file.endsWith('.css')) css.add(item.file); };
 collect(entry);

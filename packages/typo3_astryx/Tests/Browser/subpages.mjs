@@ -17,7 +17,7 @@ for (const name of (process.env.ASTRYX_TEST_BROWSERS ?? 'chromium,webkit').split
     await page.goto(`${base}/code/menues`, {waitUntil: 'networkidle'});
     const vite = await page.locator('link[rel="stylesheet"]').evaluateAll(elements => elements.map(e => e.href));
     const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json', 'utf8'));
-    const extensionEntry = Object.keys(manifest).find(k => k.includes('typo3-astryx/') && k.endsWith('/Main.entry.js'));
+    const extensionEntry = Object.keys(manifest).find(k => k.includes('typo3-astryx/') && k.endsWith('/frontend.entry.js'));
     const packaged = [`${base}/_assets/`];
     // Resolve packaged CSS from its installed extension URL, using an actual published asset on the server.
     const packagePath = fs.realpathSync('public/_assets/' + fs.readdirSync('public/_assets').find(d => {

@@ -1,0 +1,7 @@
+/* StyleX 0.19 does not compile pseudo-elements; the native dialog backdrop
+   is an integration surface that only CSS can target. */
+@layer astryx-base {
+  .astryx-dialog::backdrop {
+    background: var(--astryx-color-overlay-scrim);
+  }
+}

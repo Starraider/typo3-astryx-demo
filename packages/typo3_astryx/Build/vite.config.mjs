@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     outDir: resolve(extension, 'Resources/Public/Assets'), emptyOutDir: true, manifest: true,
     rollupOptions: {
-      input: {astryx:resolve(extension,'Resources/Private/JavaScript/Main.entry.js'), rte:resolve(extension,'Resources/Private/JavaScript/Rte.entry.js'), preview:resolve(extension,'Resources/Private/JavaScript/Preview.entry.js')},
+      input: {astryx:resolve(extension,'Resources/Private/JavaScript/frontend.entry.js'), rte:resolve(extension,'Resources/Private/JavaScript/rte-editor.entry.js'), preview:resolve(extension,'Resources/Private/JavaScript/backend-preview.entry.js')},
       output: {entryFileNames:'[name].js', chunkFileNames:'[name]-[hash].js', assetFileNames:'[name][extname]'},
     },
   },

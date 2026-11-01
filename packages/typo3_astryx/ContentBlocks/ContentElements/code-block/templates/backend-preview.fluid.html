@@ -2,5 +2,5 @@
 <f:section name="Header"><f:if condition="{data.header}"><strong>{data.header}</strong><br /></f:if><strong><f:if condition="{data.filename}">{data.filename} — </f:if>{f:translate(key: 'codeBlock.language.{data.language}', extensionName: 'Typo3Astryx', default: data.language)}</strong></f:section>
 <f:section name="Content">
     <f:asset.css identifier="astryx-preview" href="EXT:typo3_astryx/Resources/Public/Css/backend-preview.css" />
-    <div class="astryx-preview"><pre class="astryx-code-preview"><code>{data.code -> f:format.crop(maxCharacters: 1000, respectWordBoundaries: false)}</code></pre></div>
+    <div class="astryx-preview {ax:recipe(name: 'Preview')}"><pre class="astryx-code-preview {ax:recipe(name: 'CodeBlockPreview', options: {part: 'pre'})}"><code class="{ax:recipe(name: 'CodeBlockPreview', options: {part: 'code'})}">{data.code -> f:format.crop(maxCharacters: 1000, respectWordBoundaries: false)}</code></pre></div>
 </f:section>

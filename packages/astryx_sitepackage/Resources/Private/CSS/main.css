@@ -1,4 +1,3 @@
-/* Project styles belong in the product layer declared by typo3_astryx. */
-@layer product {
-  .astryx-logo img { max-height: 2.75rem; width: auto; }
-}
+/* CSS entry/layer anchor for Vite's compiled sitepackage StyleX recipes.
+   Product styles belong in StyleX; keep this file declaration-free. */
+@layer product;

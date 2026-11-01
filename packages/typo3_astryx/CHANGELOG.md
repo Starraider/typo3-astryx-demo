@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Establish a semantic StyleX source contract: lowercase kebab-case recipe, token-family and theme filenames; grouped token modules; and a separate theme identity/mode model with complete generated theme boundaries.
+- Rename all 221 public CSS custom properties to the `--astryx-{domain}-{role}-...` convention and switch compiled recipe aliases to lowercase kebab-case. The token rename is a breaking change for external CSS overrides and custom theme code; see `Documentation/Styling/TokenMigration.rst`.
+- Add a token migration table, explicit `Build/design-tokens.json` source contract and build-time ownership/naming checks. Regenerate the theme bridge and paired assets from source.
+
 ## 0.1.0 - 2026-10-11
 
 - Fix P2-07: propagate caller image sizes through Image/Media and Card slots; use native lazy auto-sizes for actual nested/responsive slots with conservative component fallbacks. Preserve eager policy, FAL crops, source candidates, dimensions and captions; add rendered candidate/byte regressions.

@@ -8,7 +8,7 @@ const output = process.env.ASTRYX_TEST_OUTPUT ?? '/tmp/astryx-responsive-images-
 fs.mkdirSync(output, {recursive: true});
 const asset = fs.readdirSync('public/_assets').find(name => fs.lstatSync(`public/_assets/${name}`).isSymbolicLink() && /typo3[-_]astryx/.test(fs.readlinkSync(`public/_assets/${name}`)));
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json', 'utf8'));
-const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))?.[1];
+const entry = Object.entries(manifest).find(([key]) => /typo3[-_]astryx\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))?.[1];
 assert(asset && entry, 'Missing published assets');
 const sharedCss = Object.values(manifest).filter(item => item.src?.startsWith('_') && item.file.endsWith('.css')).map(item => item.file);
 const modes = {packaged: [`_assets/${asset}/Assets/astryx.css`], vite: [...new Set([...sharedCss, ...entry.css])].map(file => `_assets/vite/${file}`)};

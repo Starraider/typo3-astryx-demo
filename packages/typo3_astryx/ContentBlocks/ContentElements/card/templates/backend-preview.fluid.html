@@ -2,7 +2,7 @@
 <f:section name="Header"><strong>{data.header}</strong></f:section>
 <f:section name="Content">
     <f:asset.css identifier="astryx-preview" href="EXT:typo3_astryx/Resources/Public/Css/backend-preview.css" />
-    <div class="astryx-preview">
+    <div class="astryx-preview {ax:recipe(name: 'Preview')}">
         <p>{data.bodytext -> f:format.stripTags() -> f:format.crop(maxCharacters: 240)}</p>
         <f:if condition="({data.cta_link} && {data.cta_label}) || ({data.secondary_link} && {data.secondary_label})">
             <p>
@@ -10,7 +10,7 @@
                 <f:if condition="{data.secondary_link} && {data.secondary_label}"><span>{data.secondary_label}</span></f:if>
             </p>
         </f:if>
-        <f:for each="{data.image}" as="file"><f:render partial="Media/Image" arguments="{file: file}" /></f:for>
+        <f:for each="{data.image}" as="file"><f:render partial="Media/Image" arguments="{file: file, preview: 1}" /></f:for>
         <f:for each="{data.assets}" as="file"><span>{file.name}</span></f:for>
     </div>
 </f:section>

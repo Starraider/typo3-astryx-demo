@@ -10,7 +10,7 @@ const fixture = JSON.parse(fs.readFileSync(process.env.ASTRYX_IDENTIFIERS_FIXTUR
 const output = process.env.ASTRYX_TEST_OUTPUT ?? '/tmp/astryx-identifiers-evidence';
 fs.mkdirSync(output, {recursive: true});
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json'));
-const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))?.[1];
+const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))?.[1];
 assert(entry, 'Missing consuming Vite entrypoint');
 const css = [...new Set([...(entry.css ?? []), ...Object.entries(manifest).filter(([key, value]) => key.startsWith('_') && value.file.endsWith('.css')).map(([, value]) => value.file)])];
 const report = [];

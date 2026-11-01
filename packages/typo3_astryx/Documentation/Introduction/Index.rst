@@ -69,7 +69,7 @@ TYPO3 Astryx is built on three interconnected layers:
     +-------------------------------------------------------------+
     |              StyleX Compiler & Vite Build Pipeline          |
     |  StyleX modules (.stylex.js) -> Atomic CSS (@layer)         |
-    |  Themes (Neutral, Stone, Ocean) -> CSS variables (--astryx-) |
+    | Token families + themes -> complete semantic CSS variables  |
     +-------------------------------------------------------------+
 
 1. **Content Blocks**: Content elements are authored as TYPO3 Content Blocks in
@@ -78,9 +78,9 @@ TYPO3 Astryx is built on three interconnected layers:
    StyleX sources.
 2. **StyleX Connector**: Connects TYPO3's PHP/Fluid rendering engine with the compiled StyleX
    manifest. Rather than hardcoding generated atomic CSS class names, Fluid templates request
-   semantic recipe keys (such as ``AstryxButton.root`` or ``AstryxButton.variant_primary``),
+   semantic recipe keys (such as ``button.root`` or ``button.variant_primary``),
    which ``StylexManifestService`` resolves to atomic class strings at render time.
-3. **Design Tokens & Theme Bridge**: Design tokens are declared in JavaScript modules
-   (``tokens.stylex.js``, ``Themes/Neutral.stylex.js``, ``Themes/Stone.stylex.js``, etc.).
-   A build-time bridge generates ``themes.css`` containing scoped CSS custom properties
-   (``--astryx-*``) that adapt dynamically to the active theme and color mode.
+3. **Design Tokens & Theme Bridge**: Semantic token families are declared in
+   ``Resources/Private/JavaScript/StyleX/tokens/`` and theme overrides in the matching
+   ``StyleX/themes/<theme>-theme.stylex.js`` modules. The build-time bridge resolves sparse theme
+   overrides into complete ``themes.css`` custom-property sets for the active theme and color mode.

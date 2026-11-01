@@ -16,7 +16,7 @@ const assetDirectory = fs.readdirSync(publicAssets).find(name => {
 });
 assert(assetDirectory, 'Missing Composer public-asset link');
 const manifest = JSON.parse(fs.readFileSync('public/_assets/vite/.vite/manifest.json', 'utf8'));
-const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/Main\.entry\.js$/.test(key))?.[1];
+const entry = Object.entries(manifest).find(([key]) => /(?:typo3-astryx|typo3_astryx)\/Resources\/Private\/JavaScript\/frontend\.entry\.js$/.test(key))?.[1];
 assert(entry, 'Missing consuming Vite entrypoint');
 const assetModes = {
   packaged: {js: `_assets/${assetDirectory}/Assets/astryx.js`, css: [`_assets/${assetDirectory}/Assets/astryx.css`]},

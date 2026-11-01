@@ -1,14 +1,14 @@
 <f:layout name="Default" />
 <f:section name="Main">
-    <section class="astryx-hero" data-layout="{data.layout}" data-variant="{data.variant}" data-align="{data.alignment}">
-        <div class="astryx-hero-content">
+    <section class="astryx-hero {ax:recipe(name: 'Hero', options: {part: 'root'})}" data-layout="{data.layout}" data-variant="{data.variant}" data-align="{data.alignment}">
+        <div class="astryx-hero-content {ax:recipe(name: 'Hero', options: {part: 'content'})}" data-hero-layout="{data.layout}">
             <f:if condition="{data.eyebrow}"><astryx:badge text="{data.eyebrow}" /></f:if>
             <f:render partial="ContentElements/Header" arguments="{data: data}" />
-            <astryx:text richText="{data.bodytext}" />
-            <f:render partial="ContentElements/Cta" arguments="{data: data}" />
+            <astryx:text richText="{data.bodytext}" alignment="{data.alignment}" />
+            <f:render partial="ContentElements/Cta" arguments="{data: data, alignment: data.alignment}" />
         </div>
         <div class="astryx-hero-media">
-            <f:for each="{data.image}" as="file"><f:render partial="Media/Image" arguments="{file: file, eager: 1, aspectRatio: data.aspect_ratio}" /></f:for>
+            <f:for each="{data.image}" as="file"><f:render partial="Media/Image" arguments="{file: file, eager: 1, aspectRatio: data.aspect_ratio, heroLayout: data.layout}" /></f:for>
         </div>
     </section>
 </f:section>

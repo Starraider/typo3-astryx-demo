@@ -1,8 +1,23 @@
 @layer reset {
-  :where(.astryx-root, .astryx-preview, .ck-content) { font-family: var(--astryx-font); color: var(--astryx-text); font-size: var(--astryx-font-size-label); font-weight: 400; line-height: var(--astryx-line-label); }
+  body { margin: 0; }
+  :where(.astryx-root, .astryx-preview, .ck-content) { font-family: var(--astryx-typography-font-family-body); color: var(--astryx-color-text-primary); font-size: var(--astryx-typography-label-font-size); font-weight: 400; line-height: var(--astryx-typography-label-line-height); }
   :where(.astryx-root, .astryx-preview, .ck-content) *, :where(.astryx-root, .astryx-preview, .ck-content) *::before, :where(.astryx-root, .astryx-preview, .ck-content) *::after { box-sizing: border-box; }
   :where(.astryx-root, .astryx-preview, .ck-content) :where(img,video) { max-inline-size: 100%; block-size: auto; }
   :where(.astryx-root, .astryx-preview, .ck-content) :where(button,input,textarea,select) { font: inherit; }
-  :where(.astryx-root, .astryx-preview, .ck-content) :focus-visible { outline: 2px solid var(--astryx-accent); outline-offset: 3px; }
+  :where(.astryx-root, .astryx-preview, .ck-content) :focus-visible { outline: 2px solid var(--astryx-color-accent); outline-offset: 3px; }
   :where(.astryx-root, .astryx-preview, .ck-content) [hidden] { display: none !important; }
+}
+
+@layer astryx-base {
+  /* Default coloring for TYPO3/core links without an authored recipe class. */
+  .astryx-root :where(a:not([class])) { color: var(--astryx-color-text-link); }
+}
+
+/* Broad accessibility policies apply to descendants rendered by many
+   independent components and CMS integrations. */
+@media (prefers-reduced-motion: reduce) {
+  .astryx-root * { scroll-behavior: auto !important; transition-duration: 0s !important; animation-duration: 0s !important; }
+}
+@media (forced-colors: active) {
+  .astryx-root :where(button, [role=\"link\"]) { border: 1px solid ButtonText; }
 }

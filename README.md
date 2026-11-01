@@ -7,13 +7,13 @@ This TYPO3 v14 project was created with `typo3-auto-install`.
 `ddev start` starts TYPO3 and its database. Use `ddev vite dev` for the Vite
 development server and `ddev vite build` for a production asset build.
 
-StyleX sources live in `packages/astryx_sitepackage/Resources/Private/JavaScript/Stylex/`.
-Import each new `*.stylex.js` source in `Main.entry.js`, using a unique basename.
-Fluid resolves its compiled classes with `{stylex:class(styles: 'Site.shell')}`.
+Site-owned StyleX recipes live in `packages/astryx_sitepackage/Resources/Private/JavaScript/StyleX/components/`.
+Import each new `*.stylex.js` source in `site.entry.js`, using a unique lowercase kebab-case basename.
+Fluid resolves its compiled classes with `{stylex:class(styles: 'site-shell.shell')}`.
 
 Run `ddev npm run build` after changing styles. This builds CSS and JavaScript,
 writes the version 2 StyleX manifest, and checks Fluid CSS selectors and CSS checksums.
-Then run `ddev typo3 stylex:validate --required-key Site.shell --required-key Site.content`
+Then run `ddev typo3 stylex:validate --required-key=site-shell.shell --required-key=site-shell.content`
 and `ddev typo3 cache:flush`. Installation and dependency updates run these commands automatically.
 The manifest adapter comes from the Composer-installed connector. Legacy aliases keep
 the supplied Fluid keys working alongside canonical module/object keys.

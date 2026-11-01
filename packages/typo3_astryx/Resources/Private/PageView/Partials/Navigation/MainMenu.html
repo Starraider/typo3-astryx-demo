@@ -2,26 +2,20 @@
     <f:variable name="occurrence" value="{ax:occurrence(prefix: 'menu')}" />
     <f:variable name="path" value="{occurrence.namespace}" />
 </f:if>
-<f:if condition="{prefix} == 'desktop'">
-    <f:variable name="panelStyle" value="{ax:recipe(name: 'Dropdown', options: {part: 'panel'})}" />
-    <f:if condition="{nested}">
-        <f:variable name="rowStyle" value="{ax:recipe(name: 'Dropdown', options: {part: 'row'})}" />
-        <f:variable name="linkStyle" value="{ax:recipe(name: 'Dropdown', options: {part: 'link'})}" />
-        <f:variable name="toggleStyle" value="{ax:recipe(name: 'Dropdown', options: {part: 'toggle'})}" />
-    </f:if>
-</f:if>
-<ul class="{f:if(condition: nested, then: 'astryx-submenu', else: 'astryx-menu astryx-main-menu')}">
+<f:variable name="menuPart" value="{f:if(condition: nested, then: 'submenu', else: 'main-menu')}" />
+<ul class="{f:if(condition: nested, then: 'astryx-submenu', else: 'astryx-menu astryx-main-menu')} {ax:recipe(name: 'Navigation', options: {part: menuPart})} {f:if(condition: prefix == 'mobile', then: ax:recipe(name: 'Navigation', options: {part: 'dialog-menu'}))}">
     <f:for each="{items}" as="item" iteration="branch">
         <f:variable name="branchPath" value="{path}-{branch.index}" />
-        <li class="astryx-menu-item {rowStyle} {f:if(condition: item.active, then: 'astryx-menu-item--active')}">
+        <li class="astryx-menu-item {ax:recipe(name: 'Navigation', options: {part: 'row'})} {f:if(condition: prefix == 'mobile', then: ax:recipe(name: 'Navigation', options: {part: 'dialog-row'}))} {f:if(condition: item.active, then: 'astryx-menu-item--active')} {f:if(condition: item.children, then: 'astryx-menu-item--has-children')}">
             <f:variable name="current" value="{f:if(condition: item.current, then: 'page', else: 'false')}" />
-            <f:link.typolink parameter="{item.link}" target="{item.target}" class="astryx-menu-link {linkStyle}" additionalAttributes="{'aria-current': current}">{item.title}</f:link.typolink>
+            <f:link.typolink parameter="{item.link}" target="{item.target}" class="astryx-menu-link {ax:recipe(name: 'Navigation', options: {part: 'link'})} {f:if(condition: item.active, then: ax:recipe(name: 'Navigation', options: {part: 'link-active'}))} {f:if(condition: item.children, then: ax:recipe(name: 'Navigation', options: {part: 'link-has-submenu'}))}" additionalAttributes="{'aria-current': current}">{item.title}</f:link.typolink>
             <f:if condition="{item.children}">
-                <details class="astryx-dropdown" data-astryx-dropdown>
-                    <summary class="astryx-submenu-toggle {toggleStyle}" aria-controls="{branchPath}-submenu" aria-label="{f:translate(key: 'submenu', extensionName: 'Typo3Astryx', default: 'Toggle submenu for %s', arguments: {0: item.title})}">
-                        <span class="astryx-chevron" aria-hidden="true"></span>
+                <details class="astryx-dropdown {ax:recipe(name: 'Navigation', options: {part: 'disclosure'})} {f:if(condition: nested, then: ax:recipe(name: 'Navigation', options: {part: 'nested-disclosure'}))} {ax:recipe(name: 'Navigation', options: {part: 'mobile-disclosure'})}" data-astryx-dropdown>
+                    <summary class="astryx-submenu-toggle {ax:recipe(name: 'Navigation', options: {part: 'summary'})} {ax:recipe(name: 'Navigation', options: {part: 'toggle'})} {ax:recipe(name: 'Navigation', options: {part: 'submenu-toggle'})}" aria-controls="{branchPath}-submenu" aria-label="{f:translate(key: 'submenu', extensionName: 'Typo3Astryx', default: 'Toggle submenu for %s', arguments: {0: item.title})}">
+                        <span class="astryx-chevron {ax:recipe(name: 'Navigation', options: {part: 'chevron'})}" aria-hidden="true"></span>
                     </summary>
-                    <div class="astryx-dropdown-panel {panelStyle}" id="{branchPath}-submenu">
+                    <div class="astryx-dropdown-panel {ax:recipe(name: 'Navigation', options: {part: 'dropdown-panel'})} {f:if(condition: nested, then: ax:recipe(name: 'Navigation', options: {part: 'nested-panel'}))} {f:if(condition: nested && prefix == 'desktop', then: ax:recipe(name: 'Navigation', options: {part: 'flyout-panel'}))} {f:if(condition: nested && prefix == 'mobile', then: ax:recipe(name: 'Navigation', options: {part: 'dialog-panel'}))} {f:if(condition: !nested && branch.isLast, then: ax:recipe(name: 'Navigation', options: {part: 'last-panel'}))}" id="{branchPath}-submenu">
+                        <f:if condition="{nested} && {prefix} == 'desktop'"><span class="astryx-dropdown-flyout-bridge {ax:recipe(name: 'Navigation', options: {part: 'flyout-bridge'})}" aria-hidden="true"></span></f:if>
                         <f:render partial="Navigation/MainMenu" arguments="{items: item.children, prefix: prefix, nested: true, path: branchPath}" />
                     </div>
                 </details>

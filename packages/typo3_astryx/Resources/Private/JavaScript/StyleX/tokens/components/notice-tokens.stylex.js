@@ -1,0 +1,26 @@
+import * as stylex from '@stylexjs/stylex';
+
+export const noticeTokens = stylex.defineVars({
+  "--astryx-component-notice-border-width": "4px",
+  "--astryx-component-notice-padding": "var(--astryx-spacing-6)",
+  "--astryx-component-notice-variant-neutral-background": "var(--astryx-color-background-surface)",
+  "--astryx-component-notice-variant-neutral-foreground": "var(--astryx-color-text-primary)",
+  "--astryx-component-notice-variant-neutral-supporting-text-color": "var(--astryx-color-text-secondary)",
+  "--astryx-component-notice-variant-neutral-border-color": "var(--astryx-color-text-secondary)",
+  "--astryx-component-notice-variant-accent-background": "var(--astryx-color-background-surface)",
+  "--astryx-component-notice-variant-accent-foreground": "var(--astryx-color-text-primary)",
+  "--astryx-component-notice-variant-accent-supporting-text-color": "var(--astryx-color-text-secondary)",
+  "--astryx-component-notice-variant-accent-border-color": "var(--astryx-color-accent)",
+  "--astryx-component-notice-variant-success-background": "var(--astryx-color-background-surface)",
+  "--astryx-component-notice-variant-success-foreground": "var(--astryx-color-text-primary)",
+  "--astryx-component-notice-variant-success-supporting-text-color": "var(--astryx-color-text-secondary)",
+  "--astryx-component-notice-variant-success-border-color": "var(--astryx-color-status-success)",
+  "--astryx-component-notice-variant-warning-background": "var(--astryx-color-background-surface)",
+  "--astryx-component-notice-variant-warning-foreground": "var(--astryx-color-text-primary)",
+  "--astryx-component-notice-variant-warning-supporting-text-color": "var(--astryx-color-text-secondary)",
+  "--astryx-component-notice-variant-warning-border-color": "var(--astryx-color-status-warning)",
+  "--astryx-component-notice-variant-error-background": "var(--astryx-color-background-surface)",
+  "--astryx-component-notice-variant-error-foreground": "var(--astryx-color-text-primary)",
+  "--astryx-component-notice-variant-error-supporting-text-color": "var(--astryx-color-text-secondary)",
+  "--astryx-component-notice-variant-error-border-color": "var(--astryx-color-status-error)",
+});

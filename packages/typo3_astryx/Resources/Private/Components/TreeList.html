@@ -13,11 +13,11 @@
 <f:section name="Items">
     <f:for each="{items}" as="item" iteration="iterator">
         <f:variable name="itemId" value="{path}-{iterator.index}" />
-        <li class="astryx-tree-list-item" data-tree-item>
+        <li class="astryx-tree-list-item {ax:recipe(name: 'TreeList', options: {part: 'item'})}" data-tree-item>
             <div class="astryx-tree-list-row {ax:recipe(name: 'TreeList', options: {part: 'row'})}">
                 <f:if condition="{item.children}">
                     <button type="button" class="astryx-tree-list-toggle {ax:recipe(name: 'TreeList', options: {part: 'toggle'})}" data-tree-toggle aria-expanded="true" aria-controls="{itemId}-children" aria-label="{f:translate(key: 'treeList.toggle', extensionName: 'Typo3Astryx', arguments: {0: item.title}, default: 'Toggle child pages for %s')}" hidden>
-                        <f:image src="EXT:typo3_astryx/Resources/Public/Icons/tree-chevron.svg" class="astryx-tree-list-chevron" width="16" height="16" alt="" />
+                        <f:image src="EXT:typo3_astryx/Resources/Public/Icons/tree-chevron.svg" class="astryx-tree-list-chevron {ax:recipe(name: 'TreeList', options: {part: 'chevron'})}" data-expanded="true" width="16" height="16" alt="" />
                     </button>
                 </f:if>
                 <f:link.typolink parameter="{item.link}" target="{item.target}" class="astryx-tree-list-link {ax:recipe(name: 'TreeList', options: {part: 'link'})}" additionalAttributes="{id: '{itemId}-label', aria-current: '{f:if(condition: item.current, then: \'page\', else: \'false\')}', data-active: '{f:if(condition: item.active, then: \'true\', else: \'false\')}'}">{item.title}</f:link.typolink>
